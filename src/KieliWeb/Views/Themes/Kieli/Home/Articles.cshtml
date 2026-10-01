@@ -1,0 +1,72 @@
+@{
+    BlockContent head = Block("news.head");
+    BlockContent cross = Block("news.cross");
+    string crumb = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "articles")?["label"] ?? "Жаңалықтар";
+    List<Articlecategory> cats = ContentStore.ArticleCategories(Cache, Lang);
+    List<Article> articles = ContentStore.Articles(Cache, Lang);
+    PostModel Post(Article a, string kind)
+    {
+        Articlecategory c = cats.FirstOrDefault(x => x.Id == a.CategoryId);
+        return new PostModel(a, kind, c?.Slug ?? string.Empty, c?.Name ?? string.Empty);
+    }
+    int i = 0;
+}
+<main id="main">
+  <section class="page-head">
+    <div class="wrap">
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li>@crumb</li></ol>
+      <div class="service-head">
+        <div>
+          <p class="eyebrow">@head["eyebrow"]</p>
+          <h1 class="page-title">@head["title"]</h1>
+          <p class="lead">@head["lead"]</p>
+        </div>
+        <div class="service-head__cta">
+          <button type="button" class="btn btn--sun" data-consult>@head["cta"]</button>
+          <p>@head["ctaNote"]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="padding-block-start:0" aria-label="@U("news.listAria")">
+    <div class="wrap" data-posts="page">
+      <div class="posts-tools">
+        <div class="chips posts-filter" role="group" aria-label="@U("common.categories")"></div>
+        <label class="search">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <input type="search" class="search__input" placeholder="@head["searchPlaceholder"]" aria-label="@U("news.searchAria")" data-posts-q>
+        </label>
+      </div>
+      <p class="posts-count" data-posts-count aria-live="polite">@U("news.count", ("n", articles.Count))</p>
+      <div class="posts-list pgrid-posts">@foreach (Article a in articles) {<partial name="~/Views/Themes/Kieli/Shared/_Post.cshtml" model='Post(a, i == 0 ? "big" : "")' />i++;}</div>
+@if (head.Has("note"))
+{
+      <p class="help-foot" style="margin-block-start:36px">@head["note"]</p>
+}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cross">
+@if (cross.Has("image"))
+{
+        <div class="cross__bg"><img src="@cross["image"]" alt="" loading="lazy"></div>
+}
+        <div>
+          <p class="eyebrow">@cross["eyebrow"]</p>
+          <h2>@cross["title"]</h2>
+          <p>@cross["text"]</p>
+        </div>
+        <div class="cross__cta">
+          <button type="button" class="btn btn--gold" data-consult="@cross["serviceKey"]">@cross["button"]</button>
+@if (cross.Has("linkText"))
+{
+          <a class="btn btn--ghost" href="@cross["linkUrl"]">@cross["linkText"]</a>
+}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

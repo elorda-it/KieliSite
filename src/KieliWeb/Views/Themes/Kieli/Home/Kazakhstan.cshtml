@@ -1,0 +1,101 @@
+@{
+    BlockContent head = Block("kazakhstan.head");
+    BlockContent atlas = Block("kazakhstan.atlas");
+    BlockContent mura = Block("kazakhstan.heritage");
+    string crumb = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "kazakhstan")?["label"] ?? "Қазақстан";
+    List<Region> regions = ContentStore.Regions(Cache, Lang);
+    List<Placecategory> cats = ContentStore.PlaceCategories(Cache, Lang);
+    List<Place> places = ContentStore.Places(Cache, Lang);
+    List<Heritage> heritage = ContentStore.HeritageItems(Cache, Lang);
+    // cities first, then the oblasts, each in the admin order
+    List<Region> buttons = regions.Where(r => r.IsCity == 1).Concat(regions.Where(r => r.IsCity != 1)).ToList();
+    int total = regions.Sum(r => ContentStore.RegionCount(Cache, r));
+}
+<main id="main">
+  <section class="page-head">
+    <div class="wrap">
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li>@crumb</li></ol>
+      <div class="service-head">
+        <div>
+          <p class="eyebrow">@head["eyebrow"]</p>
+          <h1 class="page-title">@head["title"]</h1>
+          <p class="lead">@head["lead"]</p>
+          <div class="figures">
+@foreach (BlockContent f in head.List("figures"))
+{
+            <div><b>@f["value"]</b><span>@f["label"]</span></div>
+}
+          </div>
+        </div>
+@if (head.Has("epigraph"))
+{
+        <figure class="epigraph">
+          <blockquote>@head["epigraph"]</blockquote>
+          <cite>@head["epigraphCite"]</cite>
+        </figure>
+}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" id="atlas" aria-labelledby="atlas-title">
+    <div class="wrap">
+      <partial name="~/Views/Themes/Kieli/Shared/_SecHead.cshtml" model='new SectionModel(atlas, TitleId: "atlas-title")' />
+      <div class="atlas">
+        <div class="kzmap-wrap">
+          @Html.Raw(KzMap.Svg(regions, r => U("places.count", ("n", ContentStore.RegionCount(Cache, r)))))
+          <div class="map-tip" id="map-tip" hidden></div>
+          <p class="map-legend"><span class="scale">@U("places.legendCount")<span>1–5</span><i style="background:var(--surface)"></i><i style="background:color-mix(in srgb,var(--kok) 9%,var(--surface))"></i><i style="background:color-mix(in srgb,var(--kok) 20%,var(--surface))"></i><i style="background:color-mix(in srgb,var(--kok) 34%,var(--surface))"></i><span>16+</span></span><span><i style="background:var(--altyn-2)"></i>@U("places.legendCity")</span><span><i style="background:var(--kok)"></i>@U("places.legendSelected")</span></p>
+        </div>
+        <div class="regions" role="group" aria-label="@U("places.regionsAria")">
+          <button type="button" class="regions__all" data-region-btn="0" aria-pressed="true"><span>@atlas["allRegions"]</span><span class="n">@total</span></button>
+@foreach (Region r in buttons)
+{
+          <button type="button" data-region-btn="@r.MapId"><span>@(r.IsCity == 1 || string.IsNullOrWhiteSpace(r.ShortName) ? r.Name : r.ShortName)</span><span class="n">@ContentStore.RegionCount(Cache, r)</span></button>
+}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="places-block">
+  <div class="filterbar" id="places">
+    <div class="wrap filterbar__in">
+      <div class="chips" role="group" aria-label="@U("places.filterAria")">
+        <button type="button" class="chip" data-cat="all" aria-pressed="true">@U("common.all") <span class="n">@places.Count</span></button>
+@foreach (Placecategory c in cats)
+{
+        <button type="button" class="chip" data-cat="@c.Slug" aria-pressed="false">@(string.IsNullOrWhiteSpace(c.PluralName) ? c.Name : c.PluralName) <span class="n">@places.Count(p => p.CategoryId == c.Id)</span></button>
+}
+      </div>
+      <p class="filter-status" id="filter-status" aria-live="polite">@UHtml("places.count", "n", "<span class=\"tnum\">" + places.Count + "</span>")</p>
+    </div>
+  </div>
+
+  <section class="section section--tight" aria-label="@U("places.placesAria")">
+    <div class="wrap">
+      <div class="pgrid" id="place-grid">
+@foreach (Place p in places)
+{
+        <partial name="~/Views/Themes/Kieli/Shared/_PlaceCard.cshtml" model="new PlaceModel(p, regions.FirstOrDefault(r => r.Id == p.RegionId), cats.FirstOrDefault(c => c.Id == p.CategoryId))" />
+}
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <section class="section section--tint" id="mura" aria-labelledby="mura-title">
+    <div class="wrap">
+      <partial name="~/Views/Themes/Kieli/Shared/_SecHead.cshtml" model='new SectionModel(mura, TitleId: "mura-title")' />
+      <div class="hgrid" id="heritage-grid">
+@foreach (Heritage h in heritage)
+{
+        string tag = string.IsNullOrWhiteSpace(h.LinkUrl) ? "div" : "a";
+        @Html.Raw("<" + tag + " class=\"hcard\"" + (tag == "a" ? " href=\"" + System.Net.WebUtility.HtmlEncode(h.LinkUrl) + "\"" : string.Empty) + ">")<div class="hcard__img"><img src="@ImageSize(h.ImageUrl, "middle")" alt="@h.Name" loading="lazy"></div><h3 class="hcard__t">@h.Name</h3><p class="hcard__k"><span>@h.Kind</span>@if (!string.IsNullOrWhiteSpace(h.Year)) {<span class="mono">@h.Year</span>}</p>@Html.Raw("</" + tag + ">")
+}
+      </div>
+    </div>
+  </section>
+
+  <partial name="~/Views/Themes/Kieli/Shared/_Cross.cshtml" model='Block("kazakhstan.cross")' />
+</main>

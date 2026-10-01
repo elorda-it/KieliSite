@@ -1,0 +1,2379 @@
+{
+ "blocks": {
+  "site.brand": {
+   "footerText": "A trusted bridge between Kazakhstan and China: translation, documents, migration, education, business and housing. Kieli is our project about the sacred places of Kazakhstan."
+  },
+  "site.nav": {
+   "items": [
+    {
+     "label": "Author",
+     "note": "Omar Bekmurat"
+    },
+    {
+     "label": "Services",
+     "note": "6 areas"
+    },
+    {
+     "label": "KAZTEST",
+     "note": "practice test"
+    },
+    {
+     "label": "News",
+     "note": "articles, guides"
+    },
+    {
+     "label": "Kazakhstan",
+     "note": "sacred places"
+    }
+   ]
+  },
+  "site.contact": {
+   "address": "66 Ainakol St, Astana",
+   "hours": "Mon–Fri 10:00–19:00, Sat 10:00–15:00",
+   "timeNote": "3 hours behind Beijing time",
+   "legalName": "BASTAU LINE Limited Liability Partnership"
+  },
+  "site.footer": {
+   "col1Title": "Kieli · Kazakhstan",
+   "col1Links": [
+    {
+     "label": "Nature"
+    },
+    {
+     "label": "Sacred sites"
+    },
+    {
+     "label": "Historic sites"
+    },
+    {
+     "label": "Cultural heritage"
+    },
+    {
+     "label": "17 regions"
+    }
+   ],
+   "col2Title": "Services",
+   "col2Links": [
+    {
+     "label": "Translation"
+    },
+    {
+     "label": "Notarization and apostille"
+    },
+    {
+     "label": "Migration"
+    },
+    {
+     "label": "Education and languages"
+    },
+    {
+     "label": "KAZTEST practice test"
+    },
+    {
+     "label": "Business"
+    },
+    {
+     "label": "Housing"
+    }
+   ],
+   "col3Title": "Contact",
+   "copyright": "Kieli · <span class=\"ltr\">kieli.kz</span>. The information on this site is for general guidance only: please check official requirements on the <a href=\"https://egov.kz\" class=\"ltr\">egov.kz</a> and <a href=\"https://www.enbek.kz\" class=\"ltr\">enbek.kz</a> portals.",
+   "credit": "Website by"
+  },
+  "site.consult": {
+   "title": "Get advice",
+   "lead": "Briefly describe your situation, and we'll get back to you during business hours. We speak Kazakh, Chinese <span class=\"zh\" lang=\"zh\">(中文咨询)</span> and Russian.",
+   "pickHint": "If you write to us in a messenger app, include this code so your request goes straight to the right specialist.",
+   "wechatHint": "<b>If you live in China</b>, message us on WeChat: WhatsApp and Telegram don't work in China without a VPN.",
+   "separator": "or leave a request",
+   "msgPlaceholder": "For example: Our family (4 people) is planning to move from Ghulja (Yining) to Almaty. We haven't gathered our documents yet.",
+   "consent": "I agree to the processing of my personal data for the purpose of this consultation.",
+   "submit": "Send request",
+   "doneText": "Your request has been received. We'll get in touch during business hours using the contact details you provided.",
+   "fab": "Get advice"
+  },
+  "seo.home": {
+   "title": "kieli.kz — Moving to Kazakhstan, Documents and KAZTEST",
+   "description": "Moving to Kazakhstan: kandas status, residence permit, citizenship, the Ata Zholy card; translation, notary, apostille and a KAZTEST practice test. BASTAU LINE, Astana."
+  },
+  "home.hero": {
+   "eyebrow": "Your first step toward Kazakhstan",
+   "name": "Omar\nBekmurat",
+   "role": "Entrepreneur · civic activist · founder of BASTAU LINE",
+   "slogan": "A confident step into a new life.",
+   "lead": "We help you move to Kazakhstan, study here and prepare your documents — in Kazakh, Chinese and Russian.",
+   "ctaConsult": "Get advice",
+   "ctaServices": "View services",
+   "ctaAuthor": "About the author",
+   "photoAlt": "Omar Bekmurat"
+  },
+  "home.strip": {
+   "items": [
+    {
+     "title": "Қазақша · <bdi lang=\"zh\" translate=\"no\">中文</bdi> · <bdi translate=\"no\">Русский</bdi>",
+     "text": "we work in three languages"
+    },
+    {
+     "title": "Translation · documents · migration",
+     "text": "from the first consultation to a ready document package"
+    },
+    {
+     "title": "66 Ainakol St, Astana",
+     "text": "BASTAU LINE LLP"
+    }
+   ]
+  },
+  "home.help": {
+   "eyebrow": "Services",
+   "title": "How can we help you?",
+   "lead": "Choose your goal, and you'll see right away what to prepare and how the process works.",
+   "foot": "Comparison table, FAQ and company details — <a class=\"link-arrow\" href=\"/kz/services\">Services page</a>"
+  },
+  "home.kaztest": {
+   "eyebrow": "New requirement · 2026",
+   "title": "Ready for KAZTEST?",
+   "lead": "Applicants for a permanent residence permit or kandas (ethnic Kazakh returnee) status now have their Kazakh language level tested. Practice for free in the official exam format.",
+   "facts": [
+    {
+     "value": "60",
+     "label": "questions"
+    },
+    {
+     "value": "70",
+     "label": "minutes"
+    },
+    {
+     "value": "70%",
+     "label": "pass mark in each section"
+    }
+   ],
+   "ctaStart": "Start the practice test",
+   "ctaMore": "More about the requirement"
+  },
+  "home.route": {
+   "eyebrow": "How we work",
+   "title": "Clear steps",
+   "aside": "We explain every stage of the process in plain language.",
+   "steps": [
+    {
+     "title": "Consultation",
+     "text": "You tell us your goal — on WeChat, WhatsApp or at our office."
+    },
+    {
+     "title": "Documents",
+     "text": "We give you a clear list of what you need."
+    },
+    {
+     "title": "Translation",
+     "text": "We translate your documents and prepare them for notarization and apostille."
+    },
+    {
+     "title": "Ready",
+     "text": "Your document package is ready to submit, and we can support you further if needed."
+    }
+   ]
+  },
+  "home.posts": {
+   "eyebrow": "News",
+   "title": "News and articles",
+   "aside": "Changes in migration rules, practical guides on documents and study, and posts by the author.",
+   "moreText": "See more",
+   "moreNote": "All news and articles, with a category filter"
+  },
+  "home.kazakhstan": {
+   "eyebrow": "Kieli · Kazakhstan",
+   "title": "Discover Kazakhstan",
+   "aside": "Its nature, history and traditions — 187 sites in 17 regions.",
+   "linkText": "Map and all sites",
+   "tabs": [
+    {
+     "label": "Nature"
+    },
+    {
+     "label": "History"
+    },
+    {
+     "label": "Traditions"
+    }
+   ]
+  },
+  "home.faq": {
+   "eyebrow": "FAQ",
+   "title": "Have a question?",
+   "lead": "Can't find the answer? Message us on WeChat or WhatsApp.",
+   "items": [
+    {
+     "q": "How is the price determined?",
+     "a": "<p>It depends on the type of document, its length and the procedure required. We'll give you an exact price once we've seen your document.</p>"
+    },
+    {
+     "q": "Can I send documents online?",
+     "a": "<p>Yes. Send a clear photo via WeChat, WhatsApp or Telegram, and we'll confirm the requirements based on it. The original is needed only when it's actually required.</p>"
+    },
+    {
+     "q": "Which language should my documents be translated into?",
+     "a": "<p>It depends on the institution you're submitting them to — usually Kazakh or Russian. We'll check the institution's requirements together.</p>"
+    },
+    {
+     "q": "Do you issue the \"Ata Zholy\" card or grant citizenship?",
+     "a": "<p>No. The decision is made by the competent government authorities; we help you prepare your documents correctly and completely.</p>"
+    }
+   ]
+  },
+  "home.contact": {
+   "eyebrow": "Contact",
+   "title": "Tell us about your situation, and together we'll find the right way forward",
+   "lead": "We answer in Kazakh, Chinese and Russian. Our office is in Astana.",
+   "wechatLabel": "WeChat · for messages from China",
+   "formTitle": "Leave a request",
+   "formLead": "We'll get in touch with you — via WeChat, WhatsApp or a phone call.",
+   "doneText": "Your request has been received. We'll get in touch during business hours."
+  },
+  "seo.author": {
+   "title": "Omar Bekmurat — founder of BASTAU LINE · kieli.kz",
+   "description": "Omar Bekmurat: Master of Arts, director-choreographer, civic activist and entrepreneur, author of the Kieli project and founder of BASTAU LINE LLP."
+  },
+  "author.hero": {
+   "eyebrow": "Author of the project",
+   "name": "Omar Bekmurat",
+   "role": "Master of Arts, director-choreographer, civic activist and entrepreneur",
+   "lead": "Some people work within the limits of their profession. Others bring several fields together for a single purpose and serve the future of their society.",
+   "quoteLabel": "His guiding principle",
+   "quote": "To be of service to the country and leave a meaningful legacy for the next generation.",
+   "stats": [
+    {
+     "label": "Working languages",
+     "value": "3",
+     "small": "Kazakh · Chinese · Russian"
+    },
+    {
+     "label": "Dance groups",
+     "value": "3"
+    },
+    {
+     "label": "Company",
+     "value": "BASTAU LINE"
+    }
+   ],
+   "ctaConsult": "Get advice",
+   "linkText": "BASTAU LINE services"
+  },
+  "author.social": {
+   "eyebrow": "Community work",
+   "title": "Every family that returns home is a contribution to the country's future",
+   "lead": "His focus goes beyond today's problems to Kazakhstan's future in the decades ahead.",
+   "issues": [
+    {
+     "text": "Population"
+    },
+    {
+     "text": "National unity"
+    },
+    {
+     "text": "The return of kandases (ethnic Kazakh returnees) to their historical homeland"
+    },
+    {
+     "text": "Adapting to a new environment and finding a place in society"
+    }
+   ],
+   "body": "<p>For Omar Bekmurat, every family that returns home adds to Kazakhstan's demographic potential, and every child is a future citizen of the country. That is why he cares deeply about the difficulties kandases face when preparing documents, obtaining a residence permit and citizenship, accessing education, finding a job and starting a business.</p> <p>He does not stop at solving individual cases; he looks at why these difficulties arise. He studies people's appeals and life situations, sends official proposals to government agencies and puts forward initiatives to make migration procedures clearer and more accessible.</p> <div class=\"callout\"><span>Behind every piece of this work lies one person's fate, one family's hope and the future of someone who wants to return to their historical homeland.</span></div>"
+  },
+  "author.stage": {
+   "eyebrow": "Dance",
+   "title": "National art — a legacy entrusted to future generations",
+   "lead": "As a director-choreographer, he sees national dance as more than a stage performance. Kazakh dance is a treasure that carries the character, history, worldview and spirit of the people.",
+   "studioLabel": "Modern Kazakh dance studio",
+   "studioName": "Bastau",
+   "studioText": "It teaches children and teenagers not only dance moves, but also stage culture, discipline, responsibility and respect for national art.",
+   "groupsTitle": "Dance groups",
+   "groups": [
+    {
+     "name": "Shugyla"
+    },
+    {
+     "name": "Shalkyma"
+    },
+    {
+     "name": "QazTribe"
+    }
+   ],
+   "groupsNote": "Blending tradition and innovation, they show what Kazakh dance can do on the modern stage.",
+   "projectsTitle": "Projects",
+   "projects": [
+    {
+     "name": "\"Rhythm of the Great Steppe – Kamazhai\""
+    },
+    {
+     "name": "\"Kara Zhorga\""
+    },
+    {
+     "name": "\"Aikoilek\""
+    }
+   ],
+   "projectsNote": "National identity grows into a movement shared by many, and art keeps the bond between generations alive."
+  },
+  "author.business": {
+   "eyebrow": "Entrepreneurship",
+   "title": "Connecting people and opportunities",
+   "lead": "Speaking Kazakh, Chinese and Russian has helped him understand in depth the problems of people from very different backgrounds. Language is more than a means of communication: it is a bridge that connects the individual and society, the citizen and the state, and the cultures and business communities of two countries.",
+   "cardLabel": "Founded on this principle",
+   "cardName": "BASTAU LINE",
+   "cardSmall": "LLP",
+   "cardText": "A trusted bridge between Kazakhstan and China — an international translation and document support center in Astana.",
+   "dirs": [
+    {
+     "name": "Translation"
+    },
+    {
+     "name": "Document processing"
+    },
+    {
+     "name": "Migration"
+    },
+    {
+     "name": "Education"
+    },
+    {
+     "name": "Legal support"
+    },
+    {
+     "name": "Real estate"
+    },
+    {
+     "name": "Business connections"
+    }
+   ],
+   "cardNote": "The ultimate goal of every service is to save people time, help them find the right path through complex procedures and give them the chance to start a new life.",
+   "linkText": "View services"
+  },
+  "author.goals": {
+   "eyebrow": "A path toward the future",
+   "title": "The common thread of his initiatives",
+   "lead": "For him, serving the country does not begin with grand words. It begins with paying attention to one person's problem, passing national art on to one child and helping one family put down roots in their historical homeland.",
+   "items": [
+    {
+     "text": "Removing obstacles for kandases returning to their historical homeland"
+    },
+    {
+     "text": "Helping families who arrive in the country adapt to society"
+    },
+    {
+     "text": "Contributing to Kazakhstan's population growth and stronger national unity"
+    },
+    {
+     "text": "Expanding the use of the Kazakh language and culture"
+    },
+    {
+     "text": "Entrusting national art to the younger generation"
+    },
+    {
+     "text": "Raising an educated, hardworking and patriotic generation"
+    },
+    {
+     "text": "Developing cultural and business ties between Kazakhstan and China"
+    }
+   ]
+  },
+  "author.project": {
+   "imageAlt": "Mausoleum of Khoja Ahmed Yasawi, Turkistan",
+   "caption": "Mausoleum of Khoja Ahmed Yasawi, Turkistan · one of the project's 187 sites",
+   "eyebrow": "The Kieli project",
+   "title": "A geography of Kazakhstan's sacred places",
+   "lead": "Every nation has sacred places that belong to everyone and that each of its citizens knows. The project brings these places together on one map and helps expand the use of the Kazakh language and culture.",
+   "bullets": [
+    {
+     "text": "187 sites in 17 regions: nature, sacred sites, ancient cities and monuments"
+    },
+    {
+     "text": "11 Kazakh heritage items on UNESCO lists — from aitys (improvised poetic duel) to the yurt"
+    },
+    {
+     "text": "360° panoramas of many sites — travel without leaving home"
+    }
+   ],
+   "linkText": "Open the map"
+  },
+  "author.path": {
+   "lines": [
+    {
+     "text": "When one person's fate is set right, a whole family's hope awakens."
+    },
+    {
+     "text": "When one family settles in the country, the nation's foundations grow stronger."
+    },
+    {
+     "text": "And every child raised with national values carries Kazakhstan's future forward."
+    }
+   ],
+   "final": "The path Omar Bekmurat has chosen begins with one person's fate and leads to the future of the whole country."
+  },
+  "author.articles": {
+   "eyebrow": "Tips",
+   "title": "Useful guides",
+   "linkText": "See more"
+  },
+  "author.cross": {
+   "eyebrow": "Contact",
+   "title": "Documents, migration, study — ask your question",
+   "text": "On WeChat, WhatsApp, Telegram or at our office in Astana — in Kazakh, Chinese and Russian.",
+   "button": "Get advice",
+   "linkText": "Services"
+  },
+  "seo.services": {
+   "title": "Services: migration, translation, notary, apostille · kieli.kz",
+   "description": "BASTAU LINE LLP, Astana: document translation, notarization, apostille, citizenship and residence permits, kandas status, the Ata Zholy card, study, business and housing."
+  },
+  "services.hero": {
+   "eyebrow": "Services",
+   "title": "Translation, documents and migration",
+   "lead": "Comprehensive services in Kazakh, Chinese and Russian for kandases (ethnic Kazakh returnees) coming back to their ancestral homeland, citizens of Kazakhstan and China, entrepreneurs and companies.",
+   "trust": [
+    {
+     "text": "In Kazakh, Chinese and Russian"
+    },
+    {
+     "text": "We check every document carefully"
+    },
+    {
+     "text": "We explain each stage in plain language"
+    },
+    {
+     "text": "Confidentiality and responsibility"
+    }
+   ],
+   "provider": "Service provider: <b>BASTAU LINE LLP</b> · 66 Ainakol St, Astana",
+   "cta": "Get advice",
+   "ctaNote": "We respond to requests during business hours.",
+   "imageAlt": "The Esil River embankment in Astana"
+  },
+  "services.help": {
+   "eyebrow": "Services",
+   "title": "How can we help you?",
+   "lead": "Choose your goal, and you'll see right away what to prepare and how the process works.",
+   "foot": "The cost depends on the type and length of the document. We'll give you an exact price after you leave a request."
+  },
+  "services.company": {
+   "eyebrow": "Service provider",
+   "title": "BASTAU LINE LLP",
+   "tagline": "A trusted bridge between Kazakhstan and China",
+   "lead": "An international translation and document support center in Astana. Our main goal is to save our clients time, translate their documents accurately and prepare them for submission to the right institutions.",
+   "bridgeLeft": "Kazakhstan",
+   "bridgeRight": "China",
+   "bridgeLangs": "қазақ · <span lang=\"zh\">中文</span> · русский",
+   "address": "66 Ainakol St, Astana",
+   "whyTitle": "Why BASTAU LINE?",
+   "why": [
+    {
+     "text": "We work in Kazakh, Chinese and Russian"
+    },
+    {
+     "text": "We take into account the specifics of document exchange between Kazakhstan and China"
+    },
+    {
+     "text": "We check every document carefully"
+    },
+    {
+     "text": "We explain each stage of the process to clients in plain language"
+    },
+    {
+     "text": "We work with individuals, entrepreneurs and companies"
+    },
+    {
+     "text": "We help prepare complete document packages"
+    },
+    {
+     "text": "We uphold the principles of confidentiality and responsibility"
+    }
+   ],
+   "motto": [
+    {
+     "word": "Professionalism"
+    },
+    {
+     "word": "Accuracy"
+    },
+    {
+     "word": "Responsibility"
+    }
+   ]
+  },
+  "services.compare": {
+   "eyebrow": "Comparison",
+   "title": "Status, card, residence permit or citizenship: what's the difference?",
+   "aside": "This is the question we hear most often. The short answer is in the table; which option suits your situation, we'll work out together during a consultation.",
+   "table": "<table class=\"compare\">\n          <thead>\n            <tr><th scope=\"col\">Question</th><th scope=\"col\">Kandas status</th><th scope=\"col\" class=\"hl\">\"Ata Zholy\" card</th><th scope=\"col\">Residence permit</th><th scope=\"col\">Citizenship</th></tr>\n          </thead>\n          <tbody>\n            <tr><th scope=\"row\">Who it's for</th><td>Ethnic Kazakhs who come to live permanently, and their families</td><td class=\"hl\">Ethnic Kazakhs abroad: business owners, in-demand professionals</td><td>Foreign nationals living permanently in Kazakhstan</td><td>Kandases living legally in Kazakhstan</td></tr>\n            <tr><th scope=\"row\">Foreign citizenship</th><td class=\"yes\">Retained</td><td class=\"hl yes\">Retained</td><td class=\"yes\">Retained</td><td class=\"no\">Must be renounced</td></tr>\n            <tr><th scope=\"row\">Validity</th><td><b>1 year</b>, extendable once for 6 months</td><td class=\"hl\"><b>Up to 10 years</b>, renewable</td><td>Permanent</td><td>Permanent</td></tr>\n            <tr><th scope=\"row\">Right to work</th><td>No permit needed</td><td class=\"hl\">No permit needed; business in any region</td><td>No permit needed</td><td>Full rights</td></tr>\n            <tr><th scope=\"row\">State support</th><td>Under the regional quota: 70 MCI (monthly calculation index) per family member, rent compensation</td><td class=\"hl no\">Not provided</td><td class=\"no\">—</td><td>All the rights of citizens</td></tr>\n            <tr><th scope=\"row\">Right to vote</th><td class=\"no\">No</td><td class=\"hl no\">No</td><td class=\"no\">No</td><td class=\"yes\">Yes</td></tr>\n            <tr><th scope=\"row\">Where to apply</th><td>eGov / enbek.kz, akimat (local administration), embassies and consulates abroad</td><td class=\"hl\">Embassies and consulates abroad, or online</td><td>Migration authorities</td><td>Migration authorities</td></tr>\n          </tbody>\n        </table>",
+   "note": "This information is for general guidance; legislation may change. The final decision rests with the competent government authorities."
+  },
+  "services.faq": {
+   "eyebrow": "FAQ",
+   "title": "Frequently asked questions",
+   "lead": "Didn't find your answer? Message us on WeChat or WhatsApp.",
+   "items": [
+    {
+     "q": "Which documents should I prepare before leaving China?",
+     "a": "<p>Usually you'll need your passport, birth certificate, marriage certificate and education documents. We'll tell you in advance which documents need notarization and an apostille — it's much easier to get these done in China before you leave.</p>"
+    },
+    {
+     "q": "My name is written differently in Chinese across my documents. What should I do?",
+     "a": "<p>This happens a lot. When translating, we make sure your name is spelled the same way in every document, and we also cross-check dates, addresses, seals and stamps.</p>"
+    },
+    {
+     "q": "How much do your services cost?",
+     "a": "<p>The price depends on the type of document, its length and the procedure required. We'll quote an exact price once we've seen your documents; the state duty and notary fees are listed separately.</p>"
+    },
+    {
+     "q": "Do you issue the \"Ata Zholy\" card or grant citizenship?",
+     "a": "<p>No. The final decision is made by the competent government authorities of the Republic of Kazakhstan. We help you prepare your documents correctly, completely and in line with the requirements.</p>"
+    },
+    {
+     "q": "Do you also work with companies?",
+     "a": "<p>Yes. Besides individuals, we work with entrepreneurs and companies: we translate founding and commercial documents, help register companies and provide interpreting support in negotiations between Kazakh and Chinese partners.</p>"
+    }
+   ]
+  },
+  "services.cross": {
+   "eyebrow": "Let's get started",
+   "title": "Show us your documents, and together we'll find the right way to process them",
+   "text": "On WeChat, WhatsApp, Telegram or at our office in Astana: 66 Ainakol St.",
+   "button": "Leave a request",
+   "linkText": "About the founder"
+  },
+  "seo.news": {
+   "title": "Kazakhstan migration news and guides · kieli.kz",
+   "description": "News and step-by-step guides on the Ata Zholy card, kandas status, residence permits, apostille and studying in Kazakhstan, plus posts by Omar Bekmurat."
+  },
+  "news.head": {
+   "eyebrow": "News",
+   "title": "News and articles",
+   "lead": "Changes in migration rules, how to prepare your documents and what to take to which office — in plain language. Plus the author's writing on society, art and Kazakhstan.",
+   "cta": "Ask a question",
+   "ctaNote": "Can't find the answer? Write to us.",
+   "searchPlaceholder": "Search: apostille, grant, card…"
+  },
+  "news.cross": {
+   "eyebrow": "New articles",
+   "title": "Your document question could become our next article",
+   "text": "We publish answers to common questions as articles — easy to share on WeChat and Telegram.",
+   "button": "Send a question",
+   "linkText": "Services"
+  },
+  "article.author": {
+   "name": "Omar Bekmurat",
+   "org": "BASTAU LINE LLP",
+   "bio": "Master of Arts, director-choreographer and civic activist. Through BASTAU LINE LLP, he helps people get their documents processed correctly between Kazakhstan and China.",
+   "linkText": "About the author"
+  },
+  "article.aside": {
+   "tocTitle": "Contents",
+   "ctaEyebrow": "Are your documents ready?",
+   "ctaText": "Send photos of your documents on WeChat, and we'll tell you what's missing.",
+   "ctaButton": "Get documents checked",
+   "shareTitle": "Share",
+   "moreEyebrow": "Tips",
+   "moreTitle": "Read more"
+  },
+  "seo.kazakhstan": {
+   "title": "Sacred places of Kazakhstan: nature and history · kieli.kz",
+   "description": "The Kieli project: natural, historic and spiritual sites across Kazakhstan's 17 regions — a map, categories and UNESCO-listed heritage."
+  },
+  "kazakhstan.head": {
+   "eyebrow": "Kazakhstan",
+   "title": "Sacred places of Kazakhstan",
+   "lead": "Canyons and lakes, mausoleums and ancient cities of the Great Steppe. The project's aim is simple: every Kazakh, wherever in the world they live, should grow up knowing what makes their ancestral homeland sacred.",
+   "figures": [
+    {
+     "value": "17",
+     "label": "regions"
+    },
+    {
+     "value": "187",
+     "label": "sites"
+    },
+    {
+     "value": "11",
+     "label": "UNESCO listings"
+    },
+    {
+     "value": "360°",
+     "label": "panoramas"
+    }
+   ],
+   "epigraph": "No land compares to your native land, no people to your own people.",
+   "epigraphCite": "— Kazakh proverb"
+  },
+  "kazakhstan.atlas": {
+   "eyebrow": "Map",
+   "title": "Choose a region",
+   "aside": "Darker regions have more sacred sites. Select a region, and the list below will show only its sites.",
+   "allRegions": "All regions"
+  },
+  "kazakhstan.heritage": {
+   "eyebrow": "Cultural heritage",
+   "title": "11 heritage items on UNESCO lists",
+   "aside": "Monuments on the World Heritage List and intangible cultural heritage — aitys (improvised poetic duel), kuy (traditional dombra music), the yurt and falconry."
+  },
+  "kazakhstan.cross": {
+   "eyebrow": "Thinking of moving?",
+   "title": "See these places not only on your travels, but in your everyday life",
+   "text": "From citizenship and residence permits to the \"Ata Zholy\" (\"Ancestral Path\") card — we'll help you get your documents right, in Kazakh, Chinese or Russian.",
+   "button": "Get advice",
+   "linkText": "Services"
+  },
+  "place.aside": {
+   "aboutTitle": "About this place",
+   "panoText": "360° panorama",
+   "shareTitle": "Share",
+   "shareNote": "To share on WeChat, copy the link and paste it into a chat.",
+   "ctaEyebrow": "Planning a move?",
+   "ctaText": "Help with translation, documents, migration and study — in Kazakh, Chinese and Russian.",
+   "ctaButton": "Get advice",
+   "relatedEyebrow": "Kazakhstan",
+   "relatedTitle": "Also worth seeing",
+   "relatedLink": "All sites",
+   "panoNote": "The panorama opens in Google Street View. For users in China, we offer a 360° viewer hosted on our own server."
+  },
+  "seo.kaztest": {
+   "title": "Free online KAZTEST practice test with audio · kieli.kz",
+   "description": "A free practice test in the KAZTEST format: listening and reading, 60 questions, 70 minutes, with answers. Prepare for a permanent residence permit or kandas status."
+  },
+  "kaztest.head": {
+   "eyebrow": "State language · KAZTEST",
+   "title": "KAZTEST practice test",
+   "lead": "Practice in the official exam format: Listening (Тыңдалым) first, then Reading (Оқылым), against the clock. At the end, you'll see right away which questions you answered correctly and which you got wrong.",
+   "facts": [
+    {
+     "title": "Listening (Тыңдалым)",
+     "text": "20 questions"
+    },
+    {
+     "title": "Reading (Оқылым)",
+     "text": "40 questions"
+    },
+    {
+     "title": "70 minutes",
+     "text": "timed"
+    },
+    {
+     "title": "70%",
+     "text": "pass mark in each section"
+    },
+    {
+     "title": "Free",
+     "text": "no sign-up"
+    }
+   ],
+   "ctaChoose": "Choose a test",
+   "ctaCourse": "Kazakh language course",
+   "ctaNote": "Your answers are saved only on your own device."
+  },
+  "kaztest.law": {
+   "eyebrow": "New requirement for 2026",
+   "title": "Kazakh language testing for permanent residence and kandas status",
+   "text": "A pilot project has been running since February 13, 2026: when a foreign national is granted a permanent residence permit, or when kandas (ethnic Kazakh returnee) status is granted or extended, knowledge of the state language is tested through the online KAZTEST — at least level A1 (beginner) is required. To pass, you need to score at least 70% in each section. The pilot project runs until December 31, 2026.",
+   "sources": "Source: <a href=\"https://adilet.zan.kz/rus/docs/G26G0000041\">the pilot project document, Adilet</a> · Official testing: <a href=\"https://testcenter.kz\">National Testing Center</a>"
+  },
+  "kaztest.list": {
+   "eyebrow": "Practice tests",
+   "title": "Choose a test",
+   "aside": "Each test follows the structure of the official exam. New tests are added regularly.",
+   "note": "The test is in Cyrillic script, just like the official exam. The tests were written by BASTAU LINE in the official exam format; they are not materials of the National Testing Center."
+  },
+  "kaztest.how": {
+   "eyebrow": "How it works",
+   "title": "In the same order as the official exam",
+   "aside": "All you need is an internet connection and headphones. You can pause the test at any time and continue later.",
+   "steps": [
+    {
+     "title": "Choose a test",
+     "text": "Pick a test and press \"Start the test\" — the timer starts running."
+    },
+    {
+     "title": "Listening (Тыңдалым)",
+     "text": "Listen to the recordings and answer the questions on each dialogue and text."
+    },
+    {
+     "title": "Reading (Оқылым)",
+     "text": "The passage appears next to the question — read it and choose the correct answer."
+    },
+    {
+     "title": "Results",
+     "text": "You'll see right away whether you reached the 70% pass mark in each section. You can review your mistakes and retake the test."
+    }
+   ]
+  },
+  "kaztest.faq": {
+   "eyebrow": "FAQ",
+   "title": "About KAZTEST",
+   "lead": "Not sure which requirement applies to you? Write to us.",
+   "items": [
+    {
+     "q": "What is KAZTEST?",
+     "a": "<p>It's the national system for assessing proficiency in the Kazakh language. The test is run by the National Testing Center, and a certificate is issued based on the results.</p>"
+    },
+    {
+     "q": "Who has to take it?",
+     "a": "<p>Under the 2026 pilot project, it applies to foreign nationals applying for a permanent residence permit in Kazakhstan and to applicants for kandas status or its extension. The minimum required level is A1.</p><p>There is a separate test for citizenship: the state language, the basics of the Constitution and the history of Kazakhstan. Kandases are exempt from this test (<a href=\"https://www.zakon.kz/pravo/6504825-poluchenie-grazhdanstva-rk-utverzhdeny-pravila-testirovaniya-na-znanie-kazakhskogo-yazyka-i-istorii-kazakhstana.html\">Zakon.kz, 19.01.2026</a>).</p>"
+    },
+    {
+     "q": "Is the practice test similar to the official exam?",
+     "a": "<p>Yes: 60 questions — 20 in Listening (Тыңдалым) and 40 in Reading (Оқылым) — and 70 minutes in total. To pass, you need at least 70% correct answers in each section: 14 in Listening and 28 in Reading. The results show \"passed\" or \"failed\" for each section.</p>"
+    },
+    {
+     "q": "Where do I register for the official test?",
+     "a": "<p>On the National Testing Center website: <a href=\"https://testcenter.kz\">testcenter.kz</a>. We'll help you plan which test to take and when, together with your documents.</p>"
+    },
+    {
+     "q": "Are these questions taken from the official exam?",
+     "a": "<p>No. BASTAU LINE wrote these tests itself, following the structure and level of the official exam: the sections, number of questions, time and task types are the same, while the texts, dialogues and questions are new. Your result shows how well prepared you are, but it does not guarantee your result in the official exam.</p>"
+    }
+   ]
+  },
+  "kaztest.cross": {
+   "eyebrow": "Test and documents in one place",
+   "title": "Let's prepare for both the language test and the paperwork together",
+   "text": "A Kazakh language course plus document preparation for kandas status and a permanent residence permit — all at BASTAU LINE.",
+   "button": "Get advice",
+   "linkText": "Migration services"
+  },
+  "ui.common": {
+   "skip": "Skip to main content",
+   "home": "Home",
+   "homeAria": "{brand} — home page",
+   "crumbs": "You are here",
+   "mainMenu": "Main menu",
+   "mobileMenu": "Mobile menu",
+   "openMenu": "Open menu",
+   "closeMenu": "Close menu",
+   "close": "Close",
+   "language": "Language",
+   "script": "Script",
+   "toDark": "Switch to dark mode",
+   "toLight": "Switch to light mode",
+   "dark": "Dark mode",
+   "light": "Light mode",
+   "copy": "Copy",
+   "copied": "Copied",
+   "selectIt": "Select and copy",
+   "social": "Social media",
+   "sitemap": "Sitemap",
+   "bin": "BIN",
+   "more": "Learn more",
+   "important": "Important",
+   "readTime": "{n} min read",
+   "all": "All",
+   "categories": "Categories",
+   "shareWa": "Share on WhatsApp",
+   "shareTg": "Share on Telegram",
+   "copyLink": "Copy link",
+   "source": "Source",
+   "phone": "Phone",
+   "office": "Office",
+   "nowInAstana": "Time in Astana",
+   "officeOpen": "office open",
+   "officeClosed": "office closed — leave a message",
+   "pano": "360° panorama",
+   "notFoundTitle": "Page not found",
+   "notFoundText": "The link may be out of date, or the page may have been removed.",
+   "notFoundHome": "Go to the home page",
+   "issuesAria": "Issues he raises",
+   "dirsAria": "Areas of service",
+   "pathAria": "The author's path",
+   "languages": "Other languages"
+  },
+  "ui.form": {
+   "nameLabel": "Your name",
+   "namePlaceholder": "For example, Aigul",
+   "nameError": "Please enter your name",
+   "contactLabel": "Phone or WeChat ID",
+   "contactPlaceholder": "+7 … / +86 … / WeChat",
+   "contactError": "Tell us how to contact you",
+   "serviceLabel": "What do you need help with?",
+   "serviceNone": "Not sure yet — I need advice",
+   "serviceGeneral": "{tab} — general consultation",
+   "countryLabel": "Which country are you in now?",
+   "countryCn": "China",
+   "countryKz": "Kazakhstan",
+   "countryOther": "Another country",
+   "messageLabel": "Your situation in brief",
+   "filesLabel": "Photo or PDF of your document",
+   "optional": "optional",
+   "filesChoose": "Choose files",
+   "filesHint": "A photo taken with your phone is fine · JPG, PNG, PDF · up to 5 files, 10 MB each",
+   "filesClear": "Clear",
+   "kb": "KB",
+   "mb": "MB",
+   "tooManyFiles": "Up to {n} files, each no larger than 10 MB.",
+   "sending": "Sending…",
+   "sendFailed": "Sending failed. Please message us on WeChat or WhatsApp.",
+   "offline": "Connection lost. Try again or message us on WeChat or WhatsApp.",
+   "thanksBefore": "Thank you, ",
+   "friend": "my friend",
+   "thanksAfter": "!",
+   "another": "Send another request",
+   "sumNumber": "Request number",
+   "sumType": "Request type",
+   "sumCountry": "Country",
+   "sumFiles": "Documents",
+   "filesAttached": "{n} attached",
+   "filesLater": "you'll send them later",
+   "general": "General consultation",
+   "waHello": "Hello! Request: ",
+   "wechatQr": "WeChat QR code",
+   "errFormat": "The request format is invalid.",
+   "errTooOften": "Too many requests. Please try again in a few minutes or message us on WeChat or WhatsApp.",
+   "errContact": "Tell us how to contact you: phone, WeChat or WhatsApp.",
+   "errConsent": "Please consent to the processing of your personal data.",
+   "errFileCount": "You can attach up to {n} files.",
+   "errFileSize": "\"{file}\" is larger than 10 MB.",
+   "errFileType": "\"{file}\": only JPG, PNG, WEBP and HEIC images and PDF files are accepted.",
+   "errSave": "We couldn't save your request. Please message us on WeChat or WhatsApp.",
+   "saved": "Your request has been received."
+  },
+  "ui.services": {
+   "tabsAria": "Types of services",
+   "who": "Who it's for",
+   "bring": "What to prepare",
+   "steps": "How it works",
+   "dontKnow": "I'm not sure what I need",
+   "priceNote": "Price and timing are confirmed based on the document and the service.",
+   "sample": "SAMPLE",
+   "sampleDefault": "中文 → Kaz / Rus",
+   "sampleNotarial": "Translation + notarization",
+   "sampleApostille": "Apostille",
+   "sampleConsular": "Legalization",
+   "sampleCheck": "Checked",
+   "docsReady": "Documents ready",
+   "checkNone": "Mark the documents you already have.",
+   "checkSome": "Good start. We'll help you gather the rest.",
+   "checkAll": "All set — now let us check your documents.",
+   "faq": "FAQ"
+  },
+  "ui.places": {
+   "sections": "Kazakhstan page sections",
+   "unesco": "UNESCO · {year}",
+   "region": "Region",
+   "category": "Category",
+   "coords": "Coordinates",
+   "regionCount": "Sites in this region",
+   "lat": "N",
+   "lon": "E",
+   "yandex": "Yandex Maps",
+   "aboutAria": "Quick facts about this place",
+   "legendCount": "Number of sites:",
+   "legendCity": "City of republican significance",
+   "legendSelected": "Selected region",
+   "regionsAria": "List of regions",
+   "filterAria": "Filter by category",
+   "placesAria": "Sites",
+   "count": "{n} site(s)",
+   "reset": "Reset",
+   "emptyTitle": "No sites match this filter yet.",
+   "emptyCount": "{region}: {n} site(s) in total — we're adding them gradually.",
+   "emptyRegion": "{region}: sites are being added gradually.",
+   "anyRegion": "Selected region"
+  },
+  "ui.news": {
+   "listAria": "List of news and articles",
+   "searchAria": "Search news and articles",
+   "count": "Posts: {n}",
+   "notFound": "Nothing found for \"{q}\".",
+   "empty": "No posts in this category yet.",
+   "contentsAria": "Article contents",
+   "source": "Source: {name}",
+   "readSource": "Read the original"
+  },
+  "ui.kaztest": {
+   "noJs": "To open the test, please enable JavaScript in your browser.",
+   "questions": "{n} questions",
+   "time": "Time",
+   "minutes": "{n} minutes",
+   "passMark": "Pass mark",
+   "passEach": "{p}% in each section",
+   "key": "Answer key",
+   "last": "Last result",
+   "passed": "passed",
+   "failed": "failed",
+   "resume": "Continue",
+   "restartFromStart": "Start over",
+   "start": "Start the test",
+   "review": "View answers",
+   "exit": "Exit the test",
+   "timeLeft": "Time left",
+   "finish": "Finish",
+   "result": "Result",
+   "questionN": "Question {n}",
+   "passage": "Passage",
+   "passageN": "Passage {n}",
+   "audioN": "Audio {n} / {total}",
+   "audioMany": "Questions {from}–{to} are based on this recording",
+   "audioOne": "Question {n} is based on this recording",
+   "correct": "Correct answer",
+   "noKey": "The answer key for this question hasn't been added yet, so it doesn't count toward your result.",
+   "yours": "Your answer",
+   "unanswered": "Not answered",
+   "next": "Next question",
+   "nextSection": "Next section: {name}",
+   "backToResult": "Back to results",
+   "finishTest": "Finish the test",
+   "sectionsAria": "Sections",
+   "gridAria": "{name}: questions",
+   "optionsAria": "Answer options",
+   "prev": "Previous",
+   "hint": "Keyboard: A–D to answer, ← → to move between questions.",
+   "askFinish": "Finish the test?",
+   "colSection": "Section",
+   "colTotal": "Total",
+   "colAnswered": "Answered",
+   "colMissing": "Unanswered",
+   "backToTest": "Back to the test",
+   "askExit": "Exit the test?",
+   "exitText": "Your answers will be saved, but the timer won't stop. You can come back later with the \"Continue\" button.",
+   "leave": "Exit",
+   "notJudged": "Not scored",
+   "pass": "Passed",
+   "fail": "Failed",
+   "needLine": "Pass mark: {need} / {count} ({p}%) · you scored {mine}%",
+   "partialLine": "The answer key is incomplete ({known} / {count}), so the {p}% pass mark can't be assessed",
+   "answeredLine": "answered: {n} / {count}",
+   "congrats": "Congratulations! You reached the {p}% pass mark in every section.",
+   "notYet": "Not passed yet: you scored below {p}% in {sections}.",
+   "notJudgedShort": "not scored (incomplete answer key)",
+   "timeUp": "Time's up — the test has ended automatically.",
+   "points": "points",
+   "note": "To pass, you need at least {p}% correct answers in each section. Points are counted only for questions that have an answer key: {known} / {count}.",
+   "notePartial": "Answer key still being completed for: {sections}.",
+   "reviewAnswers": "Review answers",
+   "retake": "Retake the test",
+   "toList": "Back to all tests",
+   "legendRight": "correct",
+   "legendWrong": "wrong",
+   "legendMiss": "not answered",
+   "legendUnknown": "no answer key",
+   "courseTitle": "Want to improve your score?",
+   "courseText": "Get advice on a Kazakh language course — we'll suggest the right path for your level.",
+   "courseButton": "Ask about the course",
+   "audioPending": "The recording is being prepared. Until it is added, the Listening section is not scored, but you can look through the questions.",
+   "audioSoon": "Listening audio is coming soon",
+   "transcript": "Transcript",
+   "waitLine": "The audio has not been added yet, so the {p}% pass mark can't be assessed",
+   "waitShort": "not scored (no audio yet)",
+   "noteWait": "Section whose audio is being prepared: {sections}.",
+   "legendWait": "no audio yet"
+  }
+ },
+ "servicetab": {
+  "translate": {
+   "name": "Translation",
+   "cta": "Send a document",
+   "steps": [
+    {
+     "text": "You send a photo of the document"
+    },
+    {
+     "text": "We confirm the language and the price"
+    },
+    {
+     "text": "We translate and check it"
+    },
+    {
+     "text": "You receive the finished translation"
+    }
+   ]
+  },
+  "notary": {
+   "name": "Notarization",
+   "cta": "Get documents checked",
+   "steps": [
+    {
+     "text": "You send the document"
+    },
+    {
+     "text": "We confirm the requirements"
+    },
+    {
+     "text": "We translate and prepare it"
+    },
+    {
+     "text": "You submit it to a notary or the relevant authority"
+    }
+   ]
+  },
+  "migration": {
+   "name": "Migration",
+   "cta": "Discuss my situation",
+   "steps": [
+    {
+     "text": "You tell us about your situation"
+    },
+    {
+     "text": "We give you a list of documents"
+    },
+    {
+     "text": "We translate and check them"
+    },
+    {
+     "text": "We explain each stage of the application"
+    }
+   ],
+   "footnote": "The final decision is made by the competent government authorities of the Republic of Kazakhstan."
+  },
+  "education": {
+   "name": "Education",
+   "cta": "Get study advice",
+   "steps": [
+    {
+     "text": "You tell us your goal"
+    },
+    {
+     "text": "We confirm the requirements"
+    },
+    {
+     "text": "We prepare the documents"
+    },
+    {
+     "text": "You're ready to apply"
+    }
+   ],
+   "footnote": "We confirm the admission requirements together with the institution you choose."
+  },
+  "business": {
+   "name": "Business",
+   "cta": "Get business advice",
+   "steps": [
+    {
+     "text": "You tell us about your plans"
+    },
+    {
+     "text": "We identify the procedure you need"
+    },
+    {
+     "text": "We prepare the documents"
+    },
+    {
+     "text": "We accompany you at the relevant offices"
+    }
+   ],
+   "footnote": "The scope of work depends on your specific task."
+  },
+  "housing": {
+   "name": "Housing",
+   "cta": "Get housing advice",
+   "steps": [
+    {
+     "text": "You tell us what you're looking for"
+    },
+    {
+     "text": "We shortlist the options"
+    },
+    {
+     "text": "We help with negotiations"
+    },
+    {
+     "text": "We check the contract"
+    }
+   ]
+  }
+ },
+ "serviceitem": {
+  "translate:passport": {
+   "name": "Passport",
+   "title": "Passport translation",
+   "dir": "From Chinese into Kazakh or Russian",
+   "who": "When a migration office, school or university, bank or notary asks for a translation of your passport.",
+   "bring": [
+    {
+     "text": "Clear photos of all passport pages"
+    },
+    {
+     "text": "Where the translation will be submitted"
+    }
+   ],
+   "note": "The language of the translation and whether it needs certification depend on the requirements of the receiving institution."
+  },
+  "translate:license": {
+   "name": "Driver's license",
+   "title": "Chinese driver's license translation",
+   "dir": "For use in Kazakhstan",
+   "who": "When you need a translation to present or exchange a Chinese-issued driver's license in Kazakhstan.",
+   "bring": [
+    {
+     "text": "Clear photos of both sides of the license"
+    },
+    {
+     "text": "A copy of your passport"
+    }
+   ],
+   "note": "We provide the translation; the decision to exchange the license is made by the competent authorities."
+  },
+  "translate:birth": {
+   "name": "Birth certificate",
+   "title": "Birth certificate translation",
+   "dir": "From Chinese into Kazakh or Russian",
+   "who": "For kandas status, citizenship, family documents or enrolling a child in school.",
+   "bring": [
+    {
+     "text": "A clear photo of the certificate"
+    },
+    {
+     "text": "The holder's passport details"
+    }
+   ],
+   "note": "A certificate issued in China may first need notarization and an apostille."
+  },
+  "translate:marriage": {
+   "name": "Marriage or divorce certificate",
+   "title": "Marriage and divorce certificates",
+   "dir": "From Chinese into Kazakh or Russian",
+   "who": "When moving with your family, applying for a residence permit or citizenship, or in a property transaction.",
+   "bring": [
+    {
+     "text": "Photos of all pages of the certificate"
+    },
+    {
+     "text": "Both spouses' passport details"
+    }
+   ]
+  },
+  "translate:diploma": {
+   "name": "Diploma, transcript",
+   "title": "Translation of education documents",
+   "dir": "Diploma, school-leaving certificate, transcript, academic certificate",
+   "who": "For admission to study, diploma recognition, employment or an \"Ata Zholy\" card application.",
+   "bring": [
+    {
+     "text": "Photos of the diploma and its supplement"
+    },
+    {
+     "text": "Where the documents will be submitted"
+    }
+   ]
+  },
+  "translate:medical": {
+   "name": "Medical documents",
+   "title": "Translation of medical certificates",
+   "dir": "Medical certificates, doctor's reports, vaccination records",
+   "who": "For medical treatment, enrolling a child in school or kindergarten, or migration procedures.",
+   "bring": [
+    {
+     "text": "A clear photo of the document"
+    },
+    {
+     "text": "What it will be used for"
+    }
+   ]
+  },
+  "translate:poa": {
+   "name": "Powers of attorney and contracts",
+   "title": "Translation of powers of attorney, letters of consent and applications",
+   "dir": "Documents of legal significance",
+   "who": "When your relatives in China need to act on your behalf, or the other way around.",
+   "bring": [
+    {
+     "text": "The text or a photo of the document"
+    },
+    {
+     "text": "Details of the parties"
+    }
+   ]
+  },
+  "translate:company": {
+   "name": "Company documents",
+   "title": "Founding and commercial documents",
+   "dir": "Charter, registration certificate, contracts, invoices",
+   "who": "For registering a company in Kazakhstan, signing a contract with a partner or submitting documents to a government agency.",
+   "bring": [
+    {
+     "text": "Electronic copies of the documents"
+    },
+    {
+     "text": "The agency they will be submitted to"
+    }
+   ]
+  },
+  "notary:notarial": {
+   "name": "Notarized translation",
+   "title": "Preparing a notarized translation",
+   "dir": "Meeting the receiving institution's requirements",
+   "who": "When a translation must have legal force — for migration, education, court or banking purposes.",
+   "bring": [
+    {
+     "text": "The original document"
+    },
+    {
+     "text": "The name of the institution that needs the translation"
+    }
+   ],
+   "note": "Certification is done by a notary; we prepare the translation and the document for it."
+  },
+  "notary:apostille": {
+   "name": "Apostille",
+   "title": "Preparing for an apostille",
+   "dir": "Documents for use in Kazakhstan and China",
+   "who": "If the document will be used in another country. Since November 7, 2023, Chinese documents can be apostilled too.",
+   "bring": [
+    {
+     "text": "A photo of the document"
+    },
+    {
+     "text": "The country where it will be used"
+    }
+   ],
+   "linkText": "Apostille guide"
+  },
+  "notary:consular": {
+   "name": "Consular legalization",
+   "title": "Consular legalization",
+   "dir": "For countries where the apostille does not apply",
+   "who": "If the document will be used in a country that is not a party to the Apostille Convention.",
+   "bring": [
+    {
+     "text": "A photo of the document"
+    },
+    {
+     "text": "The receiving country and institution"
+    }
+   ]
+  },
+  "notary:check": {
+   "name": "Document check",
+   "title": "Preliminary document check",
+   "dir": "Matching names, dates, addresses and seals",
+   "who": "If your name is written differently in different documents, or you want to make sure there are no mistakes before you submit them.",
+   "bring": [
+    {
+     "text": "Photos of all your documents"
+    }
+   ],
+   "note": "The Latin spelling in your passport, the Chinese characters on your certificates and the Cyrillic spelling in the translation must all match."
+  },
+  "migration:kandas": {
+   "name": "Kandas status",
+   "title": "Documents for kandas status",
+   "dir": "For ethnic Kazakhs moving for good",
+   "who": "For foreign nationals of Kazakh ethnicity who come to live in Kazakhstan permanently, and their families.",
+   "bring": [
+    {
+     "text": "Passport and a document confirming your ethnicity"
+    },
+    {
+     "text": "Documents of your family members"
+    }
+   ],
+   "note": "The status is granted for 1 year and can be extended once for 6 months. Under the 2026 pilot project, Kazakh language skills are tested through KAZTEST (at least level A1).",
+   "linkText": "KAZTEST practice test"
+  },
+  "migration:permit": {
+   "name": "Residence permit",
+   "title": "Residence permit",
+   "dir": "Permanent residence permit in Kazakhstan",
+   "who": "If you want to live in Kazakhstan permanently — the main step before citizenship.",
+   "bring": [
+    {
+     "text": "Passport"
+    },
+    {
+     "text": "Documents issued in China"
+    },
+    {
+     "text": "Family documents"
+    }
+   ],
+   "note": "Under the 2026 pilot project, applicants for a permanent residence permit have their Kazakh language skills tested through KAZTEST (at least level A1).",
+   "linkText": "KAZTEST practice test"
+  },
+  "migration:citizen": {
+   "name": "Citizenship",
+   "title": "Documents for citizenship",
+   "dir": "Application, questionnaire, document check",
+   "who": "For kandases living legally in Kazakhstan who want to become citizens.",
+   "bring": [
+    {
+     "text": "Residence permit or status document"
+    },
+    {
+     "text": "Passport and birth certificate"
+    }
+   ],
+   "note": "Kazakhstan does not recognize dual citizenship."
+  },
+  "migration:atazholy": {
+   "name": "\"Ata Zholy\" card",
+   "title": "Applying for the \"Ata Zholy\" card",
+   "dir": "Keep your citizenship and live here for up to 10 years",
+   "who": "For ethnic Kazakhs living abroad: business owners and in-demand professionals.",
+   "bring": [
+    {
+     "text": "Diploma and proof of work experience"
+    },
+    {
+     "text": "Passport"
+    }
+   ],
+   "linkText": "More about the card"
+  },
+  "migration:family": {
+   "name": "Family documents",
+   "title": "Documents for family members",
+   "dir": "Spouse, children, parents",
+   "who": "When you move with your family — to gather everyone's documents into one package.",
+   "bring": [
+    {
+     "text": "Marriage and birth certificates"
+    },
+    {
+     "text": "Each family member's passport"
+    }
+   ]
+  },
+  "migration:prepare": {
+   "name": "Preparing to move",
+   "title": "Preparing to move to Kazakhstan",
+   "dir": "What to do before leaving China",
+   "who": "If you're planning a move but don't know where to start.",
+   "bring": [
+    {
+     "text": "A list of the documents you have"
+    },
+    {
+     "text": "The purpose and timing of your move"
+    }
+   ]
+  },
+  "education:admission": {
+   "name": "Admission",
+   "title": "Applying to study in Kazakhstan",
+   "dir": "University, college, foundation program",
+   "who": "If you want to study in Kazakhstan: choosing where to study, submitting documents, quotas and grants.",
+   "bring": [
+    {
+     "text": "School-leaving certificate or diploma"
+    },
+    {
+     "text": "Passport"
+    }
+   ],
+   "note": "A 4% quota of state education grants is reserved for ethnic Kazakh applicants from abroad."
+  },
+  "education:recognition": {
+   "name": "Diploma recognition",
+   "title": "Preparing for diploma recognition",
+   "dir": "Education documents obtained in China",
+   "who": "If you want to study or work in Kazakhstan with a diploma you received in China.",
+   "bring": [
+    {
+     "text": "Diploma and its supplement"
+    },
+    {
+     "text": "Apostille (if you have one)"
+    }
+   ]
+  },
+  "education:diplomatr": {
+   "name": "Diploma translation",
+   "title": "Translation of your diploma and its supplement",
+   "dir": "From Chinese into Kazakh or Russian",
+   "who": "For admission to study, diploma recognition or employment.",
+   "bring": [
+    {
+     "text": "Photos of the diploma and its supplement"
+    }
+   ]
+  },
+  "education:kazakh": {
+   "name": "Kazakh language",
+   "title": "Kazakh language course",
+   "dir": "Cyrillic script and the language of official documents",
+   "who": "For those who learned to read in Tote (the Arabic-based Kazakh script) and want to get used to Cyrillic quickly.",
+   "bring": [
+    {
+     "text": "Your current level"
+    },
+    {
+     "text": "Times that suit you"
+    }
+   ],
+   "cta": "Sign up for the course",
+   "linkText": "KAZTEST practice test"
+  },
+  "education:chinese": {
+   "name": "Chinese language",
+   "title": "Chinese language course",
+   "dir": "Business and everyday Chinese",
+   "who": "For those doing business with China, and for children who don't want to forget their Chinese.",
+   "bring": [
+    {
+     "text": "Your level"
+    },
+    {
+     "text": "Your goal"
+    }
+   ],
+   "cta": "Sign up for the course"
+  },
+  "education:russian": {
+   "name": "Russian language",
+   "title": "Russian language course",
+   "dir": "Everyday life and public offices",
+   "who": "To communicate with ease in daily life, at work and in public offices in Kazakhstan.",
+   "bring": [
+    {
+     "text": "Your level"
+    },
+    {
+     "text": "Times that suit you"
+    }
+   ],
+   "cta": "Sign up for the course"
+  },
+  "business:register": {
+   "name": "Company registration",
+   "title": "Help registering a company in Kazakhstan",
+   "dir": "Documents, translation, support",
+   "who": "If you want to start a business in Kazakhstan — as an LLP or as an individual entrepreneur.",
+   "bring": [
+    {
+     "text": "Passport"
+    },
+    {
+     "text": "Type of business activity and address"
+    }
+   ],
+   "note": "Registration is carried out by government agencies; we prepare the documents and support you through the process."
+  },
+  "business:corpdocs": {
+   "name": "Business documents",
+   "title": "Founding and commercial documents",
+   "dir": "Charter, resolutions, invoices, certificates",
+   "who": "For using the documents of a company in China or Kazakhstan in the other country.",
+   "bring": [
+    {
+     "text": "Electronic copies of the documents"
+    }
+   ]
+  },
+  "business:contract": {
+   "name": "Contracts and powers of attorney",
+   "title": "Draft contracts and powers of attorney",
+   "dir": "Documents of legal significance",
+   "who": "When you make an agreement with a partner or give someone power of attorney.",
+   "bring": [
+    {
+     "text": "What the deal is about"
+    },
+    {
+     "text": "Details of the parties"
+    }
+   ]
+  },
+  "business:interpret": {
+   "name": "Interpreting",
+   "title": "Interpreting at negotiations",
+   "dir": "Kazakh · Chinese · Russian",
+   "who": "At meetings with Chinese partners, at trade fairs and on visits to official institutions.",
+   "bring": [
+    {
+     "text": "Date and place of the meeting"
+    },
+    {
+     "text": "The topic"
+    }
+   ]
+  },
+  "housing:rent": {
+   "name": "Renting an apartment",
+   "title": "Help renting an apartment",
+   "dir": "Finding options, checking the lease",
+   "who": "For families and students who have just arrived in Kazakhstan.",
+   "bring": [
+    {
+     "text": "Budget and neighborhood"
+    },
+    {
+     "text": "Moving date"
+    }
+   ]
+  },
+  "housing:buy": {
+   "name": "Buying a home",
+   "title": "Buying or selling a home",
+   "dir": "Support with the deal from start to finish",
+   "who": "If you want to buy or sell an apartment or a house in Kazakhstan.",
+   "bring": [
+    {
+     "text": "Preferred neighborhood and budget"
+    },
+    {
+     "text": "Passport"
+    }
+   ]
+  },
+  "housing:commercial": {
+   "name": "Commercial property",
+   "title": "Finding commercial property",
+   "dir": "Office, store, warehouse",
+   "who": "If you're looking for premises for your business.",
+   "bring": [
+    {
+     "text": "Property type and floor area"
+    },
+    {
+     "text": "Budget"
+    }
+   ]
+  },
+  "housing:deal": {
+   "name": "Negotiations and contracts",
+   "title": "Negotiation support and contract translation",
+   "dir": "In Kazakh and Chinese",
+   "who": "To reach an understanding with a seller or landlord and to understand what the contract says.",
+   "bring": [
+    {
+     "text": "The contract text"
+    },
+    {
+     "text": "Your questions"
+    }
+   ]
+  }
+ },
+ "servicepage": {
+  "atazholy": {
+   "title": "\"Ata Zholy\" card",
+   "seoDescription": "The \"Ata Zholy\" (\"Ancestral Path\") card for ethnic Kazakhs living abroad: who can get it, what it offers and how BASTAU LINE helps you apply.",
+   "data": {
+    "eyebrow": "Migration",
+    "lead": "We provide document support for your application for the \"Ata Zholy\" (\"Ancestral Path\") card for ethnic Kazakhs living abroad — from checking your profession against the approved list to preparing the full document package.",
+    "crumbText": "Migration",
+    "cta": "Get my documents checked",
+    "ctaNote": "You can also message us on WeChat",
+    "keyfacts": [
+     {
+      "value": "10 years",
+      "text": "card validity, renewable afterward"
+     },
+     {
+      "value": "5 days",
+      "text": "application review after registration, in working days"
+     },
+     {
+      "value": "Retained",
+      "text": "your foreign citizenship — no need to give it up"
+     }
+    ],
+    "benefitsEyebrow": "What the card gives you",
+    "benefitsTitle": "Rights and restrictions",
+    "benefitsLead": "Cardholders enjoy many of the same rights as citizens of Kazakhstan and kandases (ethnic Kazakh returnees), but their political rights are limited.",
+    "benefits": [
+     {
+      "title": "Living with your family",
+      "text": "Enter Kazakhstan freely and live here with your family members for up to 10 years."
+     },
+     {
+      "title": "Work without a permit",
+      "text": "No separate work permit is needed to take a job."
+     },
+     {
+      "title": "Business in any region",
+      "text": "You can run a business in any region of the country."
+     },
+     {
+      "title": "Healthcare and schooling",
+      "text": "Access to medical care, and free secondary education for children."
+     },
+     {
+      "title": "No voting rights",
+      "text": "Cardholders do not take part in elections or referendums."
+     },
+     {
+      "title": "No civil service",
+      "text": "Cardholders cannot be appointed to government positions."
+     }
+    ],
+    "whoEyebrow": "Who can get it",
+    "whoTitle": "You only need to fit one of three categories",
+    "whoAside": "We check in advance whether your profession is on the approved list — the list of documents depends on your category.",
+    "who": [
+     {
+      "label": "Category 1",
+      "title": "Business immigrant",
+      "text": "Entrepreneurs who own a business that has been operating steadily abroad."
+     },
+     {
+      "label": "Category 2",
+      "title": "In-demand professional",
+      "text": "People whose profession is on Kazakhstan's list of in-demand occupations."
+     },
+     {
+      "label": "Category 3",
+      "title": "Special profession",
+      "text": "People whose profession entitles them to citizenship of Kazakhstan under a simplified procedure."
+     }
+    ],
+    "stepsEyebrow": "What we do",
+    "stepsTitle": "The paperwork side of your application — fully covered",
+    "stepsAside": "We translate your documents into Kazakh or Russian and explain every stage of the application in plain language.",
+    "steps": [
+     {
+      "title": "Profession check",
+      "text": "We check whether your profession matches the approved list.",
+      "time": "compared with the list"
+     },
+     {
+      "title": "Document review",
+      "text": "We review your diploma and your proof of work experience.",
+      "time": "diploma · work experience"
+     },
+     {
+      "title": "Translation",
+      "text": "We translate the documents into Kazakh or Russian.",
+      "time": "Chinese → Kazakh / Russian"
+     },
+     {
+      "title": "Document package",
+      "text": "We put together the required document package.",
+      "time": "complete package"
+     },
+     {
+      "title": "Explaining the stages",
+      "text": "We explain the stages of the application in plain language.",
+      "time": "step by step"
+     }
+    ],
+    "disclaimer": "The final decision on issuing the \"Ata Zholy\" card is made by the competent government authorities of the Republic of Kazakhstan.",
+    "docsEyebrow": "Documents",
+    "docsTitle": "Mark what you already have",
+    "docsLead": "This is a sample list. You'll get the exact list for your category during a consultation. Your checkmarks are saved only on this device.",
+    "docs": [
+     {
+      "title": "Foreign passport",
+      "note": "Copies of all pages, with a translation"
+     },
+     {
+      "title": "Proof of Kazakh ethnicity",
+      "note": "Birth certificate or another official document"
+     },
+     {
+      "title": "Diploma and its supplement",
+      "note": "To check your profession against the list"
+     },
+     {
+      "title": "Proof of work experience",
+      "note": "Employment record book, letter from your employer"
+     },
+     {
+      "title": "Proof of business ownership",
+      "note": "For business immigrants: registration certificate, financial reports"
+     },
+     {
+      "title": "Certificate of no criminal record",
+      "note": "Notarized and apostilled"
+     },
+     {
+      "title": "Marriage certificate and children's birth certificates",
+      "note": "If family members are coming with you"
+     },
+     {
+      "title": "Photo",
+      "note": "3.5 × 4.5 cm, on a white background"
+     }
+    ],
+    "panelTitle": "Preparation",
+    "tipTitle": "Tip",
+    "tipText": "Get certificates issued in China ready for an apostille before you set off: China has been a party to the Apostille Convention since 2023.",
+    "tipLinkText": "Apostille guide",
+    "faqTitle": "Questions about the \"Ata Zholy\" card",
+    "faq": [
+     {
+      "q": "Do I have to give up my Chinese citizenship?",
+      "a": "<p>No. The main feature of the \"Ata Zholy\" card is that you keep your foreign citizenship.</p>"
+     },
+     {
+      "q": "Can my family get the card too?",
+      "a": "<p>Yes, your family members can live in Kazakhstan with you. We'll help prepare their documents too.</p>"
+     },
+     {
+      "q": "Do you issue the card?",
+      "a": "<p>No. The final decision is made by the competent government authorities of the Republic of Kazakhstan. We help make sure your documents are correct, complete and meet the requirements.</p>"
+     },
+     {
+      "q": "Can I get citizenship later if I have the card?",
+      "a": "<p>Yes, if you wish. But cardholders are not required to take up citizenship.</p>"
+     },
+     {
+      "q": "How is it different from kandas status?",
+      "a": "<p>Kandas status is for those who move for good and later become citizens; it is granted for 1 year. The \"Ata Zholy\" card is for those who want to keep their citizenship while living and working in Kazakhstan long-term.</p><p><a class=\"link-arrow\" href=\"/kz/services#cmp-title\">Comparison table</a></p>"
+     }
+    ],
+    "relatedEyebrow": "Services",
+    "relatedTitle": "You may also need",
+    "related": [
+     {
+      "kicker": "Translation and documents",
+      "title": "Translation services",
+      "text": "Passports, certificates, diplomas, employment records — in Kazakh, Chinese and Russian."
+     },
+     {
+      "kicker": "Guide",
+      "title": "Apostille for Chinese documents",
+      "text": "From the notary office to the apostille — step by step."
+     },
+     {
+      "kicker": "Migration",
+      "title": "Citizenship and residence permits",
+      "text": "Document lists, applications and a final check before you go to the migration office."
+     }
+    ]
+   }
+  }
+ },
+ "articlecategory": {
+  "news": {
+   "name": "News"
+  },
+  "docs": {
+   "name": "Documents"
+  },
+  "migration": {
+   "name": "Migration"
+  },
+  "study": {
+   "name": "Education"
+  },
+  "author": {
+   "name": "From the author"
+  }
+ },
+ "article": {
+  "apostille": {
+   "title": "Apostille for Chinese documents: a step-by-step guide",
+   "excerpt": "From the notary office to the foreign affairs office — what to do, where, and in what order.",
+   "bodyHtml": "<p class=\"dropcap\">In the past, to use a document issued in China in Kazakhstan, you had to go through lengthy consular legalization: first China's foreign affairs authorities certified it, then Kazakhstan's embassy or consulate in China. This could take months and required a separate fee for each document.</p>\n\n<h2 id=\"what\">What has changed?</h2>\n<p>Since November 7, 2023, the People's Republic of China has been a party to the 1961 Hague Convention abolishing the requirement to legalize foreign public documents (the Apostille Convention). Kazakhstan joined this convention long ago. This means that a Chinese document now needs just one apostille to be valid in Kazakhstan as well.</p>\n<div class=\"callout\"><b>In short</b><span>No more consular legalization. In China: notarization + apostille. In Kazakhstan: translation and notarization of the translation.</span></div>\n\n<h2 id=\"which\">Which documents need an apostille?</h2>\n<ul>\n  <li>Birth certificate — for kandas (ethnic Kazakh returnee) status and citizenship</li>\n  <li>Marriage certificate and children's birth certificates</li>\n  <li>Diploma and its supplement — for admission to study and diploma recognition</li>\n  <li>Certificate of no criminal record — for the \"Ata Zholy\" (\"Ancestral Path\") card and a residence permit</li>\n  <li>A document confirming your ethnicity, if it isn't shown on your ID</li>\n</ul>\n\n<h2 id=\"steps\">Steps</h2>\n<ol>\n  <li><b>Notary office.</b> Get the document notarized at the notary office <span class=\"zh\" lang=\"zh\">(公证处)</span> in your hometown. In most cases, the notarial certificate comes with an English translation.</li>\n  <li><b>Apostille.</b> The Ministry of Foreign Affairs of the PRC or its authorized local foreign affairs office puts an apostille on the notarial certificate.</li>\n  <li><b>Translation.</b> Once you arrive in Kazakhstan, we translate the document together with its apostille into Kazakh or Russian.</li>\n  <li><b>Certifying the translation.</b> A notary certifies the translator's signature — your document is now ready to be submitted via enbek.kz, to the migration service or to a university.</li>\n</ol>\n\n<h2 id=\"tips\">Common mistakes</h2>\n<p>The most common mistake is starting to gather documents only after arriving in Kazakhstan. Then everything has to be done through relatives in China with a power of attorney, which makes the process two to three times longer. The second mistake is having your name spelled differently in different documents: the Latin spelling in your passport, the Chinese characters on your certificates and the Cyrillic spelling in the translation must all match.</p>\n<div class=\"callout callout--gold\"><b>Tip</b><span>Settle the Cyrillic spelling of your name in your very first translation, and use exactly the same spelling in every document after that.</span></div>",
+   "authorName": "Omar Bekmurat",
+   "seoDescription": "How to use a document issued in China in Kazakhstan: a step-by-step guide."
+  },
+  "prepare": {
+   "title": "Preparing to move: what to do before leaving China",
+   "excerpt": "In what order to gather your documents, and why it's better to get apostilles done in advance.",
+   "authorName": "Omar Bekmurat"
+  },
+  "atazholy": {
+   "title": "The difference between kandas status and the \"Ata Zholy\" card",
+   "excerpt": "Do you want to keep your citizenship, or are you moving for good? How the two paths differ.",
+   "authorName": "Omar Bekmurat"
+  },
+  "license": {
+   "title": "Translating a Chinese driver's license: what you need to know",
+   "excerpt": "The difference between translating a license and exchanging it, and which documents to prepare.",
+   "authorName": "Omar Bekmurat"
+  },
+  "study": {
+   "title": "Studying in Kazakhstan: the quota, foundation programs and the UNT (Unified National Testing)",
+   "excerpt": "The 4% quota for ethnic Kazakh applicants from abroad, and when to submit your documents.",
+   "authorName": "Omar Bekmurat"
+  },
+  "dance": {
+   "title": "National art — a legacy entrusted to future generations",
+   "excerpt": "The Bastau studio, the Shugyla, Shalkyma and QazTribe groups, and the future of Kazakh dance.",
+   "authorName": "Omar Bekmurat"
+  },
+  "n-kaztest": {
+   "title": "Permanent residence and kandas status: Kazakh language to be tested through KAZTEST",
+   "excerpt": "Starting February 13, 2026, a pilot project tests applicants' knowledge of the state language — at least level A1 is required. Get ready with our practice test.",
+   "sourceName": "Adilet"
+  },
+  "n-atazholy": {
+   "title": "65 \"Ata Zholy\" cards issued to ethnic Kazakhs",
+   "excerpt": "27 cards went to business immigrants and 38 to in-demand professionals. The cardholders come from Russia, Germany, Mongolia, China and other countries.",
+   "sourceName": "Ministry of Labor of Kazakhstan",
+   "dateText": "February 2025"
+  },
+  "n-quota": {
+   "title": "Grant quota for ethnic Kazakh applicants from abroad: 4%",
+   "excerpt": "The share of state education grants reserved for ethnic Kazakhs from abroad has been increased from 2% to 4%."
+  },
+  "n-apostille": {
+   "title": "China joins the Apostille Convention",
+   "excerpt": "Since November 7, 2023, documents issued in China have been certified with an apostille instead of consular legalization.",
+   "sourceName": "HCCH"
+  }
+ },
+ "region": {
+  "3": {
+   "name": "Astana (city)",
+   "shortName": "Astana (city)"
+  },
+  "4": {
+   "name": "Almaty (city)",
+   "shortName": "Almaty (city)"
+  },
+  "19": {
+   "name": "Shymkent (city)",
+   "shortName": "Shymkent (city)"
+  },
+  "5": {
+   "name": "Akmola Region",
+   "shortName": "Akmola"
+  },
+  "7": {
+   "name": "Aktobe Region",
+   "shortName": "Aktobe"
+  },
+  "6": {
+   "name": "Almaty Region",
+   "shortName": "Almaty Region"
+  },
+  "8": {
+   "name": "Atyrau Region",
+   "shortName": "Atyrau"
+  },
+  "9": {
+   "name": "West Kazakhstan Region",
+   "shortName": "West Kazakhstan"
+  },
+  "10": {
+   "name": "Zhambyl Region",
+   "shortName": "Zhambyl"
+  },
+  "11": {
+   "name": "Karaganda Region",
+   "shortName": "Karaganda"
+  },
+  "12": {
+   "name": "Kostanay Region",
+   "shortName": "Kostanay"
+  },
+  "13": {
+   "name": "Kyzylorda Region",
+   "shortName": "Kyzylorda"
+  },
+  "14": {
+   "name": "Mangystau Region",
+   "shortName": "Mangystau"
+  },
+  "16": {
+   "name": "Pavlodar Region",
+   "shortName": "Pavlodar"
+  },
+  "17": {
+   "name": "North Kazakhstan Region",
+   "shortName": "North Kazakhstan"
+  },
+  "15": {
+   "name": "Turkistan Region",
+   "shortName": "Turkistan"
+  },
+  "18": {
+   "name": "East Kazakhstan Region",
+   "shortName": "East Kazakhstan"
+  }
+ },
+ "placecategory": {
+  "tabigat": {
+   "name": "Nature",
+   "pluralName": "Nature"
+  },
+  "kieli": {
+   "name": "Sacred site",
+   "pluralName": "Sacred sites"
+  },
+  "tarih": {
+   "name": "Historic site",
+   "pluralName": "Historic sites"
+  },
+  "eskertkish": {
+   "name": "Monument",
+   "pluralName": "Monuments"
+  }
+ },
+ "place": {
+  "sharyn": {
+   "name": "Charyn Canyon",
+   "fact": "Cliffs 150–300 m high",
+   "lead": "One of the most beautiful places in Kazakhstan — locals call it the \"valley of fortified castles.\"",
+   "bodyHtml": "<p>Charyn Canyon lies 195 km from the city of Almaty. It is 200 km long, and its rock formations rise from 150 to 300 meters. The \"Valley of Towers,\" which is especially popular with tourists, is 2 km long and 20–80 m wide.</p>\n<p>Charyn is often compared to America's Grand Canyon and called its little brother. Huge rocks that seem to touch the sky resemble a fairy-tale city that built itself: their shapes look strikingly like man-made buildings and towers.</p>\n<p>Images of wild animals show that birds and animals lived in this area as far back as the Paleolithic. Barberry and turanga poplar grow in the lower part of the canyon.</p>",
+   "facts": [
+    {
+     "label": "From Almaty",
+     "value": "195 km"
+    },
+    {
+     "label": "Length",
+     "value": "200 km"
+    },
+    {
+     "label": "Cliff height",
+     "value": "150–300 m"
+    },
+    {
+     "label": "Best time to visit",
+     "value": "April–October"
+    }
+   ]
+  },
+  "kolsai": {
+   "name": "Kolsai Lakes",
+   "fact": "1,800–2,650 m above sea level",
+   "lead": "A chain of three lakes in the Northern Tien Shan: Lower, Middle and Upper Kolsai.",
+   "bodyHtml": "<p>The Kolsai Lakes are a system of three lakes in the Northern Tien Shan, which links the Kungei Alatau and Trans-Ili Alatau ranges. They lie one after another at different altitudes along the Kolsai River.</p>\n<p>Upper Kolsai lies 2,650 m above sea level, Middle Kolsai at 2,280 m and Lower Kolsai at 1,800 m. The lower lake is 1,520 m long and 222 m wide on average.</p>\n<p>The neighboring Lake Kaindy was formed by a powerful earthquake in 1911: water flooded the valley, and the trees ended up underwater. Because the lake water stays at around +6°C even in summer, the needles on the trees have survived to this day.</p>",
+   "facts": [
+    {
+     "label": "Number of lakes",
+     "value": "3"
+    },
+    {
+     "label": "Lower lake",
+     "value": "1,800 m"
+    },
+    {
+     "label": "Upper lake",
+     "value": "2,650 m"
+    },
+    {
+     "label": "Lower lake length",
+     "value": "1,520 m"
+    }
+   ]
+  },
+  "khantengri": {
+   "name": "Khan Tengri",
+   "fact": "Over 7,000 m high",
+   "lead": "The most beautiful peak of the Tien Shan, which Kazakhs call \"Aspantau\" — it stands where the borders of Kazakhstan, Kyrgyzstan and China meet.",
+   "bodyHtml": "<p>Khan Tengri is one of the high peaks of the Tien Shan, which Kazakhs call \"Aspantau.\" Its southeastern side belongs to Kazakhstan, its eastern side to China and its western side to Kyrgyzstan.</p>\n<p>Rising to more than 7,000 meters, it is counted among the most beautiful peaks in the world. Until 1960, local people called it Khantengir.</p>\n<p>The marble walls of this sharp, four-sided pyramid catch the eye from far away. Climbers reach the summit via the South and North Inylchek glaciers.</p>",
+   "facts": [
+    {
+     "label": "Height",
+     "value": "7,010 m"
+    },
+    {
+     "label": "Mountain system",
+     "value": "Tien Shan"
+    },
+    {
+     "label": "Shared by",
+     "value": "3 countries"
+    },
+    {
+     "label": "Climbing season",
+     "value": "July–August"
+    }
+   ]
+  },
+  "muztau": {
+   "name": "Belukha",
+   "fact": "Highest peak of the Altai · 4,506 m",
+   "lead": "The highest glacier-capped peak of the Altai Mountains in Russia and Kazakhstan. Kazakhs called it Aksumbi and Aktaiky.",
+   "bodyHtml": "<p>Belukha (Muztau in Kazakh) is the highest glacier-capped peak of the Altai Mountains in Russia and Kazakhstan (4,506 m). It rises on the eastern side of the Katun Range, near the border between Kazakhstan and the Altai region.</p>\n<p>Near its summit lie the Greater and Lesser Berel and Mensu glaciers, which give rise to the Katun River. The river basins connected with Belukha contain 162 glaciers covering 146 square kilometers.</p>\n<p>The people of Altai affectionately call Belukha \"the abode of God\" and \"the Great Elder.\" Perhaps it got these names because it is covered in eternal snow from top to bottom.</p>",
+   "facts": [
+    {
+     "label": "Height",
+     "value": "4,506 m"
+    },
+    {
+     "label": "Glaciers",
+     "value": "162"
+    },
+    {
+     "label": "Age",
+     "value": "1.5 million years"
+    },
+    {
+     "label": "District",
+     "value": "Katon-Karagay"
+    }
+   ]
+  },
+  "alakol": {
+   "name": "Lake Alakol",
+   "fact": "Fed by more than 15 rivers",
+   "lead": "A closed lake rich in iodine and salts, known for its healing properties. Silk Road caravans once passed along its shores.",
+   "bodyHtml": "<p>Alakol is a closed lake with no outflow, located in Almaty and East Kazakhstan regions. More than 15 rivers flow into it.</p>\n<p>Its water is rich in minerals, iodine and salt, and its health benefits have been medically proven. Travelers on the Silk Road are said to have rested on its shores and drawn strength from its waters.</p>\n<p>Between the 12th and 19th centuries, the lake was known by several names: Turge-Nor, Alaktagol and Alateniz.</p>",
+   "facts": [
+    {
+     "label": "Type",
+     "value": "closed lake"
+    },
+    {
+     "label": "Inflowing rivers",
+     "value": "15+"
+    },
+    {
+     "label": "Water",
+     "value": "mineral, iodine-rich"
+    },
+    {
+     "label": "Season",
+     "value": "June–August"
+    }
+   ]
+  },
+  "okzhetpes": {
+   "name": "Okzhetpes",
+   "fact": "Burabay · Kokshetau Upland",
+   "lead": "A granite rock rising above the clear waters of Lake Auliekol. Shokan Ualikhanov collected more than 15 legends about it.",
+   "bodyHtml": "<p>Okzhetpes stands next to Mount Kokshe, the highest point of the Kokshetau Upland. It is made of granite, with steep slopes where pine and birch grow.</p>\n<p>Many legends are told about this rock above the clear waters of Lake Auliekol. Shokan Ualikhanov collected more than 15 legends and tales, and Saken Seifullin told the story of Okzhetpes in his poem \"Kokshetau.\"</p>",
+   "facts": [
+    {
+     "label": "Location",
+     "value": "Burabay"
+    },
+    {
+     "label": "Rock type",
+     "value": "granite"
+    },
+    {
+     "label": "Legends",
+     "value": "15+"
+    },
+    {
+     "label": "From Astana",
+     "value": "≈ 250 km"
+    }
+   ]
+  },
+  "korgalzhyn": {
+   "name": "Korgalzhyn Nature Reserve",
+   "fact": "120 km from Astana · Ramsar List",
+   "lead": "Around 60 lakes that are home to millions of birds. Three of the world's 8 bird migration routes pass through Lake Tengiz.",
+   "bodyHtml": "<p>Korgalzhyn Nature Reserve lies 120 km southwest of the city of Astana. In 1968, it was re-established as a nature reserve by government decree. It covers 258,963 hectares.</p>\n<p>There are 8 bird migration routes in the world, and three of them cross Lake Tengiz in this reserve. That is why millions of birds live on Korgalzhyn's nearly 70 lakes.</p>\n<p>The reserve belongs to Group \"A\" under the Ramsar Convention, and in 2007 its lakes were designated an Important Bird Area (IBA) of international significance.</p>",
+   "facts": [
+    {
+     "label": "From Astana",
+     "value": "120 km"
+    },
+    {
+     "label": "Area",
+     "value": "258,963 ha"
+    },
+    {
+     "label": "Lakes",
+     "value": "≈ 60"
+    },
+    {
+     "label": "Established",
+     "value": "1968"
+    }
+   ]
+  },
+  "tanbaly": {
+   "name": "Tamgaly Petroglyphs",
+   "fact": "More than 5,000 petroglyphs · UNESCO",
+   "lead": "One of the oldest monuments of Zhetysu — thousands of images carved into the rock since the Bronze Age.",
+   "bodyHtml": "<p>This archaeological complex lies in the southeastern part of the Chu-Ili Mountains in Almaty Region, 170 km northwest of Almaty.</p>\n<p>The Tamgaly complex includes more than 5,000 petroglyphs from different historical periods, as well as settlements, burial grounds and sacrificial sites. Its most valuable part is the petroglyphs of the Middle Bronze Age.</p>\n<p>Researchers particularly highlight the high aesthetic value and spiritual impact of the Tamgaly petroglyphs.</p>",
+   "facts": [
+    {
+     "label": "From Almaty",
+     "value": "170 km"
+    },
+    {
+     "label": "Petroglyphs",
+     "value": "5,000+"
+    },
+    {
+     "label": "Oldest images",
+     "value": "14th century BC"
+    },
+    {
+     "label": "UNESCO",
+     "value": "2004"
+    }
+   ]
+  },
+  "yassawi": {
+   "name": "Mausoleum of Khoja Ahmed Yasawi",
+   "fact": "14th century · UNESCO, 2003",
+   "lead": "A jewel of medieval architecture in Turkistan and the spiritual center of the Turkic world.",
+   "bodyHtml": "<p>The Mausoleum of Khoja Ahmed Yasawi is a jewel of medieval architecture in Turkistan. It was built at the end of the 14th century by order of Amir Timur over the grave of the great thinker Khoja Ahmed Yasawi.</p>\n<p>In 2003, the mausoleum was added to the UNESCO World Heritage List. For centuries, this towering building with its blue dome has been a sacred place of pilgrimage for the peoples of Central Asia.</p>",
+   "facts": [
+    {
+     "label": "City",
+     "value": "Turkistan"
+    },
+    {
+     "label": "Built",
+     "value": "late 14th century"
+    },
+    {
+     "label": "Commissioned by",
+     "value": "Amir Timur"
+    },
+    {
+     "label": "UNESCO",
+     "value": "2003"
+    }
+   ]
+  },
+  "otyrar": {
+   "name": "Ancient city of Otrar",
+   "fact": "1st–18th centuries · homeland of al-Farabi",
+   "lead": "A major center of trade and learning on the Silk Road, and the capital of the region where the great thinker al-Farabi was born.",
+   "bodyHtml": "<p>The ancient city of Otrar lies 7 km northwest of Shauildir, the center of Otrar District. In history it is also known as Turarband, Tarband and Farab.</p>\n<p>The city was an important center on the trade route linking Iran and Central Asia with Siberia, Mongolia and China. Otrar was the capital of the region where Abu Nasr al-Farabi was born.</p>",
+   "facts": [
+    {
+     "label": "Period",
+     "value": "1st–18th centuries"
+    },
+    {
+     "label": "Area",
+     "value": "≈ 200 ha"
+    },
+    {
+     "label": "Ancient name",
+     "value": "Farab"
+    },
+    {
+     "label": "From Shauildir",
+     "value": "7 km"
+    }
+   ]
+  },
+  "beket": {
+   "name": "Beket Ata Mosque",
+   "fact": "Ogylandy · underground mosque",
+   "lead": "The most sacred pilgrimage site in Mangystau — an underground mosque carved into the rock by Beket Ata.",
+   "bodyHtml": "<p>Beket Myrzagululy (1750–1813) was a prominent Kazakh religious figure, educator and warrior. A master builder, he carved underground mosques in the Mangystau, Atyrau and Ustyurt areas, where children were taught.</p>\n<p>In the underground mosque at Ogylandy, he founded a Sufi school. Today the place is known as a sacred site that gives people spiritual nourishment and shows the way to those who have lost it.</p>",
+   "facts": [
+    {
+     "label": "Location",
+     "value": "Ogylandy"
+    },
+    {
+     "label": "Beket Ata",
+     "value": "1750–1813"
+    },
+    {
+     "label": "Mosques he built",
+     "value": "5"
+    },
+    {
+     "label": "Region",
+     "value": "Mangystau"
+    }
+   ]
+  },
+  "ulytau": {
+   "name": "Ulytau",
+   "fact": "The heart of the Kazakh land",
+   "lead": "The highest point of western Saryarka. A land where khans were raised on white felt, and which Asan Kaigy called Zheruiyk (the promised land).",
+   "bodyHtml": "<p>Ulytau covers the southeast of the Turgai Trough and the northern part of Betpak-Dala. It is not only the highest point of western Saryarka, but also its \"heart\" and the \"center of the world.\"</p>\n<p>It was here that the Kazakhs raised their sultans on white felt and proclaimed them khans. Jochi Khan, Alasha Khan and Tokhtamysh Khan, as well as the warrior Edige, are buried here. Asan Kaigy called this land Zheruiyk, a promised land where the Kazakh people could live well.</p>",
+   "facts": [
+    {
+     "label": "Area",
+     "value": "Western Saryarka"
+    },
+    {
+     "label": "Highest peak",
+     "value": "Akmeshit"
+    },
+    {
+     "label": "Mausoleums",
+     "value": "Jochi, Alasha Khan"
+    },
+    {
+     "label": "Region",
+     "value": "Ulytau"
+    }
+   ]
+  },
+  "zhidebai": {
+   "name": "Zhidebai-Borili",
+   "fact": "Abai's house museum",
+   "lead": "A historical and cultural complex that gives a full picture of Abai's life and work.",
+   "bodyHtml": "<p>The complex is located in the settlement of Zhidebai in Abai District. Abai's winter home, inherited from Kunanbai in 1884, was turned into a house museum.</p>\n<p>The items in the museum's five rooms and three halls were collected from the poet's relatives, friends and contemporaries. The outside of the house still looks as it did in Abai's time.</p>",
+   "facts": [
+    {
+     "label": "House museum",
+     "value": "1884 winter home"
+    },
+    {
+     "label": "Rooms",
+     "value": "5 rooms, 3 halls"
+    },
+    {
+     "label": "District",
+     "value": "Abai"
+    },
+    {
+     "label": "Built by Abai",
+     "value": "school, mosque"
+    }
+   ]
+  },
+  "baiterek": {
+   "name": "Baiterek",
+   "fact": "97 m high",
+   "lead": "A symbol of the independent country: its height of 97 meters stands for 1997, when the capital moved to Astana.",
+   "bodyHtml": "<p>The Baiterek monument in the center of Astana is a symbol of the independent Kazakh state and of its people's revival and renewal. The structure rises to 97 meters, a reference to 1997, the year the new capital was proclaimed.</p>\n<p>The main idea behind the monument is the World Tree. The \"Bata\" (Blessing) composition at the top holds the blessings of the leaders of world religions who gathered in Astana in 2003.</p>",
+   "facts": [
+    {
+     "label": "Height",
+     "value": "97 m"
+    },
+    {
+     "label": "Concept",
+     "value": "World Tree"
+    },
+    {
+     "label": "Opened",
+     "value": "2002"
+    },
+    {
+     "label": "City",
+     "value": "Astana"
+    }
+   ]
+  },
+  "berel": {
+   "name": "Berel Kurgans",
+   "fact": "More than 70 burial mounds · Saka period",
+   "lead": "A famous Saka and Turkic burial ground where permafrost has kept clothing, horse gear and wooden objects from decaying.",
+   "bodyHtml": "<p>The Berel burial ground lies 7–8 km southwest of the village of Berel in Katon-Karagay District. The earliest mounds date back to the 4th–3rd centuries BC, and the later ones to the ancient Turkic period.</p>\n<p>Thanks to the permafrost inside the large mounds, clothing, horse harnesses, wooden objects and items made of leather and felt have been well preserved. The site was studied by V. Radlov in 1865, and Z. Samashev has been researching it since 1998.</p>",
+   "facts": [
+    {
+     "label": "Mounds",
+     "value": "70+"
+    },
+    {
+     "label": "Period",
+     "value": "4th–3rd centuries BC"
+    },
+    {
+     "label": "Area",
+     "value": "4,000 × 1,000 m"
+    },
+    {
+     "label": "District",
+     "value": "Katon-Karagay"
+    }
+   ]
+  },
+  "bayanaul": {
+   "name": "Konyr Aulie Cave",
+   "fact": "Bayanaul · 3 km from Lake Zhasybay",
+   "lead": "A sacred place where people have come to make wishes since ancient times. Mashhur Zhusup called it \"the place where saints ask Allah for His decree.\"",
+   "bodyHtml": "<p>This sacred cave in the Bayanaul Mountains lies three kilometers from Lake Zhasybay. Known as Konyr Aulie or the Aulie Tas cave, it has long been regarded as the blessed heart of Bayanaul.</p>\n<p>Water constantly collects in a cauldron-like hollow deep inside the cave; it is considered sacred and healing for the sick. Mashhur Zhusup praised the sanctity of this place and called it \"the place where saints ask Allah for His decree.\"</p>",
+   "facts": [
+    {
+     "label": "Location",
+     "value": "Bayanaul"
+    },
+    {
+     "label": "From Lake Zhasybay",
+     "value": "3 km"
+    },
+    {
+     "label": "Rock type",
+     "value": "granite"
+    },
+    {
+     "label": "Region",
+     "value": "Pavlodar"
+    }
+   ]
+  },
+  "tamshybulak": {
+   "name": "Tamshybulak",
+   "fact": "Kapal village · healing spring",
+   "lead": "A healing spring that breaks through stone walls and flows drop by drop. Shokan Ualikhanov studied it in 1859–1865.",
+   "bodyHtml": "<p>Tamshybulak is in the center of the village of Kapal in Aksu District. Breaking through ancient stone walls and gathering drop by drop, the spring does not freeze even in winter.</p>\n<p>Since ancient times, local people have used its water to treat various illnesses. The first written records of Tamshybulak were made by Shokan Ualikhanov.</p>",
+   "facts": [
+    {
+     "label": "Location",
+     "value": "Kapal village"
+    },
+    {
+     "label": "District",
+     "value": "Aksu"
+    },
+    {
+     "label": "Studied by",
+     "value": "Sh. Ualikhanov"
+    },
+    {
+     "label": "Water",
+     "value": "does not freeze in winter"
+    }
+   ]
+  },
+  "esik": {
+   "name": "Esik Kurgans",
+   "fact": "Where the \"Golden Man\" was found",
+   "lead": "A burial ground of Saka kings where the \"Golden Man,\" one of the symbols of independent Kazakhstan, was found in 1969.",
+   "bodyHtml": "<p>The Esik Kurgans are a burial ground of Saka kings at the foot of the Trans-Ili Alatau. In 1969, the remains of a warrior in golden clothing — the famous \"Golden Man\" — were found in one of the mounds here.</p>\n<p>Today the \"Golden Man\" stands atop Kazakhstan's Independence Monument, and an open-air museum operates near the kurgans.</p>",
+   "facts": [
+    {
+     "label": "Discovered",
+     "value": "1969"
+    },
+    {
+     "label": "Find",
+     "value": "\"Golden Man\""
+    },
+    {
+     "label": "Period",
+     "value": "Saka"
+    },
+    {
+     "label": "From Almaty",
+     "value": "≈ 50 km"
+    }
+   ]
+  }
+ },
+ "heritage": {
+  "Қожа Ахмет Ясауи кесенесі": {
+   "name": "Mausoleum of Khoja Ahmed Yasawi",
+   "kind": "World Heritage"
+  },
+  "Таңбалы тас": {
+   "name": "Petroglyphs within the Archaeological Landscape of Tamgaly",
+   "kind": "World Heritage"
+  },
+  "Сарыарқа — дала мен көлдер": {
+   "name": "Saryarka – Steppe and Lakes of Northern Kazakhstan",
+   "kind": "Natural heritage"
+  },
+  "Айтыс": {
+   "name": "Aitys (improvised poetic duel)",
+   "kind": "Intangible heritage"
+  },
+  "Күй": {
+   "name": "Kazakh traditional art of Dombra Kuy",
+   "kind": "Intangible heritage"
+  },
+  "Киіз үй": {
+   "name": "Traditional yurt-making",
+   "kind": "Intangible heritage"
+  },
+  "Құсбегілік": {
+   "name": "Falconry, a living human heritage",
+   "kind": "Intangible heritage"
+  },
+  "Жылқышылардың көктемгі жоралғылары": {
+   "name": "Traditional spring festive rites of the Kazakh horse breeders",
+   "kind": "Intangible heritage"
+  },
+  "Қорқыт ата мұрасы": {
+   "name": "Heritage of Korkyt Ata",
+   "kind": "Intangible heritage"
+  },
+  "Наурыз": {
+   "name": "Nauryz",
+   "kind": "Intangible heritage"
+  },
+  "Қазақша күрес": {
+   "name": "Kazakh wrestling (kazaksha kures)",
+   "kind": "Intangible heritage"
+  }
+ },
+ "kaztestvariant": {
+  "1-нұсқа": {
+   "title": "Practice test 1"
+  },
+  "2-нұсқа": {
+   "title": "Practice test 2"
+  },
+  "3-нұсқа": {
+   "title": "Practice test 3"
+  }
+ }
+}

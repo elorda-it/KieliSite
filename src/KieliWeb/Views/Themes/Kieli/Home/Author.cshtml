@@ -1,0 +1,196 @@
+@{
+    BlockContent hero = Block("author.hero");
+    BlockContent social = Block("author.social");
+    BlockContent stage = Block("author.stage");
+    BlockContent biz = Block("author.business");
+    BlockContent goals = Block("author.goals");
+    BlockContent proj = Block("author.project");
+    BlockContent path = Block("author.path");
+    BlockContent aa = Block("author.articles");
+    string crumb = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "author")?["label"] ?? "Автор";
+    List<Articlecategory> cats = ContentStore.ArticleCategories(Cache, Lang);
+    List<Article> all = ContentStore.Articles(Cache, Lang).Where(a => !string.IsNullOrWhiteSpace(a.BodyHtml) || !string.IsNullOrWhiteSpace(a.LinkUrl)).ToList();
+    int count = Math.Clamp(aa.Int("count", 3), 0, 12);
+    // the author's own posts first, newest first; then other guides (not short news)
+    List<Article> guides = all.Where(a => !string.IsNullOrWhiteSpace(a.AuthorName)).OrderByDescending(a => a.PublishTime)
+        .Concat(all.Where(a => string.IsNullOrWhiteSpace(a.AuthorName) && cats.FirstOrDefault(c => c.Id == a.CategoryId)?.Slug != "news").OrderByDescending(a => a.PublishTime))
+        .Take(count).ToList();
+}
+<main id="main">
+  <section class="wrap author-hero" aria-labelledby="a-title">
+@if (hero.Has("photo"))
+{
+    <figure class="portrait-cut">
+      <img src="@hero["photo"]" width="1024" height="1280" alt="@hero["name"]" fetchpriority="high">
+    </figure>
+}
+    <div>
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li>@crumb</li></ol>
+      <p class="eyebrow">@hero["eyebrow"]</p>
+      <h1 class="author__name" id="a-title">@hero["name"]</h1>
+      <p class="author__role">@hero["role"]</p>
+      <p class="lead" style="margin-block-start:22px">@hero["lead"]</p>
+@if (hero.Has("quote"))
+{
+      <blockquote class="author__quote"><p class="quote-k">@hero["quoteLabel"]</p><p>@hero["quote"]</p></blockquote>
+}
+      <dl class="stats">
+@foreach (BlockContent s in hero.List("stats"))
+{
+        bool word = !s["value"].Trim().All(ch => char.IsDigit(ch) || ch == '+' || ch == ' ' || ch == '%');
+        <div><dt>@s["label"]</dt><dd class="@(word ? "is-word" : null)">@s["value"]@if (s.Has("small")) {<text> <small>@s["small"]</small></text>}</dd></div>
+}
+      </dl>
+      <div class="hero__cta">
+        <button type="button" class="btn btn--primary" data-consult>@hero["ctaConsult"]</button>
+@if (hero.Has("linkText"))
+{
+        <a class="btn btn--ghost" href="@hero["linkUrl"]">@hero["linkText"]</a>
+}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" aria-labelledby="soc-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">@social["eyebrow"]</p>
+        <h2 id="soc-title">@social["title"]</h2>
+        <p class="lead">@social["lead"]</p>
+      </div>
+      <div>
+        <ul class="issues" aria-label="@U("common.issuesAria")">
+@foreach (BlockContent i in social.List("issues"))
+{
+          <li>@Icon(i["icon"])@i["text"]</li>
+}
+        </ul>
+        <div class="prose" style="font-size:1.05rem">@social.Raw("body")</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--night band--warm stage" aria-labelledby="art-title">
+    <svg class="stage__pattern" aria-hidden="true"><defs><pattern id="orn-stage" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M32 6 58 32 32 58 6 32Z" fill="none" stroke="currentColor"/><path d="M32 48c0-10-8-16-12-12s1 9 5 5M32 48c0-10 8-16 12-12s-1 9-5 5" fill="none" stroke="currentColor" stroke-linecap="round"/></pattern></defs><rect width="100%" height="100%" fill="url(#orn-stage)"/></svg>
+    <div class="wrap playbill">
+      <div>
+        <p class="eyebrow">@stage["eyebrow"]</p>
+        <h2 id="art-title">@stage["title"]</h2>
+        <p class="lead">@stage["lead"]</p>
+        <div class="studio">
+          <span class="studio__k">@stage["studioLabel"]</span>
+          <span class="studio__name">@stage["studioName"]</span>
+          <p>@stage["studioText"]</p>
+        </div>
+      </div>
+      <div class="bill">
+        <div class="bill__group">
+          <h3>@stage["groupsTitle"] <span>@stage.List("groups").Count</span></h3>
+          <ul class="bill__names">@foreach (BlockContent g in stage.List("groups")) {<li>@g["name"]</li>}</ul>
+          <p class="bill__note">@stage["groupsNote"]</p>
+        </div>
+        <div class="bill__group">
+          <h3>@stage["projectsTitle"] <span>@stage.List("projects").Count</span></h3>
+          <ul class="bill__names bill__names--stack">@foreach (BlockContent g in stage.List("projects")) {<li>@g["name"]</li>}</ul>
+          <p class="bill__note">@stage["projectsNote"]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="biz-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">@biz["eyebrow"]</p>
+        <h2 id="biz-title">@biz["title"]</h2>
+        <p class="lead">@biz["lead"]</p>
+      </div>
+      <div class="company-card">
+        <span class="company-card__k">@biz["cardLabel"]</span>
+        <span class="company-card__name">@biz["cardName"]<small>@biz["cardSmall"]</small></span>
+        <p>@biz["cardText"]</p>
+        <ul class="dirs" aria-label="@U("common.dirsAria")">@foreach (BlockContent d in biz.List("dirs")) {<li>@d["name"]</li>}</ul>
+        <p>@biz["cardNote"]</p>
+@if (biz.Has("linkText"))
+{
+        <a class="link-arrow" href="@biz["linkUrl"]">@biz["linkText"]</a>
+}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="goal-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">@goals["eyebrow"]</p>
+        <h2 id="goal-title">@goals["title"]</h2>
+        <p class="lead">@goals["lead"]</p>
+      </div>
+      <ul class="goals">
+@foreach (BlockContent g in goals.List("items"))
+{
+        <li>@g["text"]</li>
+}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="proj-title">
+    <div class="wrap split">
+      <figure class="mission">
+        <img src="@proj["image"]" alt="@proj["imageAlt"]" loading="lazy" width="1920" height="1080">
+        <figcaption>@proj["caption"]</figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow">@proj["eyebrow"]</p>
+        <h2 id="proj-title">@proj["title"]</h2>
+        <p class="lead">@proj["lead"]</p>
+        <div class="prose" style="margin-block-start:22px;font-size:1.02rem">
+          <ul>
+@foreach (BlockContent b in proj.List("bullets"))
+{
+            <li>@b["text"]</li>
+}
+          </ul>
+        </div>
+@if (proj.Has("linkText"))
+{
+        <p style="margin-block-start:24px"><a class="link-arrow" href="@proj["linkUrl"]">@proj["linkText"]</a></p>
+}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" aria-label="@U("common.pathAria")">
+    <div class="wrap">
+      <div class="path-quote">
+@foreach (BlockContent l in path.List("lines"))
+{
+        <p>@l["text"]</p>
+}
+        <p class="final">@path["final"]</p>
+      </div>
+    </div>
+  </section>
+
+@if (guides.Count > 0)
+{
+  <section class="section" aria-labelledby="aa-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div><p class="eyebrow">@aa["eyebrow"]</p><h2 id="aa-title">@aa["title"]</h2></div>
+        <div class="sec-head__aside"><a class="link-arrow" href="@L("/kz/news")">@aa["linkText"]</a></div>
+      </header>
+      <div class="articles">
+@foreach (Article a in guides)
+{
+        string meta = string.Join(" · ", new[] { a.DateText, a.ReadMinutes > 0 ? U("common.readTime", ("n", a.ReadMinutes)) : string.Empty }.Where(x => !string.IsNullOrWhiteSpace(x)));
+        <a class="acard" href="@ContentStore.ArticleUrl(a, Lang)"><span class="acard__k">@cats.FirstOrDefault(c => c.Id == a.CategoryId)?.Name</span><h3 class="acard__t">@a.Title</h3><p class="acard__d">@a.Excerpt</p><span class="acard__m">@meta</span></a>
+}
+      </div>
+    </div>
+  </section>
+}
+
+  <partial name="~/Views/Themes/Kieli/Shared/_Cross.cshtml" model='Block("author.cross")' />
+</main>

@@ -1,0 +1,75 @@
+@using Dapper
+@using KieliWeb.Setup.Cms
+@{
+    Dictionary<string, string> pageUrls = QarModel<Dictionary<string, string>>("pageUrls") ?? new Dictionary<string, string>();
+    Dictionary<string, Pageblock> rows;
+    using (System.Data.IDbConnection connection = DBHelper.Utilities.GetOpenConnection())
+    {
+        rows = connection.GetList<Pageblock>("where qStatus = 0").GroupBy(r => r.BlockKey).ToDictionary(g => g.Key, g => g.First(), StringComparer.OrdinalIgnoreCase);
+    }
+}
+<section class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Беттер мен мәтіндер</a></li>
+                            <li class="breadcrumb-item" aria-current="page">Бет блоктары</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h5 class="mb-0">Бет блоктары</h5></div>
+            <div class="card-body">
+                <div class="alert alert-light-primary kf-help">
+                    Сайттың әр бетіндегі мәтін, сурет, батырма мен сілтеме — осы блоктарда. Блокты ашып, өзгертіп, «Сақтау» басыңыз: сайтта бірден көрінеді.
+                    Қызметтер, мақалалар, нысандар және ҚАЗТЕСТ сұрақтары — сол жақ мәзірдегі өз бөлімдерінде.
+                </div>
+                @foreach ((string pageKey, string pageTitle) in BlockRegistry.AllPages)
+                {
+                    <div class="kf-page-head" id="page-@pageKey">
+                        <h5>@pageTitle</h5>
+                        @if (pageUrls.TryGetValue(pageKey, out string url))
+                        {
+                            <a href="@url" target="_blank" rel="noopener" class="link-secondary"><i class="ti ti-external-link"></i> Сайтта ашу</a>
+                        }
+                    </div>
+                    <div class="kf-blocks">
+                        @foreach (BlockDef b in BlockRegistry.All.Where(x => x.Page == pageKey))
+                        {
+                            rows.TryGetValue(b.Key, out Pageblock row);
+                            bool changed = row != null && row.UpdateTime > row.AddTime + 1;
+                            <a class="kf-block" href="/@(CurrentLanguage)/content/block/edit?key=@(b.Key)">
+                                <b>@b.Title</b>
+                                <small>@(b.Help ?? string.Join(", ", b.Fields.Take(4).Select(f => f.Label.ToLower())) + (b.Fields.Length > 4 ? "…" : ""))</small>
+                                <span class="d-flex justify-content-between align-items-center gap-2 mt-1">
+                                    <code>@b.Key</code>
+                                    @if (changed)
+                                    {
+                                        <span class="badge bg-light-success text-success">өзгертілді @(UnixTimeHelper.UnixTimeToDateTime(row.UpdateTime).ToString("dd.MM.yyyy"))</span>
+                                    }
+                                </span>
+                                @if (b.Fields.Any(f => f.Translatable))
+                                {
+                                    Newtonsoft.Json.Linq.JObject baseValues = ContentStore.BaseBlock(Cache, b.Key);
+                                    <span class="kf-block__tr">
+                                        @foreach (SiteLanguage l in SiteLanguages.Translations)
+                                        {
+                                            int p = TranslationStore.Percent(FieldValues.Coverage(b.Fields, baseValues, ContentStore.BlockTranslation(Cache, b.Key, l.Culture)));
+                                            string css = p >= 100 ? "success" : p > 0 ? "warning" : "secondary";
+                                            <span class="badge bg-light-@css text-@css" title="@l.Name: @p%">@(l.Culture == "zh-cn" ? "ZH" : l.Culture.ToUpperInvariant())</span>
+                                        }
+                                    </span>
+                                }
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

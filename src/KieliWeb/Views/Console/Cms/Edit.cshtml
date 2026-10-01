@@ -1,0 +1,89 @@
+@model KieliWeb.Setup.Cms.CmsEditModel
+@using KieliWeb.Setup.Cms
+<section class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">@Model.Group</a></li>
+                            @if (!string.IsNullOrEmpty(Model.ListUrl))
+                            {
+                                <li class="breadcrumb-item"><a href="@Model.ListUrl">@Model.ListTitle</a></li>
+                            }
+                            <li class="breadcrumb-item" aria-current="page">@Model.Heading</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="card qar-form kf-form" data-kf-form action="@Model.FormAction" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="@Model.RowId" />
+            @if (Model.Key != null)
+            {
+                <input type="hidden" name="key" value="@Model.Key" />
+            }
+            <input type="hidden" name="dataJson" data-kf-json />
+            <input type="hidden" name="lang" value="@Model.Lang" />
+            <div class="card-header d-flex flex-wrap gap-2 align-items-center justify-content-between">
+                <h5 class="mb-0">@Model.Heading</h5>
+                <div class="d-flex flex-wrap gap-2">
+                    @if (!string.IsNullOrEmpty(Model.PublicUrl))
+                    {
+                        <a class="btn btn-outline-secondary" href="@Model.PublicUrl" target="_blank" rel="noopener"><i class="ti ti-external-link me-1"></i>Сайтта көру</a>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.ListUrl))
+                    {
+                        <a class="btn btn-outline-secondary" href="@Model.ListUrl"><i class="ti ti-list me-1"></i>Тізімге</a>
+                    }
+                </div>
+            </div>
+            @if (Model.Tabs.Count > 0)
+            {
+                <nav class="kf-langs" aria-label="Тілдер">
+                    @foreach (LanguageTab tab in Model.Tabs)
+                    {
+                        <a href="@tab.Url" class="kf-lang@(tab.Active ? " is-active" : "")" aria-current="@(tab.Active ? "page" : null)">
+                            <span>@tab.Name</span>
+                            @if (tab.Culture != SiteLanguages.Base)
+                            {
+                                <small class="kf-lang__p@(tab.Percent >= 100 ? " is-done" : tab.Percent > 0 ? " is-part" : "")">@tab.Percent%</small>
+                            }
+                        </a>
+                    }
+                </nav>
+            }
+            <div class="card-body">
+                @if (Model.Translate)
+                {
+                    <div class="alert alert-light-warning kf-help">Аударма: @SiteLanguages.Get(Model.Lang).Name. Әр өрістің астында қазақша мәтіні тұр. Бос қалған өріс сайтта қазақша көрінеді. Суреттер, сілтемелер мен белгішелер барлық тілге ортақ — оларды «Қазақша» бетінде өзгертіңіз.</div>
+                }
+                else if (!string.IsNullOrWhiteSpace(Model.Help))
+                {
+                    <div class="alert alert-light-primary kf-help">@Model.Help</div>
+                }
+                <div class="kf-fields" data-kf-root>
+                    <partial name="~/Views/Console/Cms/_Fields.cshtml" model="new FieldsModel(Model.Fields, Model.Values, Model.BaseValues, Model.Translate)" />
+                </div>
+                @if (Model.DataFields != null)
+                {
+                    <h5 class="kf-section-title">@Model.DataTitle</h5>
+                    <div class="kf-fields" data-kf-root data-kf-key="data">
+                        <partial name="~/Views/Console/Cms/_Fields.cshtml" model="new FieldsModel(Model.DataFields, Model.DataValues, Model.BaseDataValues, Model.Translate)" />
+                    </div>
+                }
+            </div>
+            <div class="card-footer kf-footer">
+                @if (!string.IsNullOrEmpty(Model.ResetUrl) && CanDelete && !Model.Translate)
+                {
+                    <button type="button" class="btn btn-outline-danger me-auto" data-kf-reset="@Model.ResetUrl" data-id="@Model.RowId"><i class="ti ti-restore me-1"></i>Бастапқы мәтінге қайтару</button>
+                }
+                <button type="submit" class="btn btn-primary" data-loading-text="@(T("ls_Loading"))"><i class="ti ti-device-floppy me-1"></i>Сақтау</button>
+            </div>
+        </form>
+    </div>
+</section>
+@section Scripts {
+    <partial name="~/Views/Console/Cms/_KfScripts.cshtml" />
+}

@@ -1,0 +1,12 @@
+@model SectionModel
+@{ BlockContent b = Model.Block; }
+<header class="sec-head">
+  <div>
+    <p class="eyebrow">@b["eyebrow"]</p>
+    <h2 id="@Model.TitleId">@b["title"]</h2>
+  </div>
+@if (b.Has("aside") || b.Has("linkText"))
+{
+  <div class="sec-head__aside">@if (b.Has("aside")) {<p>@b["aside"]</p>}@if (b.Has("linkText")) {<a class="link-arrow" href="@b["linkUrl"]">@b["linkText"]</a>}</div>
+}
+</header>

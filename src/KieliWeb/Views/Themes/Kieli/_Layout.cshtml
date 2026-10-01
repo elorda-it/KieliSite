@@ -1,0 +1,105 @@
+@{
+    string seoTitle = QarString("seoTitle");
+    string seoDescription = QarString("seoDescription");
+    string seoImage = QarString("seoImage");
+    string pagePath = QarString("pagePath");
+    string siteUrl = SiteUrl.TrimEnd('/');
+    BlockContent brand = Block("site.brand");
+    string favicon = string.IsNullOrWhiteSpace(SiteSetting?.Favicon) ? "/kieli/img/favicon.svg" : SiteSetting.Favicon;
+    List<SiteLanguage> languages = SiteLanguages.Enabled(Cache);
+    string canonical = string.IsNullOrWhiteSpace(pagePath) ? string.Empty : siteUrl + L(pagePath);
+    // pages without their own picture are shared with the kieli.kz card (1200×630)
+    bool defaultImage = string.IsNullOrWhiteSpace(seoImage);
+    string shareImage = defaultImage ? siteUrl + Asset("/kieli/img/og-kieli.jpg") : seoImage;
+    string jsonLd = QarString("jsonLd");
+    var langData = new { code = Lang, prefix = Lang == SiteLanguages.Base ? "/kz" : "/" + Lang, html = LangInfo.Html };
+}
+<!doctype html>
+<html lang="@LangInfo.Html" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>@seoTitle</title>
+<meta name="description" content="@seoDescription">
+<meta name="robots" content="@(QarBool("noindex") ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1")">
+<meta name="theme-color" content="#F4F6F5">
+<script>/* apply the saved day/night theme and (Kazakh pages only) the Tote script before first paint */(function(){try{var d=document.documentElement,s=localStorage;if(s.getItem("kieli-theme")==="dark")d.setAttribute("data-theme","dark");if(s.getItem("kieli-script")==="tote"&&d.lang==="kk"){d.setAttribute("data-script","tote");d.dir="rtl";d.lang="kk-Arab";var l=document.createElement("link");l.rel="stylesheet";l.href="@Asset("/kieli/css/tote-font.css")";l.setAttribute("data-tote-font","");document.head.appendChild(l);}}catch(e){}})();</script>
+<meta property="og:site_name" content="@brand["name"]">
+<meta property="og:title" content="@seoTitle">
+<meta property="og:description" content="@seoDescription">
+<meta property="og:locale" content="@LangInfo.OgLocale">
+@foreach (SiteLanguage l in languages.Where(l => l.Culture != Lang))
+{
+<meta property="og:locale:alternate" content="@l.OgLocale">
+}
+<meta property="og:image" content="@shareImage">
+@if (defaultImage)
+{
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+}
+<meta property="og:image:alt" content="@seoTitle">
+<meta property="og:type" content="@(string.IsNullOrEmpty(QarString("ogType")) ? "website" : QarString("ogType"))">
+@if (!string.IsNullOrEmpty(QarString("publishedTime")))
+{
+<meta property="article:published_time" content="@QarString("publishedTime")">
+}
+@if (canonical.Length > 0)
+{
+<meta property="og:url" content="@canonical">
+}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@seoTitle">
+<meta name="twitter:description" content="@seoDescription">
+<meta name="twitter:image" content="@shareImage">
+<meta name="geo.region" content="KZ-AST">
+<meta name="geo.placename" content="Астана">
+@if (!string.IsNullOrWhiteSpace(pagePath))
+{
+<link rel="canonical" href="@canonical">
+    @foreach (SiteLanguage l in languages)
+    {
+<link rel="alternate" hreflang="@l.Hreflang" href="@(siteUrl + SiteLanguages.Localize(pagePath, l.Culture))">
+    }
+<link rel="alternate" hreflang="x-default" href="@(siteUrl + pagePath)">
+}
+<link rel="icon" href="@Asset("/favicon.ico")" sizes="48x48">
+@if (favicon.EndsWith(".svg", StringComparison.OrdinalIgnoreCase))
+{
+<link rel="icon" href="@Media(favicon)" type="image/svg+xml">
+}
+else
+{
+<link rel="icon" href="@Media(favicon)" type="image/png">
+}
+<link rel="apple-touch-icon" href="@Asset("/kieli/img/apple-touch-icon.png")">
+<link rel="manifest" href="@Asset("/manifest.webmanifest")">
+@* "!": the script tag helper takes every <script type> (for import maps) and would write "+" as &#x2B; *@
+@if (!string.IsNullOrEmpty(jsonLd))
+{
+<!script type="application/ld+json">@Html.Raw(jsonLd)</!script>
+}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@@400..700&family=IBM+Plex+Mono:wght@@400;500&family=Noto+Serif+Display:ital,wght@@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="@Asset("/kieli/css/kieli.css")">
+@Html.Raw(SiteSetting?.AnalyticsHtml ?? string.Empty)
+</head>
+<body data-page="@QarString("page")" data-tote-css="@Asset("/kieli/css/tote-font.css")">
+<partial name="~/Views/Themes/Kieli/Shared/_Sprite.cshtml" />
+<partial name="~/Views/Themes/Kieli/Shared/_Header.cshtml" />
+
+@RenderBody()
+
+<partial name="~/Views/Themes/Kieli/Shared/_Footer.cshtml" />
+<partial name="~/Views/Themes/Kieli/Shared/_Overlays.cshtml" />
+<script>window.KIELI_LANG = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(langData, ContentStore.ScriptJson)); window.KIELI_UI = @Html.Raw(ContentStore.UiJson(Cache, Lang, "common", "form", "services", "places", "news")); window.BASTAU = @Html.Raw(ContentStore.ServicesJson(Cache, QarBool("withArticles"), Lang));</script>
+@if (QarBool("withKieli"))
+{
+<script>window.KIELI = @Html.Raw(ContentStore.KieliJson(Cache, Lang));</script>
+}
+<script src="@Asset("/kieli/js/kieli.js")"></script>
+@RenderSection("Scripts", required: false)
+@Html.Raw(SiteSetting?.AnalyticsScript ?? string.Empty)
+</body>
+</html>

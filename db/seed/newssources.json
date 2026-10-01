@@ -1,0 +1,26 @@
+{
+ "about": "Default feeds of «Жаңалық көздері» (Setup/NewsCollector.cs). On start a feed that is not in the database yet is added; one deleted in the admin stays deleted. Without «keywords» a source gets NewsCollector.DefaultKeywords. Checked 2026-10-01: each feed answers, its robots.txt allows reading it, and the notes say what the publisher's terms allow.",
+ "sources": [
+  {
+   "name": "Tengrinews.kz",
+   "siteUrl": "https://kaz.tengrinews.kz",
+   "feedUrl": "https://kaz.tengrinews.kz/news.rss",
+   "enabled": true,
+   "note": "Жариялау шарттары (kaz.tengrinews.kz/page/information): материалдың бір бөлігін түпнұсқаға белсенді сілтемемен келтіруге болады, толық көшіруге редакцияның жазбаша рұқсаты керек. Карточкада тек тақырып, қысқа сипаттама және түпнұсқа сілтемесі бар."
+  },
+  {
+   "name": "Akorda.kz",
+   "siteUrl": "https://www.akorda.kz/kz",
+   "feedUrl": "https://www.akorda.kz/kz/rss",
+   "enabled": true,
+   "note": "Мемлекет басшысының ресми сайты. Жарлықтар мен ресми хабарламалар, дереккөзі көрсетіледі."
+  },
+  {
+   "name": "Egemen Qazaqstan",
+   "siteUrl": "https://egemen.kz",
+   "feedUrl": "https://egemen.kz/rss",
+   "enabled": false,
+   "note": "Қолдану шарттарында (egemen.kz/terms) сайт материалдары тек жеке, коммерциялық емес мақсатта пайдаланылады делінген. Қоспас бұрын редакциямен келісіңіз (Байланыс бөлімі), рұқсат болса «Қосулы» белгісін қойыңыз."
+  }
+ ]
+}

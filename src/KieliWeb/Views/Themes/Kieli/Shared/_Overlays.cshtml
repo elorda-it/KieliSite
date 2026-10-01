@@ -1,0 +1,139 @@
+@{
+    BlockContent c = Block("site.consult");
+    BlockContent contact = Block("site.contact");
+    BlockContent place = Block("place.aside");
+    string wa = Digits(contact["whatsapp"]);
+    string tg = contact["telegram"].TrimStart('@');
+}
+<div class="drawer" id="consult" hidden>
+  <div class="drawer__scrim" data-consult-close></div>
+  <section class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="consult-title">
+    <div class="drawer__head">
+      <div>
+        <h2 id="consult-title">@c["title"]</h2>
+        <p>@c.Raw("lead")</p>
+      </div>
+      <button type="button" class="icon-btn" data-consult-close aria-label="@U("common.close")"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+
+    <div class="pick" data-consult-pick hidden>
+      <b class="pick__code" data-pick-code translate="no"></b>
+      <div class="pick__body">
+        <span class="pick__k">@U("form.sumType") · <span data-pick-group></span></span>
+        <span class="pick__t" data-pick-title></span>
+        <span class="pick__hint">@c["pickHint"]</span>
+      </div>
+    </div>
+
+    <div class="channels">
+@if (contact.Has("wechat"))
+{
+      <div class="channel">
+        <span class="channel__ic channel__ic--wechat"><svg aria-hidden="true"><use href="#i-wechat"/></svg></span>
+        <span class="channel__k">WeChat</span>
+        <span class="channel__v"><span class="ltr">@contact["wechat"]</span><button type="button" class="copy" data-copy="@contact["wechat"]">@U("common.copy")</button></span>
+      </div>
+}
+@if (!string.IsNullOrEmpty(wa))
+{
+      <a class="channel" href="https://wa.me/@wa" data-wa="@wa">
+        <span class="channel__ic channel__ic--wa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+        <span class="channel__k">WhatsApp</span>
+        <span class="channel__v"><span class="ltr">@contact["phone"]</span></span>
+      </a>
+}
+@if (!string.IsNullOrEmpty(tg))
+{
+      <a class="channel" href="https://t.me/@tg">
+        <span class="channel__ic channel__ic--tg"><svg aria-hidden="true"><use href="#i-telegram"/></svg></span>
+        <span class="channel__k">Telegram</span>
+        <span class="channel__v"><span class="ltr">@@@tg</span></span>
+      </a>
+}
+@if (contact.Has("phone"))
+{
+      <div class="channel">
+        <span class="channel__ic channel__ic--tel"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>
+        <span class="channel__k">@U("common.phone")</span>
+        <span class="channel__v"><span class="ltr">@contact["phone"]</span><button type="button" class="copy" data-copy="+@Digits(contact["phone"])">@U("common.copy")</button></span>
+      </div>
+}
+    </div>
+
+    <div class="wechat-qr">
+@if (contact.Has("wechatQr"))
+{
+      <div class="wechat-qr__box wechat-qr__box--img"><img src="@contact["wechatQr"]" alt="@U("form.wechatQr")" width="112" height="112" loading="lazy"></div>
+}
+else
+{
+      <div class="wechat-qr__box" translate="no">WeChat<br>QR</div>
+}
+      <p>@c.Raw("wechatHint")</p>
+    </div>
+
+    <div class="drawer__sep">@c["separator"]</div>
+
+    <form class="form" data-lead-form action="/api/consult" method="post" enctype="multipart/form-data" novalidate>
+      <input type="hidden" name="code"><input type="hidden" name="source"><input type="hidden" name="lang" value="@Lang">
+      <div class="hp" aria-hidden="true"><label for="c-website">Website</label><input id="c-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="form__row">
+        <div class="field">
+          <label for="c-name">@U("form.nameLabel")</label>
+          <input class="input" id="c-name" name="name" autocomplete="name" required maxlength="100" placeholder="@U("form.namePlaceholder")">
+          <span class="field__err" hidden>@U("form.nameError")</span>
+        </div>
+        <div class="field">
+          <label for="c-contact">@U("form.contactLabel")</label>
+          <input class="input" id="c-contact" name="contact" required maxlength="100" placeholder="@U("form.contactPlaceholder")">
+          <span class="field__err" hidden>@U("form.contactError")</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="c-service">@U("form.serviceLabel")</label>
+        <select class="select" id="c-service" name="service" data-service-select>
+          <option value="">@U("form.serviceNone")</option>
+        </select>
+      </div>
+      <div class="field">
+        <span class="label" id="c-country-l">@U("form.countryLabel")</span>
+        <div class="seg" role="radiogroup" aria-labelledby="c-country-l">
+          <input type="radio" id="c-cn" name="country" value="cn" checked><label for="c-cn">@U("form.countryCn")</label>
+          <input type="radio" id="c-kz" name="country" value="kz"><label for="c-kz">@U("form.countryKz")</label>
+          <input type="radio" id="c-other" name="country" value="other"><label for="c-other">@U("form.countryOther")</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="c-msg">@U("form.messageLabel")</label>
+        <textarea class="textarea" id="c-msg" name="msg" maxlength="3000" placeholder="@c["msgPlaceholder"]"></textarea>
+      </div>
+      <div class="field">
+        <span class="label" id="c-files-l">@U("form.filesLabel") <span class="label__opt">@U("form.optional")</span></span>
+        <input class="drop__input" type="file" id="c-files" name="files" accept="image/jpeg,image/png,image/webp,image/heic,.pdf" multiple data-files aria-labelledby="c-files-l">
+        <label class="drop" for="c-files"><svg aria-hidden="true"><use href="#i-doc"/></svg><span><b>@U("form.filesChoose")</b><small>@U("form.filesHint")</small></span></label>
+        <ul class="drop__list" data-file-list hidden></ul>
+      </div>
+      <label class="check"><input type="checkbox" id="c-consent" name="consent" value="1" required> @c["consent"]</label>
+      <div class="form__foot">
+        <button type="submit" class="btn btn--sun">@c["submit"]</button>
+        <span class="form__note" data-form-status role="status"></span>
+      </div>
+    </form>
+    <div class="form-done" data-form-done hidden>
+      <span class="form-done__ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+      <h3>@U("form.thanksBefore")<span data-done-name>@U("form.friend")</span>@U("form.thanksAfter")</h3>
+      <p>@c["doneText"]</p>
+      <dl class="done-sum" data-done-summary></dl>
+      <button type="button" class="btn btn--ghost btn--sm" data-form-reset>@U("form.another")</button>
+    </div>
+  </section>
+</div>
+
+<div class="pano" id="pano" hidden>
+  <div class="pano__scrim" data-pano-close></div>
+  <div class="pano__box" role="dialog" aria-modal="true" aria-labelledby="pano-t">
+    <div class="pano__bar"><b id="pano-t" data-pano-title>@place["panoText"]</b><button type="button" class="icon-btn" data-pano-close aria-label="@U("common.close")"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <div class="pano__frame" data-pano-frame></div>
+    <p class="pano__note">@place["panoNote"]</p>
+  </div>
+</div>

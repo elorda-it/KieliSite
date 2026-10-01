@@ -1,0 +1,7 @@
+@model PlaceModel
+@{
+    // Same markup as placeCard() in kieli.js.
+    Place p = Model.Place;
+    bool hasPano = ContentStore.ParseArray(p.PanoJson).Count > 0;
+}
+<a class="pcard" href="@L("/kz/place/" + p.Slug)"><div class="pcard__img"><img src="@ImageSize(p.ImageUrl, "middle")" alt="@p.Name" loading="lazy" width="640" height="360">@if (hasPano) {<div class="pcard__badges"><span class="tag tag--on-photo">360°</span></div>}</div><div class="pcard__meta"><b>@Model.Category?.Name</b><span>@Model.Region?.Name</span></div><h3 class="pcard__name">@p.Name</h3><p class="pcard__fact">@p.Fact</p></a>

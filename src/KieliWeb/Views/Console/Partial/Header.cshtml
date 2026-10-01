@@ -1,0 +1,78 @@
+
+@if (ViewData["realName"] == null)
+{
+_ = string.Empty;
+
+}
+
+@if (ViewData["avatarUrl"] == null)
+{
+_ = string.Empty;
+
+}
+
+@if (ViewData["adminTypeName"] == null)
+{
+_ = string.Empty;
+
+}
+<header class="pc-header">
+    <div class="header-wrapper">
+        <div class="me-auto pc-mob-drp">
+            <ul class="list-unstyled">
+                <li class="pc-h-item pc-sidebar-collapse">
+                    <a href="javascript:void(0)" class="pc-head-link ms-0" id="sidebar-hide">
+                        <i class="ti ti-menu-2"></i>
+                    </a>
+                </li>
+                <li class="pc-h-item pc-sidebar-popup">
+                    <a href="javascript:void(0)" class="pc-head-link ms-0" id="mobile-collapse">
+                        <i class="ti ti-menu-2"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="ms-auto">
+            <ul class="list-unstyled">
+                <li class="dropdown pc-h-item">
+                    <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown"
+                        href="javascaript:void(0);" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="fa-duotone fa-sun-bright"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+                        <a href="javascaript:void(0);"
+                            class="dropdown-item @(SkinName.Equals("dark", StringComparison.OrdinalIgnoreCase) ? "active" : "")"
+                            data-skin="dark">
+                            <i class="fa-duotone fa-moon"></i>
+                            <span>@(T("ls_Darkmode"))</span>
+                        </a>
+                        <a href="javascaript:void(0);"
+                            class="dropdown-item @(SkinName.Equals("light", StringComparison.OrdinalIgnoreCase) ? "active" : "")"
+                            data-skin="light">
+                            <i class="fa-duotone fa-sun-bright"></i>
+                            <span>@(T("ls_Lightmode"))</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown pc-h-item">
+                    <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown"
+                        href="javascript:void(0)" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="fa-duotone fa-globe"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+
+@foreach (Language item in LanguageList.Where((Language x) => x.BackendDisplay == 1).ToList())
+{
+                            <a href="javascaript:void(0);" data-language="@(item.LanguageCulture)" data-static="qar"
+                                class="dropdown-item @(item.LanguageCulture.Equals(CurrentLanguage) ? "active" : "")">
+                                <img src="@(item.LanguageFlagImageUrl)" alt="" /> &nbsp;
+                                <span>@(item.FullName)</span>
+                            </a>
+
+}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

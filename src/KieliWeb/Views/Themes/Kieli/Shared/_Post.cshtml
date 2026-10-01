@@ -1,0 +1,33 @@
+@model PostModel
+@{
+    // Same markup as postHTML()/cover() in kieli.js, which re-renders the list when a category is picked.
+    Article a = Model.Article;
+    bool isNews = Model.CategorySlug == "news";
+    string read = a.ReadMinutes > 0 ? U("common.readTime", ("n", a.ReadMinutes)) : string.Empty;
+    string source = string.IsNullOrWhiteSpace(a.SourceName) ? string.Empty : U("news.source", ("name", a.SourceName));
+    string metaText = isNews ? string.Join(" · ", new[] { source, read }.Where(x => !string.IsNullOrWhiteSpace(x)))
+                             : string.Join(" · ", new[] { a.DateText, read }.Where(x => !string.IsNullOrWhiteSpace(x)));
+    string tone = string.IsNullOrWhiteSpace(a.CoverTone) ? "sky" : a.CoverTone;
+    string icon = string.IsNullOrWhiteSpace(a.CoverIcon) ? "i-doc" : a.CoverIcon;
+    string href = ContentStore.ArticleUrl(a, Lang);
+    // a news item of another site opens the original there, in a new tab
+    bool external = href.StartsWith("http", StringComparison.OrdinalIgnoreCase);
+    string target = external ? "_blank" : null;
+    string rel = external ? "noopener" : null;
+    string more = external ? U("news.readSource") : U("common.more");
+    string moreClass = external ? "post__more post__more--ext" : "post__more";
+}
+@{
+    void Cover()
+    {
+        <div class="post__cover">@if (!string.IsNullOrWhiteSpace(a.CoverImageUrl)) {<img src="@a.CoverImageUrl" alt="" loading="lazy">} else if (isNews) {<span class="cover-news tone-@tone">@Icon(icon)<span class="cover-news__date">@a.DateText</span></span>} else {<span class="cover-illo tone-@tone">@Icon(icon)</span>}@if (a.IsImportant == 1) {<span class="post__badge">@U("common.important")</span>}</div>
+    }
+}
+@if (Model.Kind == "row")
+{
+<a class="post post--row" href="@href" target="@target" rel="@rel">@{ Cover(); }<div class="post__body"><span class="post__k">@Model.CategoryName</span><h3 class="post__t">@a.Title</h3><span class="post__m">@metaText</span><span class="@moreClass">@more</span></div></a>
+}
+else
+{
+<a class="post@(Model.Kind == "big" ? " post--big" : "")" href="@href" target="@target" rel="@rel">@{ Cover(); }<span class="post__k">@Model.CategoryName</span><h3 class="post__t">@a.Title</h3><p class="post__d">@a.Excerpt</p><span class="post__foot"><span class="post__m">@metaText</span><span class="@moreClass">@more</span></span></a>
+}

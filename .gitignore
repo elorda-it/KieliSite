@@ -1,0 +1,86 @@
+# KieliSite — kieli.kz. This repository is PUBLIC: nothing secret, personal or generated belongs in it.
+
+# ---- Secrets / local config (each machine and the server keep their own; never commit) ----
+appsettings.*.json
+!appsettings.json
+secrets.json
+*.pfx
+*.p12
+*.pem
+*.key
+.env
+.env.*
+initial-admin.txt
+
+# ---- Runtime data of a running site ----
+logs/
+# pictures and audio uploaded in the admin
+wwwroot/uploads/
+# documents attached to «Кеңес алу» requests (personal data)
+App_Data/
+language_pack.txt
+
+# ---- Build output ----
+[Bb]in/
+[Oo]bj/
+out/
+publish/
+[Pp]ublish/
+artifacts/
+*.dll
+*.pdb
+
+# ---- .NET / Visual Studio / Rider / VS Code ----
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+project.lock.json
+[Dd]ebug/
+[Rr]elease/
+*_i.c
+*_p.c
+*.ncb
+*.aps
+*.pch
+*.tlb
+*.tmp
+*.log
+TestResults/
+
+# ---- NuGet ----
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+.nuget/
+
+# ---- Python (tools/kaztest-audio): environments and the Piper voice model (~380 MB) ----
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+tools/kaztest-audio/voices/
+*.onnx
+*.onnx.json
+
+# ---- Editors and assistants: personal settings ----
+*.swp
+*~
+.history/
+.claude/settings.local.json
+node_modules/
+
+# ---- OS cruft ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini

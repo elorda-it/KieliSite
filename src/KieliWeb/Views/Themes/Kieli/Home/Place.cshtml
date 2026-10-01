@@ -1,0 +1,137 @@
+@model Place
+@{
+    BlockContent aside = Block("place.aside");
+    string kzLabel = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "kazakhstan")?["label"] ?? "Қазақстан";
+    List<Region> regions = ContentStore.Regions(Cache, Lang);
+    List<Placecategory> cats = ContentStore.PlaceCategories(Cache, Lang);
+    List<Place> places = ContentStore.Places(Cache, Lang);
+    Region region = regions.FirstOrDefault(r => r.Id == Model.RegionId);
+    Placecategory cat = cats.FirstOrDefault(c => c.Id == Model.CategoryId);
+    bool hasCoords = Model.Lat != 0 || Model.Lon != 0;
+    string coords = hasCoords ? Dm(Model.Lat) + " " + U("places.lat") + " · " + Dm(Model.Lon) + " " + U("places.lon") : string.Empty;
+    string lat = Model.Lat.ToString(System.Globalization.CultureInfo.InvariantCulture), lon = Model.Lon.ToString(System.Globalization.CultureInfo.InvariantCulture);
+    List<string> pano = ContentStore.ParseArray(Model.PanoJson).Select(x => x is Newtonsoft.Json.Linq.JObject o ? (string)o["url"] : (string)x).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+    List<(string, string)> facts = ContentStore.ParseArray(Model.FactsJson).Select(x => x is Newtonsoft.Json.Linq.JObject o ? ((string)o["label"], (string)o["value"]) : ((string)x[0], (string)x[1])).ToList();
+    ArticleHtml.Result body = ArticleHtml.Prepare(Model.BodyHtml.TrimStart().StartsWith("<") ? Model.BodyHtml
+        : string.Join("", Model.BodyHtml.Replace("\r\n", "\n").Split("\n\n", StringSplitOptions.RemoveEmptyEntries).Select(p => "<p>" + System.Net.WebUtility.HtmlEncode(p.Trim()) + "</p>")));
+    // same region first, then the same kind of place elsewhere
+    List<Place> related = places.Where(x => x.Id != Model.Id && x.RegionId == Model.RegionId).ToList();
+    if (related.Count < 3)
+    {
+        related.AddRange(places.Where(x => x.Id != Model.Id && x.RegionId != Model.RegionId && x.CategoryId == Model.CategoryId));
+    }
+    related = related.Take(3).ToList();
+    string relTitle = aside["relatedTitle"];
+    if (region != null && related.Count > 0 && related[0].RegionId == Model.RegionId && relTitle.Length > 0)
+    {
+        relTitle = region.Name + ": " + char.ToLower(relTitle[0]) + relTitle.Substring(1);
+    }
+    string url = COMMON.QarSingleton.GetInstance().GetSiteUrl().TrimEnd('/') + L("/kz/place/" + Model.Slug);
+    string yandexUrl = "https://yandex.kz/maps/?pt=" + lon + "," + lat + "&z=11&l=map";
+    string gisUrl = "https://2gis.kz/search/" + lat + "%2C" + lon;
+}
+@functions {
+    static string Dm(decimal v)
+    {
+        double a = Math.Abs((double)v);
+        int d = (int)Math.Floor(a);
+        int m = (int)Math.Round((a - d) * 60, MidpointRounding.AwayFromZero);
+        if (m == 60) { d++; m = 0; }
+        return d + "°" + m.ToString("00") + "′";
+    }
+}
+<main id="main">
+  <section class="place-hero" aria-labelledby="p-title">
+    <div class="place-hero__img"><img id="p-img" src="@ImageSize(Model.ImageUrl, "big")" alt="@Model.Name" width="1536" height="864" fetchpriority="high"></div>
+    <div class="wrap place-hero__in">
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li><a href="@L("/kz/kazakhstan")">@kzLabel</a></li><li id="p-crumb-region">@region?.Name</li></ol>
+      <div class="place-hero__tags"><span class="tag tag--on-photo" id="p-cat">@cat?.Name</span><span class="tag tag--on-photo" id="p-region">@region?.Name</span></div>
+      <h1 class="place-hero__title" id="p-title">@Model.Name</h1>
+      <p class="place-hero__lead" id="p-lead">@Model.Lead</p>
+@if (hasCoords)
+{
+      <p class="coords" id="p-coords"><svg aria-hidden="true"><use href="#i-pin"/></svg><span id="p-coords-t" dir="ltr">@coords</span></p>
+}
+    </div>
+  </section>
+
+@if (facts.Count > 0)
+{
+  <div class="factbar">
+    <dl class="wrap factbar__in" id="p-facts">
+@foreach ((string label, string value) in facts)
+{
+      <div class="fact"><dt>@label</dt><dd>@value</dd></div>
+}
+    </dl>
+  </div>
+}
+
+  <section class="section">
+    <div class="wrap article-layout">
+      <article class="prose" id="p-body">
+        @Html.Raw(body.Html)
+      </article>
+      <aside class="aside" aria-label="@U("places.aboutAria")">
+        <div class="panel">
+          <h3>@aside["aboutTitle"]</h3>
+          <dl class="dl" id="p-dl">
+            <div><dt>@U("places.region")</dt><dd>@region?.Name</dd></div>
+            <div><dt>@U("places.category")</dt><dd>@cat?.Name</dd></div>
+@if (hasCoords)
+{
+            <div class="stack"><dt>@U("places.coords")</dt><dd class="mono" dir="ltr">@coords</dd></div>
+}
+            <div><dt>@U("places.regionCount")</dt><dd class="tnum">@(region == null ? "—" : ContentStore.RegionCount(Cache, region).ToString())</dd></div>
+          </dl>
+@if (pano.Count > 0)
+{
+          <button type="button" class="btn btn--primary btn--block" id="p-pano" data-pano="@pano[0]" data-pano-name="@Model.Name · 360°"><svg aria-hidden="true"><use href="#i-360"/></svg>@aside["panoText"] · <span id="p-pano-n" class="tnum">@pano.Count</span></button>
+}
+@if (hasCoords)
+{
+          <div class="map-links">
+            <a class="btn btn--ghost btn--sm" id="p-map-yandex" href="@yandexUrl"><svg aria-hidden="true"><use href="#i-map"/></svg>@U("places.yandex")</a>
+            <a class="btn btn--ghost btn--sm" id="p-map-2gis" href="@gisUrl"><svg aria-hidden="true"><use href="#i-pin"/></svg>2GIS</a>
+          </div>
+}
+        </div>
+        <div class="panel">
+          <h3>@aside["shareTitle"]</h3>
+          <div class="share">
+            <a href="https://wa.me/?text=@Uri.EscapeDataString(Model.Name + " — " + url)" aria-label="@U("common.shareWa")"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+            <a href="https://t.me/share/url?url=@Uri.EscapeDataString(url)&text=@Uri.EscapeDataString(Model.Name)" aria-label="@U("common.shareTg")"><svg aria-hidden="true"><use href="#i-telegram"/></svg></a>
+            <button type="button" data-copy="@url" aria-label="@U("common.copyLink")"><svg aria-hidden="true"><use href="#i-link"/></svg></button>
+          </div>
+          <p class="panel__note">@aside["shareNote"]</p>
+        </div>
+        <div class="panel panel--night">
+          <p class="eyebrow">@aside["ctaEyebrow"]</p>
+          <p>@aside["ctaText"]</p>
+          <button type="button" class="btn btn--gold btn--block" data-consult>@aside["ctaButton"]</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+@if (related.Count > 0)
+{
+  <section class="section section--tint" aria-labelledby="p-related-t">
+    <div class="wrap">
+      <header class="sec-head">
+        <div>
+          <p class="eyebrow">@aside["relatedEyebrow"]</p>
+          <h2 id="p-related-t">@relTitle</h2>
+        </div>
+        <div class="sec-head__aside"><a class="link-arrow" href="@(L("/kz/kazakhstan") + "#places")">@aside["relatedLink"]</a></div>
+      </header>
+      <div class="pgrid" id="p-related">
+@foreach (Place p in related)
+{
+        <partial name="~/Views/Themes/Kieli/Shared/_PlaceCard.cshtml" model="new PlaceModel(p, regions.FirstOrDefault(r => r.Id == p.RegionId), cats.FirstOrDefault(c => c.Id == p.CategoryId))" />
+}
+      </div>
+    </div>
+  </section>
+}
+</main>

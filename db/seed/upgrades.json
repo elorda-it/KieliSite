@@ -1,0 +1,430 @@
+{
+ "about": "Seed texts that changed after sites were installed. On start, a value that still equals «from» (nobody edited it in the admin) gets the current value of db/seed (blocks.json, i18n/*.json); settings get «to».",
+ "blocks": [
+  {
+   "key": "site.brand",
+   "field": "name",
+   "lang": "kz",
+   "from": "BASTAU LINE"
+  },
+  {
+   "key": "seo.home",
+   "field": "title",
+   "lang": "kz",
+   "from": "BASTAU LINE · Омар Бекмұрат"
+  },
+  {
+   "key": "seo.home",
+   "field": "description",
+   "lang": "kz",
+   "from": "Омар Бекмұрат және «BASTAU LINE» ЖШС: Қазақстанға көшу, оқу, құжат аудармасы, нотариат, апостиль — қазақ, қытай және орыс тілдерінде. Астана, Айнакөл көшесі, 66."
+  },
+  {
+   "key": "seo.home",
+   "field": "image",
+   "lang": "kz",
+   "from": "https://kieli.kz/uploads/thumbnail/20200830123414870_big.jpg"
+  },
+  {
+   "key": "seo.author",
+   "field": "title",
+   "lang": "kz",
+   "from": "Омар Бекмұрат · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "title",
+   "lang": "kz",
+   "from": "Қызметтер · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "description",
+   "lang": "kz",
+   "from": "«BASTAU LINE» ЖШС — Астанадағы халықаралық аударма және құжат рәсімдеу орталығы: аударма, нотариат, апостиль, азаматтық пен ықтиярхат, «Ата жолы» картасы, білім, бизнес және жылжымайтын мүлік."
+  },
+  {
+   "key": "seo.services",
+   "field": "image",
+   "lang": "kz",
+   "from": "https://kieli.kz/uploads/thumbnail/20200830123414870_big.jpg"
+  },
+  {
+   "key": "seo.news",
+   "field": "title",
+   "lang": "kz",
+   "from": "Жаңалықтар мен мақалалар · BASTAU LINE"
+  },
+  {
+   "key": "seo.news",
+   "field": "description",
+   "lang": "kz",
+   "from": "Көші-қон, «Ата жолы», апостиль және оқу туралы жаңалықтар мен нұсқаулықтар, Омар Бекмұраттың жазбалары."
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "title",
+   "lang": "kz",
+   "from": "Қазақстанның киелі жерлері · BASTAU LINE"
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "description",
+   "lang": "kz",
+   "from": "17 өңірдегі 187 табиғи, тарихи және рухани нысан: карта, санаттар, ЮНЕСКО тізіміндегі мұралар."
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "title",
+   "lang": "kz",
+   "from": "ҚАЗТЕСТ байқау тестілеуі · BASTAU LINE"
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "description",
+   "lang": "kz",
+   "from": "ҚАЗТЕСТ жүйесі бойынша тегін байқау тестілеуі: тыңдалым мен оқылым, ресми емтихан форматында, уақыт өлшеумен. Тұрақты тұруға рұқсат пен қандас мәртебесіне дайындық."
+  },
+  {
+   "key": "site.nav",
+   "list": "items",
+   "item": "r5",
+   "field": "note",
+   "lang": "kz",
+   "from": "187 нысан"
+  },
+  {
+   "key": "seo.home",
+   "field": "title",
+   "lang": "ru",
+   "from": "BASTAU LINE · Омар Бекмурат"
+  },
+  {
+   "key": "seo.home",
+   "field": "description",
+   "lang": "ru",
+   "from": "Омар Бекмурат и ТОО «BASTAU LINE»: переезд в Казахстан, учёба, перевод документов, нотариальное заверение, апостиль — на казахском, китайском и русском языках. Астана, ул. Айнакол, 66."
+  },
+  {
+   "key": "seo.author",
+   "field": "title",
+   "lang": "ru",
+   "from": "Омар Бекмурат · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "title",
+   "lang": "ru",
+   "from": "Услуги · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "description",
+   "lang": "ru",
+   "from": "ТОО «BASTAU LINE» — международный центр перевода и оформления документов в Астане: перевод, нотариальное заверение, апостиль, гражданство и вид на жительство, карта «Ата жолы», образование, бизнес и недвижимость."
+  },
+  {
+   "key": "seo.news",
+   "field": "title",
+   "lang": "ru",
+   "from": "Новости и статьи · BASTAU LINE"
+  },
+  {
+   "key": "seo.news",
+   "field": "description",
+   "lang": "ru",
+   "from": "Новости и инструкции о миграции, карте «Ата жолы», апостиле и учёбе, заметки Омара Бекмурата."
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "title",
+   "lang": "ru",
+   "from": "Сакральные места Казахстана · BASTAU LINE"
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "description",
+   "lang": "ru",
+   "from": "187 природных, исторических и духовных объектов в 17 регионах: карта, категории, наследие из списков ЮНЕСКО."
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "title",
+   "lang": "ru",
+   "from": "Пробное тестирование КАЗТЕСТ · BASTAU LINE"
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "description",
+   "lang": "ru",
+   "from": "Бесплатное пробное тестирование по системе КАЗТЕСТ: аудирование (Тыңдалым) и чтение (Оқылым) в формате официального экзамена, с таймером. Подготовка к получению разрешения на постоянное проживание и статуса кандаса."
+  },
+  {
+   "key": "site.nav",
+   "list": "items",
+   "item": "r5",
+   "field": "note",
+   "lang": "ru",
+   "from": "187 объектов"
+  },
+  {
+   "key": "seo.home",
+   "field": "title",
+   "lang": "zh-cn",
+   "from": "BASTAU LINE · 奥马尔·别克穆拉特"
+  },
+  {
+   "key": "seo.home",
+   "field": "description",
+   "lang": "zh-cn",
+   "from": "奥马尔·别克穆拉特与 BASTAU LINE 有限责任公司：移居哈萨克斯坦、留学、文件翻译、公证、海牙认证（Apostille），提供哈萨克语、中文和俄语服务。地址：阿斯塔纳市艾纳科尔街 66 号。"
+  },
+  {
+   "key": "seo.author",
+   "field": "title",
+   "lang": "zh-cn",
+   "from": "奥马尔·别克穆拉特 · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "title",
+   "lang": "zh-cn",
+   "from": "服务项目 · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "description",
+   "lang": "zh-cn",
+   "from": "BASTAU LINE 有限责任公司是位于阿斯塔纳的国际翻译与文件办理中心：翻译、公证、海牙认证（Apostille）、国籍与居留证、“Ata Zholy”（祖先之路）卡、教育、商务及房地产。"
+  },
+  {
+   "key": "seo.news",
+   "field": "title",
+   "lang": "zh-cn",
+   "from": "新闻与文章 · BASTAU LINE"
+  },
+  {
+   "key": "seo.news",
+   "field": "description",
+   "lang": "zh-cn",
+   "from": "关于移民、“Ata Zholy”（祖先之路）卡、海牙认证（Apostille）和留学的新闻与指南，以及奥马尔·别克穆拉特的随笔。"
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "title",
+   "lang": "zh-cn",
+   "from": "哈萨克斯坦圣地 · BASTAU LINE"
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "description",
+   "lang": "zh-cn",
+   "from": "17 个地区的 187 个自然、历史和精神文化地点：地图、分类及联合国教科文组织名录中的遗产。"
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "title",
+   "lang": "zh-cn",
+   "from": "KAZTEST 模拟测试 · BASTAU LINE"
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "description",
+   "lang": "zh-cn",
+   "from": "KAZTEST（哈萨克语水平测试）免费模拟测试：听力与阅读（Тыңдалым / Оқылым），采用正式考试形式并计时。为申请永久居留许可和坎达斯身份做准备。"
+  },
+  {
+   "key": "site.nav",
+   "list": "items",
+   "item": "r5",
+   "field": "note",
+   "lang": "zh-cn",
+   "from": "187 个地点"
+  },
+  {
+   "key": "seo.home",
+   "field": "title",
+   "lang": "en",
+   "from": "BASTAU LINE · Omar Bekmurat"
+  },
+  {
+   "key": "seo.home",
+   "field": "description",
+   "lang": "en",
+   "from": "Omar Bekmurat and BASTAU LINE LLP: moving to Kazakhstan, study, document translation, notarization and apostille — in Kazakh, Chinese and Russian. 66 Ainakol St, Astana."
+  },
+  {
+   "key": "seo.author",
+   "field": "title",
+   "lang": "en",
+   "from": "Omar Bekmurat · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "title",
+   "lang": "en",
+   "from": "Services · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "description",
+   "lang": "en",
+   "from": "BASTAU LINE LLP is an international translation and document center in Astana: translation, notarization, apostille, citizenship and residence permits, the \"Ata Zholy\" card, education, business and real estate."
+  },
+  {
+   "key": "seo.news",
+   "field": "title",
+   "lang": "en",
+   "from": "News and articles · BASTAU LINE"
+  },
+  {
+   "key": "seo.news",
+   "field": "description",
+   "lang": "en",
+   "from": "News and guides on migration, the \"Ata Zholy\" card, apostille and study, plus posts by Omar Bekmurat."
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "title",
+   "lang": "en",
+   "from": "Sacred places of Kazakhstan · BASTAU LINE"
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "description",
+   "lang": "en",
+   "from": "187 natural, historic and spiritual sites in 17 regions: a map, categories and UNESCO-listed heritage."
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "title",
+   "lang": "en",
+   "from": "KAZTEST practice test · BASTAU LINE"
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "description",
+   "lang": "en",
+   "from": "A free KAZTEST practice test: Listening (Тыңдалым) and Reading (Оқылым) in the official exam format, with a timer. Prepare for a permanent residence permit or kandas (ethnic Kazakh returnee) status."
+  },
+  {
+   "key": "site.nav",
+   "list": "items",
+   "item": "r5",
+   "field": "note",
+   "lang": "en",
+   "from": "187 sites"
+  },
+  {
+   "key": "seo.home",
+   "field": "title",
+   "lang": "tr",
+   "from": "BASTAU LINE · Omar Bekmurat"
+  },
+  {
+   "key": "seo.home",
+   "field": "description",
+   "lang": "tr",
+   "from": "Omar Bekmurat ve BASTAU LINE LLP: Kazakistan'a taşınma, eğitim, belge çevirisi, noter onayı ve apostil; Kazakça, Çince ve Rusça. Ainakol Cad. No: 66, Astana."
+  },
+  {
+   "key": "seo.author",
+   "field": "title",
+   "lang": "tr",
+   "from": "Omar Bekmurat · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "title",
+   "lang": "tr",
+   "from": "Hizmetler · BASTAU LINE"
+  },
+  {
+   "key": "seo.services",
+   "field": "description",
+   "lang": "tr",
+   "from": "BASTAU LINE LLP, Astana'da uluslararası çeviri ve belge işlemleri merkezi: çeviri, noter onayı, apostil, vatandaşlık ve oturma izni, \"Ata Jolı\" kartı, eğitim, iş dünyası ve gayrimenkul."
+  },
+  {
+   "key": "seo.news",
+   "field": "title",
+   "lang": "tr",
+   "from": "Haberler ve makaleler · BASTAU LINE"
+  },
+  {
+   "key": "seo.news",
+   "field": "description",
+   "lang": "tr",
+   "from": "Göç, \"Ata Jolı\" kartı, apostil ve eğitim üzerine haberler ve rehberler; Omar Bekmurat'ın yazıları."
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "title",
+   "lang": "tr",
+   "from": "Kazakistan'ın kutsal yerleri · BASTAU LINE"
+  },
+  {
+   "key": "seo.kazakhstan",
+   "field": "description",
+   "lang": "tr",
+   "from": "17 bölgede 187 doğal, tarihi ve manevi mekân: harita, kategoriler, UNESCO listesindeki miraslar."
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "title",
+   "lang": "tr",
+   "from": "KAZTEST deneme sınavı · BASTAU LINE"
+  },
+  {
+   "key": "seo.kaztest",
+   "field": "description",
+   "lang": "tr",
+   "from": "KAZTEST sistemine göre ücretsiz deneme sınavı: dinleme (Тыңдалым) ve okuma (Оқылым), resmi sınav formatında ve süreli. Daimi oturma izni ve kandas (soydaş) statüsüne hazırlık."
+  },
+  {
+   "key": "site.nav",
+   "list": "items",
+   "item": "r5",
+   "field": "note",
+   "lang": "tr",
+   "from": "187 mekân"
+  },
+  {
+   "key": "site.footer",
+   "field": "credit",
+   "lang": "kz",
+   "from": "Дизайн және әзірлеу: <a href=\"http://qar.kz/\">Qar IT</a>"
+  },
+  {
+   "key": "site.footer",
+   "field": "credit",
+   "lang": "ru",
+   "from": "Дизайн и разработка: <a href=\"http://qar.kz/\">Qar IT</a>"
+  },
+  {
+   "key": "site.footer",
+   "field": "credit",
+   "lang": "zh-cn",
+   "from": "设计与开发：<a href=\"http://qar.kz/\">Qar IT</a>"
+  },
+  {
+   "key": "site.footer",
+   "field": "credit",
+   "lang": "en",
+   "from": "Design and development: <a href=\"http://qar.kz/\">Qar IT</a>"
+  },
+  {
+   "key": "site.footer",
+   "field": "credit",
+   "lang": "tr",
+   "from": "Tasarım ve geliştirme: <a href=\"http://qar.kz/\">Qar IT</a>"
+  }
+ ],
+ "settings": [
+  {
+   "field": "title",
+   "from": "BASTAU LINE · Омар Бекмұрат",
+   "to": "kieli.kz"
+  }
+ ]
+}

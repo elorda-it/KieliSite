@@ -1,0 +1,17 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="kk-KZ">
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Алло, тыңдап тұрмын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сәлеметсіз бе! Мен сайттағы хабарландыру бойынша хабарласып тұрмын. Пәтеріңізді жалға бересіз бе?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Иә, сәлеметсіз бе! Беремін. Екі бөлмелі пәтер, үшінші қабатта.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Пәтер қай жерде орналасқан?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Әуезов ауданында. Аялдамаға дейін бес минуттық жер, ал мектеп үйдің дәл қарсы алдында.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Қандай жақсы! Ұлым биыл бірінші сыныпқа барады. Онда мектепке өзі жаяу бара береді екен.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Иә, балалы отбасына өте ыңғайлы. Аулада балалар алаңы да бар.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Айына қанша төлеу керек?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Айына екі жүз мың теңге. Коммуналдық төлемдер бөлек.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Пәтерде жиһаз бар ма?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Бар: төсек, үстел, орындықтар. Тоңазытқыш пен кір жуғыш машина да бар. Тек теледидар жоқ.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Пәтерді қашан көруге болады?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Бүгін мен қаладан тыспын. Ертең кешкі сағат алтыда келіңіз. Мекенжайды хабарламамен жіберемін, үйдің алдында күтемін.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жарайды, келемін. Рақмет сізге!</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Оқасы жоқ. Сау болыңыз!</prosody><break time="700ms"/></voice>
+</speak>

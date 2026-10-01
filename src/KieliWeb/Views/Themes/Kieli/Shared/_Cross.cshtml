@@ -1,0 +1,23 @@
+@model BlockContent
+<section class="section" style="padding-block-start:0">
+  <div class="wrap">
+    <div class="cross">
+@if (Model.Has("image"))
+{
+      <div class="cross__bg"><img src="@Model["image"]" alt="" loading="lazy"></div>
+}
+      <div>
+        <p class="eyebrow">@Model["eyebrow"]</p>
+        <h2>@Model["title"]</h2>
+        <p>@Model["text"]</p>
+      </div>
+      <div class="cross__cta">
+        <button type="button" class="btn btn--gold" data-consult="@Model["serviceKey"]">@Model["button"]</button>
+@if (Model.Has("linkText"))
+{
+        <a class="btn btn--ghost" href="@Model["linkUrl"]">@Model["linkText"]</a>
+}
+      </div>
+    </div>
+  </div>
+</section>

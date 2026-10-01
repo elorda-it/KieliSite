@@ -1,0 +1,53 @@
+<script src="~/console/js/plugins/popper.min.js"></script>
+<script src="~/console/js/plugins/simplebar.min.js"></script>
+<script src="~/console/js/plugins/bootstrap.min.js"></script>
+<script src="~/console/js/fonts/custom-font.js"></script>
+<script src="~/console/js/pcoded.js"></script>
+<script src="~/console/js/plugins/feather.min.js"></script>
+<script src="~/console/js/plugins/sweetalert2.all.min.js"></script>
+<script src="~/console/js/plugins/cropper.min.js"></script>
+<script src="~/console/js/jquery-3.7.1.min.js"></script>
+<script src="~/console/js/plugins/jquery.dataTables.min.js"></script>
+<script src="~/console/js/plugins/dataTables.bootstrap5.min.js"></script>
+<script src="~/console/js/plugins/tinymce/tinymce.min.js"></script>
+<script src="~/console/js/plugins/uppy/uppy.min.js"></script>
+<script src="~/console/js/plugins/choices.js"></script>
+<script src="~/console/js/plugins/tagify.min.js"></script>
+<script src="~/console/js/plugins/jquery.datetimepicker.full.js"></script>
+<script src="~/console/js/plugins/flatpickr.min.js"></script>
+
+@switch (CurrentLanguage)
+{
+
+case "en":
+            <script src="/console/js/plugins/uppy/langs/en_US.min.js" asp-append-version="true"></script>
+break;
+
+case "zh-cn":
+            <script src="/console/js/plugins/uppy/langs/zh_CN.min.js" asp-append-version="true"></script>
+break;
+
+case "ru":
+            <script src="/console/js/plugins/uppy/langs/ru_RU.min.js" asp-append-version="true"></script>
+break;
+
+case "tr":
+            <script src="/console/js/plugins/uppy/langs/tr_TR.min.js" asp-append-version="true"></script>
+break;
+
+case "tote":
+            <script src="/console/js/plugins/uppy/langs/tote_KZ.min.js" asp-append-version="true"></script>
+break;
+
+case "latyn":
+            <script src="/console/js/plugins/uppy/langs/latyn_KZ.min.js" asp-append-version="true"></script>
+break;
+
+default:
+            <script src="/console/js/plugins/uppy/langs/kk_KZ.min.js" asp-append-version="true"></script>
+break;
+
+}
+
+<script src="~/console/js/common.js" asp-append-version="true"></script>
+<script src="~/console/js/main.js" asp-append-version="true"></script>

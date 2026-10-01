@@ -1,0 +1,17 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="kk-KZ">
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Сәлеметсіз бе! Кітапханамызға қош келдіңіз. Сізге қалай көмектесе аламын?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сәлеметсіз бе! Мен кітапханаға жазылайын деп едім. Мұнда бірінші рет келіп тұрмын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Өте жақсы. Жеке куәлігіңіз бар ма?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Иә, міне. Жазылу ақылы ма?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Жоқ, тегін. Мына анкетаны толтырыңыз: аты-жөніңізді, мекенжайыңызды және телефон нөміріңізді жазыңыз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жарайды. Міне, толтырдым. Бір жолы неше кітап алуға болады?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Үш кітапқа дейін. Кітапты екі апта оқуға болады. Үлгермесеңіз, телефон арқылы мерзімін ұзартамыз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Түсінікті. Маған балаларға арналған қазақ ертегілері керек. Ұлым жеті жаста, қазақша оқуды енді үйреніп жүр.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Балалар бөлімі екінші қабатта. Онда ертегі де, суретті кітап та көп.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Балаларға арналған іс-шаралар бар ма?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Иә, сенбі сайын сағат онда балаларға арналған кітап оқу сабағы өтеді. Ұлыңызды да ертіп келіңіз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Керемет екен! Кітапхана сағат нешеге дейін жұмыс істейді?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Дүйсенбіден жұмаға дейін таңғы тоғыздан кешкі жетіге дейін, сенбіде сағат үшке дейін. Жексенбі – демалыс.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Көп рақмет! Онда сенбіде ұлыммен бірге келеміз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Келіңіздер, күтеміз!</prosody><break time="700ms"/></voice>
+</speak>

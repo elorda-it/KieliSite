@@ -1,0 +1,272 @@
+@{
+    BlockContent hero = Block("home.hero");
+    BlockContent strip = Block("home.strip");
+    BlockContent help = Block("home.help");
+    BlockContent kt = Block("home.kaztest");
+    BlockContent route = Block("home.route");
+    BlockContent posts = Block("home.posts");
+    BlockContent kz = Block("home.kazakhstan");
+    BlockContent contactBlock = Block("home.contact");
+    BlockContent contact = Block("site.contact");
+    List<ContentStore.TabWithItems> tabs = ContentStore.ServiceTabs(Cache, Lang);
+    List<Articlecategory> cats = ContentStore.ArticleCategories(Cache, Lang);
+    List<Article> articles = ContentStore.Articles(Cache, Lang);
+    List<Region> regions = ContentStore.Regions(Cache, Lang);
+    List<Place> places = ContentStore.Places(Cache, Lang);
+    List<Heritage> heritage = ContentStore.HeritageItems(Cache, Lang);
+    // the Kazakhstan tabs name heritage items by their Kazakh name
+    List<Heritage> heritageKz = ContentStore.HeritageItems(Cache);
+    int selected = kt.Int("mockSelected", 0);
+    string wa = Digits(contact["whatsapp"]);
+    string tg = contact["telegram"].TrimStart('@');
+    PostModel Post(Article a, string kind)
+    {
+        Articlecategory c = cats.FirstOrDefault(x => x.Id == a.CategoryId);
+        return new PostModel(a, kind, c?.Slug ?? string.Empty, c?.Name ?? string.Empty);
+    }
+}
+<main id="main">
+  <section class="ahero" aria-labelledby="hero-name">
+@if (hero.Has("city"))
+{
+    <img class="ahero__city" src="@hero["city"]" alt="" width="1710" height="600">
+}
+    <span class="ahero__sun" aria-hidden="true"></span>
+    <div class="wrap ahero__grid">
+      <div class="ahero__copy">
+        <p class="eyebrow">@hero["eyebrow"]</p>
+        <h1 class="ahero__name" id="hero-name">@hero.Lines("name")</h1>
+        <p class="ahero__role">@hero["role"]</p>
+        <p class="ahero__slogan">@hero["slogan"]</p>
+        <p class="ahero__lead">@hero["lead"]</p>
+        <div class="ahero__cta">
+          <button type="button" class="btn btn--sun" data-consult>@hero["ctaConsult"]</button>
+          <a class="btn btn--ghost" href="#help">@hero["ctaServices"]</a>
+          <a class="link-arrow" href="@L("/kz/author")">@hero["ctaAuthor"]</a>
+        </div>
+      </div>
+@if (hero.Has("photo"))
+{
+      <figure class="ahero__portrait">
+        <img class="ahero__photo" src="@hero["photo"]" width="1024" height="1280" alt="@hero["photoAlt"]" fetchpriority="high">
+      </figure>
+}
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="strip__in">
+@foreach (BlockContent item in strip.List("items"))
+{
+        <div class="strip__item">@Icon(item["icon"])<div><b>@item.Raw("title")</b><span>@item["text"]</span></div></div>
+}
+      </div>
+    </div>
+  </div>
+
+  <section class="section help" id="help" aria-labelledby="help-title">
+    <div class="wrap">
+      <header class="help-head">
+        <p class="eyebrow">@help["eyebrow"]</p>
+        <h2 id="help-title">@help["title"]</h2>
+        <p>@help["lead"]</p>
+      </header>
+      <div data-help><partial name="~/Views/Themes/Kieli/Shared/_Help.cshtml" model='new HelpModel(tabs, "hp0")' /></div>
+@if (help.Has("foot"))
+{
+      <p class="help-foot">@help.Raw("foot")</p>
+}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ktp-title" style="padding-block-start:0">
+    <div class="wrap">
+      <div class="ktpromo">
+        <div class="ktpromo__copy">
+          <p class="eyebrow">@kt["eyebrow"]</p>
+          <h2 id="ktp-title">@kt["title"]</h2>
+          <p class="ktpromo__lead">@kt["lead"]</p>
+          <ul class="ktpromo__facts">@foreach (BlockContent f in kt.List("facts")) {<li><b>@f["value"]</b>@f["label"]</li>}</ul>
+          <div class="ktpromo__cta"><a class="btn btn--sun" href="@L("/kz/kaztest")#nusqalar">@kt["ctaStart"]</a><a class="link-arrow" href="@L("/kz/kaztest")">@kt["ctaMore"]</a></div>
+        </div>
+        <div class="ktmock" aria-hidden="true" data-no-tote dir="ltr" lang="kk">
+          <div class="ktmock__bar"><b>@kt["mockVariant"]</b><span>@kt["mockSection"]</span><span class="ktmock__timer">@kt["mockTimer"]</span></div>
+          <div class="ktmock__grid"><i class="is-done is-cur"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="ktmock__k">@kt["mockKicker"]</p>
+          <p class="ktmock__q">@kt["mockQuestion"]</p>
+          <ul class="ktmock__opts">
+@{ int n = 0; }
+@foreach (BlockContent o in kt.List("mockOptions"))
+{
+            n++;
+            <li class="@(n == selected ? "is-sel" : null)"><b>@((char)('A' + n - 1))</b>@o["text"]</li>
+}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" aria-labelledby="route-title">
+    <div class="wrap">
+      <partial name="~/Views/Themes/Kieli/Shared/_SecHead.cshtml" model='new SectionModel(route, TitleId: "route-title")' />
+      <ol class="route route--4">
+@{ int step = 0; }
+@foreach (BlockContent s in route.List("steps"))
+{
+        step++;
+        <li class="route__step"><span class="route__n">@step</span><h3 class="route__t">@s["title"]</h3><p class="route__d">@s["text"]</p></li>
+}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="posts-title">
+    <div class="wrap" data-posts="home">
+      <partial name="~/Views/Themes/Kieli/Shared/_SecHead.cshtml" model='new SectionModel(posts, TitleId: "posts-title")' />
+      <div class="chips posts-filter" role="group" aria-label="@U("common.categories")"></div>
+@if (articles.Count > 0)
+{
+      <div class="posts-list posts"><partial name="~/Views/Themes/Kieli/Shared/_Post.cshtml" model='Post(articles[0], "big")' />@if (articles.Count > 1) {<div class="posts__side">@foreach (Article a in articles.Skip(1).Take(3)) {<partial name="~/Views/Themes/Kieli/Shared/_Post.cshtml" model='Post(a, "row")' />}</div>}</div>
+}
+else
+{
+      <div class="posts-list"></div>
+}
+      <div class="posts-more">
+        <a class="btn btn--ghost" href="@L("/kz/news")" data-posts-more>@posts["moreText"]<svg class="i-dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <span>@posts["moreNote"]</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="kz-title">
+    <div class="wrap" data-ktabs>
+      <partial name="~/Views/Themes/Kieli/Shared/_SecHead.cshtml" model='new SectionModel(kz, TitleId: "kz-title")' />
+      <div class="ktabs chips posts-filter" role="tablist" aria-label="@U("places.sections")">
+@{ int ti = 0; }
+@foreach (BlockContent t in kz.List("tabs"))
+{
+        <button type="button" class="chip" role="tab" data-kt="@ti" aria-selected="@(ti == 0 ? "true" : "false")" tabindex="@(ti == 0 ? "0" : "-1")">@t["label"]</button>
+        ti++;
+}
+      </div>
+@{ ti = 0; }
+@foreach (BlockContent t in kz.List("tabs"))
+{
+      string[] keys = t["items"].Replace("\r\n", "\n").Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+      bool isHeritage = t["kind"] == "heritage";
+      bool big = true;
+      <div class="kgrid" role="tabpanel" aria-label="@t["label"]" data-kt-panel="@ti" hidden="@(ti == 0 ? null : "hidden")">
+@foreach (string key in keys)
+{
+      if (isHeritage)
+      {
+          int hid = heritageKz.FirstOrDefault(x => x.Name.Equals(key, StringComparison.OrdinalIgnoreCase))?.Id ?? 0;
+          Heritage h = heritage.FirstOrDefault(x => x.Id == hid);
+          if (h == null) { continue; }
+        <a class="tile" href="@L("/kz/kazakhstan")#mura"><img src="@ImageSize(h.ImageUrl, big ? "big" : "middle")" alt="@h.Name" loading="lazy"><span class="tile__top"><span class="tag tag--on-photo">@h.Kind</span></span><span class="tile__body"><span class="tile__name">@h.Name</span>@if (!string.IsNullOrWhiteSpace(h.Year)) {<span class="tile__fact">@U("places.unesco", ("year", h.Year))</span>}</span></a>
+      }
+      else
+      {
+          Place p = places.FirstOrDefault(x => x.Slug.Equals(key, StringComparison.OrdinalIgnoreCase));
+          if (p == null) { continue; }
+          Region r = regions.FirstOrDefault(x => x.Id == p.RegionId);
+        <a class="tile" href="@L("/kz/place/" + p.Slug)"><img src="@ImageSize(p.ImageUrl, big ? "big" : "middle")" alt="@p.Name" loading="lazy"><span class="tile__top"><span class="tag tag--on-photo">@r?.Name</span></span><span class="tile__body"><span class="tile__name">@p.Name</span><span class="tile__fact">@p.Fact</span></span></a>
+      }
+      big = false;
+}
+      </div>
+      ti++;
+}
+    </div>
+  </section>
+
+  <partial name="~/Views/Themes/Kieli/Shared/_Faq.cshtml" model='new SectionModel(Block("home.faq"), "section", "faq-title")' />
+
+  <section class="band band--contact" id="contact" aria-labelledby="contact-title">
+@if (contactBlock.Has("image"))
+{
+    <div class="band__bg"><img src="@contactBlock["image"]" alt="" loading="lazy" width="1710" height="600"></div>
+}
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">@contactBlock["eyebrow"]</p>
+        <h2 id="contact-title">@contactBlock["title"]</h2>
+        <p class="contact__lead">@contactBlock["lead"]</p>
+        <div class="channels">
+@if (contact.Has("wechat"))
+{
+          <div class="channel">
+            <span class="channel__ic channel__ic--wechat"><svg aria-hidden="true"><use href="#i-wechat"/></svg></span>
+            <span class="channel__k">@contactBlock["wechatLabel"]</span>
+            <span class="channel__v"><span class="ltr">@contact["wechat"]</span><button type="button" class="copy" data-copy="@contact["wechat"]">@U("common.copy")</button></span>
+          </div>
+}
+@if (!string.IsNullOrEmpty(wa))
+{
+          <a class="channel" href="https://wa.me/@wa">
+            <span class="channel__ic channel__ic--wa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+            <span class="channel__k">WhatsApp</span>
+            <span class="channel__v"><span class="ltr">@contact["phone"]</span></span>
+          </a>
+}
+@if (!string.IsNullOrEmpty(tg))
+{
+          <a class="channel" href="https://t.me/@tg">
+            <span class="channel__ic channel__ic--tg"><svg aria-hidden="true"><use href="#i-telegram"/></svg></span>
+            <span class="channel__k">Telegram</span>
+            <span class="channel__v"><span class="ltr">@@@tg</span></span>
+          </a>
+}
+@if (contact.Has("address"))
+{
+          <div class="channel">
+            <span class="channel__ic channel__ic--tel"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <span class="channel__k">@U("common.office")</span>
+            <span class="channel__v channel__v--wrap"><span>@contact["address"]</span></span>
+          </div>
+}
+        </div>
+        <p class="contact__meta"><span><span class="dot" data-open-dot></span>@U("common.nowInAstana") <b class="tnum" data-clock>--:--</b> · <span data-open-state>@U("common.officeOpen")</span></span><span>@contact["timeNote"]</span></p>
+      </div>
+      <div class="form-card">
+        <h3>@contactBlock["formTitle"]</h3>
+        <p>@contactBlock["formLead"]</p>
+        <form class="form" data-lead-form action="/api/consult" method="post" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="code"><input type="hidden" name="source"><input type="hidden" name="lang" value="@Lang">
+          <div class="hp" aria-hidden="true"><label for="h-website">Website</label><input id="h-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="field">
+            <label for="h-name">@U("form.nameLabel")</label>
+            <input class="input" id="h-name" name="name" autocomplete="name" required maxlength="100" placeholder="@U("form.namePlaceholder")">
+            <span class="field__err" hidden>@U("form.nameError")</span>
+          </div>
+          <div class="field">
+            <label for="h-contact">@U("form.contactLabel")</label>
+            <input class="input" id="h-contact" name="contact" required maxlength="100" placeholder="@U("form.contactPlaceholder")">
+            <span class="field__err" hidden>@U("form.contactError")</span>
+          </div>
+          <div class="field">
+            <label for="h-service">@U("form.serviceLabel")</label>
+            <select class="select" id="h-service" name="service" data-service-select>
+              <option value="">@U("form.serviceNone")</option>
+            </select>
+          </div>
+          <label class="check"><input type="checkbox" id="h-consent" name="consent" value="1" required> @Block("site.consult")["consent"]</label>
+          <div class="form__foot">
+            <button type="submit" class="btn btn--sun">@Block("site.consult")["submit"]</button>
+            <span class="form__note" data-form-status role="status"></span>
+          </div>
+        </form>
+        <div class="form-done" data-form-done hidden>
+          <span class="form-done__ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3>@U("form.thanksBefore")<span data-done-name>@U("form.friend")</span>@U("form.thanksAfter")</h3>
+          <p>@contactBlock["doneText"]</p>
+          <dl class="done-sum" data-done-summary></dl>
+          <button type="button" class="btn btn--ghost btn--sm" data-form-reset>@U("form.another")</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

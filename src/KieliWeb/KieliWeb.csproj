@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>KieliWeb</AssemblyName>
+    <RootNamespace>KieliWeb</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Dapper.SimpleCRUD" Version="2.3.0" />
+    <PackageReference Include="Hangfire" Version="1.8.12" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.12" />
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.8.0" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.72" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+    <PackageReference Include="MySqlConnector" Version="2.3.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\COMMON\COMMON.csproj" />
+    <ProjectReference Include="..\DBHelper\DBHelper.csproj" />
+    <ProjectReference Include="..\MODEL\MODEL.csproj" />
+  </ItemGroup>
+
+  <!--
+    Never ship config with the build. The committed appsettings.json holds REPLACE_ME
+    placeholders, so copying a publish output over a server once wiped the real
+    connection string and took the site down with 'Access denied for REPLACE_ME'.
+    The files still copy to bin/ for local runs (CopyToOutputDirectory), they just
+    never land in a publish payload.
+  -->
+  <ItemGroup>
+    <Content Update="appsettings.json" CopyToPublishDirectory="Never" />
+    <Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Setup\kzmap.svg" LogicalName="kzmap.svg" />
+  </ItemGroup>
+
+  <!-- Schema and first content (db/kieli_schema.sql, db/seed/*.json), read by Setup/DatabaseBootstrap. -->
+  <ItemGroup>
+    <None Include="..\..\db\**\*" LinkBase="db" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+@model SectionModel
+@{ BlockContent b = Model.Block; bool first = true; }
+<section class="@Model.Css" aria-labelledby="@Model.TitleId">
+  <div class="wrap faq-layout">
+    <header>
+      <p class="eyebrow">@b["eyebrow"]</p>
+      <h2 class="page-title" style="font-size:var(--fs-h2)" id="@Model.TitleId">@b["title"]</h2>
+@if (b.Has("lead"))
+{
+      <p class="lead" style="margin-block-start:16px">@b["lead"]</p>
+}
+    </header>
+    <div class="faq">
+@foreach (BlockContent item in b.List("items"))
+{
+        <details open="@(first ? "open" : null)"><summary>@item["q"]</summary><div class="faq__a">@Html.Raw(Paragraphs(item["a"]))</div></details>
+        first = false;
+}
+    </div>
+  </div>
+</section>
+@functions {
+    /// <summary>FAQ answers are HTML; plain text typed in the admin is wrapped in paragraphs.</summary>
+    static string Paragraphs(string html)
+    {
+        html = (html ?? string.Empty).Trim();
+        if (html.StartsWith("<"))
+        {
+            return html;
+        }
+        return string.Join("", html.Replace("\r\n", "\n").Split(new[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).Select(p => "<p>" + p.Trim().Replace("\n", "<br>") + "</p>"));
+    }
+}

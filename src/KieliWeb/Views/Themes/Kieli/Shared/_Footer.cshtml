@@ -1,0 +1,81 @@
+@{
+    BlockContent brand = Block("site.brand");
+    BlockContent social = Block("site.social");
+    BlockContent footer = Block("site.footer");
+    BlockContent contact = Block("site.contact");
+    BlockContent consult = Block("site.consult");
+    string logo = brand.Has("logo") ? brand["logo"] : "/kieli/img/logo.svg";
+    List<string> legal = new List<string> { contact["legalName"], contact["address"], contact.Has("bin") ? U("common.bin") + " " + contact["bin"] : string.Empty };
+}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="@L("/")" aria-label="@U("common.homeAria", ("brand", brand["name"]))">
+          <img class="brand__logo" src="@Media(logo)" alt="" width="36" height="36">
+          <span class="brand__word brand__word--site" translate="no" dir="ltr">@BrandName(brand["name"])</span>
+        </a>
+        <p>@brand["footerText"]</p>
+        <div class="social" aria-label="@U("common.social")">
+@foreach (BlockContent s in social.List("items").Where(s => s.Has("url")))
+{
+          <a href="@s["url"]" aria-label="@s["label"]">@Icon(s["icon"])</a>
+}
+          <button type="button" class="social-btn" data-consult aria-label="WeChat"><svg aria-hidden="true"><use href="#i-wechat"/></svg></button>
+        </div>
+      </div>
+      <nav class="footer-cols" aria-label="@U("common.sitemap")">
+@foreach ((string title, IReadOnlyList<BlockContent> links) in new[] { (footer["col1Title"], footer.List("col1Links")), (footer["col2Title"], footer.List("col2Links")) })
+{
+        <div>
+          <h3>@title</h3>
+          <ul>
+@foreach (BlockContent link in links)
+{
+            <li><a href="@link["url"]">@link["label"]</a></li>
+}
+          </ul>
+        </div>
+}
+        <div>
+          <h3>@footer["col3Title"]</h3>
+          <ul>
+@if (contact.Has("phone"))
+{
+            <li><a href="tel:+@Digits(contact["phone"])"><span class="ltr">@contact["phone"]</span></a></li>
+}
+@if (contact.Has("email"))
+{
+            <li><a href="mailto:@contact["email"]"><span class="ltr">@contact["email"]</span></a></li>
+}
+@if (contact.Has("wechat"))
+{
+            <li><span class="footer-plain">WeChat: <span class="ltr">@contact["wechat"]</span></span></li>
+}
+@if (contact.Has("address"))
+{
+            <li><span class="footer-plain">@contact["address"]</span></li>
+}
+@if (contact.Has("hours"))
+{
+            <li><span class="footer-plain">@contact["hours"]</span></li>
+}
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>@string.Join(" · ", legal.Where(x => !string.IsNullOrWhiteSpace(x)))</span>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>@DateTime.Now.Year</span> @footer.Raw("copyright")</p>
+@if (footer.Has("credit"))
+{
+    // the developer's logo (wwwroot/kieli/img/qar-logo.svg) in the text colour, so it reads in day and night mode
+    string qarLogo = Asset("/kieli/img/qar-logo.svg") + "#qar";
+      <p class="credit"><span>@footer["credit"]</span>@if (footer.Has("creditUrl")) {<a class="credit__logo" href="@footer["creditUrl"]" target="_blank" rel="noopener" aria-label="QAR Solutions"><svg viewBox="0 0 305 44" aria-hidden="true"><use href="@qarLogo"/></svg></a>} else {<span class="credit__logo" role="img" aria-label="QAR Solutions"><svg viewBox="0 0 305 44" aria-hidden="true"><use href="@qarLogo"/></svg></span>}</p>
+}
+    </div>
+  </div>
+</footer>
+<button type="button" class="btn btn--sun fab is-hidden" data-consult><svg aria-hidden="true"><use href="#i-lang"/></svg>@consult["fab"]</button>

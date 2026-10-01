@@ -1,0 +1,15 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="kk-KZ">
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Мадина, сәлем! Демалыс күндеріне жоспарың бар ма?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сәлем, Арман! Әзірге жоқ. Неге сұрап тұрсың?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Біз Ерболат екеуміз сенбіде Бурабайға барайық деп жүрміз. Бізбен бірге барасың ба?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Ой, қандай керемет ұсыныс! Бурабайды көптен бері көргім келіп жүр еді. Немен барасыңдар?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Пойызбен. Пойыз Астанадан таңғы жетіде шығады, жолда үш сағаттай боламыз. Билетті бүгін кешке аламын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Онда маған да билет ала салшы. Ақшасын ертең беремін.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Жарайды. Тек жылы киініп ал. Синоптиктер сенбіде күн салқын болады, кешке қарай жаңбыр жауады дейді.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Түсіндім. Ал ол жерде не істейміз?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Алдымен Оқжетпес жартасын көреміз, сосын көлдің жағасымен жаяу серуендейміз. Түсте ұлттық тағамдар дайындайтын кафеде тамақтанамыз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Тамаша! Жексенбіде қайтамыз ба?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Жоқ, сенбінің өзінде, кешкі пойызбен қайтамыз. Жексенбіде демалып, дүйсенбіде жұмысқа шығамыз ғой.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Дұрыс айтасың. Онда сенбіде вокзалда кездесейік.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Келістік! Алты жарымда вокзалдың кіреберісінде күтемін.</prosody><break time="700ms"/></voice>
+</speak>

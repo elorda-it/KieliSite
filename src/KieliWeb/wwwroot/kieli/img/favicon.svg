@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <!-- kieli.kz browser icon: the logo's yurt without the lattice -->
+  <rect width="40" height="40" rx="11" fill="#0A7EA3"/>
+  <path d="M8.5 30V22.6Q9.2 15.6 16.6 12.6Q20 11.9 23.4 12.6Q30.8 15.6 31.5 22.6V30Z" fill="#FFFFFF"/>
+  <g stroke="#0A7EA3" stroke-width=".75" opacity=".5" stroke-linecap="round"><path d="M17.4 13.1L10.6 22.2M18.7 13.3L15.4 22.2M20 13.4V22.2M21.3 13.3L24.6 22.2M22.6 13.1L29.4 22.2"/></g>
+  <path d="M8.5 22.9H31.5" stroke="#0A7EA3" stroke-width="1.1"/>
+  <path d="M17.2 30V25.1Q20 23.6 22.8 25.1V30Z" fill="#F3C33A"/>
+  <ellipse cx="20" cy="12.3" rx="3.9" ry="1.5" fill="#F3C33A"/>
+</svg>

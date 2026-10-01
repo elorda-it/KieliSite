@@ -1,0 +1,19 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="kk-KZ">
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Кешіріңіз, сіз Сәуле емессіз бе?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Иә, менмін... Ой, Ерлан, сен бе? Танымай қала жаздадым ғой!</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Мен де бірден танымадым. Мектепті бітіргенімізге он жыл болды ғой! Қалайсың, амансың ба?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Шүкір, жақсымын. Өзің ше? Қазір қайда жұмыс істейсің?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Қалалық ауруханада балалар дәрігерімін. Ал сен?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Мен мектепте ағылшын тілінен сабақ беремін.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Бүгін демалыс па?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Иә, бүгін сенбі ғой, сабақ жоқ. Ертең қызымның туған күні, бес жасқа толады. Соған бола базарға шықтым.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Құтты болсын! Не алайын деп жүрсің?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жеміс-жидек, ет, торт пісіруге ұн мен жұмыртқа керек. Қонақтар көп келеді.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Мен анама сүт пен ірімшік алуға келдім. Ол кісі базардың ірімшігін жақсы көреді.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Ерлан, сыныптастарымызбен хабарласып тұрасың ба?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Кейбірімен ғана. Бәрі әр қалада тұрады ғой. Жазда бәрімізді жинап, кездесу өткізсек қайтеді?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Керемет ой! Мен қыздарға өзім хабарлаймын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Онда телефон нөмірлерімізді алмасайық.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жарайды, жазып ал. Анаңа сәлем айт!</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Айтамын. Қызыңды туған күнімен алдын ала құттықтаймын!</prosody><break time="700ms"/></voice>
+</speak>

@@ -1,0 +1,103 @@
+@model Article
+@{
+    BlockContent author = Block("article.author");
+    BlockContent aside = Block("article.aside");
+    string newsLabel = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "articles")?["label"] ?? "Жаңалықтар";
+    List<Articlecategory> cats = ContentStore.ArticleCategories(Cache, Lang);
+    Articlecategory cat = cats.FirstOrDefault(c => c.Id == Model.CategoryId);
+    ArticleHtml.Result body = ArticleHtml.Prepare(Model.BodyHtml);
+    string meta = string.Join(" · ", new[] { Model.DateText, Model.ReadMinutes > 0 ? U("common.readTime", ("n", Model.ReadMinutes)) : string.Empty }.Where(x => !string.IsNullOrWhiteSpace(x)));
+    bool hasAuthor = !string.IsNullOrWhiteSpace(Model.AuthorName);
+    string url = COMMON.QarSingleton.GetInstance().GetSiteUrl().TrimEnd('/') + L("/kz/news/" + Model.Slug);
+    List<Article> all = ContentStore.Articles(Cache, Lang).Where(a => a.Id != Model.Id && (!string.IsNullOrWhiteSpace(a.BodyHtml) || !string.IsNullOrWhiteSpace(a.LinkUrl))).ToList();
+    List<Article> more = all.Where(a => a.CategoryId == Model.CategoryId).Concat(all.Where(a => a.CategoryId != Model.CategoryId)).Take(3).ToList();
+}
+<main id="main">
+  <section class="page-head">
+    <div class="wrap">
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li><a href="@L("/kz/news")">@newsLabel</a></li>@if (cat != null) {<li><a href="@(L("/kz/news") + "#cat-" + cat.Slug)">@cat.Name</a></li>}</ol>
+      <p class="eyebrow">@cat?.Name</p>
+      <h1 class="page-title" style="max-width:22ch">@Model.Title</h1>
+@if (!string.IsNullOrWhiteSpace(Model.Excerpt))
+{
+      <p class="lead">@Model.Excerpt</p>
+}
+      <div class="byline">
+@if (hasAuthor)
+{
+        <a class="byline__who" href="@author["linkUrl"]"><span class="monogram monogram--photo" aria-hidden="true"><img src="@author["photo"]" width="240" height="240" alt="" loading="lazy"></span><span><b>@Model.AuthorName</b><span>@author["org"]</span></span></a>
+}
+        <span class="byline__meta">@meta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="padding-block-start:0">
+    <div class="wrap article-layout">
+      <article class="prose">
+        @Html.Raw(body.Html)
+@if (!string.IsNullOrWhiteSpace(Model.SourceName))
+{
+        <p class="article__source">@U("common.source"): @if (!string.IsNullOrWhiteSpace(Model.SourceUrl)) {<a href="@Model.SourceUrl" rel="noopener">@Model.SourceName</a>} else {@Model.SourceName}</p>
+}
+@if (hasAuthor)
+{
+        <div class="author-box">
+          <span class="monogram monogram--photo" aria-hidden="true"><img src="@author["photo"]" width="240" height="240" alt="" loading="lazy"></span>
+          <div>
+            <b>@Model.AuthorName</b>
+            <p>@author["bio"]</p>
+@if (author.Has("linkText"))
+{
+            <a class="link-arrow" href="@author["linkUrl"]">@author["linkText"]</a>
+}
+          </div>
+        </div>
+}
+      </article>
+      <aside class="aside" aria-label="@U("news.contentsAria")">
+@if (body.Toc.Count > 1)
+{
+        <div class="panel">
+          <h3>@aside["tocTitle"]</h3>
+          <nav class="toc">
+@foreach ((string id, string title) in body.Toc)
+{
+            <a href="#@id">@title</a>
+}
+          </nav>
+        </div>
+}
+        <div class="panel panel--night">
+          <p class="eyebrow">@aside["ctaEyebrow"]</p>
+          <p>@aside["ctaText"]</p>
+          <button type="button" class="btn btn--gold btn--block" data-consult="@Model.ServiceKey">@aside["ctaButton"]</button>
+        </div>
+        <div class="panel">
+          <h3>@aside["shareTitle"]</h3>
+          <div class="share">
+            <a href="https://wa.me/?text=@Uri.EscapeDataString(Model.Title + " — " + url)" aria-label="@U("common.shareWa")"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+            <a href="https://t.me/share/url?url=@Uri.EscapeDataString(url)&text=@Uri.EscapeDataString(Model.Title)" aria-label="@U("common.shareTg")"><svg aria-hidden="true"><use href="#i-telegram"/></svg></a>
+            <button type="button" data-copy="@url" aria-label="@U("common.copyLink")"><svg aria-hidden="true"><use href="#i-link"/></svg></button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+@if (more.Count > 0)
+{
+  <section class="section section--tint" aria-labelledby="more-title">
+    <div class="wrap">
+      <header class="sec-head"><div><p class="eyebrow">@aside["moreEyebrow"]</p><h2 id="more-title">@aside["moreTitle"]</h2></div></header>
+      <div class="articles">
+@foreach (Article a in more)
+{
+        string m = string.Join(" · ", new[] { a.DateText, a.ReadMinutes > 0 ? U("common.readTime", ("n", a.ReadMinutes)) : string.Empty }.Where(x => !string.IsNullOrWhiteSpace(x)));
+        <a class="acard" href="@ContentStore.ArticleUrl(a, Lang)"><span class="acard__k">@cats.FirstOrDefault(c => c.Id == a.CategoryId)?.Name</span><h3 class="acard__t">@a.Title</h3><p class="acard__d">@a.Excerpt</p><span class="acard__m">@m</span></a>
+}
+      </div>
+    </div>
+  </section>
+}
+</main>

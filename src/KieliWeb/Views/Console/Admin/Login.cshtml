@@ -1,0 +1,54 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="@(ViewData["languageIsoCode"])">
+  <head>
+    <title>@(Title)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="@(SiteSetting.Description)">
+    <meta name="keywords" content="@(SiteSetting.Keywords)">
+    <partial name="~/Views/Shared/_Style.cshtml" />
+  </head>
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast="" data-pc-theme="@(ViewData["skinName"])">
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-wrapper v1">
+      <div class="auth-form">
+        <div class="card my-5">
+          <form class="card-body qar-form" action="/@(CurrentLanguage)/admin/login" method="post" id="form-login">
+            <div class="text-center mb-5">
+               <a href="/@(CurrentLanguage)"><img src="@Media(SiteSetting?.DarkLogo)" class="mw-100" alt="@(SiteSetting?.Title)"></a>
+            </div>
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" id="email" name="email" value="" placeholder="@(T("ls_Email"))">
+            </div>
+            <div class="form-group mb-3">
+              <input type="password" class="form-control" id="password" value="" name="password" placeholder="@(T("ls_Password"))">
+            </div>
+            <div class="d-flex mt-1 justify-content-between align-items-center">
+              <div class="form-check">
+                <input class="form-check-input input-primary" type="checkbox" id="rememberme" name="rememberme" value="on" >
+                <label class="form-check-label text-muted" for="rememberme">@(T("ls_Rememberme"))?</label>
+              </div>
+            </div>
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-primary" data-loading-text="@(T("ls_Loading"))">@(T("ls_Signin"))</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <partial name="~/Views/Shared/_Script.cshtml" />
+</body>
+</html>

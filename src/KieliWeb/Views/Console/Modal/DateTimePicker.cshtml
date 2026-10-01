@@ -1,0 +1,66 @@
+@{
+    Layout = null;
+}
+
+<div class="modal-header">
+    <h5 class="modal-title">@(T("ls_Selectdaterange"))</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="container">
+        <input type="text" class="form-control flatpickr-input" id="select-add-time-range-input">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" id="date-time-picker-save-btn" class="btn btn-primary me-2">@(T("ls_Save"))</button>
+    <button type="button" data-bs-dismiss="modal" class="btn btn-light">@(T("ls_Close"))</button>
+</div>
+
+
+<script>
+    function initDateTimePicker() {
+        const timeRangeSelectInput = document.querySelector("#select-add-time-range-input");
+        const targetDateInput = document.querySelector("#@(ViewData["elementId"])");
+        const saveBtn = document.querySelector("#date-time-picker-save-btn");
+
+        if (timeRangeSelectInput) {
+            const datetimePicker = flatpickr(timeRangeSelectInput, {
+                mode: 'range',
+                enableTime: true,
+                dateFormat: 'Y-m-d H:i',
+                defaultDate: targetDateInput ? [targetDateInput.getAttribute("data-date-time-result-start"), targetDateInput.getAttribute("data-date-time-result-end")] : [],
+                onChange: function (selectedDates, dateStr, instance) {
+                    if (selectedDates.length === 2) {
+                        const startDate = selectedDates[0];
+                        const endDate = selectedDates[1];
+
+                        if (startDate.toDateString() === endDate.toDateString()) {
+                            startDate.setHours(0, 0, 0, 0);
+                            endDate.setHours(23, 59, 59, 999);
+                            instance.setDate([startDate, endDate]);
+                        }
+                    }
+                }
+            });
+
+            if (saveBtn) {
+                saveBtn.addEventListener("click", () => {
+                    if (targetDateInput) {
+                        const startDate = datetimePicker.selectedDates[0].toISOString();
+                        const endDate = datetimePicker.selectedDates[1].toISOString();
+
+                        targetDateInput.setAttribute("data-date-time-result-start", startDate)
+                        targetDateInput.setAttribute("data-date-time-result-end", endDate)
+                    }
+                    $qar.removeCustomModal();
+
+                    if ($qar.currentDataTable) {
+                        $qar.currentDataTable.draw();
+                    }
+                });
+            }
+        }
+    }
+
+    initDateTimePicker();
+</script>

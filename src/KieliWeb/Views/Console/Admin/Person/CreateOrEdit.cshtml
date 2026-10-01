@@ -1,0 +1,102 @@
+@{
+    Admin admin = QarModel<Admin>("admin");
+    List<Role> roleList = QarList<Role>("roleList");
+    List<Adminrole> adminRoleList = QarList<Adminrole>("adminRoleList");
+}
+<section class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)">@(T("ls_Administratormanagement"))</a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">@(ViewData["title"])</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <form class="card qar-form" action="/@(CurrentLanguage)/@(ControllerName)/@(ActionName)" method="post" enctype="multipart/form-data">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>@(ViewData["title"])</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" name="id" value="@(admin?.Id)" />
+                        <div class="form-group">
+                            <label class="form-label" for="roleIdList">
+                                @(T("ls_Administratortype"))<span class="text-danger">*</span>
+                            </label>
+                            <select class="form-control" data-trigger name="roleIdList" multiple id="roleIdList">
+
+@foreach (Role role in roleList)
+{
+if (adminRoleList.Exists((Adminrole ar) => ar.RoleId == role.Id))
+{
+                                        <option value="@(role.Id)" selected="">@(role.Name)</option>
+
+}
+else
+{
+                                        <option value="@(role.Id)">@(role.Name)</option>
+
+}
+
+}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="name">
+                                @(T("ls_Name")) <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="name" name="name" value="@(admin?.Name)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                @(T("ls_Email")) <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="email" name="email" value="@(admin?.Email)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">
+                                @(T("ls_Password"))
+
+@if (admin == null)
+{
+                                    <span class="text-danger">*</span>
+
+}
+                            </label>
+                            <input type="password" class="form-control" id="password" name="password" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">@(T("ls_Phone"))</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="@(admin?.Phone)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="description">@(T("ls_Description"))</label>
+                            <textarea class="form-control" name="description" id="description"
+                                rows="3">@(admin?.Description)</textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button type="reset" class="btn btn-outline-secondary">
+                            <i class="fa-duotone fa-rotate-right me-1"></i>@(T("ls_Reset"))
+                        </button>
+                        <button type="submit" class="btn btn-primary me-2" data-loading-text="@(T("ls_Loading"))">
+                            <i class="fa-duotone fa-floppy-disk me-1"></i> @(T("ls_Save"))
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

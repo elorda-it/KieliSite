@@ -1,0 +1,93 @@
+@{
+    BlockContent brand = Block("site.brand");
+    BlockContent nav = Block("site.nav");
+    BlockContent consult = Block("site.consult");
+    string navKey = QarString("navKey");
+    string logo = brand.Has("logo") ? brand["logo"] : "/kieli/img/logo.svg";
+    string pagePath = string.IsNullOrWhiteSpace(QarString("pagePath")) ? "/" : QarString("pagePath");
+    List<SiteLanguage> languages = SiteLanguages.Enabled(Cache);
+    string homeAria = U("common.homeAria", ("brand", brand["name"]));
+}
+<a class="skip" href="#main">@U("common.skip")</a>
+<header class="site-header@(QarBool("overlayHeader") ? " site-header--overlay" : "")" data-header>
+  <div class="wrap site-header__in">
+    <a class="brand" href="@L("/")" aria-label="@homeAria">
+      <img class="brand__logo" src="@Media(logo)" alt="" width="36" height="36">
+      <span class="brand__word brand__word--site" translate="no" dir="ltr">@BrandName(brand["name"])</span>
+    </a>
+    <nav class="nav" aria-label="@U("common.mainMenu")">
+@foreach (BlockContent item in nav.List("items"))
+{
+      <a href="@item["url"]" data-nav="@item["key"]" aria-current="@(item.Has("key") && item["key"] == navKey ? "page" : null)">@item["label"]</a>
+}
+    </nav>
+    <div class="header-tools">
+@if (IsKazakh)
+{
+      <div class="script-switch" role="group" aria-label="@U("common.script")">
+        <button type="button" data-script-btn="cyr" aria-pressed="true" translate="no">Кирилл</button>
+        <button type="button" data-script-btn="tote" aria-pressed="false" lang="kk-Arab" dir="rtl" translate="no">توتە</button>
+      </div>
+}
+@if (languages.Count > 1)
+{
+      <details class="lang-menu" data-lang-menu>
+        <summary class="lang-menu__btn" aria-label="@U("common.language"): @LangInfo.Name"><svg aria-hidden="true"><use href="#i-globe"/></svg><span translate="no">@LangInfo.Short</span></summary>
+        <ul class="lang-menu__list" role="list">
+@foreach (SiteLanguage l in languages)
+{
+          <li><a href="@SiteLanguages.Localize(pagePath, l.Culture)" hreflang="@l.Hreflang" lang="@l.Html" aria-current="@(l.Culture == Lang ? "true" : null)" translate="no">@l.Name</a></li>
+}
+        </ul>
+      </details>
+}
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="@U("common.toDark")" title="@U("common.toDark")">
+        <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <button type="button" class="btn btn--primary btn--sm" data-consult>@consult["title"]</button>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="mnav" aria-label="@U("common.openMenu")">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav" hidden>
+  <div class="mnav__top">
+    <a class="brand" href="@L("/")" aria-label="@homeAria">
+      <img class="brand__logo" src="@Media(logo)" alt="" width="36" height="36">
+      <span class="brand__word brand__word--site" translate="no" dir="ltr">@BrandName(brand["name"])</span>
+    </a>
+    <button type="button" class="icon-btn" data-nav-close aria-label="@U("common.closeMenu")"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <nav class="mnav__links" aria-label="@U("common.mobileMenu")">
+    <a href="@L("/")">@U("common.home") <small>@brand["name"]</small></a>
+@foreach (BlockContent item in nav.List("items"))
+{
+    <a href="@item["url"]">@item["label"]@if (item.Has("note")) {<text> <small>@item["note"]</small></text>}</a>
+}
+  </nav>
+  <div class="mnav__foot">
+@if (languages.Count > 1)
+{
+    <nav class="mnav__langs" aria-label="@U("common.language")">
+@foreach (SiteLanguage l in languages)
+{
+      <a href="@SiteLanguages.Localize(pagePath, l.Culture)" hreflang="@l.Hreflang" lang="@l.Html" aria-current="@(l.Culture == Lang ? "true" : null)" translate="no">@l.Name</a>
+}
+    </nav>
+}
+    <div class="mnav__row">
+@if (IsKazakh)
+{
+    <div class="script-switch" role="group" aria-label="@U("common.script")">
+      <button type="button" data-script-btn="cyr" aria-pressed="true" translate="no">Кирилл</button>
+      <button type="button" data-script-btn="tote" aria-pressed="false" lang="kk-Arab" dir="rtl" translate="no">توتە</button>
+    </div>
+}
+    <button type="button" class="theme-toggle theme-toggle--wide" data-theme-toggle aria-pressed="false">
+      <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg><span class="theme-toggle__t">@U("common.dark")</span>
+    </button>
+    </div>
+    <button type="button" class="btn btn--primary btn--block" data-consult>@consult["title"]</button>
+  </div>
+</div>

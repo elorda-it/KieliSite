@@ -1,0 +1,13 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectList = document.querySelectorAll("select:not([data-plain])");
+    if (selectList && selectList.length > 0) {
+      selectList.forEach(select => {
+        const choices = new Choices(select, {
+          placeholder: false,
+          itemSelectText: '@(T("ls_Pleaseselect"))'
+        });
+      });
+    }
+  });
+</script>

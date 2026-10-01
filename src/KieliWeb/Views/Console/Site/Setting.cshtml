@@ -1,0 +1,301 @@
+@{
+    Layout = "~/Views/Shared/_ConsoleLayout.cshtml";
+}
+
+<div class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="javascript: void(0)">@(T("ls_Websitemanagement"))</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="javascript: void(0)">@(ViewData["title"])</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>_h
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered table-settings">
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Computerlogo")):</strong>
+                        </td>
+                        <td>
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">@(T("ls_Black"))</th>
+                                        <th scope="col">@(T("ls_White"))</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-6" style="background-color: #EEEEEE;">
+                                            <a href="javascript: void(0)">
+                                                <img class="siteSetting-logo" data-oldvalue="@(SiteSetting?.DarkLogo)"
+                                                    src='@(string.IsNullOrEmpty(SiteSetting?.DarkLogo) ? ("/" + CurrentLanguage + "/QarBase/NoImage?w=250&h=150&s=dark") : SiteSetting.DarkLogo)'>
+                                                <input type="file" class="d-none" name="logoImage" data-type="darkLogo"
+                                                    accept="image/png,image/x-png,image/gif,image/jpeg" />
+                                            </a>
+                                        </td>
+                                        <td class="col-6" style="background-color: #28323FFF;">
+                                            <a href="javascript: void(0)">
+                                                <img class="siteSetting-logo" data-oldvalue="@(SiteSetting?.LightLogo)"
+                                                    src='@(string.IsNullOrEmpty(SiteSetting?.LightLogo) ? ("/" + CurrentLanguage + "/QarBase/NoImage?w=250&h=150&s=light") : SiteSetting.LightLogo)'>
+                                                <input type="file" class="d-none" name="logoImage" data-type="lightLogo"
+                                                    accept="image/png,image/x-png,image/gif,image/jpeg" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Mobilelogo")):</strong>
+                        </td>
+                        <td>
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">@(T("ls_Black"))</th>
+                                        <th scope="col">@(T("ls_White"))</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-6" style="background-color: #EEEEEE;">
+                                            <a href="javascript: void(0)">
+                                                <img class="siteSetting-logo"
+                                                    data-oldvalue='@(SiteSetting?.MobileDarkLogo)'
+                                                    src='@((!string.IsNullOrEmpty(SiteSetting?.MobileDarkLogo)) ? SiteSetting.MobileDarkLogo : ("/" + CurrentLanguage + "/QarBase/NoImage?w=250&h=150&s=dark"))'>
+                                                <input type="file" class="d-none" name="logoImage"
+                                                    data-type="mobileDarkLogo"
+                                                    accept="image/png,image/x-png,image/gif,image/jpeg" />
+                                            </a>
+                                        </td>
+                                        <td class="col-6" style="background-color: #28323FFF;">
+                                            <a href="javascript: void(0)">
+                                                <img class="siteSetting-logo"
+                                                    data-oldvalue='@(SiteSetting?.MobileLightLogo)'
+                                                    src='@((!string.IsNullOrEmpty(SiteSetting?.MobileLightLogo)) ? SiteSetting.MobileLightLogo : ("/" + CurrentLanguage + "/QarBase/NoImage?w=250&h=150&s=light"))'>
+                                                <input type="file" class="d-none" name="logoImage"
+                                                    data-type="mobileLightLogo"
+                                                    accept="image/png,image/x-png,image/gif,image/jpeg" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Icon")) (*.png):</strong>
+                        </td>
+                        <td>
+                            <a href="javascript: void(0)">
+                                <img class="siteSetting-icon" data-oldvalue='@(SiteSetting?.Favicon)'
+                                    src='@((!string.IsNullOrEmpty(SiteSetting?.Favicon)) ? SiteSetting.Favicon : "/favicon.ico")'>
+                                <input type="file" class="d-none" name="iconFile" accept="image/png,image/x-png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Mourningday")):</strong>
+                        </td>
+                        <td>
+                            <div class="form-check d-flex align-items-center gap-2 p-0">
+                                <input type="text" class="form-control" id="mourning-day" name="mourning-day"
+                                    placeholder="@(T("ls_Pleaseselect"))" style="width: 310px">
+                                <button type="button"
+                                    class="btn btn-success mourning-day-submit btn-sm waves-effect waves-light"><i
+                                        class="fa-light fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Sitename")):</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-title" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Title)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Sitedescription")):</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-description" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Description)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Sitekeywords")):</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-keywords" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Keywords)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>@(T("ls_Sitecopyright")):</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-copyright" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Copyright)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Analytics Html:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-analyticsHtml" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.AnalyticsHtml)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Analytics Scripts:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-analyticsScript" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.AnalyticsScript)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Facebook:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-facebook" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Facebook)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>X (Twitter):</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-twitter" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Twitter)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Instagram:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-instagram" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Instagram)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Telegram:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-telegram" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Telegram)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>VK:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-vk" data-pk="@(SiteSetting?.Id)" data-rows="1">@(SiteSetting?.Vk)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Youtube:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-youtube" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Youtube)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Whatsapp:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-whatsapp" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Whatsapp)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>TikTok:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-tiktok" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Tiktok)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Phone:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-phone" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Phone)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Email:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-email" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Email)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Secondary Email:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-sEmail" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Email)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>Address:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-address" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.Address)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+                            <strong>MapEmbed:</strong>
+                        </td>
+                        <td>
+                            <a class="siteSetting-mapEmbed" data-pk="@(SiteSetting?.Id)"
+                                data-rows="1">@(SiteSetting?.MapEmbed)</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link>
+@section Scripts {
+    <script src="@Asset("/console/js/kieli-settings.js")"></script>
+}

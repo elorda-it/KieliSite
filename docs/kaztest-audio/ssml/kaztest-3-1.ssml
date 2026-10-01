@@ -1,0 +1,21 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="kk-KZ">
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Емхананың тіркеу бөлімі, тыңдап тұрмын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сәлеметсіз бе! Ұлымды балалар дәрігерінің қабылдауына жазғым келеді.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Сәлеметсіз бе! Балаңызға не болды?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Кеше кешке қызуы көтерілді, бүгін таңертең жөтеле бастады.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Түсіндім. Балаңыз неше жаста?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Алты жаста.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Біздің емханаға тіркелгенсіздер ме?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Иә, биыл көктемде тіркелдік.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Онда балаңыздың аты-жөнін айтыңызшы.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сапарұлы Әли.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Жарайды. Балалар дәрігері бүгін түстен кейін қабылдайды. Сағат төрт жарымға жазайын ба?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Бүгін жұмыстан ерте шыға алмаймын. Ертең демалыс күнім, ертеңге болмай ма?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Ертең сағат он жарымда бос уақыт бар. Келесіз бе?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Иә, бұл маған ыңғайлы.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Онда ертең сағат он жарымда келіңіз. Екінші қабат, екі жүз он төртінші кабинет. Өзіңізбен жеке куәлігіңізді және баланың туу туралы куәлігін ала келіңіз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жақсы. Ал егер түнде қызуы тағы көтерілсе, не істеуім керек?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Онда бірден жедел жәрдем шақырыңыз, нөмірі – жүз үш.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Көп рақмет сізге!</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Оқасы жоқ. Балаңыз тезірек жазылсын!</prosody><break time="700ms"/></voice>
+</speak>

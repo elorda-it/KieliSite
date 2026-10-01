@@ -1,0 +1,19 @@
+@model HelpModel
+@{
+    // First paint of the «Сізге қандай көмек керек?» picker: the same markup kieli.js renders
+    // (paint()/detail()), so the page shows content before the script and does not jump.
+    if (Model.Tabs.Count == 0 || Model.Tabs[0].Items.Count == 0)
+    {
+        return;
+    }
+    Servicetab tab = Model.Tabs[0].Tab;
+    Serviceitem item = Model.Tabs[0].Items[0];
+    string uid = Model.Uid;
+    var sampleLang = new Dictionary<string, string> { ["notarial"] = U("services.sampleNotarial"), ["apostille"] = U("services.sampleApostille"), ["consular"] = U("services.sampleConsular"), ["check"] = U("services.sampleCheck") };
+    string note = string.Join(" ", new[] { item.Note, tab.Footnote, U("services.priceNote") }.Where(x => !string.IsNullOrWhiteSpace(x)));
+    string cta = string.IsNullOrWhiteSpace(item.Cta) ? tab.Cta : item.Cta;
+    List<string> bring = ContentStore.ParseArray(item.BringJson).Select(x => x is Newtonsoft.Json.Linq.JObject o ? (string)o["text"] : (string)x).ToList();
+    List<string> steps = ContentStore.ParseArray(tab.StepsJson).Select(x => x is Newtonsoft.Json.Linq.JObject o ? (string)o["text"] : (string)x).ToList();
+}
+<div class="htabs" role="tablist" aria-label="@U("services.tabsAria")">@foreach (ContentStore.TabWithItems t in Model.Tabs) {<button type="button" class="htab" role="tab" id="@uid-@t.Tab.Slug" data-tab="@t.Tab.Slug" aria-controls="@uid-panel" aria-selected="@(t.Tab == tab ? "true" : "false")" tabindex="@(t.Tab == tab ? "0" : "-1")">@Icon(t.Tab.Icon)<span>@t.Tab.Name</span></button>}</div>
+<div class="hpanel" role="tabpanel" id="@uid-panel" aria-labelledby="@uid-@tab.Slug"><div class="hitems" role="group" aria-label="@tab.Name">@foreach (Serviceitem it in Model.Tabs[0].Items) {<button type="button" class="hitem" data-item="@it.Slug" aria-pressed="@(it == item ? "true" : "false")">@Icon(it.Icon)<span>@it.Name</span><span class="hitem__go">@Icon("i-arrow")</span></button>}</div><article class="hdetail" aria-live="polite"><div class="hdetail__visual">@if (tab.Visual == "doc") {<div class="docsample" aria-hidden="true"><div class="docsample__top"><span>BASTAU LINE</span><span>@U("services.sample")</span></div><div class="docsample__title">@item.Name</div><span class="docsample__lang" translate="no">@(sampleLang.TryGetValue(item.Slug, out string sample) ? sample : U("services.sampleDefault"))</span>@if (item.Slug == "passport" || item.Slug == "license") {<div class="docsample__photo"></div>}@foreach (int w in new[] { 62, 80, 48, 72, 56 }) {<div class="docsample__row"><i></i><b style="width:@(w)%"></b></div>}<div class="docsample__stamp">@U("services.sample")</div></div>} else {<div class="illo" aria-hidden="true"><span class="illo__sun"></span><span class="illo__ring"></span><span class="illo__disc">@Icon(item.Icon)</span></div>}</div><div class="hdetail__body"><p class="hdetail__k">@tab.Name <span class="hdetail__code">@item.Code</span></p><h3 class="hdetail__t">@item.Title</h3><p class="hdetail__dir">@item.Dir</p><div class="hdetail__cols"><div class="hdetail__block"><h4>@U("services.who")</h4><p>@item.Who</p></div><div class="hdetail__block"><h4>@U("services.bring")</h4><ul>@foreach (string x in bring) {<li>@x</li>}</ul></div></div><div class="hdetail__block"><h4>@U("services.steps")</h4><ol class="hsteps">@foreach (string x in steps) {<li>@x</li>}</ol></div><div class="hdetail__cta"><a class="btn btn--sun" href="#order-@tab.Slug-@item.Slug" data-consult="@tab.Slug:@item.Slug">@cta</a><button type="button" class="quiet" data-consult="">@U("services.dontKnow")</button>@if (!string.IsNullOrWhiteSpace(item.LinkUrl)) {<a class="link-arrow" href="@item.LinkUrl">@item.LinkText</a>}</div><p class="hdetail__note">@Icon("i-info")<span>@note</span></p></div></article></div>

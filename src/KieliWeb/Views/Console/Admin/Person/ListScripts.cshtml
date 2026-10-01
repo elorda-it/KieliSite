@@ -1,0 +1,91 @@
+
+<script>
+     $(function () {
+        const strTableId = "#qar-table";
+        $(strTableId).dataTable({
+            "dom": `<'row'<'col-6'l><'col-6'f>><'row dt-row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>`,
+            "autoWidth": true,
+            "destroy": true,
+            "processing": true,
+            "serverSide": true,
+            "ajax": function (data, callback, setting) {
+                $.ajax({
+                    url: "/@(CurrentLanguage)/@(ControllerName)/Get@(ActionName)List",
+                    type: "POST",
+                    data: {
+                        "keyword": data.search.value,
+                        "start": data.start,
+                        "length": data.length,
+                        "orderList": data.order
+                    },
+                    success: function (data) {
+                        const qData = data["data"],
+                            result = {},
+                            total = parseInt(qData["total"]);
+
+                        result.data = total > 0 ? qData["dataList"] : [];
+                        result.recordsFiltered = total;
+                        result.recordsTotal = total;
+                        callback(result);
+                    }
+                });
+            },
+            'order': [4, 'asc'],
+            "columns": [
+                {
+                    "data": null,
+                    "orderable": false,
+                    "width": "20px",
+                    "bSortable": false,
+                    "render": function (data, type, row) {
+                        if (parseInt(row.isSuper) === 1)
+                            return '<i class="fal fa-shield-check"></i>';
+                        return'<div class="form-check abc-checkbox">\
+                                            <input id="checkbox' + row.id + '" data-id="' + row.id + '" class="form-check-input datatable-checkbox" type="checkbox">\
+                                            <label class="form-check-label" for="checkbox' + row.id + '">\
+                                            </label>\
+                                        </div>';
+                    }
+                },
+                {
+                    "data": 'name',
+                    "orderable": false
+                },
+                {
+                    "data": 'role',
+                    "orderable": false
+                },
+                {
+                    "data": 'email',
+                    "orderable": false
+                },
+                {
+                    "data": 'addTime',
+                    "orderable": true
+                },
+                {
+                    "data": null,
+                    "orderable": false,
+                    "width": "100px",
+                    "bSortable": false,
+                    "render": function (data, type, row) {
+                       return '<div class="button-items">\
+                                     <a class="btn btn-icon btn-outline-secondary" href="/@(CurrentLanguage)/@(ControllerName.ToLower())/@(ActionName.ToLower())/edit?id=' + row.id + '"><i class="fa-duotone fa-pen-to-square"></i></a>\
+                                </div>';
+
+                    }
+                }
+            ],
+            "oLanguage": $qar.getDataTableLanguage(),
+            "preDrawCallback": function () {
+
+            },
+            "rowCallback": function (nRow) {
+
+            },
+            "drawCallback": function (oSettings) {
+
+            }
+        });
+    });
+</script>

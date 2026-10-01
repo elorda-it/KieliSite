@@ -1,0 +1,111 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+       
+
+        const navTd = document.querySelector('[data-table="@("Navigation")"]'),
+            navChkArr = navTd.querySelectorAll('input[type="checkbox"]');
+
+        const checkParentByMangeType = (id, manageType, checked) => {
+            const childInputs = navTd.querySelectorAll('tr[data-parentid="' + id + '"] input[data-manage="' + manageType +'"]');
+            childInputs.forEach(elem => {
+                elem.checked = checked;
+                elem.dispatchEvent(new Event('change'));
+            });
+            navTd.querySelector('tr[data-id="' + id + '"] input[data-manage="' + manageType + '"]').checked = checked;
+        };
+
+        const checkByMangeType = (id, manageType, checked) => {
+            if (checked) {
+                const childViewInputs = navTd.querySelectorAll('tr[data-parentid="' + id + '"] input[data-manage="' + manageType + '"]');
+                let hasNoCheck = false;
+                childViewInputs.forEach(elem => {
+                    if (!elem.checked) {
+                        hasNoCheck = true;
+                        return false;
+                    }
+                });
+                if (!hasNoCheck) {
+                    navTd.querySelector('tr[data-id="' + id + '"] input[data-manage="' + manageType + '"]').checked = true;
+                }
+            } else {
+                navTd.querySelector('tr[data-id="' + id + '"] input[data-manage="' + manageType + '"]').checked = checked;
+            }
+        };
+        navChkArr.forEach(elem => elem.addEventListener("change", function () {
+            const manageType = this.dataset.manage,
+                tr = this.closest('tr'),
+                parentId = parseInt(tr.dataset.parentid),
+                id = parseInt(tr.dataset.id),
+                checked = this.checked;
+
+            if (parentId > 0) {
+                checkByMangeType(id, manageType, checked);
+                switch (manageType) {
+                    case "view": {
+                        if (!checked) {
+                            tr.querySelectorAll('input[type="checkbox"]').forEach(elem => {
+                                elem.checked = checked;
+                                elem.dispatchEvent(new Event('change'));
+                            });
+                        }
+                    } break;
+                    case "create":
+                    case "edit":
+                    case "delete": {
+                        if (checked) {
+                            tr.querySelector('input[data-manage="view"]').checked = checked;
+                        }
+                    } break;
+                }
+            } else {
+                switch (manageType) {
+                    case "view": {
+                        checkParentByMangeType(id, manageType, checked);
+                        if (!checked) {
+                            checkParentByMangeType(id, "create", checked);
+                            checkParentByMangeType(id, "edit", checked);
+                            checkParentByMangeType(id, "delete", checked);
+                        }
+                    } break;
+                    case "create": {
+                        if (checked) {
+                            checkParentByMangeType(id, 'view', true);
+                        }
+                        checkParentByMangeType(id, manageType, checked);
+                    } break;
+                    case "edit": {
+                        if (checked) {
+                            checkParentByMangeType(id, 'view', true);
+                        }
+                        checkParentByMangeType(id, manageType, checked);
+                    } break;
+                    case "delete": {
+                        if (checked) {
+                            checkParentByMangeType(id, 'view', true);
+                        }
+                        checkParentByMangeType(id, manageType, checked);
+                    } break;
+                }
+             
+            }
+        }));
+
+        const allPermissionCheckBoxArr = document.querySelectorAll('#table-permission input[type="checkbox"][data-id]');
+        allPermissionCheckBoxArr.forEach(elem => {
+            elem.addEventListener('change', function () {
+                let permissionIdList = [];
+                allPermissionCheckBoxArr.forEach(item => {
+                    if (item.checked) {
+                        permissionIdList.push({
+                            permissionId: item.dataset.id,
+                            tableName: item.dataset.table,
+                            columnId: item.dataset.columnid
+                        });
+                    }
+                });
+                document.querySelector('#permissionJson').value = JSON.stringify(permissionIdList);
+            });
+            elem.dispatchEvent(new Event('change'));
+        });
+    });
+    </script>

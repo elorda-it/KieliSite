@@ -1,0 +1,106 @@
+@{
+    BlockContent hero = Block("services.hero");
+    BlockContent help = Block("services.help");
+    BlockContent co = Block("services.company");
+    BlockContent cmp = Block("services.compare");
+    string crumb = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "services")?["label"] ?? "Қызметтер";
+}
+<main id="main">
+  <section class="page-head svc-hero">
+    <div class="wrap">
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li>@crumb</li></ol>
+      <div class="service-head">
+        <div>
+          <p class="eyebrow">@hero["eyebrow"]</p>
+          <h1 class="page-title">@hero["title"]</h1>
+          <p class="lead">@hero["lead"]</p>
+          <ul class="trust">
+@foreach (BlockContent t in hero.List("trust"))
+{
+            <li>@Icon(t["icon"])@t["text"]</li>
+}
+          </ul>
+@if (hero.Has("provider"))
+{
+          <p class="provider">@hero.Raw("provider")</p>
+}
+        </div>
+        <div class="service-head__cta">
+          <button type="button" class="btn btn--sun" data-consult>@hero["cta"]</button>
+          <p>@hero["ctaNote"]</p>
+        </div>
+      </div>
+@if (hero.Has("image"))
+{
+      <figure class="svc-hero__band"><img src="@hero["image"]" alt="@hero["imageAlt"]" width="1710" height="600"></figure>
+}
+    </div>
+  </section>
+
+  <section class="section help" id="help" aria-labelledby="help-title">
+    <div class="wrap">
+      <header class="help-head">
+        <p class="eyebrow">@help["eyebrow"]</p>
+        <h2 id="help-title">@help["title"]</h2>
+        <p>@help["lead"]</p>
+      </header>
+      <div data-help><partial name="~/Views/Themes/Kieli/Shared/_Help.cshtml" model='new HelpModel(ContentStore.ServiceTabs(Cache, Lang), "hp0")' /></div>
+@if (help.Has("foot"))
+{
+      <p class="help-foot">@help.Raw("foot")</p>
+}
+    </div>
+  </section>
+
+  <section class="band band--night" id="bastau" aria-labelledby="co-title">
+    <div class="wrap company">
+      <div>
+        <p class="eyebrow">@co["eyebrow"]</p>
+        <h2 id="co-title">@co["title"]</h2>
+        <p class="company__tag">@co["tagline"]</p>
+        <p class="lead">@co["lead"]</p>
+        <div class="bridge" aria-hidden="true">
+          <svg viewBox="0 0 400 110">
+            <path d="M8 96h384" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M20 96Q200-24 380 96" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M60 96V76.3M100 96V58.5M140 96V46.7M180 96V40.7M220 96V40.7M260 96V46.7M300 96V58.5M340 96V76.3" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+            <circle cx="20" cy="96" r="5" fill="currentColor"/><circle cx="380" cy="96" r="5" fill="currentColor"/>
+          </svg>
+          <div class="bridge__ends"><span>@co["bridgeLeft"]</span><span>@co["bridgeRight"]</span></div>
+          <p class="bridge__langs">@co.Raw("bridgeLangs")</p>
+        </div>
+@if (co.Has("address"))
+{
+        <p class="company__addr"><svg aria-hidden="true"><use href="#i-pin"/></svg>@co["address"]</p>
+}
+      </div>
+      <div class="company__why">
+        <h3>@co["whyTitle"]</h3>
+        <ul class="why">
+@foreach (BlockContent w in co.List("why"))
+{
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>@w["text"]</li>
+}
+        </ul>
+        <p class="motto">@foreach (BlockContent m in co.List("motto")) {@m["word"]<span>.</span><text> </text>}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" aria-labelledby="cmp-title">
+    <div class="wrap">
+      <partial name="~/Views/Themes/Kieli/Shared/_SecHead.cshtml" model='new SectionModel(cmp, TitleId: "cmp-title")' />
+      <div class="table-wrap">
+        @cmp.Raw("table")
+      </div>
+@if (cmp.Has("note"))
+{
+      <p class="table-note">@cmp["note"]</p>
+}
+    </div>
+  </section>
+
+  <partial name="~/Views/Themes/Kieli/Shared/_Faq.cshtml" model='new SectionModel(Block("services.faq"), "section section--tint", "faq-title")' />
+
+  <partial name="~/Views/Themes/Kieli/Shared/_Cross.cshtml" model='Block("services.cross")' />
+</main>

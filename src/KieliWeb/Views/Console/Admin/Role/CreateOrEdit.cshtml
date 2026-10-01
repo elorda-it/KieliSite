@@ -1,0 +1,221 @@
+@{
+    Role role = QarModel<Role>("role");
+    List<IGrouping<string, Permission>> permissionGroupList = (ViewData["permissionGroupList"] ?? new List<IGrouping<string, Permission>>()) as List<IGrouping<string, Permission>>;
+    List<Navigation> allNavigationList = QarList<Navigation>("allNavigationList");
+    List<Rolepermission> rolePermissionList = QarList<Rolepermission>("rolePermissionList");
+    bool isChecked = false;
+}
+<section class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">@(T("ls_Administratormanagement"))</a></li>
+                            <li class="breadcrumb-item" aria-current="page">@(ViewData["title"])</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <form class="card qar-form" action="/@(CurrentLanguage)/@(ControllerName)/@(ActionName)" method="post" enctype="multipart/form-data">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>@(ViewData["title"])</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" name="id" value="@(role?.Id)" />
+                        <input type="hidden" id="permissionJson" name="permissionJson" value="" />
+                        <ul class="nav nav-tabs mb-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="nav-language-default-tab" data-bs-toggle="tab" href="#nav-language-default" role="tab" aria-selected="true">@(T("ls_Default"))</a>
+                            </li>
+
+@if (LanguageList.Count((Language x) => x.IsSubLanguage == 0 && x.FrontendDisplay == 1) > 1)
+{
+foreach (Language item in LanguageList.Where((Language x) => x.IsSubLanguage == 0 && x.FrontendDisplay == 1).ToList())
+{
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="nav-language-@(item.LanguageCulture)-tab" href="#nav-language-@(item.LanguageCulture)" data-bs-toggle="tab" role="tab" aria-selected="false">@(item.FullName)</a>
+                                    </li>
+
+}
+
+}
+                        </ul>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane show active" id="nav-language-default" role="tabpanel" aria-labelledby="nav-language-default-tab">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">@(T("ls_Name"))<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" value="@(role?.Name)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="description">@(T("ls_Description"))</label>
+                                    <textarea class="form-control" name="description" id="description" rows="3">@(role?.Description)</textarea>
+                                </div>
+                            </div>
+
+@foreach (Language item2 in LanguageList.Where((Language x) => x.FrontendDisplay == 1).ToList())
+{
+string name = MultiLanguageList.FirstOrDefault((Multilanguage x) => x.ColumnName.Equals("name", StringComparison.OrdinalIgnoreCase) && x.Language.Equals(item2.LanguageCulture, StringComparison.OrdinalIgnoreCase))?.ColumnValue;
+string description = MultiLanguageList.FirstOrDefault((Multilanguage x) => x.ColumnName.Equals("description", StringComparison.OrdinalIgnoreCase) && x.Language.Equals(item2.LanguageCulture, StringComparison.OrdinalIgnoreCase))?.ColumnValue;
+                                <div class="tab-pane" id="nav-language-@(item2.LanguageCulture)" role="tabpanel" aria-labelledby="nav-language-@(item2.LanguageCulture)-tab">
+                                    <div class="form-group">
+                                        <label class="form-label" for="name_@(item2.LanguageCulture)">@(T("ls_Name"))</label>
+                                        <input type="text" name="name_@(item2.LanguageCulture)" data-multilanguage="input" class="form-control" id="name_@(item2.LanguageCulture)" value="@(name)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="description_@(item2.LanguageCulture)">@(T("ls_Description"))</label>
+                                        <textarea class="form-control" data-multilanguage="textarea" name="description_@(item2.LanguageCulture)" id="description_@(item2.LanguageCulture)" rows="2">@(description)</textarea>
+                                    </div>
+                                </div>
+
+}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="description">@(T("ls_Permissionmanagment")) <span class="text-danger">*</span></label>
+                            <table class="table table-bordered" id="table-permission">
+
+@foreach (IGrouping<string, Permission> item3 in permissionGroupList)
+{
+                                    <tr class="table-primary">
+                                        <td>
+
+@{ string key = item3.Key; }
+
+@if (key == "Navigation")
+{
+
+                                                            @(T("ls_Navigationmenus"))
+                                                        
+}
+else
+{
+
+                                                            @(item3.Key)
+                                                        
+}
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+@if (item3.Key.Equals("Navigation", StringComparison.OrdinalIgnoreCase))
+{
+                                            <td data-table="@(item3.Key)">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                @(T("ls_Name"))
+                                                            </th>
+
+@foreach (Permission permission in item3)
+{
+                                                                <th>
+                                                                    @(T(permission.LocalKey))
+                                                                </th>
+
+}
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+@foreach (Navigation navigation in (from x in allNavigationList
+where x.ParentId == 0
+orderby x.DisplayOrder
+select x).ToList())
+{
+List<Navigation> childList = (from x in allNavigationList
+where x.ParentId == navigation.Id
+orderby x.DisplayOrder
+select x).ToList();
+                                                            <tr data-parentid="@(navigation.ParentId)" data-id="@(navigation.Id)" class="table-active">
+                                                                <td>
+                                                                    @(T(navigation.NavTitle))
+                                                                </td>
+
+@foreach (Permission permission2 in item3)
+{
+                                                                    <td>
+                                                                        <div class="form-check abc-checkbox">
+                                                                            <input id="checkbox_@(navigation.Id)_@(permission2.ManageType)" data-manage="@(permission2.ManageType)" class="form-check-input datatable-checkbox" type="checkbox">
+                                                                            <label class="form-check-label" for="checkbox_@(navigation.Id)_@(permission2.ManageType)">
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+
+}
+                                                            </tr>
+foreach (Navigation childNavigation in childList)
+{
+                                                                <tr data-parentid="@(childNavigation.ParentId)" data-id="@(navigation.Id)">
+                                                                    <td>
+                                                                        &nbsp; <i class="fa-duotone fa-caret-right"></i> @(T(childNavigation.NavTitle))
+                                                                    </td>
+
+@foreach (Permission permission3 in item3)
+{
+isChecked = rolePermissionList.Exists((Rolepermission x) => x.TableName.Equals(item3.Key) && x.PermissionId == permission3.Id && x.ColumnId == childNavigation.Id);
+                                                                        <td>
+                                                                            <div class="form-check abc-checkbox">
+                                                                                <input id="checkbox_@(childNavigation.Id)_@(permission3.ManageType)" data-manage="@(permission3.ManageType)" data-id="@(permission3.Id)" data-table="@(item3.Key)" data-columnid="@(childNavigation.Id)" class="form-check-input datatable-checkbox" type="checkbox" @(isChecked ? "checked" : "")>
+                                                                                <label class="form-check-label" for="checkbox_@(childNavigation.Id)_@(permission3.ManageType)">
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+
+}
+                                                                </tr>
+
+}
+
+}
+                                                    </tbody>
+                                                </table>
+                                            </td>
+
+}
+else
+{
+                                            <td data-table="@(item3.Key)">
+
+@foreach (Permission permission4 in item3)
+{
+isChecked = rolePermissionList.Exists((Rolepermission x) => x.TableName.Equals(item3.Key) && x.PermissionId == permission4.Id && x.ColumnId == 0);
+                                                    <div class="form-check form-check-inline ">
+                                                        <input id="checkbox_@(permission4.TableName)_@(permission4.ManageType)" data-id="@(permission4.Id)" data-table="@(item3.Key)" data-columnid="0" class="form-check-input datatable-checkbox" type="checkbox" @(isChecked ? "checked" : "")>
+                                                        <label class="form-check-label" for="checkbox_@(permission4.TableName)_@(permission4.ManageType)">
+                                                            @(T(permission4.LocalKey))
+                                                        </label>
+                                                    </div>
+
+}
+                                            </td>
+
+}
+                                    </tr>
+
+}
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button type="reset" class="btn btn-outline-secondary">
+                            <i class="fa-duotone fa-rotate-right me-1"></i>@(T("ls_Reset"))
+                        </button>
+                        <button type="submit" class="btn btn-primary me-2" data-loading-text="@(T("ls_Loading"))">
+                            <i class="fa-duotone fa-floppy-disk me-1"></i> @(T("ls_Save"))
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

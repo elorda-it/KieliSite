@@ -1,0 +1,2379 @@
+{
+ "blocks": {
+  "site.brand": {
+   "footerText": "Kazakistan ile Çin arasında güvenilir bir köprü: çeviri, belgeler, göç, eğitim, iş dünyası ve konut. Kieli, Kazakistan'ın kutsal yerlerini tanıtan projemizdir."
+  },
+  "site.nav": {
+   "items": [
+    {
+     "label": "Yazar",
+     "note": "Omar Bekmurat"
+    },
+    {
+     "label": "Hizmetler",
+     "note": "6 alan"
+    },
+    {
+     "label": "KAZTEST",
+     "note": "deneme sınavı"
+    },
+    {
+     "label": "Haberler",
+     "note": "makaleler, rehberler"
+    },
+    {
+     "label": "Kazakistan",
+     "note": "kutsal yerler"
+    }
+   ]
+  },
+  "site.contact": {
+   "address": "Ainakol Cad. No: 66, Astana",
+   "hours": "Pzt–Cum 10:00–19:00, Cmt 10:00–15:00",
+   "timeNote": "Pekin saatinin 3 saat gerisinde",
+   "legalName": "BASTAU LINE Sınırlı Sorumluluk Ortaklığı (LLP)"
+  },
+  "site.footer": {
+   "col1Title": "Kieli · Kazakistan",
+   "col1Links": [
+    {
+     "label": "Doğa"
+    },
+    {
+     "label": "Kutsal yerler"
+    },
+    {
+     "label": "Tarihi yerler"
+    },
+    {
+     "label": "Kültürel miras"
+    },
+    {
+     "label": "17 bölge"
+    }
+   ],
+   "col2Title": "Hizmetler",
+   "col2Links": [
+    {
+     "label": "Çeviri"
+    },
+    {
+     "label": "Noter onayı ve apostil"
+    },
+    {
+     "label": "Göç"
+    },
+    {
+     "label": "Eğitim ve dil"
+    },
+    {
+     "label": "KAZTEST deneme sınavı"
+    },
+    {
+     "label": "İş dünyası"
+    },
+    {
+     "label": "Konut"
+    }
+   ],
+   "col3Title": "İletişim",
+   "copyright": "Kieli · <span class=\"ltr\">kieli.kz</span>. Sitedeki bilgiler genel bilgilendirme amaçlıdır: resmi şartları <a href=\"https://egov.kz\" class=\"ltr\">egov.kz</a> ve <a href=\"https://www.enbek.kz\" class=\"ltr\">enbek.kz</a> portallarından kontrol edin.",
+   "credit": "Siteyi hazırlayan"
+  },
+  "site.consult": {
+   "title": "Danışmanlık alın",
+   "lead": "Durumunuzu kısaca yazın, çalışma saatlerinde size ulaşalım. Kazakça, Çince <span class=\"zh\" lang=\"zh\">(中文咨询)</span> ve Rusça hizmet veriyoruz.",
+   "pickHint": "Mesajlaşma uygulamasından yazarsanız bu kodu belirtin; talebiniz doğrudan ilgili uzmana ulaşır.",
+   "wechatHint": "<b>Çin'de yaşıyorsanız</b> WeChat üzerinden yazın: WhatsApp ve Telegram Çin'de VPN olmadan açılmıyor.",
+   "separator": "ya da talep oluşturun",
+   "msgPlaceholder": "Örneğin: Gulca'dan ailecek (4 kişi) Almatı'ya taşınmak istiyoruz, belgeleri henüz toplamadık.",
+   "consent": "Kişisel verilerimin danışmanlık amacıyla işlenmesine onay veriyorum.",
+   "submit": "Talebi gönder",
+   "doneText": "Talebiniz alındı. Çalışma saatlerinde, belirttiğiniz iletişim kanalından size yazacağız.",
+   "fab": "Danışmanlık alın"
+  },
+  "seo.home": {
+   "title": "kieli.kz — Kazakistan'a taşınma, çeviri, belgeler ve KAZTEST",
+   "description": "Kazakistan'a taşınma: kandas statüsü, oturma izni, vatandaşlık, Ata Jolı kartı; çeviri, noter, apostil ve KAZTEST deneme sınavı. BASTAU LINE, Astana."
+  },
+  "home.hero": {
+   "eyebrow": "Kazakistan'a gelişin ilk adımı",
+   "name": "Omar\nBekmurat",
+   "role": "Girişimci · sivil toplum aktivisti · BASTAU LINE'ın kurucusu",
+   "slogan": "Yeni bir hayata emin adımlarla.",
+   "lead": "Kazakistan'a taşınma, eğitim ve belge hazırlığında Kazakça, Çince ve Rusça destek veriyoruz.",
+   "ctaConsult": "Danışmanlık alın",
+   "ctaServices": "Hizmetleri inceleyin",
+   "ctaAuthor": "Yazar hakkında",
+   "photoAlt": "Omar Bekmurat"
+  },
+  "home.strip": {
+   "items": [
+    {
+     "title": "Қазақша · <bdi lang=\"zh\" translate=\"no\">中文</bdi> · <bdi translate=\"no\">Русский</bdi>",
+     "text": "üç dilde hizmet veriyoruz"
+    },
+    {
+     "title": "Çeviri · belgeler · göç",
+     "text": "ilk görüşmeden hazır dosyaya kadar"
+    },
+    {
+     "title": "Ainakol Cad. No: 66, Astana",
+     "text": "BASTAU LINE LLP"
+    }
+   ]
+  },
+  "home.help": {
+   "eyebrow": "Hizmetler",
+   "title": "Hangi konuda yardıma ihtiyacınız var?",
+   "lead": "Amacınızı seçin: neleri hazırlamanız gerektiğini ve sürecin nasıl işlediğini hemen görürsünüz.",
+   "foot": "Karşılaştırma tablosu, sık sorulan sorular ve şirket bilgileri: <a class=\"link-arrow\" href=\"/kz/services\">Hizmetler sayfası</a>"
+  },
+  "home.kaztest": {
+   "eyebrow": "Yeni şart · 2026",
+   "title": "KAZTEST'e hazır mısınız?",
+   "lead": "Daimi oturma izni ve kandas (soydaş) statüsü alırken artık Kazakça bilgi düzeyi ölçülüyor. Resmi sınav formatında ücretsiz pratik yapın.",
+   "facts": [
+    {
+     "value": "60",
+     "label": "soru"
+    },
+    {
+     "value": "70",
+     "label": "dakika"
+    },
+    {
+     "value": "%70",
+     "label": "her bölümde geçme sınırı"
+    }
+   ],
+   "ctaStart": "Deneme sınavına başlayın",
+   "ctaMore": "Şart hakkında ayrıntılar"
+  },
+  "home.route": {
+   "eyebrow": "Çalışma süreci",
+   "title": "Anlaşılır adımlar",
+   "aside": "Sürecin her aşamasını anlaşılır bir dille açıklıyoruz.",
+   "steps": [
+    {
+     "title": "Danışma",
+     "text": "Amacınızı WeChat, WhatsApp üzerinden ya da ofisimizde anlatırsınız."
+    },
+    {
+     "title": "Belgeler",
+     "text": "Nelerin gerektiğini net bir listeyle bildiriyoruz."
+    },
+    {
+     "title": "Çeviri",
+     "text": "Belgeleri çevirip noter onayı ve apostile hazırlıyoruz."
+    },
+    {
+     "title": "Hazır",
+     "text": "Dosyanız teslime hazır; gerekirse süreç boyunca size eşlik ediyoruz."
+    }
+   ]
+  },
+  "home.posts": {
+   "eyebrow": "Haberler",
+   "title": "Haberler ve makaleler",
+   "aside": "Göç kurallarındaki değişiklikler, belgeler ve eğitim üzerine somut rehberler ve yazarın yazıları.",
+   "moreText": "Daha fazla",
+   "moreNote": "Tüm haberler ve makaleler, kategoriye göre filtrelenebilir"
+  },
+  "home.kazakhstan": {
+   "eyebrow": "Kieli · Kazakistan",
+   "title": "Kazakistan'ı keşfedin",
+   "aside": "Doğası, tarihi ve gelenekleriyle 17 bölgede 187 mekân.",
+   "linkText": "Harita ve tüm mekânlar",
+   "tabs": [
+    {
+     "label": "Doğa"
+    },
+    {
+     "label": "Tarih"
+    },
+    {
+     "label": "Gelenek"
+    }
+   ]
+  },
+  "home.faq": {
+   "eyebrow": "Soru-cevap",
+   "title": "Sorunuz mu var?",
+   "lead": "Cevabını bulamazsanız WeChat veya WhatsApp'tan yazın.",
+   "items": [
+    {
+     "q": "Fiyat nasıl belirleniyor?",
+     "a": "<p>Belgenin türüne, uzunluğuna ve gereken işleme göre. Belgenizi gördükten sonra kesin fiyatı söylüyoruz.</p>"
+    },
+    {
+     "q": "Belgeleri çevrim içi gönderebilir miyim?",
+     "a": "<p>Evet. Net bir fotoğrafını WeChat, WhatsApp veya Telegram üzerinden gönderin; şartları buna göre netleştiririz. Belgenin aslı yalnızca gerektiğinde istenir.</p>"
+    },
+    {
+     "q": "Hangi dile çevirmek gerekiyor?",
+     "a": "<p>Belgenin teslim edileceği kuruma bağlı; çoğunlukla Kazakça veya Rusça. Kurumun şartlarını birlikte kontrol ederiz.</p>"
+    },
+    {
+     "q": "Kartı veya vatandaşlığı siz mi veriyorsunuz?",
+     "a": "<p>Hayır. Kararı yetkili devlet kurumları verir; biz belgelerinizi doğru ve eksiksiz hazırlamanıza yardımcı oluyoruz.</p>"
+    }
+   ]
+  },
+  "home.contact": {
+   "eyebrow": "İletişim",
+   "title": "Durumunuzu anlatın, doğru yolu birlikte bulalım",
+   "lead": "Kazakça, Çince ve Rusça yanıt veriyoruz. Ofisimiz Astana'da.",
+   "wechatLabel": "WeChat · Çin'den yazmak için",
+   "formTitle": "Talep oluşturun",
+   "formLead": "Size biz ulaşırız: WeChat, WhatsApp veya telefonla.",
+   "doneText": "Talebiniz alındı. Çalışma saatlerinde size ulaşacağız."
+  },
+  "seo.author": {
+   "title": "Omar Bekmurat — BASTAU LINE'ın kurucusu · kieli.kz",
+   "description": "Omar Bekmurat: sanat bilimleri yüksek lisans mezunu, yönetmen-koreograf, sivil toplum aktivisti ve girişimci; Kieli projesinin yaratıcısı, BASTAU LINE LLP'nin kurucusu."
+  },
+  "author.hero": {
+   "eyebrow": "Projenin yaratıcısı",
+   "name": "Omar Bekmurat",
+   "role": "Sanat bilimleri yüksek lisans mezunu, yönetmen-koreograf, sivil toplum aktivisti ve girişimci",
+   "lead": "Kimi insanlar kendi mesleğinin sınırları içinde çalışır. Kimileri ise birçok alanı tek bir amaçta birleştirerek toplumun geleceğine hizmet eder.",
+   "quoteLabel": "Temel ilkesi",
+   "quote": "Ülkesine faydalı olmak ve gelecek kuşaklara anlamlı bir iz bırakmak.",
+   "stats": [
+    {
+     "label": "Çalışma dilleri",
+     "value": "3",
+     "small": "Kazakça · Çince · Rusça"
+    },
+    {
+     "label": "Dans toplulukları",
+     "value": "3"
+    },
+    {
+     "label": "Şirket",
+     "value": "BASTAU LINE"
+    }
+   ],
+   "ctaConsult": "Danışmanlık alın",
+   "linkText": "BASTAU LINE hizmetleri"
+  },
+  "author.social": {
+   "eyebrow": "Toplumsal çalışmalar",
+   "title": "Ülkeye dönen her aile, ülkenin geleceğine bir katkıdır",
+   "lead": "Onun gündeminde yalnızca bugünün sorunları değil, Kazakistan'ın önümüzdeki on yıllardaki geleceği de var.",
+   "issues": [
+    {
+     "text": "Nüfus"
+    },
+    {
+     "text": "Milli birlik"
+    },
+    {
+     "text": "Kandasların (soydaşların) tarihi anavatanlarına dönüşü"
+    },
+    {
+     "text": "Yeni ortama uyum sağlamak, toplumda yer edinmek"
+    }
+   ],
+   "body": "<p>Omar Bekmurat için ülkeye dönen her aile Kazakistan'ın demografik potansiyeline bir katkı, her çocuk ise devletin yarınki vatandaşıdır. Bu yüzden kandasların belge işlemleri, oturma izni ve vatandaşlık alma, eğitime erişim, işe girme ve iş kurma sırasında karşılaştıkları zorluklara kayıtsız kalmıyor.</p> <p>Tek tek kişilerin sorunlarını çözmekle yetinmiyor, bu zorlukların nedenlerine de eğiliyor: vatandaşların başvurularını ve yaşam koşullarını inceliyor, devlet kurumlarına resmi öneriler sunuyor, göç işlemlerini anlaşılır ve erişilebilir kılmaya yönelik girişimleri gündeme getiriyor.</p> <div class=\"callout\"><span>Bu alandaki her çalışmanın ardında bir insanın kaderi, bir ailenin umudu ve tarihi anavatanına dönmek isteyen bir vatandaşın geleceği var.</span></div>"
+  },
+  "author.stage": {
+   "eyebrow": "Dans sanatı",
+   "title": "Milli sanat, gelecek kuşaklara bırakılan bir emanettir",
+   "lead": "Bir yönetmen-koreograf olarak milli dansı yalnızca bir sahne gösterisi olarak görmüyor. Kazak dansı, halkın karakterini, tarihini, dünya görüşünü ve ruhunu aktaran bir değerdir.",
+   "studioLabel": "Çağdaş Kazak dansı stüdyosu",
+   "studioName": "\"Bastau\"",
+   "studioText": "Çocuklara ve gençlere yalnızca dans figürlerini değil, sahne kültürünü, disiplini, sorumluluğu ve milli sanata saygıyı da öğretiyor.",
+   "groupsTitle": "Dans toplulukları",
+   "groups": [
+    {
+     "name": "\"Şugıla\""
+    },
+    {
+     "name": "\"Şalkıma\""
+    },
+    {
+     "name": "\"QazTribe\""
+    }
+   ],
+   "groupsNote": "Gelenekle yeniliği harmanlayarak Kazak dansının günümüzdeki olanaklarını ortaya koyuyorlar.",
+   "projectsTitle": "Projeler",
+   "projects": [
+    {
+     "name": "\"Büyük Bozkırın Ritmi – Kamajay\""
+    },
+    {
+     "name": "\"Karajorga\""
+    },
+    {
+     "name": "\"Ayköylek\""
+    }
+   ],
+   "projectsNote": "Milli kimlik herkesin paylaştığı bir harekete dönüşüyor, kuşaklar arasındaki bağ sanat aracılığıyla sürüyor."
+  },
+  "author.business": {
+   "eyebrow": "Girişimcilik",
+   "title": "İnsanları ve fırsatları buluşturmak",
+   "lead": "Kazakça, Çince ve Rusçaya hâkim olması, farklı çevrelerden insanların sorunlarını derinlemesine anlamasını sağladı. Dil yalnızca bir iletişim aracı değildir: insanı toplumla, vatandaşı devletle, iki ülkenin kültürünü ve iş dünyasını birbirine bağlayan bir köprüdür.",
+   "cardLabel": "Bu ilke üzerine kuruldu",
+   "cardName": "BASTAU LINE",
+   "cardSmall": "LLP",
+   "cardText": "Kazakistan ile Çin arasında güvenilir bir köprü: Astana'da uluslararası çeviri ve belge işlemlerine destek merkezi.",
+   "dirs": [
+    {
+     "name": "Çeviri"
+    },
+    {
+     "name": "Belge işlemleri"
+    },
+    {
+     "name": "Göç"
+    },
+    {
+     "name": "Eğitim"
+    },
+    {
+     "name": "Hukuksal destek"
+    },
+    {
+     "name": "Gayrimenkul"
+    },
+    {
+     "name": "İş bağlantıları"
+    }
+   ],
+   "cardNote": "Her hizmetin nihai amacı, insanların zamanını korumak, karmaşık işlemler arasında doğru yolu bulmalarına yardım etmek ve yeni bir hayata başlamalarını sağlamaktır.",
+   "linkText": "Hizmetleri inceleyin"
+  },
+  "author.goals": {
+   "eyebrow": "Geleceğe uzanan yol",
+   "title": "Girişimlerinin ortak özü",
+   "lead": "Onun için ülkeye hizmet büyük sözlerle başlamaz: tek bir insanın sorununa eğilmekle, bir çocuğa milli sanatı aşılamakla, bir ailenin tarihi anavatanına yerleşmesine yardım etmekle başlar.",
+   "items": [
+    {
+     "text": "Tarihi anavatanına dönen kandasların önündeki engelleri azaltmak"
+    },
+    {
+     "text": "Ülkeye gelen ailelerin topluma uyum sağlamasına yardım etmek"
+    },
+    {
+     "text": "Kazakistan nüfusunun artmasına ve milli birliğin güçlenmesine katkı sağlamak"
+    },
+    {
+     "text": "Kazakçanın ve Kazak kültürünün kullanım alanını genişletmek"
+    },
+    {
+     "text": "Milli sanatı genç kuşaklara emanet etmek"
+    },
+    {
+     "text": "Bilgili, çalışkan ve vatansever bir kuşak yetiştirmek"
+    },
+    {
+     "text": "Kazakistan ile Çin arasındaki kültürel ve ticari bağları geliştirmek"
+    }
+   ]
+  },
+  "author.project": {
+   "imageAlt": "Hoca Ahmed Yesevi Türbesi, Türkistan",
+   "caption": "Hoca Ahmed Yesevi Türbesi, Türkistan · projedeki 187 mekândan biri",
+   "eyebrow": "Kieli projesi",
+   "title": "Kazakistan'ın kutsal yerlerinin coğrafyası",
+   "lead": "Her halkın, herkesin ortak saydığı ve her ferdinin bildiği kutsal yerleri vardır. Proje bu yerleri tek bir haritada toplayarak Kazakçanın ve Kazak kültürünün kullanım alanını genişletmeye hizmet ediyor.",
+   "bullets": [
+    {
+     "text": "17 bölgede 187 mekân: doğa, kutsal yerler, antik kentler, anıtlar"
+    },
+    {
+     "text": "UNESCO listesindeki 11 Kazak mirası: aytıştan boz eve kadar"
+    },
+    {
+     "text": "Birçok mekânın 360° panoraması: evden çıkmadan gezebilirsiniz"
+    }
+   ],
+   "linkText": "Haritayı açın"
+  },
+  "author.path": {
+   "lines": [
+    {
+     "text": "Bir insanın kaderi düzelirse bir ailenin umudu yeşerir."
+    },
+    {
+     "text": "Bir aile ülkeye yerleşirse halkın temeli sağlamlaşır."
+    },
+    {
+     "text": "Milli değerleri özümseyen her çocuk ise Kazakistan'ın geleceğini sürdürür."
+    }
+   ],
+   "final": "Omar Bekmurat'ın seçtiği yol, bir insanın kaderinden başlayıp ülkenin geleceğine uzanan bir yoldur."
+  },
+  "author.articles": {
+   "eyebrow": "Tavsiyeler",
+   "title": "Faydalı rehberler",
+   "linkText": "Daha fazla"
+  },
+  "author.cross": {
+   "eyebrow": "İletişim",
+   "title": "Belge, göç, eğitim: sorunuzu sorun",
+   "text": "WeChat, WhatsApp, Telegram üzerinden ya da Astana'daki ofisimizde; Kazakça, Çince ve Rusça.",
+   "button": "Danışmanlık alın",
+   "linkText": "Hizmetler"
+  },
+  "seo.services": {
+   "title": "Hizmetler: göç, çeviri, noter, apostil · kieli.kz",
+   "description": "BASTAU LINE LLP, Astana: belge çevirisi, noter onayı, apostil, vatandaşlık ve oturma izni, kandas statüsü, Ata Jolı kartı, eğitim, iş ve konut."
+  },
+  "services.hero": {
+   "eyebrow": "Hizmetler",
+   "title": "Çeviri, belge ve göç işlemleri",
+   "lead": "Ata yurduna dönen kandaslara (soydaşlara), Kazakistan ve Çin vatandaşlarına, girişimcilere ve şirketlere Kazakça, Çince ve Rusça kapsamlı hizmet.",
+   "trust": [
+    {
+     "text": "Kazakça, Çince, Rusça"
+    },
+    {
+     "text": "Her belgeyi titizlikle kontrol ediyoruz"
+    },
+    {
+     "text": "Aşamaları anlaşılır bir dille açıklıyoruz"
+    },
+    {
+     "text": "Gizlilik ve sorumluluk"
+    }
+   ],
+   "provider": "Hizmet sağlayıcı: <b>BASTAU LINE LLP</b> · Ainakol Cad. No: 66, Astana",
+   "cta": "Danışmanlık alın",
+   "ctaNote": "Talebinize çalışma saatlerinde yanıt veriyoruz.",
+   "imageAlt": "Astana, Esil Nehri kıyısı"
+  },
+  "services.help": {
+   "eyebrow": "Hizmetler",
+   "title": "Hangi konuda yardıma ihtiyacınız var?",
+   "lead": "Amacınızı seçin: neleri hazırlamanız gerektiğini ve sürecin nasıl işlediğini hemen görürsünüz.",
+   "foot": "Hizmet bedeli belgenin türüne ve uzunluğuna bağlıdır. Kesin fiyatı talebinizi aldıktan sonra bildiriyoruz."
+  },
+  "services.company": {
+   "eyebrow": "Hizmet sağlayıcı",
+   "title": "BASTAU LINE LLP",
+   "tagline": "Kazakistan ile Çin arasında güvenilir bir köprü",
+   "lead": "Astana şehrinde uluslararası çeviri ve belge işlemlerine destek merkezi. Temel amacımız, müşterilerimizin zamanını korumak, belgeleri doğru çevirmek ve ilgili kurumlara teslime hazırlamaktır.",
+   "bridgeLeft": "Kazakistan",
+   "bridgeRight": "Çin",
+   "bridgeLangs": "қазақ · <span lang=\"zh\">中文</span> · русский",
+   "address": "Ainakol Cad. No: 66, Astana",
+   "whyTitle": "Neden BASTAU LINE?",
+   "why": [
+    {
+     "text": "Kazakça, Çince ve Rusça hizmet veriyoruz"
+    },
+    {
+     "text": "Kazakistan ile Çin arasındaki belge işlemlerinin özelliklerini dikkate alıyoruz"
+    },
+    {
+     "text": "Her belgeyi titizlikle kontrol ediyoruz"
+    },
+    {
+     "text": "İşlemlerin aşamalarını müşteriye anlaşılır bir dille aktarıyoruz"
+    },
+    {
+     "text": "Bireylerle, girişimcilerle ve şirketlerle çalışıyoruz"
+    },
+    {
+     "text": "Belgelerin eksiksiz bir bütün olarak hazırlanmasına yardımcı oluyoruz"
+    },
+    {
+     "text": "Gizlilik ve sorumluluk ilkelerine bağlıyız"
+    }
+   ],
+   "motto": [
+    {
+     "word": "Profesyonellik"
+    },
+    {
+     "word": "Titizlik"
+    },
+    {
+     "word": "Sorumluluk"
+    }
+   ]
+  },
+  "services.compare": {
+   "eyebrow": "Karşılaştırma",
+   "title": "Statü, kart, oturma izni, vatandaşlık: farkları ne?",
+   "aside": "En sık sorulan soru. Kısa cevap tabloda; hangisinin durumunuza uygun olduğunu danışmanlıkta birlikte belirleriz.",
+   "table": "<table class=\"compare\">\n          <thead>\n            <tr><th scope=\"col\">Soru</th><th scope=\"col\">Kandas statüsü</th><th scope=\"col\" class=\"hl\">\"Ata Jolı\" kartı</th><th scope=\"col\">Oturma izni</th><th scope=\"col\">Vatandaşlık</th></tr>\n          </thead>\n          <tbody>\n            <tr><th scope=\"row\">Kimler için</th><td>Kalıcı olarak yerleşmeye gelen etnik Kazaklar ve aileleri</td><td class=\"hl\">Yurt dışındaki kandaslar: işletme sahipleri, talep gören uzmanlar</td><td>Kazakistan'da kalıcı olarak yaşayan yabancılar</td><td>Kazakistan'da yasal olarak yaşayan kandaslar</td></tr>\n            <tr><th scope=\"row\">Yabancı vatandaşlık</th><td class=\"yes\">Korunur</td><td class=\"hl yes\">Korunur</td><td class=\"yes\">Korunur</td><td class=\"no\">Vazgeçilmesi gerekir</td></tr>\n            <tr><th scope=\"row\">Süre</th><td><b>1 yıl</b>, bir kez 6 ay uzatılır</td><td class=\"hl\"><b>10 yıla kadar</b>, uzatılabilir</td><td>Süresiz</td><td>Süresiz</td></tr>\n            <tr><th scope=\"row\">Çalışma</th><td>İzin gerekmez</td><td class=\"hl\">İzin gerekmez; her bölgede iş yapılabilir</td><td>İzin gerekmez</td><td>Tam hak</td></tr>\n            <tr><th scope=\"row\">Devlet desteği</th><td>Bölgesel kota kapsamında: aile üyesi başına 70 AHE (aylık hesaplama endeksi), kira yardımı</td><td class=\"hl no\">Öngörülmemiş</td><td class=\"no\">—</td><td>Vatandaşların tüm hakları</td></tr>\n            <tr><th scope=\"row\">Oy hakkı</th><td class=\"no\">Yok</td><td class=\"hl no\">Yok</td><td class=\"no\">Yok</td><td class=\"yes\">Var</td></tr>\n            <tr><th scope=\"row\">Başvuru yeri</th><td>eGov / enbek.kz, akimlik (yerel yönetim), yurt dışı temsilcilikleri</td><td class=\"hl\">Yurt dışı temsilcilikleri veya çevrim içi</td><td>Göç makamları</td><td>Göç makamları</td></tr>\n          </tbody>\n        </table>",
+   "note": "Bilgiler genel bir fikir vermek amacıyla sunulmuştur; mevzuat değişebilir. Nihai kararı yetkili devlet kurumları verir."
+  },
+  "services.faq": {
+   "eyebrow": "Soru-cevap",
+   "title": "Sıkça sorulan sorular",
+   "lead": "Sorunuzun cevabı yok mu? WeChat'ten veya WhatsApp'tan yazın.",
+   "items": [
+    {
+     "q": "Çin'den ayrılmadan önce hangi belgeleri hazırlamalıyım?",
+     "a": "<p>Genellikle pasaport, doğum belgesi, evlilik belgesi ve eğitim belgesi gerekir. Hangi belgeye noter onayı ve apostil gerektiğini önceden söylüyoruz; bunları Çin'de yaptırıp gelmek çok daha kolaydır.</p>"
+    },
+    {
+     "q": "Çince yazılmış adım soyadım belgelerde farklı geçiyor. Ne yapmalıyım?",
+     "a": "<p>Bu sık karşılaşılan bir durum. Çeviri sırasında ad ve soyadın tüm belgelerde aynı yazılıp yazılmadığını kontrol ediyor; tarihleri, adresleri, mühür ve damgaları da karşılaştırıyoruz.</p>"
+    },
+    {
+     "q": "Hizmet bedeli ne kadar?",
+     "a": "<p>Fiyat belgenin türüne, uzunluğuna ve gereken işleme bağlıdır. Belgelerinizi gördükten sonra kesin fiyatı söylüyoruz; devlet harcı ve noter ücreti ayrıca belirtilir.</p>"
+    },
+    {
+     "q": "Kartı veya vatandaşlığı siz mi veriyorsunuz?",
+     "a": "<p>Hayır. Nihai kararı Kazakistan Cumhuriyeti'nin yetkili devlet kurumları verir. Biz belgelerinizi doğru, eksiksiz ve şartlara uygun şekilde hazırlamanıza yardımcı oluyoruz.</p>"
+    },
+    {
+     "q": "Şirketlere de hizmet veriyor musunuz?",
+     "a": "<p>Evet. Bireylerin yanı sıra girişimciler ve şirketler için kuruluş ve ticari belgeleri çeviriyor, şirket tescilinde yardımcı oluyor, Kazakistan ile Çin arasındaki görüşmelerde tercümanlık desteği sağlıyoruz.</p>"
+    }
+   ]
+  },
+  "services.cross": {
+   "eyebrow": "Başlayalım",
+   "title": "Belgenizi gösterin, doğru işlem yolunu birlikte bulalım",
+   "text": "WeChat, WhatsApp, Telegram üzerinden ya da Astana'daki ofisimizde: Ainakol Cad. No: 66.",
+   "button": "Talep oluşturun",
+   "linkText": "Kurucu hakkında"
+  },
+  "seo.news": {
+   "title": "Kazakistan göç haberleri ve rehberler · kieli.kz",
+   "description": "Ata Jolı kartı, kandas statüsü, oturma izni, apostil ve Kazakistan'da eğitim üzerine haberler ve adım adım rehberler; Omar Bekmurat'ın yazıları."
+  },
+  "news.head": {
+   "eyebrow": "Haberler",
+   "title": "Haberler ve makaleler",
+   "lead": "Göç kurallarındaki değişiklikler, belgelerin nasıl hazırlanacağı, hangi kuruma neyin götürüleceği: hepsi sade bir dille. Ayrıca yazarın toplum, sanat ve Kazakistan üzerine yazıları.",
+   "cta": "Soru sorun",
+   "ctaNote": "Cevabını bulamazsanız bize yazın.",
+   "searchPlaceholder": "Ara: apostil, burs, kart…"
+  },
+  "news.cross": {
+   "eyebrow": "Yeni makaleler",
+   "title": "Belgelerle ilgili sorunuz bir makaleye dönüşsün",
+   "text": "Sık sorulan soruların cevaplarını makale olarak yayımlıyoruz; WeChat'te ve Telegram'da paylaşması kolay.",
+   "button": "Soru gönderin",
+   "linkText": "Hizmetler"
+  },
+  "article.author": {
+   "name": "Omar Bekmurat",
+   "org": "BASTAU LINE LLP",
+   "bio": "Sanat bilimleri yüksek lisans mezunu, yönetmen-koreograf, sivil toplum aktivisti. BASTAU LINE LLP aracılığıyla Kazakistan ile Çin arasındaki belge işlemlerinin doğru yapılmasına yardımcı oluyor.",
+   "linkText": "Yazar hakkında"
+  },
+  "article.aside": {
+   "tocTitle": "İçindekiler",
+   "ctaEyebrow": "Belgeniz hazır mı?",
+   "ctaText": "Belgelerinizin fotoğrafını WeChat'ten gönderin; neyin eksik olduğunu söyleyelim.",
+   "ctaButton": "Belgenizi kontrol ettirin",
+   "shareTitle": "Paylaşın",
+   "moreEyebrow": "Tavsiyeler",
+   "moreTitle": "Bunları da okuyun"
+  },
+  "seo.kazakhstan": {
+   "title": "Kazakistan'ın kutsal yerleri: doğa ve tarih · kieli.kz",
+   "description": "Kieli projesi: Kazakistan'ın 17 bölgesindeki doğal, tarihi ve manevi mekânlar — harita, kategoriler ve UNESCO listesindeki miraslar."
+  },
+  "kazakhstan.head": {
+   "eyebrow": "Kazakistan",
+   "title": "Kazakistan'ın kutsal yerleri",
+   "lead": "Büyük Bozkır'ın kanyonları ve gölleri, türbeleri ve antik kentleri. Projenin amacı basit: her Kazak, hangi ülkede yaşarsa yaşasın, ata yurdunun kutsallığını bilerek büyüsün.",
+   "figures": [
+    {
+     "value": "17",
+     "label": "bölge"
+    },
+    {
+     "value": "187",
+     "label": "mekân"
+    },
+    {
+     "value": "11",
+     "label": "UNESCO mirası"
+    },
+    {
+     "value": "360°",
+     "label": "panoramalar"
+    }
+   ],
+   "epigraph": "Doğduğun toprak gibi toprak, doğduğun yurt gibi yurt olmaz.",
+   "epigraphCite": "— Kazak atasözü"
+  },
+  "kazakhstan.atlas": {
+   "eyebrow": "Harita",
+   "title": "Bir bölge seçin",
+   "aside": "Rengi koyu olan bölgelerde kutsal mekân daha çok. Bir bölgeye tıklayın; aşağıdaki liste o bölgeye göre filtrelenir.",
+   "allRegions": "Tüm bölgeler"
+  },
+  "kazakhstan.heritage": {
+   "eyebrow": "Kültürel miras",
+   "title": "UNESCO listesindeki 11 miras",
+   "aside": "Dünya Mirası Listesi'ndeki anıtlar ve somut olmayan kültürel miras: aytış (doğaçlama şiir atışması), küy (dombıra ezgisi), boz ev, doğancılık."
+  },
+  "kazakhstan.cross": {
+   "eyebrow": "Taşınmayı mı düşünüyorsunuz?",
+   "title": "Bu yerleri yalnızca gezerken değil, gündelik hayatınızda da görün",
+   "text": "Vatandaşlık ve oturma izninden \"Ata Jolı\" kartına kadar belgelerinizi Kazakça, Çince ve Rusça olarak doğru şekilde hazırlamanıza yardımcı oluyoruz.",
+   "button": "Danışmanlık alın",
+   "linkText": "Hizmetler"
+  },
+  "place.aside": {
+   "aboutTitle": "Mekân hakkında",
+   "panoText": "360° panorama",
+   "shareTitle": "Paylaşın",
+   "shareNote": "WeChat'te paylaşmak için bağlantıyı kopyalayıp sohbete yapıştırın.",
+   "ctaEyebrow": "Taşınmayı mı planlıyorsunuz?",
+   "ctaText": "Çeviri, belge işlemleri, göç ve eğitim konularında Kazakça, Çince ve Rusça destek.",
+   "ctaButton": "Danışmanlık alın",
+   "relatedEyebrow": "Kazakistan",
+   "relatedTitle": "Görülmeye değer diğer yerler",
+   "relatedLink": "Tüm mekânlar",
+   "panoNote": "Panorama Google Street View üzerinden açılır. Çin'deki kullanıcılar için kendi sunucumuzdaki 360° görüntüleyici sunulur."
+  },
+  "seo.kaztest": {
+   "title": "Ücretsiz çevrimiçi KAZTEST deneme sınavı (sesli) · kieli.kz",
+   "description": "KAZTEST formatında ücretsiz deneme sınavı: dinleme ve okuma, 60 soru, 70 dakika, cevaplarıyla. Daimi oturma izni ve kandas statüsüne hazırlık."
+  },
+  "kaztest.head": {
+   "eyebrow": "Devlet dili · KAZTEST",
+   "title": "KAZTEST sistemine göre deneme sınavı",
+   "lead": "Resmi sınav formatında, süre tutarak pratik yapın: önce dinleme (Тыңдалым), ardından okuma (Оқылым). Sonunda hangi soruları doğru, hangilerini yanlış cevapladığınızı hemen görürsünüz.",
+   "facts": [
+    {
+     "title": "Dinleme (Тыңдалым)",
+     "text": "20 soru"
+    },
+    {
+     "title": "Okuma (Оқылым)",
+     "text": "40 soru"
+    },
+    {
+     "title": "70 dakika",
+     "text": "süre tutularak"
+    },
+    {
+     "title": "%70",
+     "text": "her bölümde geçme sınırı"
+    },
+    {
+     "title": "Ücretsiz",
+     "text": "kayıt gerekmez"
+    }
+   ],
+   "ctaChoose": "Deneme seçin",
+   "ctaCourse": "Kazakça kursu",
+   "ctaNote": "Cevaplarınız yalnızca kendi cihazınızda saklanır."
+  },
+  "kaztest.law": {
+   "eyebrow": "2026'nın yeni şartı",
+   "title": "Daimi oturma izni ve kandas (soydaş) statüsü için Kazakça bilgisi ölçülüyor",
+   "text": "13 Şubat 2026'dan bu yana bir pilot proje yürütülüyor: yabancılara daimi oturma izni verilirken, kandas statüsü verilirken veya uzatılırken devlet dilini bilme düzeyi KAZTEST çevrim içi sınavıyla ölçülüyor; en az A1 (başlangıç) seviyesi aranıyor. Sınavı geçmek için her bölümden en az %70 puan almak gerekiyor. Proje 31 Aralık 2026'ya kadar sürecek.",
+   "sources": "Kaynak: <a href=\"https://adilet.zan.kz/rus/docs/G26G0000041\">pilot projeye ilişkin belge, \"Adilet\" mevzuat bankası</a> · Resmi sınav: <a href=\"https://testcenter.kz\">Ulusal Test Merkezi</a>"
+  },
+  "kaztest.list": {
+   "eyebrow": "Deneme sınavları",
+   "title": "Bir deneme seçin",
+   "aside": "Her deneme, resmi sınavın yapısına göre hazırlandı. Düzenli olarak yeni denemeler ekleniyor.",
+   "note": "Sınav, resmi sınavda olduğu gibi Kiril alfabesiyle yapılır. Denemeleri BASTAU LINE resmi sınav formatına göre kendisi hazırladı; bunlar Ulusal Test Merkezi'nin materyalleri değildir."
+  },
+  "kaztest.how": {
+   "eyebrow": "Nasıl işler?",
+   "title": "Resmi sınavdaki sırayla",
+   "aside": "İnternet bağlantısı ve kulaklık yeterli. Sınavı istediğiniz zaman durdurup sonra devam edebilirsiniz.",
+   "steps": [
+    {
+     "title": "Deneme",
+     "text": "Bir deneme seçin ve \"Sınava başla\" düğmesine basın; süre işlemeye başlar."
+    },
+    {
+     "title": "Dinleme (Тыңдалым)",
+     "text": "Ses kaydını dinleyin, her diyalog ve metinle ilgili soruları cevaplayın."
+    },
+    {
+     "title": "Okuma (Оқылым)",
+     "text": "Metin, sorunun yanında yer alır: okuyun ve doğru seçeneği işaretleyin."
+    },
+    {
+     "title": "Sonuç",
+     "text": "Her bölümde %70 sınırını geçip geçmediğinizi hemen görürsünüz. Hatalarınızı inceleyip sınava yeniden girebilirsiniz."
+    }
+   ]
+  },
+  "kaztest.faq": {
+   "eyebrow": "Soru-cevap",
+   "title": "KAZTEST hakkında",
+   "lead": "Durumunuza hangi şartın uygulandığını bilmiyorsanız bize yazın.",
+   "items": [
+    {
+     "q": "KAZTEST nedir?",
+     "a": "<p>Kazakça bilgi düzeyini ölçen ulusal sistemdir. Sınavı Ulusal Test Merkezi yapar, sonuca göre sertifika verilir.</p>"
+    },
+    {
+     "q": "Kimler için zorunlu?",
+     "a": "<p>2026 pilot projesine göre Kazakistan'da daimi oturma izni alan yabancılar ile kandas statüsü alan veya uzatan başvuru sahipleri için. İstenen en düşük seviye A1'dir.</p><p>Vatandaşlık için ayrı bir sınav var: devlet dili, Anayasa'nın temelleri ve Kazakistan tarihi. Kandaslar bu sınavdan muaftır (<a href=\"https://www.zakon.kz/pravo/6504825-poluchenie-grazhdanstva-rk-utverzhdeny-pravila-testirovaniya-na-znanie-kazakhskogo-yazyka-i-istorii-kazakhstana.html\">Zakon.kz, 19.01.2026</a>).</p>"
+    },
+    {
+     "q": "Deneme sınavı resmi sınava benziyor mu?",
+     "a": "<p>Evet: 60 soru, bunların 20'si dinleme (Тыңдалым), 40'ı okuma (Оқылым); süre 70 dakika. Geçmek için her bölümde en az %70 doğru cevap gerekir: dinlemede 14, okumada 28. Sonuçta her bölüm için \"geçti\" veya \"geçmedi\" yazar.</p>"
+    },
+    {
+     "q": "Resmi sınava nereden kaydolurum?",
+     "a": "<p>Ulusal Test Merkezi'nin sitesinden: <a href=\"https://testcenter.kz\">testcenter.kz</a>. Hangi sınava ne zaman girmeniz gerektiğini belgelerinizle birlikte planlıyoruz.</p>"
+    },
+    {
+     "q": "Bu sorular resmi sınavdan mı alındı?",
+     "a": "<p>Hayır. Denemeleri BASTAU LINE, resmi sınavın yapısına ve seviyesine uygun olarak kendisi hazırladı: bölümler, soru sayısı, süre ve görev türleri aynı; metinler, diyaloglar ve sorular ise yeni. Sonuç hazırlık seviyenizi gösterir, ancak resmi sınavdaki sonucu garanti etmez.</p>"
+    }
+   ]
+  },
+  "kaztest.cross": {
+   "eyebrow": "Sınav ve belgeler tek yerde",
+   "title": "Dile de belgelere de birlikte hazırlanalım",
+   "text": "Kazakça kursu, kandas statüsü ve daimi oturma izni için belge hazırlığı BASTAU LINE'da.",
+   "button": "Danışmanlık alın",
+   "linkText": "Göç hizmetleri"
+  },
+  "ui.common": {
+   "skip": "Ana içeriğe geç",
+   "home": "Ana sayfa",
+   "homeAria": "{brand} ana sayfası",
+   "crumbs": "Sitedeki konumunuz",
+   "mainMenu": "Ana menü",
+   "mobileMenu": "Mobil menü",
+   "openMenu": "Menüyü aç",
+   "closeMenu": "Menüyü kapat",
+   "close": "Kapat",
+   "language": "Dil",
+   "script": "Alfabe",
+   "toDark": "Gece moduna geç",
+   "toLight": "Gündüz moduna geç",
+   "dark": "Gece modu",
+   "light": "Gündüz modu",
+   "copy": "Kopyala",
+   "copied": "Kopyalandı",
+   "selectIt": "Metni seçin",
+   "social": "Sosyal medya",
+   "sitemap": "Site haritası",
+   "bin": "BIN",
+   "more": "Daha fazla",
+   "important": "Önemli",
+   "readTime": "{n} dk okuma",
+   "all": "Tümü",
+   "categories": "Kategoriler",
+   "shareWa": "WhatsApp ile paylaş",
+   "shareTg": "Telegram ile paylaş",
+   "copyLink": "Bağlantıyı kopyala",
+   "source": "Kaynak",
+   "phone": "Telefon",
+   "office": "Ofis",
+   "nowInAstana": "Astana'da şu an",
+   "officeOpen": "ofis açık",
+   "officeClosed": "ofis kapalı, mesaj bırakın",
+   "pano": "360° panorama",
+   "notFoundTitle": "Sayfa bulunamadı",
+   "notFoundText": "Bağlantı eskimiş ya da sayfa kaldırılmış olabilir.",
+   "notFoundHome": "Ana sayfaya dön",
+   "issuesAria": "Gündeme getirdiği konular",
+   "dirsAria": "Hizmet alanları",
+   "pathAria": "Yazarın yolu",
+   "languages": "Diğer diller"
+  },
+  "ui.form": {
+   "nameLabel": "Adınız",
+   "namePlaceholder": "Örneğin, Aygül",
+   "nameError": "Adınızı yazın",
+   "contactLabel": "Telefon veya WeChat ID",
+   "contactPlaceholder": "+7 … / +86 … / WeChat",
+   "contactError": "Size nasıl ulaşacağımızı yazın",
+   "serviceLabel": "Nasıl bir yardıma ihtiyacınız var?",
+   "serviceNone": "Henüz bilmiyorum, danışmak istiyorum",
+   "serviceGeneral": "{tab}: genel danışmanlık",
+   "countryLabel": "Şu an hangi ülkedesiniz?",
+   "countryCn": "Çin'de",
+   "countryKz": "Kazakistan'da",
+   "countryOther": "Başka bir ülkede",
+   "messageLabel": "Kısaca durumunuz",
+   "filesLabel": "Belgenin fotoğrafı veya PDF'i",
+   "optional": "isteğe bağlı",
+   "filesChoose": "Dosya seç",
+   "filesHint": "Telefonla çekilmiş fotoğraf da olur · JPG, PNG, PDF · en fazla 5 dosya, her biri 10 MB'a kadar",
+   "filesClear": "Temizle",
+   "kb": "KB",
+   "mb": "MB",
+   "tooManyFiles": "En fazla {n} dosya; her biri 10 MB'ı geçmemeli.",
+   "sending": "Gönderiliyor…",
+   "sendFailed": "Gönderilemedi. WeChat veya WhatsApp üzerinden yazın.",
+   "offline": "Bağlantı kesildi. Tekrar deneyin ya da WeChat veya WhatsApp üzerinden yazın.",
+   "thanksBefore": "Teşekkürler, ",
+   "friend": "dostum",
+   "thanksAfter": "!",
+   "another": "Bir talep daha",
+   "sumNumber": "Talep numarası",
+   "sumType": "Talep türü",
+   "sumCountry": "Bulunduğunuz yer",
+   "sumFiles": "Belgeler",
+   "filesAttached": "{n} dosya eklendi",
+   "filesLater": "sonra göndereceksiniz",
+   "general": "Genel danışmanlık",
+   "waHello": "Merhaba! Talep: ",
+   "wechatQr": "WeChat QR kodu",
+   "errFormat": "Talep biçimi hatalı.",
+   "errTooOften": "Talepler çok sık gönderildi. Birkaç dakika sonra tekrar deneyin ya da WeChat veya WhatsApp üzerinden yazın.",
+   "errContact": "Size nasıl ulaşacağımızı yazın: telefon, WeChat veya WhatsApp.",
+   "errConsent": "Kişisel verilerin işlenmesine onay verin.",
+   "errFileCount": "En fazla {n} dosya eklenebilir.",
+   "errFileSize": "\"{file}\" dosyası 10 MB'tan büyük.",
+   "errFileType": "\"{file}\": yalnızca JPG, PNG, WEBP, HEIC görselleri ve PDF kabul edilir.",
+   "errSave": "Talep kaydedilemedi. WeChat veya WhatsApp üzerinden yazın.",
+   "saved": "Talebiniz alındı."
+  },
+  "ui.services": {
+   "tabsAria": "Hizmet türleri",
+   "who": "Kimler için",
+   "bring": "Neler hazırlanmalı",
+   "steps": "Nasıl işler",
+   "dontKnow": "Neye ihtiyacım olduğunu bilmiyorum",
+   "priceNote": "Fiyat ve süre, belgeye ve hizmete göre netleştirilir.",
+   "sample": "ÖRNEK",
+   "sampleDefault": "中文 → Kaz / Rus",
+   "sampleNotarial": "Çeviri + noter onayı",
+   "sampleApostille": "Apostille",
+   "sampleConsular": "Konsolosluk tasdiki",
+   "sampleCheck": "Kontrol edildi",
+   "docsReady": "Hazır belgeler",
+   "checkNone": "Elinizdeki belgeleri işaretleyin.",
+   "checkSome": "İyi bir başlangıç. Gerisini toplamanıza yardımcı oluruz.",
+   "checkAll": "Hepsi hazır; şimdi belgelerinizi bize kontrol ettirin.",
+   "faq": "Soru-cevap"
+  },
+  "ui.places": {
+   "sections": "Kazakistan bölümleri",
+   "unesco": "UNESCO · {year}",
+   "region": "Bölge",
+   "category": "Kategori",
+   "coords": "Koordinatlar",
+   "regionCount": "Bölgedeki mekân sayısı",
+   "lat": "K",
+   "lon": "D",
+   "yandex": "Yandex Haritalar",
+   "aboutAria": "Mekân hakkında kısa bilgi",
+   "legendCount": "Mekân sayısı:",
+   "legendCity": "Özel statülü şehir",
+   "legendSelected": "Seçili bölge",
+   "regionsAria": "Bölge listesi",
+   "filterAria": "Kategoriye göre filtrele",
+   "placesAria": "Mekânlar",
+   "count": "{n} mekân",
+   "reset": "Temizle",
+   "emptyTitle": "Bu filtreye uygun mekân henüz eklenmedi.",
+   "emptyCount": "{region} için toplam {n} mekân var; bunlar adım adım ekleniyor.",
+   "emptyRegion": "{region} için mekânlar adım adım ekleniyor.",
+   "anyRegion": "Seçili bölge"
+  },
+  "ui.news": {
+   "listAria": "Haber ve makale listesi",
+   "searchAria": "Haberlerde ve makalelerde ara",
+   "count": "{n} içerik",
+   "notFound": "\"{q}\" için sonuç bulunamadı.",
+   "empty": "Bu kategoride henüz içerik yok.",
+   "contentsAria": "Makalenin içindekiler bölümü",
+   "source": "Kaynak: {name}",
+   "readSource": "Kaynakta oku"
+  },
+  "ui.kaztest": {
+   "noJs": "Sınavı açmak için tarayıcınızda JavaScript etkin olmalıdır.",
+   "questions": "{n} soru",
+   "time": "Süre",
+   "minutes": "{n} dakika",
+   "passMark": "Geçme sınırı",
+   "passEach": "her bölümde %{p}",
+   "key": "Cevap anahtarı",
+   "last": "Son sonuç",
+   "passed": "geçti",
+   "failed": "geçmedi",
+   "resume": "Devam et",
+   "restartFromStart": "Baştan başla",
+   "start": "Sınava başla",
+   "review": "Cevapları gör",
+   "exit": "Sınavdan çık",
+   "timeLeft": "Kalan süre",
+   "finish": "Bitir",
+   "result": "Sonuç",
+   "questionN": "Soru {n}",
+   "passage": "Metin",
+   "passageN": "Metin {n}",
+   "audioN": "Ses kaydı {n} / {total}",
+   "audioMany": "{from}–{to}. sorular bu kayıtla ilgili",
+   "audioOne": "{n}. soru bu kayıtla ilgili",
+   "correct": "Doğru cevap",
+   "noKey": "Bu sorunun cevap anahtarı henüz eklenmedi; sonuca dahil edilmez.",
+   "yours": "Sizin cevabınız",
+   "unanswered": "Cevaplanmadı",
+   "next": "Sonraki soru",
+   "nextSection": "Sonraki bölüm: {name}",
+   "backToResult": "Sonuca dön",
+   "finishTest": "Sınavı bitir",
+   "sectionsAria": "Bölümler",
+   "gridAria": "{name}: sorular",
+   "optionsAria": "Cevap seçenekleri",
+   "prev": "Önceki",
+   "hint": "Klavye: A–D ile cevap verin, ← → ile sorular arasında gezinin.",
+   "askFinish": "Sınavı bitirmek istiyor musunuz?",
+   "colSection": "Bölüm",
+   "colTotal": "Toplam",
+   "colAnswered": "Cevaplanan",
+   "colMissing": "Cevaplanmayan",
+   "backToTest": "Sınava dön",
+   "askExit": "Sınavdan çıkmak istiyor musunuz?",
+   "exitText": "Cevaplarınız kaydedilir ama süre durmaz. Daha sonra \"Devam et\" düğmesiyle geri dönebilirsiniz.",
+   "leave": "Çık",
+   "notJudged": "Değerlendirilmiyor",
+   "pass": "Geçti",
+   "fail": "Geçmedi",
+   "needLine": "Geçme sınırı: {need} / {count} (%{p}) · sizin sonucunuz %{mine}",
+   "partialLine": "Cevap anahtarı eksik ({known} / {count}), bu yüzden %{p} sınırı değerlendirilmiyor",
+   "answeredLine": "cevaplanan {n} / {count}",
+   "congrats": "Tebrikler! Tüm bölümlerde %{p} sınırını geçtiniz.",
+   "notYet": "Henüz geçemediniz: {sections} bölümünde %{p} sınırına ulaşılamadı.",
+   "notJudgedShort": "değerlendirilmiyor (anahtar eksik)",
+   "timeUp": "Süre doldu; sınav otomatik olarak sona erdi.",
+   "points": "puan",
+   "note": "Geçmek için her bölümde en az %{p} doğru cevap gerekir. Puan yalnızca cevap anahtarı olan sorular üzerinden hesaplanır: {known} / {count}.",
+   "notePartial": "Anahtarı tamamlanmakta olan bölüm: {sections}.",
+   "reviewAnswers": "Cevapları incele",
+   "retake": "Yeniden çöz",
+   "toList": "Denemelere dön",
+   "legendRight": "doğru",
+   "legendWrong": "yanlış",
+   "legendMiss": "cevaplanmadı",
+   "legendUnknown": "anahtar yok",
+   "courseTitle": "Sonucunuzu iyileştirmek ister misiniz?",
+   "courseText": "Kazakça kursu hakkında bilgi alın; seviyenize göre size yol gösterelim.",
+   "courseButton": "Kurs hakkında bilgi alın",
+   "audioPending": "Ses kaydı hazırlanıyor. Kayıt eklenene kadar dinleme bölümü puanlanmaz, ancak sorulara göz atabilirsiniz.",
+   "audioSoon": "Dinleme bölümünün ses kayıtları yakında eklenecek",
+   "transcript": "Kaydın metni",
+   "waitLine": "Ses kaydı henüz eklenmediği için %{p} sınırı değerlendirilmiyor",
+   "waitShort": "değerlendirilmiyor (ses kaydı henüz yok)",
+   "noteWait": "Ses kaydı hazırlanan bölüm: {sections}.",
+   "legendWait": "ses kaydı yok"
+  }
+ },
+ "servicetab": {
+  "translate": {
+   "name": "Çeviri",
+   "cta": "Belgeyi gönderin",
+   "steps": [
+    {
+     "text": "Belgenin fotoğrafını gönderirsiniz"
+    },
+    {
+     "text": "Dili ve fiyatı netleştiririz"
+    },
+    {
+     "text": "Çevirir, kontrol ederiz"
+    },
+    {
+     "text": "Hazır çeviriyi teslim alırsınız"
+    }
+   ]
+  },
+  "notary": {
+   "name": "Noter onayı",
+   "cta": "Belgenizi kontrol ettirin",
+   "steps": [
+    {
+     "text": "Belgeyi gönderirsiniz"
+    },
+    {
+     "text": "Şartları netleştiririz"
+    },
+    {
+     "text": "Çevirip hazırlarız"
+    },
+    {
+     "text": "Notere veya ilgili kuruma teslim edersiniz"
+    }
+   ]
+  },
+  "migration": {
+   "name": "Göç",
+   "cta": "Durumumu görüşelim",
+   "steps": [
+    {
+     "text": "Durumunuzu anlatırsınız"
+    },
+    {
+     "text": "Belge listesini veririz"
+    },
+    {
+     "text": "Çevirir, kontrol ederiz"
+    },
+    {
+     "text": "Başvuru aşamalarını açıklarız"
+    }
+   ],
+   "footnote": "Nihai kararı Kazakistan Cumhuriyeti'nin yetkili devlet kurumları verir."
+  },
+  "education": {
+   "name": "Eğitim",
+   "cta": "Eğitim danışmanlığı",
+   "steps": [
+    {
+     "text": "Amacınızı anlatırsınız"
+    },
+    {
+     "text": "Şartları netleştiririz"
+    },
+    {
+     "text": "Belgeleri hazırlarız"
+    },
+    {
+     "text": "Başvuruya hazırsınız"
+    }
+   ],
+   "footnote": "Kabul şartlarını seçtiğiniz eğitim kurumuyla birlikte netleştiririz."
+  },
+  "business": {
+   "name": "İş dünyası",
+   "cta": "İş danışmanlığı",
+   "steps": [
+    {
+     "text": "Planınızı anlatırsınız"
+    },
+    {
+     "text": "Gereken işlemi belirleriz"
+    },
+    {
+     "text": "Belgeleri hazırlarız"
+    },
+    {
+     "text": "Kurumlarda size eşlik ederiz"
+    }
+   ],
+   "footnote": "Hizmetin kapsamı somut ihtiyaca göre belirlenir."
+  },
+  "housing": {
+   "name": "Konut",
+   "cta": "Konut danışmanlığı",
+   "steps": [
+    {
+     "text": "Beklentilerinizi anlatırsınız"
+    },
+    {
+     "text": "Uygun seçenekleri belirleriz"
+    },
+    {
+     "text": "Görüşmelerde yardımcı oluruz"
+    },
+    {
+     "text": "Sözleşmeyi kontrol ederiz"
+    }
+   ]
+  }
+ },
+ "serviceitem": {
+  "translate:passport": {
+   "name": "Pasaport",
+   "title": "Pasaport çevirisi",
+   "dir": "Çinceden Kazakçaya veya Rusçaya",
+   "who": "Göç makamı, eğitim kurumu, banka veya noter pasaport çevirisi istediğinde.",
+   "bring": [
+    {
+     "text": "Pasaportun tüm sayfalarının net fotoğrafı"
+    },
+    {
+     "text": "Çevirinin hangi kuruma verileceği"
+    }
+   ],
+   "note": "Çeviri dili ve onay gerekip gerekmediği, belgeyi alacak kurumun şartlarına göre netleştirilir."
+  },
+  "translate:license": {
+   "name": "Sürücü belgesi",
+   "title": "Çin sürücü belgesinin çevirisi",
+   "dir": "Kazakistan'da kullanmak için",
+   "who": "Çin'de verilmiş sürücü belgesini Kazakistan'da ibraz etmek veya değiştirmek için çeviri gerektiğinde.",
+   "bring": [
+    {
+     "text": "Belgenin iki yüzünün net fotoğrafı"
+    },
+    {
+     "text": "Pasaport fotokopisi"
+    }
+   ],
+   "note": "Biz çeviriyi yaparız; belgenin değiştirilmesine yetkili kurumlar karar verir."
+  },
+  "translate:birth": {
+   "name": "Doğum belgesi",
+   "title": "Doğum belgesi çevirisi",
+   "dir": "Çinceden Kazakçaya veya Rusçaya",
+   "who": "Kandas (soydaş) statüsü, vatandaşlık, aile belgeleri ya da çocuğu okula kaydettirmek için.",
+   "bring": [
+    {
+     "text": "Belgenin net fotoğrafı"
+    },
+    {
+     "text": "Belge sahibinin pasaport bilgileri"
+    }
+   ],
+   "note": "Çin'de verilmiş belgeye önce noter onayı ve apostil gerekebilir."
+  },
+  "translate:marriage": {
+   "name": "Evlilik, boşanma belgesi",
+   "title": "Evlilik ve boşanma belgeleri",
+   "dir": "Çinceden Kazakçaya veya Rusçaya",
+   "who": "Ailecek taşınırken, oturma izni ve vatandaşlık başvurusunda, mülk alım satımında.",
+   "bring": [
+    {
+     "text": "Belgenin tüm sayfalarının fotoğrafı"
+    },
+    {
+     "text": "Eşlerin pasaport bilgileri"
+    }
+   ]
+  },
+  "translate:diploma": {
+   "name": "Diploma, transkript",
+   "title": "Eğitim belgelerinin çevirisi",
+   "dir": "Diploma, lise diploması, transkript, öğrenim belgesi",
+   "who": "Eğitime kabul, diploma denkliği, işe girme veya \"Ata Jolı\" kartı başvurusu için.",
+   "bring": [
+    {
+     "text": "Diploma ve ekinin fotoğrafı"
+    },
+    {
+     "text": "Belgenin verileceği kurum"
+    }
+   ]
+  },
+  "translate:medical": {
+   "name": "Sağlık belgeleri",
+   "title": "Sağlık raporlarının çevirisi",
+   "dir": "Sağlık raporu, tıbbi görüş, aşı kartı",
+   "who": "Tedavi, çocuğu okula veya anaokuluna kaydettirme ve göç işlemleri için.",
+   "bring": [
+    {
+     "text": "Belgenin net fotoğrafı"
+    },
+    {
+     "text": "Kullanım amacı"
+    }
+   ]
+  },
+  "translate:poa": {
+   "name": "Vekâletname ve sözleşme",
+   "title": "Vekâletname, muvafakatname ve dilekçe çevirisi",
+   "dir": "Hukuksal sonuç doğuran belgeler",
+   "who": "Çin'deki akrabalarınızın sizin adınıza işlem yapması gerektiğinde ya da tam tersi durumda.",
+   "bring": [
+    {
+     "text": "Belgenin metni veya fotoğrafı"
+    },
+    {
+     "text": "Tarafların bilgileri"
+    }
+   ]
+  },
+  "translate:company": {
+   "name": "Şirket belgeleri",
+   "title": "Kuruluş ve ticari belgeler",
+   "dir": "Ana sözleşme, tescil belgesi, sözleşmeler, faturalar",
+   "who": "Kazakistan'da şirket tescili, bir ortakla sözleşme yapma veya bir devlet kurumuna sunma için.",
+   "bring": [
+    {
+     "text": "Belgelerin elektronik kopyası"
+    },
+    {
+     "text": "Belgenin sunulacağı kurum"
+    }
+   ]
+  },
+  "notary:notarial": {
+   "name": "Noter onaylı çeviri",
+   "title": "Noter onaylı çeviriye hazırlık",
+   "dir": "Belgeyi alacak kurumun şartlarına uygun",
+   "who": "Çevirinin hukuken geçerli olması gerektiğinde: göç, eğitim, mahkeme veya banka işlemleri için.",
+   "bring": [
+    {
+     "text": "Belgenin aslı"
+    },
+    {
+     "text": "Çevirinin verileceği kurumun adı"
+    }
+   ],
+   "note": "Onayı noter yapar; biz çeviriyi ve belgeyi bu işleme hazırlarız."
+  },
+  "notary:apostille": {
+   "name": "Apostil",
+   "title": "Apostile hazırlık",
+   "dir": "Kazakistan'da ve Çin'de kullanılacak belgeler",
+   "who": "Belge başka bir ülkede kullanılacaksa. 7 Kasım 2023'ten bu yana Çin belgelerine de apostil şerhi düşülüyor.",
+   "bring": [
+    {
+     "text": "Belgenin fotoğrafı"
+    },
+    {
+     "text": "Hangi ülkede kullanılacağı"
+    }
+   ],
+   "linkText": "Apostil rehberi"
+  },
+  "notary:consular": {
+   "name": "Konsolosluk tasdiki",
+   "title": "Konsolosluk tasdiki",
+   "dir": "Apostilin geçerli olmadığı ülkeler için",
+   "who": "Belge, Apostil Sözleşmesi'ne taraf olmayan bir ülkede kullanılacaksa.",
+   "bring": [
+    {
+     "text": "Belgenin fotoğrafı"
+    },
+    {
+     "text": "Belgeyi alacak ülke ve kurum"
+    }
+   ]
+  },
+  "notary:check": {
+   "name": "Belge kontrolü",
+   "title": "Belgelerin ön kontrolü",
+   "dir": "Ad-soyad, tarih, adres ve mühür uyumu",
+   "who": "Belgelerinizde adınız farklı yazılmışsa ya da teslimden önce hata olmadığından emin olmak istiyorsanız.",
+   "bring": [
+    {
+     "text": "Tüm belgelerin fotoğrafı"
+    }
+   ],
+   "note": "Pasaporttaki Latin harfli yazım, belgedeki Çince karakterler ve çevirideki Kiril yazımı birbiriyle uyuşmalıdır."
+  },
+  "migration:kandas": {
+   "name": "Kandas statüsü",
+   "title": "Kandas (soydaş) statüsü için belge hazırlığı",
+   "dir": "Kalıcı olarak taşınan etnik Kazaklar için",
+   "who": "Kazakistan'a kalıcı olarak yerleşmeye gelen Kazak kökenli yabancılar ve aileleri için.",
+   "bring": [
+    {
+     "text": "Pasaport ve etnik kökeninizi gösteren belge"
+    },
+    {
+     "text": "Aile üyelerinin belgeleri"
+    }
+   ],
+   "note": "Statü 1 yıllığına verilir ve bir kez 6 ay uzatılır. 2026 pilot projesine göre Kazakça bilgisi KAZTEST ile ölçülür (en az A1).",
+   "linkText": "KAZTEST deneme sınavı"
+  },
+  "migration:permit": {
+   "name": "Oturma izni",
+   "title": "Oturma izni",
+   "dir": "Kazakistan'da daimi oturma izni",
+   "who": "Kazakistan'da kalıcı olarak yaşamak istiyorsanız: vatandaşlık yolunda temel adım.",
+   "bring": [
+    {
+     "text": "Pasaport"
+    },
+    {
+     "text": "Çin'de verilmiş belgeler"
+    },
+    {
+     "text": "Aile belgeleri"
+    }
+   ],
+   "note": "2026 pilot projesine göre daimi oturma izni alınırken Kazakça bilgisi KAZTEST ile ölçülür (en az A1).",
+   "linkText": "KAZTEST deneme sınavı"
+  },
+  "migration:citizen": {
+   "name": "Vatandaşlık",
+   "title": "Vatandaşlık için belge hazırlığı",
+   "dir": "Dilekçe, başvuru formu, belge kontrolü",
+   "who": "Kazakistan'da yasal olarak yaşayan ve vatandaşlık almak isteyen kandaslar için.",
+   "bring": [
+    {
+     "text": "Oturma izni veya statü belgesi"
+    },
+    {
+     "text": "Pasaport ve doğum belgesi"
+    }
+   ],
+   "note": "Kazakistan çifte vatandaşlığı tanımaz."
+  },
+  "migration:atazholy": {
+   "name": "\"Ata Jolı\" kartı",
+   "title": "\"Ata Jolı\" (Ata Yolu) kartı başvurusu",
+   "dir": "Vatandaşlığınızı koruyarak 10 yıla kadar oturma",
+   "who": "Yurt dışında yaşayan etnik Kazaklar için: işletme sahipleri ve talep gören uzmanlar.",
+   "bring": [
+    {
+     "text": "Diploma ve iş deneyimini kanıtlayan belgeler"
+    },
+    {
+     "text": "Pasaport"
+    }
+   ],
+   "linkText": "Kart hakkında ayrıntılar"
+  },
+  "migration:family": {
+   "name": "Aile belgeleri",
+   "title": "Aile üyelerinin belgeleri",
+   "dir": "Eş, çocuklar, anne-baba",
+   "who": "Ailecek taşınırken her bireyin belgelerini tek bir dosyada toplamak için.",
+   "bring": [
+    {
+     "text": "Evlilik ve doğum belgeleri"
+    },
+    {
+     "text": "Her bireyin pasaportu"
+    }
+   ]
+  },
+  "migration:prepare": {
+   "name": "Taşınma hazırlığı",
+   "title": "Kazakistan'a taşınma hazırlığı",
+   "dir": "Çin'den ayrılmadan önce yapılması gerekenler",
+   "who": "Taşınmayı planlıyor ama nereden başlayacağınızı bilmiyorsanız.",
+   "bring": [
+    {
+     "text": "Elinizdeki belgelerin listesi"
+    },
+    {
+     "text": "Taşınma amacı ve zamanı"
+    }
+   ]
+  },
+  "education:admission": {
+   "name": "Eğitime kabul",
+   "title": "Kazakistan'da eğitime kabul",
+   "dir": "Üniversite, kolej, hazırlık bölümü",
+   "who": "Kazakistan'da okumak istiyorsanız: eğitim kurumu seçimi, belge teslimi, kota ve burs.",
+   "bring": [
+    {
+     "text": "Lise diploması veya diploma"
+    },
+    {
+     "text": "Pasaport"
+    }
+   ],
+   "note": "Yurt dışındaki kandas adaylar için devlet burslarında %4 kota ayrılır."
+  },
+  "education:recognition": {
+   "name": "Diploma denkliği",
+   "title": "Diploma denkliğine hazırlık",
+   "dir": "Çin'de alınmış eğitim belgeleri",
+   "who": "Çin'de aldığınız diplomayla Kazakistan'da okumak veya çalışmak istiyorsanız.",
+   "bring": [
+    {
+     "text": "Diploma ve eki"
+    },
+    {
+     "text": "Apostil (varsa)"
+    }
+   ]
+  },
+  "education:diplomatr": {
+   "name": "Diploma çevirisi",
+   "title": "Diploma ve ekinin çevirisi",
+   "dir": "Çinceden Kazakçaya veya Rusçaya",
+   "who": "Eğitime kabul, diploma denkliği veya işe girme için.",
+   "bring": [
+    {
+     "text": "Diploma ve ekinin fotoğrafı"
+    }
+   ]
+  },
+  "education:kazakh": {
+   "name": "Kazakça",
+   "title": "Kazakça kursu",
+   "dir": "Kiril alfabesi ve resmi belgelerin dili",
+   "who": "Töte yazısıyla (Arap harfli Kazak alfabesi) okumuş ve Kiril alfabesine hızla alışmak isteyenler için.",
+   "bring": [
+    {
+     "text": "Mevcut seviyeniz"
+    },
+    {
+     "text": "Size uygun saat"
+    }
+   ],
+   "cta": "Kursa kaydolun",
+   "linkText": "KAZTEST deneme sınavı"
+  },
+  "education:chinese": {
+   "name": "Çince",
+   "title": "Çince kursu",
+   "dir": "İş hayatı ve gündelik yaşam için Çince",
+   "who": "Çin'le iş yapanlar ve Çincesini unutmak istemeyen çocuklar için.",
+   "bring": [
+    {
+     "text": "Seviyeniz"
+    },
+    {
+     "text": "Amacınız"
+    }
+   ],
+   "cta": "Kursa kaydolun"
+  },
+  "education:russian": {
+   "name": "Rusça",
+   "title": "Rusça kursu",
+   "dir": "Gündelik yaşam ve resmi kurumlar",
+   "who": "Kazakistan'da gündelik hayatta, işte ve resmi kurumlarda rahatça iletişim kurmak için.",
+   "bring": [
+    {
+     "text": "Seviyeniz"
+    },
+    {
+     "text": "Size uygun saat"
+    }
+   ],
+   "cta": "Kursa kaydolun"
+  },
+  "business:register": {
+   "name": "Şirket tescili",
+   "title": "Kazakistan'da şirket tesciline yardım",
+   "dir": "Belgeler, çeviri, süreç desteği",
+   "who": "Kazakistan'da iş kurmak istiyorsanız: LLP ya da bireysel girişimci olarak.",
+   "bring": [
+    {
+     "text": "Pasaport"
+    },
+    {
+     "text": "Faaliyet türü ve adres"
+    }
+   ],
+   "note": "Tescili devlet kurumları yapar; biz belgeleri hazırlar ve süreç boyunca size eşlik ederiz."
+  },
+  "business:corpdocs": {
+   "name": "Ticari belgeler",
+   "title": "Kuruluş ve ticari belgeler",
+   "dir": "Ana sözleşme, karar, fatura, sertifika",
+   "who": "Çin'deki veya Kazakistan'daki bir şirketin belgelerini diğer ülkede kullanmak için.",
+   "bring": [
+    {
+     "text": "Belgelerin elektronik kopyası"
+    }
+   ]
+  },
+  "business:contract": {
+   "name": "Sözleşme ve vekâletname",
+   "title": "Sözleşme ve vekâletname taslakları",
+   "dir": "Hukuksal sonuç doğuran belgeler",
+   "who": "Bir ortakla anlaşma yaparken ya da birine vekâlet verirken.",
+   "bring": [
+    {
+     "text": "İşlemin konusu"
+    },
+    {
+     "text": "Tarafların bilgileri"
+    }
+   ]
+  },
+  "business:interpret": {
+   "name": "Sözlü tercüme",
+   "title": "Görüşmelerde sözlü tercüme",
+   "dir": "Kazakça · Çince · Rusça",
+   "who": "Çinli ortaklarla toplantılarda, fuarlarda, resmi kurum ziyaretlerinde.",
+   "bring": [
+    {
+     "text": "Toplantının tarihi ve yeri"
+    },
+    {
+     "text": "Konusu"
+    }
+   ]
+  },
+  "housing:rent": {
+   "name": "Daire kiralama",
+   "title": "Daire kiralamada yardım",
+   "dir": "Seçenek arama, sözleşme kontrolü",
+   "who": "Kazakistan'a yeni gelen aileler ve öğrenciler için.",
+   "bring": [
+    {
+     "text": "Bütçe ve semt"
+    },
+    {
+     "text": "Taşınma zamanı"
+    }
+   ]
+  },
+  "housing:buy": {
+   "name": "Ev satın alma",
+   "title": "Ev alımı veya satışı",
+   "dir": "İşlemin baştan sona takibi",
+   "who": "Kazakistan'da daire veya ev almak ya da satmak istiyorsanız.",
+   "bring": [
+    {
+     "text": "İstediğiniz semt ve bütçe"
+    },
+    {
+     "text": "Pasaport"
+    }
+   ]
+  },
+  "housing:commercial": {
+   "name": "Ticari gayrimenkul",
+   "title": "Ticari gayrimenkul arama",
+   "dir": "Ofis, mağaza, depo",
+   "who": "İşiniz için bir yer arıyorsanız.",
+   "bring": [
+    {
+     "text": "Gayrimenkulün türü ve alanı"
+    },
+    {
+     "text": "Bütçe"
+    }
+   ]
+  },
+  "housing:deal": {
+   "name": "Görüşme ve sözleşme",
+   "title": "Görüşmelerde yardım ve sözleşme çevirisi",
+   "dir": "Kazakça ve Çince",
+   "who": "Satıcıyla veya kiraya verenle anlaşabilmek ve sözleşmenin içeriğini anlamak için.",
+   "bring": [
+    {
+     "text": "Sözleşme metni"
+    },
+    {
+     "text": "Sorularınız"
+    }
+   ]
+  }
+ },
+ "servicepage": {
+  "atazholy": {
+   "title": "\"Ata Jolı\" kartı",
+   "seoDescription": "Yurt dışında yaşayan etnik Kazaklara yönelik \"Ata Jolı\" (Ata Yolu) kartı: kimlere verilir, ne sağlar ve BASTAU LINE başvuruda nasıl yardımcı olur.",
+   "data": {
+    "eyebrow": "Göç",
+    "lead": "Yurt dışında yaşayan etnik Kazaklara yönelik \"Ata Jolı\" (Ata Yolu) kartı başvurusunda belge desteği veriyoruz: mesleğinizi listeyle karşılaştırmaktan başvuru dosyasını hazırlamaya kadar.",
+    "crumbText": "Göç",
+    "cta": "Belgelerinizi kontrol ettirin",
+    "ctaNote": "WeChat üzerinden de yazabilirsiniz",
+    "keyfacts": [
+     {
+      "value": "10 yıl",
+      "text": "kartın geçerlilik süresi, sonra uzatılabilir"
+     },
+     {
+      "value": "5 gün",
+      "text": "kayıttan sonra başvurunun incelenme süresi (iş günü)"
+     },
+     {
+      "value": "Korunur",
+      "text": "yabancı vatandaşlığınız; ondan vazgeçmeniz gerekmez"
+     }
+    ],
+    "benefitsEyebrow": "Kart ne sağlar",
+    "benefitsTitle": "Haklar ve sınırlamalar",
+    "benefitsLead": "Kart sahibi, Kazakistan vatandaşları ve kandaslar (soydaşlar) gibi birçok haktan yararlanır, ancak siyasi hakları sınırlıdır.",
+    "benefits": [
+     {
+      "title": "Aileyle birlikte yaşama",
+      "text": "Kazakistan'a serbestçe giriş ve aile üyeleriyle birlikte 10 yıla kadar oturma izni."
+     },
+     {
+      "title": "Çalışma izni gerekmez",
+      "text": "İşe girmek için ayrıca çalışma izni almak gerekmez."
+     },
+     {
+      "title": "Her bölgede iş kurma",
+      "text": "Ülkenin her bölgesinde ticari faaliyet yürütülebilir."
+     },
+     {
+      "title": "Sağlık ve okul",
+      "text": "Tıbbi yardım alma, çocuklar için ücretsiz orta öğretim."
+     },
+     {
+      "title": "Oy hakkı yok",
+      "text": "Seçimlere ve referandumlara katılamaz."
+     },
+     {
+      "title": "Kamu görevi yok",
+      "text": "Devlet kadrolarına atanamaz."
+     }
+    ],
+    "whoEyebrow": "Kimlere verilir",
+    "whoTitle": "Üç kategoriden birine uymanız yeterli",
+    "whoAside": "Mesleğinizin belirlenen listeye uygunluğunu önceden kontrol ediyoruz; belge listesi kategorinize göre değişir.",
+    "who": [
+     {
+      "label": "1. kategori",
+      "title": "Girişimci göçmen",
+      "text": "Yurt dışında düzenli olarak faaliyet gösteren kendi işletmesi olan girişimciler."
+     },
+     {
+      "label": "2. kategori",
+      "title": "Talep gören uzman",
+      "text": "Kazakistan'da talep gören meslekler listesinde yer alan meslek sahipleri."
+     },
+     {
+      "label": "3. kategori",
+      "title": "Özel meslek",
+      "text": "Kazakistan vatandaşlığını kolaylaştırılmış usulle alma hakkı tanıyan meslek sahipleri."
+     }
+    ],
+    "stepsEyebrow": "Biz ne yapıyoruz",
+    "stepsTitle": "Başvurunun belge tarafı, eksiksiz",
+    "stepsAside": "Belgelerinizi Kazakçaya veya Rusçaya çevirip başvuru aşamalarını anlaşılır bir dille açıklıyoruz.",
+    "steps": [
+     {
+      "title": "Meslek kontrolü",
+      "text": "Mesleğinizin belirlenen listeye uygunluğunu kontrol ediyoruz.",
+      "time": "listeyle karşılaştırma"
+     },
+     {
+      "title": "Belgelerin incelenmesi",
+      "text": "Diploma ve iş deneyimini kanıtlayan belgeleri inceliyoruz.",
+      "time": "diploma · iş deneyimi"
+     },
+     {
+      "title": "Çeviri",
+      "text": "Belgeleri Kazakçaya veya Rusçaya çeviriyoruz.",
+      "time": "Çince → Kazakça / Rusça"
+     },
+     {
+      "title": "Dosya",
+      "text": "Gerekli belge dosyasını hazırlıyoruz.",
+      "time": "eksiksiz dosya"
+     },
+     {
+      "title": "Aşamaların açıklanması",
+      "text": "Başvuru aşamalarını anlaşılır bir dille açıklıyoruz.",
+      "time": "adım adım"
+     }
+    ],
+    "disclaimer": "\"Ata Jolı\" kartının verilmesine ilişkin nihai kararı Kazakistan Cumhuriyeti'nin yetkili devlet kurumları verir.",
+    "docsEyebrow": "Belgeler",
+    "docsTitle": "Elinizde olanları işaretleyin",
+    "docsLead": "Örnek liste. Kesin liste, kategorinize göre danışmanlık sırasında verilir. İşaretleriniz yalnızca bu cihazda saklanır.",
+    "docs": [
+     {
+      "title": "Yabancı pasaport",
+      "note": "Tüm sayfalarının fotokopisi, çevirisiyle birlikte"
+     },
+     {
+      "title": "Kazak kökenini kanıtlayan belge",
+      "note": "Doğum belgesi veya başka bir resmi belge"
+     },
+     {
+      "title": "Diploma ve eki",
+      "note": "Mesleği listeyle karşılaştırmak için"
+     },
+     {
+      "title": "İş deneyimini kanıtlayan belgeler",
+      "note": "Çalışma karnesi, işverenden alınan çalışma belgesi"
+     },
+     {
+      "title": "İşletme sahipliğini kanıtlayan belgeler",
+      "note": "Girişimci göçmenler için: tescil belgesi, mali raporlar"
+     },
+     {
+      "title": "Adli sicil kaydı",
+      "note": "Noterde onaylatılır ve apostil yaptırılır"
+     },
+     {
+      "title": "Evlilik belgesi ve çocukların doğum belgeleri",
+      "note": "Aile üyeleri de birlikte geliyorsa"
+     },
+     {
+      "title": "Fotoğraf",
+      "note": "3,5 × 4,5 cm, beyaz fonda"
+     }
+    ],
+    "panelTitle": "Hazırlık",
+    "tipTitle": "Tavsiye",
+    "tipText": "Çin'de verilen belgeleri yola çıkmadan önce apostile hazırlayın: Çin, 2023'ten bu yana Apostil Sözleşmesi'ne taraftır.",
+    "tipLinkText": "Apostil rehberi",
+    "faqTitle": "\"Ata Jolı\" hakkında sorular",
+    "faq": [
+     {
+      "q": "Çin vatandaşlığımdan vazgeçmem gerekir mi?",
+      "a": "<p>Hayır. \"Ata Jolı\" kartının temel özelliği, yabancı vatandaşlığın korunmasıdır.</p>"
+     },
+     {
+      "q": "Kart aileme de verilir mi?",
+      "a": "<p>Evet, aile üyeleriniz de sizinle birlikte Kazakistan'da yaşayabilir. Onların belgelerini hazırlamanıza da yardımcı oluyoruz.</p>"
+     },
+     {
+      "q": "Kartı siz mi veriyorsunuz?",
+      "a": "<p>Hayır. Nihai kararı Kazakistan Cumhuriyeti'nin yetkili devlet kurumları verir. Biz belgelerinizin doğru, eksiksiz ve şartlara uygun olmasına yardımcı oluyoruz.</p>"
+     },
+     {
+      "q": "Kartla daha sonra vatandaşlık alınabilir mi?",
+      "a": "<p>Evet, isterseniz. Ancak kart sahibi için vatandaşlık almak zorunlu değildir.</p>"
+     },
+     {
+      "q": "Kandas statüsünden farkı nedir?",
+      "a": "<p>Kandas statüsü, kalıcı olarak taşınıp ileride vatandaş olacaklar içindir ve 1 yıllığına verilir. \"Ata Jolı\" ise vatandaşlığını koruyarak Kazakistan'da uzun süre yaşamak ve çalışmak isteyenler içindir.</p><p><a class=\"link-arrow\" href=\"/kz/services#cmp-title\">Karşılaştırma tablosu</a></p>"
+     }
+    ],
+    "relatedEyebrow": "Hizmetler",
+    "relatedTitle": "Bunlar da işinize yarayabilir",
+    "related": [
+     {
+      "kicker": "Çeviri ve belgeler",
+      "title": "Çeviri hizmetleri",
+      "text": "Pasaport, nüfus belgeleri, diploma, iş belgeleri; Kazakça, Çince ve Rusça."
+     },
+     {
+      "kicker": "Rehber",
+      "title": "Çin belgelerine apostil",
+      "text": "Noterden apostile kadar adım adım."
+     },
+     {
+      "kicker": "Göç",
+      "title": "Vatandaşlık ve oturma izni",
+      "text": "Belge listeleri, dilekçeler ve göç makamına başvurmadan önce kontrol."
+     }
+    ]
+   }
+  }
+ },
+ "articlecategory": {
+  "news": {
+   "name": "Haberler"
+  },
+  "docs": {
+   "name": "Belgeler"
+  },
+  "migration": {
+   "name": "Göç"
+  },
+  "study": {
+   "name": "Eğitim"
+  },
+  "author": {
+   "name": "Yazarın yazıları"
+  }
+ },
+ "article": {
+  "apostille": {
+   "title": "Çin belgelerine apostil: adım adım rehber",
+   "excerpt": "Noterden dışişleri bürosuna kadar: ne, nerede, hangi sırayla.",
+   "bodyHtml": "<p class=\"dropcap\">Eskiden Çin'de verilen bir belgeyi Kazakistan'da kullanmak için uzun bir konsolosluk tasdiki sürecinden geçmek gerekirdi: belgeyi önce Çin'in dışişleri makamları, ardından Kazakistan'ın Çin'deki büyükelçiliği veya konsolosluğu onaylardı. Bu süreç aylarca sürer ve her belge için ayrı ücret ödenirdi.</p>\n\n<h2 id=\"what\">Ne değişti?</h2>\n<p>Çin Halk Cumhuriyeti, 7 Kasım 2023'ten itibaren yabancı resmi belgelerin tasdiki zorunluluğunu kaldıran 1961 tarihli Lahey Sözleşmesi'ne (Apostil Sözleşmesi) katıldı. Kazakistan bu sözleşmeye zaten taraf. Yani artık Çin belgesine tek bir apostil şerhi düşülmesi yeterli: belge Kazakistan'da da geçerli olur.</p>\n<div class=\"callout\"><b>Kısacası</b><span>Konsolosluk tasdiki yok. Çin'de noter onayı + apostil; Kazakistan'da çeviri ve çevirinin noter onayı.</span></div>\n\n<h2 id=\"which\">Hangi belgelere apostil gerekir?</h2>\n<ul>\n  <li>Doğum belgesi: kandas (soydaş) statüsü ve vatandaşlık için</li>\n  <li>Evlilik belgesi ve çocukların doğum belgeleri</li>\n  <li>Diploma ve eki: eğitime kabul ve diploma denkliği için</li>\n  <li>Adli sicil kaydı: \"Ata Jolı\" kartı ve oturma izni için</li>\n  <li>Etnik kökeninizi gösteren belge (kimlik belgesinde belirtilmemişse)</li>\n</ul>\n\n<h2 id=\"steps\">Adımlar</h2>\n<ol>\n  <li><b>Noterlik.</b> Memleketinizdeki noterlikten <span class=\"zh\" lang=\"zh\">(公证处)</span> belgenin noter onayını alın. Çoğu durumda noter onayı, İngilizce çevirisiyle birlikte verilir.</li>\n  <li><b>Apostil.</b> Noter onayına ÇHC Dışişleri Bakanlığı veya bakanlığın yetkilendirdiği yerel dışişleri bürosu apostil şerhi düşer.</li>\n  <li><b>Çeviri.</b> Kazakistan'a geldikten sonra belgeyi apostiliyle birlikte Kazakçaya veya Rusçaya çeviriyoruz.</li>\n  <li><b>Çevirinin onayı.</b> Çevirmenin imzasını noter onaylar; belgeniz artık enbek.kz'ye, göç idaresine veya üniversiteye teslim edilmeye hazır.</li>\n</ol>\n\n<h2 id=\"tips\">Sık yapılan hatalar</h2>\n<p>En sık yapılan hata, belgeleri ancak Kazakistan'a geldikten sonra toplamaya başlamaktır. O zaman her şeyi Çin'deki akrabalar aracılığıyla, vekâletnameyle yaptırmak gerekir; bu da süreyi iki üç kat uzatır. İkinci hata, isimlerin her belgede farklı yazılmasıdır: pasaporttaki Latin harfli yazım, belgedeki Çince karakterler ve çevirideki Kiril yazımı birbiriyle uyuşmalıdır.</p>\n<div class=\"callout callout--gold\"><b>Tavsiye</b><span>Adınızın Kiril yazımını ilk çeviride kesinleştirin ve sonraki tüm belgelerde aynen kullanın.</span></div>",
+   "authorName": "Omar Bekmurat",
+   "seoDescription": "Çin'de verilen bir belgeyi Kazakistan'da kullanmak için ne yapmalı: adım adım rehber."
+  },
+  "prepare": {
+   "title": "Taşınmaya hazırlık: Çin'den ayrılmadan önce yapılması gerekenler",
+   "excerpt": "Belgeler hangi sırayla toplanmalı ve apostili neden önceden yaptırmak daha iyi.",
+   "authorName": "Omar Bekmurat"
+  },
+  "atazholy": {
+   "title": "Kandas (soydaş) statüsü ile \"Ata Jolı\" kartı arasındaki fark",
+   "excerpt": "Vatandaşlığınızı korumak mı istiyorsunuz, yoksa kalıcı olarak mı taşınıyorsunuz? İki yol arasındaki fark.",
+   "authorName": "Omar Bekmurat"
+  },
+  "license": {
+   "title": "Çin sürücü belgesinin çevirisi: bilmeniz gerekenler",
+   "excerpt": "Çeviri ile belge değişimi arasındaki fark ve hangi belgelerin hazırlanması gerektiği.",
+   "authorName": "Omar Bekmurat"
+  },
+  "study": {
+   "title": "Kazakistan'da eğitim: kota, hazırlık bölümü ve UNT (Birleşik Ulusal Test)",
+   "excerpt": "Yurt dışındaki kandas adaylar için %4 kota ve belgelerin ne zaman teslim edilmesi gerektiği.",
+   "authorName": "Omar Bekmurat"
+  },
+  "dance": {
+   "title": "Milli sanat, gelecek kuşaklara bırakılan bir emanettir",
+   "excerpt": "\"Bastau\" stüdyosu, \"Şugıla\", \"Şalkıma\" ve \"QazTribe\" toplulukları ve Kazak dansının geleceği.",
+   "authorName": "Omar Bekmurat"
+  },
+  "n-kaztest": {
+   "title": "Daimi oturma izni ve kandas (soydaş) statüsü: Kazakça bilgisi KAZTEST ile ölçülüyor",
+   "excerpt": "13 Şubat 2026'dan itibaren pilot proje kapsamında başvuru sahiplerinin devlet dilini bilme düzeyi ölçülüyor; en az A1 seviyesi aranıyor. Deneme sınavıyla hazırlanın.",
+   "sourceName": "\"Adilet\" mevzuat bankası"
+  },
+  "n-atazholy": {
+   "title": "Etnik Kazaklara 65 \"Ata Jolı\" kartı verildi",
+   "excerpt": "27 kart girişimci göçmenlere, 38 kart talep gören uzmanlara verildi. Kart sahipleri Rusya, Almanya, Moğolistan, Çin ve diğer ülkelerden.",
+   "sourceName": "Kazakistan Cumhuriyeti Çalışma Bakanlığı",
+   "dateText": "Şubat 2025"
+  },
+  "n-quota": {
+   "title": "Yurt dışındaki kandas adaylara burs kotası: %4",
+   "excerpt": "Devlet eğitim burslarında yurt dışındaki kandaslara ayrılan kota %2'den %4'e çıkarıldı."
+  },
+  "n-apostille": {
+   "title": "Çin, Apostil Sözleşmesi'ne katıldı",
+   "excerpt": "7 Kasım 2023'ten itibaren Çin'de verilen belgeler konsolosluk tasdiki olmadan, apostil şerhiyle onaylanıyor.",
+   "sourceName": "HCCH"
+  }
+ },
+ "region": {
+  "3": {
+   "name": "Astana şehri",
+   "shortName": "Astana şehri"
+  },
+  "4": {
+   "name": "Almatı şehri",
+   "shortName": "Almatı şehri"
+  },
+  "19": {
+   "name": "Çimkent şehri",
+   "shortName": "Çimkent şehri"
+  },
+  "5": {
+   "name": "Akmola ili",
+   "shortName": "Akmola"
+  },
+  "7": {
+   "name": "Aktöbe ili",
+   "shortName": "Aktöbe"
+  },
+  "6": {
+   "name": "Almatı ili",
+   "shortName": "Almatı ili"
+  },
+  "8": {
+   "name": "Atırau ili",
+   "shortName": "Atırau"
+  },
+  "9": {
+   "name": "Batı Kazakistan ili",
+   "shortName": "Batı Kazakistan"
+  },
+  "10": {
+   "name": "Jambıl ili",
+   "shortName": "Jambıl"
+  },
+  "11": {
+   "name": "Karağandı ili",
+   "shortName": "Karağandı"
+  },
+  "12": {
+   "name": "Kostanay ili",
+   "shortName": "Kostanay"
+  },
+  "13": {
+   "name": "Kızılorda ili",
+   "shortName": "Kızılorda"
+  },
+  "14": {
+   "name": "Mangıstau ili",
+   "shortName": "Mangıstau"
+  },
+  "16": {
+   "name": "Pavlodar ili",
+   "shortName": "Pavlodar"
+  },
+  "17": {
+   "name": "Kuzey Kazakistan ili",
+   "shortName": "Kuzey Kazakistan"
+  },
+  "15": {
+   "name": "Türkistan ili",
+   "shortName": "Türkistan"
+  },
+  "18": {
+   "name": "Doğu Kazakistan ili",
+   "shortName": "Doğu Kazakistan"
+  }
+ },
+ "placecategory": {
+  "tabigat": {
+   "name": "Doğa",
+   "pluralName": "Doğa"
+  },
+  "kieli": {
+   "name": "Kutsal yer",
+   "pluralName": "Kutsal yerler"
+  },
+  "tarih": {
+   "name": "Tarihi yer",
+   "pluralName": "Tarihi yerler"
+  },
+  "eskertkish": {
+   "name": "Anıt",
+   "pluralName": "Anıtlar"
+  }
+ },
+ "place": {
+  "sharyn": {
+   "name": "Şarın Kanyonu",
+   "fact": "Kayaların yüksekliği 150–300 m",
+   "lead": "Kazakistan'ın en güzel yerlerinden biri; yöre halkı ona \"surlu kaleler vadisi\" der.",
+   "bodyHtml": "<p>Şarın Kanyonu, Almatı şehrine 195 kilometre uzaklıktadır. Uzunluğu 200 km'dir; kaya kütlelerinin yüksekliği 150 metreden 300 metreye kadar ulaşır. Turistlerin ilgisini çeken \"Kuleler Vadisi\"nin uzunluğu 2 km, genişliği 20–80 m'dir.</p>\n<p>Şarın, Amerika'daki Büyük Kanyon'un küçük kardeşine benzetilir. Tepeleri göğe değen dev kayalar, kendiliğinden oluşmuş masalsı bir şehri andırır: biçimleri insan eliyle yapılmış binalara ve kulelere çok benzer.</p>\n<p>Yabani hayvan tasvirleri, paleolitik çağda bu bölgede kuşların ve hayvanların yaşadığını gösterir. Kanyonun alt kesiminde kadıntuzluğu ve Fırat kavağı (turanga) yetişir.</p>",
+   "facts": [
+    {
+     "label": "Almatı'dan",
+     "value": "195 km"
+    },
+    {
+     "label": "Uzunluğu",
+     "value": "200 km"
+    },
+    {
+     "label": "Kaya yüksekliği",
+     "value": "150–300 m"
+    },
+    {
+     "label": "En uygun zaman",
+     "value": "nisan–ekim"
+    }
+   ]
+  },
+  "kolsai": {
+   "name": "Kolsay Gölleri",
+   "fact": "Deniz seviyesinden 1 800–2 650 m yükseklikte",
+   "lead": "Kuzey Tanrı Dağları'nda üç gölden oluşan bir sistem: Aşağı, Orta ve Yukarı Kolsay.",
+   "bodyHtml": "<p>Kolsay Gölleri, Küngey Alatau ile İli Alatau sıradağlarını birleştiren Kuzey Tanrı Dağları'nda üç gölden oluşan bir sistemdir. Göller, Kolsay Nehri boyunca farklı yüksekliklerde art arda sıralanır.</p>\n<p>Yukarı Kolsay deniz seviyesinden 2 650 m, Orta Kolsay 2 280 m, Aşağı Kolsay ise 1 800 m yükseklikte yer alır. Aşağı gölün uzunluğu 1 520 m, ortalama genişliği 222 m'dir.</p>\n<p>Komşu Kayındı Gölü, 1911'deki şiddetli depremle oluştu: vadiyi su bastı ve ağaçlar su altında kaldı. Gölün suyu yazın bile +6 derece civarında olduğu için ağaçların iğne yaprakları bugüne kadar korunmuştur.</p>",
+   "facts": [
+    {
+     "label": "Göl sayısı",
+     "value": "3"
+    },
+    {
+     "label": "Aşağı göl",
+     "value": "1 800 m"
+    },
+    {
+     "label": "Yukarı göl",
+     "value": "2 650 m"
+    },
+    {
+     "label": "Aşağı gölün uzunluğu",
+     "value": "1 520 m"
+    }
+   ]
+  },
+  "khantengri": {
+   "name": "Han Tengri",
+   "fact": "Yüksekliği 7 000 m'nin üzerinde",
+   "lead": "Kazakların \"Aspantau\" dediği Tanrı Dağları'nın en güzel zirvesi; Kazakistan, Kırgızistan ve Çin sınırlarının birleştiği noktada.",
+   "bodyHtml": "<p>Han Tengri, Kazakların \"Aspantau\" dediği Tanrı Dağları'nın yüksek zirvelerinden biridir. Güneydoğu yamacı Kazakistan'a, doğu yamacı Çin'e, batı yamacı Kırgızistan'a aittir.</p>\n<p>En yüksek noktası 7 000 metreyi aşan bu zirve, dünyanın en güzel zirveleri arasında sayılır. 1960'a kadar yerel halkın dilinde Hantengir olarak anılıyordu.</p>\n<p>Sivri, dört yüzlü bir piramidi andıran zirvenin mermer duvarı uzaktan dikkat çeker. Zirveye Güney ve Kuzey İnılçek buzulları üzerinden tırmanılır.</p>",
+   "facts": [
+    {
+     "label": "Yüksekliği",
+     "value": "7 010 m"
+    },
+    {
+     "label": "Dağ sistemi",
+     "value": "Tanrı Dağları"
+    },
+    {
+     "label": "Sınırı",
+     "value": "3 ülke"
+    },
+    {
+     "label": "Tırmanış sezonu",
+     "value": "temmuz–ağustos"
+    }
+   ]
+  },
+  "muztau": {
+   "name": "Beluha Dağı",
+   "fact": "Altay'ın en yüksek zirvesi · 4 506 m",
+   "lead": "Altay dağ sisteminin Rusya ve Kazakistan topraklarındaki en yüksek buzullu zirvesi. Kazaklar ona Aksümbi ve Aktaykı demiştir.",
+   "bodyHtml": "<p>Beluha Dağı (Kazakça adıyla Muztau), Altay dağ sisteminin Rusya ve Kazakistan topraklarındaki en yüksek buzullu zirvesidir (4 506 m). Katun Sıradağları'nın doğusunda, Kazakistan ile Altay bölgesi arasındaki sınırın yakınında yer alır.</p>\n<p>Zirvesinde Büyük ve Küçük Berel ile Mensu buzulları bulunur; Katun Nehri bu buzullardan doğar. Beluha'ya bağlı nehir havzalarında 146 kilometrekarelik alanı kaplayan 162 buzul vardır.</p>\n<p>Altaylılar Beluha'yı sevgiyle \"Tanrı'nın yurdu\" ve \"Ulu ihtiyar\" diye anar. Bu adların kaynağı, dağın tepeden eteğe kadar kalıcı karla kaplı olması olsa gerek.</p>",
+   "facts": [
+    {
+     "label": "Yüksekliği",
+     "value": "4 506 m"
+    },
+    {
+     "label": "Buzul sayısı",
+     "value": "162"
+    },
+    {
+     "label": "Yaşı",
+     "value": "1,5 milyon yıl"
+    },
+    {
+     "label": "İlçe",
+     "value": "Katonkarağay"
+    }
+   ]
+  },
+  "alakol": {
+   "name": "Alakol Gölü",
+   "fact": "15'ten fazla nehir dökülür",
+   "lead": "Şifalı özellikleriyle bilinen, iyot ve tuz bakımından zengin bir kapalı havza gölü. Bir zamanlar İpek Yolu kervanları bu kıyılardan geçerdi.",
+   "bodyHtml": "<p>Alakol, Almatı ili ile Doğu Kazakistan ili topraklarında yer alan bir kapalı havza gölüdür. Göle 15'ten fazla nehir dökülür.</p>\n<p>Gölün suyu mineraller, iyot ve tuz bakımından zengin olduğundan sağlığa faydası tıbben kanıtlanmıştır. Anlatılanlara göre İpek Yolu'ndan gelen yolcular kıyıda dinlenir, göl suyuyla güç toplarmış.</p>\n<p>XII–XIX. yüzyıllarda göl Türge-Nor, Alaktagöl, Alateniz gibi çeşitli adlarla anılmıştır.</p>",
+   "facts": [
+    {
+     "label": "Türü",
+     "value": "kapalı havza gölü"
+    },
+    {
+     "label": "Dökülen nehir",
+     "value": "15+"
+    },
+    {
+     "label": "Suyu",
+     "value": "mineralli, iyotlu"
+    },
+    {
+     "label": "Sezon",
+     "value": "haziran–ağustos"
+    }
+   ]
+  },
+  "okzhetpes": {
+   "name": "Okjetpes Kayası",
+   "fact": "Burabay · Kökşetau Tepeleri",
+   "lead": "Auliyekol Gölü'nün berrak sularında yükselen granit kaya. Şokan Velihanov onunla ilgili 15'ten fazla efsane derlemiştir.",
+   "bodyHtml": "<p>Okjetpes, Kökşetau Tepeleri'nin en yüksek noktası olan Kökşe Dağı'nın yanında yer alır. Granit kayalardan oluşur, yamaçları diktir; üzerinde çam ve huş ağaçları yetişir.</p>\n<p>Auliyekol Gölü'nün berrak sularında yükselen bu kaya hakkında halk arasında pek çok efsane anlatılır. Şokan Velihanov 15'ten fazla efsane ve anlatı derlemiş, Saken Seyfullin de \"Kökşetau\" adlı uzun şiirinde Okjetpes'in kaderini dile getirmiştir.</p>",
+   "facts": [
+    {
+     "label": "Yeri",
+     "value": "Burabay"
+    },
+    {
+     "label": "Kaya türü",
+     "value": "granit"
+    },
+    {
+     "label": "Efsane sayısı",
+     "value": "15+"
+    },
+    {
+     "label": "Astana'dan",
+     "value": "≈ 250 km"
+    }
+   ]
+  },
+  "korgalzhyn": {
+   "name": "Korgaljın Doğa Koruma Alanı",
+   "fact": "Astana'dan 120 km · Ramsar listesi",
+   "lead": "Milyonlarca kuşa ev sahipliği yapan 60 kadar göl. Dünyadaki 8 kuş göç yolundan üçü Tengiz Gölü'nden geçer.",
+   "bodyHtml": "<p>Korgaljın Doğa Koruma Alanı, Astana şehrinin 120 kilometre güneybatısında yer alır. 1968'de hükümet kararıyla koruma alanı olarak yeniden kuruldu. Yüzölçümü 258 963 hektardır.</p>\n<p>Dünyada göçmen kuşların kullandığı 8 göç yolu vardır; bunlardan üçü bu koruma alanındaki Tengiz Gölü'nden geçer. Bu yüzden Korgaljın'ın 70'e yakın gölünde milyonlarca kuş yaşar.</p>\n<p>Koruma alanı, Ramsar Sözleşmesi'nin \"A\" grubunda yer alır; 2007'de göllere uluslararası öneme sahip ornitolojik alan (IBA) statüsü verilmiştir.</p>",
+   "facts": [
+    {
+     "label": "Astana'dan",
+     "value": "120 km"
+    },
+    {
+     "label": "Yüzölçümü",
+     "value": "258 963 ha"
+    },
+    {
+     "label": "Göl sayısı",
+     "value": "≈ 60"
+    },
+    {
+     "label": "Kuruluş",
+     "value": "1968"
+    }
+   ]
+  },
+  "tanbaly": {
+   "name": "Tamgalı Petroglifleri",
+   "fact": "5 000'den fazla petroglif · UNESCO",
+   "lead": "Yedisu'nun en eski anıtlarından biri: Tunç Çağı'ndan bu yana taşa oyulmuş binlerce tasvir.",
+   "bodyHtml": "<p>Arkeolojik kompleks, Almatı ilinde, Çu-İli Dağları'nın güneydoğu kesiminde, Almatı'nın 170 kilometre kuzeybatısında yer alır.</p>\n<p>Tamgalı kompleksi, farklı tarihi dönemlere ait 5 000'den fazla petroglifi, yerleşim yerlerini, mezarlıkları ve kurban sunaklarını kapsar. En değerli kısmı, Orta Tunç Çağı'na ait petrogliflerdir.</p>\n<p>Araştırmacılar, Tamgalı petrogliflerinin yüksek estetik değerini ve manevi etkisini özellikle vurgular.</p>",
+   "facts": [
+    {
+     "label": "Almatı'dan",
+     "value": "170 km"
+    },
+    {
+     "label": "Petroglif",
+     "value": "5 000+"
+    },
+    {
+     "label": "En eski tasvirler",
+     "value": "MÖ XIV. yy."
+    },
+    {
+     "label": "UNESCO",
+     "value": "2004"
+    }
+   ]
+  },
+  "yassawi": {
+   "name": "Hoca Ahmed Yesevi Türbesi",
+   "fact": "XIV. yy. · UNESCO, 2003",
+   "lead": "Türkistan'daki Orta Çağ mimarisinin incisi, Türk dünyasının manevi merkezi.",
+   "bodyHtml": "<p>Hoca Ahmed Yesevi Türbesi, Türkistan'daki Orta Çağ mimarisinin incisidir. Türbe, XIV. yüzyılın sonunda Emir Timur'un emriyle büyük düşünür Hoca Ahmed Yesevi'nin kabri üzerine inşa edilmiştir.</p>\n<p>Türbe 2003'te UNESCO Dünya Mirası Listesi'ne alındı. Mavi kubbeli bu görkemli yapı, yüzyıllardır Orta Asya halkları için kutsal bir ziyaret yeridir.</p>",
+   "facts": [
+    {
+     "label": "Şehir",
+     "value": "Türkistan"
+    },
+    {
+     "label": "Yapılışı",
+     "value": "XIV. yy. sonu"
+    },
+    {
+     "label": "Yaptıran",
+     "value": "Emir Timur"
+    },
+    {
+     "label": "UNESCO",
+     "value": "2003"
+    }
+   ]
+  },
+  "otyrar": {
+   "name": "Otrar Antik Kenti",
+   "fact": "I–XVIII. yy. · Farabi'nin yurdu",
+   "lead": "İpek Yolu üzerinde büyük bir ticaret ve bilim merkezi; büyük düşünür Farabi'nin doğduğu bölgenin başkenti.",
+   "bodyHtml": "<p>Otrar Antik Kenti, Otrar ilçesinin merkezi Şauildir'in 7 kilometre kuzeybatısında yer alır. Tarihte Turarband, Tarband ve Farab adlarıyla bilinir.</p>\n<p>Şehir, İran'dan ve Orta Asya'dan Sibirya'ya, Moğolistan'a ve Çin'e uzanan ticaret yolu üzerinde önemli bir merkezdi. Otrar, Ebu Nasr el-Farabi'nin doğduğu bölgenin başkentidir.</p>",
+   "facts": [
+    {
+     "label": "Dönemi",
+     "value": "I–XVIII. yy."
+    },
+    {
+     "label": "Yüzölçümü",
+     "value": "≈ 200 ha"
+    },
+    {
+     "label": "Eski adı",
+     "value": "Farab"
+    },
+    {
+     "label": "Şauildir'den",
+     "value": "7 km"
+    }
+   ]
+  },
+  "beket": {
+   "name": "Beket Ata Camii",
+   "fact": "Oğılandı · yeraltı camii",
+   "lead": "Mangıstau'nun en kutsal ziyaret yeri: Beket Ata'nın kayaları oydurarak yaptırdığı yeraltı camii.",
+   "bodyHtml": "<p>Beket Mırzagululı (1750–1813), Kazak halkının önemli bir din önderi, eğitimci ve kahramanıdır. Mangıstau, Atırau ve Üstyurt bölgelerinde çocukların eğitim gördüğü yeraltı camilerini kayalara oyarak inşa eden usta bir mimardır.</p>\n<p>Oğılandı'daki yeraltı camiinde bir tasavvuf okulunun temelini attı. Bugün burası insanlara manevi güç veren, yolunu kaybedene yol gösteren kutsal bir mekân olarak bilinir.</p>",
+   "facts": [
+    {
+     "label": "Yeri",
+     "value": "Oğılandı"
+    },
+    {
+     "label": "Beket Ata",
+     "value": "1750–1813"
+    },
+    {
+     "label": "Yaptırdığı cami",
+     "value": "5"
+    },
+    {
+     "label": "İl",
+     "value": "Mangıstau"
+    }
+   ]
+  },
+  "ulytau": {
+   "name": "Ulıtau",
+   "fact": "Kazak topraklarının göbeği",
+   "lead": "Batı Sarıarka'nın en yüksek noktası. Hanların ak keçeye oturtulup kaldırılarak tahta çıkarıldığı, Asan Kaygı'nın Jeruyık (efsanevi bolluk ülkesi) dediği diyar.",
+   "bodyHtml": "<p>Ulıtau, Torgay Çukuru'nun güneydoğusu ile Betpakdala'nın kuzeyini kaplar. Burası yalnızca Batı Sarıarka'nın en yüksek noktası değil, aynı zamanda onun \"göbeği\", \"dünyanın merkezi\"dir.</p>\n<p>Halkımız bu diyarda sultanlarını ak keçeye oturtup kaldırarak han ilan ederdi. Cuci, Alaşa ve Toktamış hanlar ile kahraman Edige burada gömülüdür. Asan Kaygı bu toprakları, Kazak halkının yaşamasına elverişli bir Jeruyık olarak anmıştır.</p>",
+   "facts": [
+    {
+     "label": "Bölge",
+     "value": "Batı Sarıarka"
+    },
+    {
+     "label": "En yüksek zirve",
+     "value": "Akmeşit"
+    },
+    {
+     "label": "Türbeler",
+     "value": "Cuci, Alaşa Han"
+    },
+    {
+     "label": "İl",
+     "value": "Ulıtau"
+    }
+   ]
+  },
+  "zhidebai": {
+   "name": "Jidebay-Börili",
+   "fact": "Abay'ın ev-müzesi",
+   "lead": "Abay'ın hayatı ve eserleri hakkında kapsamlı bilgi sunan tarihi-kültürel kompleks.",
+   "bodyHtml": "<p>Kompleks, Abay ilçesindeki Jidebay yerleşiminde yer alır. 1884'te Kunanbay'dan miras kalan Abay'ın kışlağı, ev-müzesine dönüştürülmüştür.</p>\n<p>Müzenin beş odasında ve üç salonundaki eşyalar, şairin yakınlarından, dostlarından ve çağdaşlarından toplanmıştır. Evin dış görünüşü, Abay dönemindeki hâlini korumaktadır.</p>",
+   "facts": [
+    {
+     "label": "Ev-müzesi",
+     "value": "1884 tarihli kışlak"
+    },
+    {
+     "label": "Oda",
+     "value": "5 oda, 3 salon"
+    },
+    {
+     "label": "İlçe",
+     "value": "Abay"
+    },
+    {
+     "label": "Abay'ın yaptırdığı",
+     "value": "okul, cami"
+    }
+   ]
+  },
+  "baiterek": {
+   "name": "Bayterek",
+   "fact": "Yüksekliği 97 m",
+   "lead": "Bağımsız ülkenin simgesi: 97 metrelik yükseklik, başkentin 1997'de Astana'ya taşınmasını simgeler.",
+   "bodyHtml": "<p>Astana'nın merkezindeki Bayterek Anıtı, bağımsız Kazak devletinin ve halkının yeniden doğuşunun ve yükselişinin simgesidir. Yapı 97 metre yüksekliktedir: bu, yeni başkentin 1997'de ilan edilmesini simgeler.</p>\n<p>Anıtın temel fikri Dünya Ağacı'dır. Üst bölümdeki \"Bata\" (hayır dua) kompozisyonu, 2003'te Astana'da toplanan dünya dinlerinin liderlerinin hayır dualarını içerir.</p>",
+   "facts": [
+    {
+     "label": "Yüksekliği",
+     "value": "97 m"
+    },
+    {
+     "label": "Fikri",
+     "value": "Dünya Ağacı"
+    },
+    {
+     "label": "Açılış",
+     "value": "2002"
+    },
+    {
+     "label": "Şehir",
+     "value": "Astana"
+    }
+   ]
+  },
+  "berel": {
+   "name": "Berel Kurganları",
+   "fact": "70'ten fazla kurgan · Saka dönemi",
+   "lead": "Donmuş toprak sayesinde giysilerin, eyer takımlarının ve ahşap eşyaların çürümeden korunduğu ünlü Saka ve Türk mezarlığı.",
+   "bodyHtml": "<p>Berel mezarlığı, Katonkarağay ilçesindeki Berel köyünün 7–8 kilometre güneybatısında yer alır. En eski kurganlar MÖ IV–III. yüzyıllara, daha geç olanlar ise Eski Türk dönemine aittir.</p>\n<p>Büyük kurganlarda oluşan donmuş toprak sayesinde giysiler, at koşum takımları, ahşap eşyalar, deri ve keçeden yapılmış nesneler çürümeden iyi korunmuştur. Mezarlık 1865'te W. Radloff tarafından, 1998'den bu yana ise Z. Samaşev tarafından araştırılmaktadır.</p>",
+   "facts": [
+    {
+     "label": "Kurgan sayısı",
+     "value": "70+"
+    },
+    {
+     "label": "Dönemi",
+     "value": "MÖ IV–III. yy."
+    },
+    {
+     "label": "Alanı",
+     "value": "4 000 × 1 000 m"
+    },
+    {
+     "label": "İlçe",
+     "value": "Katonkarağay"
+    }
+   ]
+  },
+  "bayanaul": {
+   "name": "Konır Evliya Mağarası",
+   "fact": "Bayanaul · Jasıbay Gölü'ne 3 km",
+   "lead": "Eskiden beri dilek dilenen kutsal bir yer. Meşhur Jüsip burası için \"Evliyaların Allah'tan ferman dilediği yer\" demiştir.",
+   "bodyHtml": "<p>Bayanaul Dağları'ndaki evliya mağarası, Jasıbay Gölü'ne üç kilometre uzaklıktadır. Konır Evliya ya da Evliya Taş Mağarası, eskiden beri Bayanaul'un bereket kaynağı sayılır.</p>\n<p>Mağaranın dibindeki kazan biçimli oyukta sürekli su birikir; bu su hastalara şifa sayılır ve kutsal kabul edilir. Meşhur Jüsip bu yerin kutsallığını yücelterek onu \"Evliyaların Allah'tan ferman dilediği yer\" diye adlandırmıştır.</p>",
+   "facts": [
+    {
+     "label": "Yeri",
+     "value": "Bayanaul"
+    },
+    {
+     "label": "Jasıbay Gölü'ne",
+     "value": "3 km"
+    },
+    {
+     "label": "Kaya türü",
+     "value": "granit"
+    },
+    {
+     "label": "İl",
+     "value": "Pavlodar"
+    }
+   ]
+  },
+  "tamshybulak": {
+   "name": "Tamşıbulak",
+   "fact": "Kapal köyü · şifalı kaynak",
+   "lead": "Taş duvarları yarıp damla damla akan şifalı bir kaynak. 1859–1865 yıllarında Şokan Velihanov tarafından incelenmiştir.",
+   "bodyHtml": "<p>Tamşıbulak, Aksu ilçesine bağlı Kapal köyünün merkezinde yer alır. Eski taş duvarları yararak çıkan ve damlalardan oluşarak akan kaynak, kışın bile donmaz.</p>\n<p>Yöre halkı kaynağın suyunu çok eski zamanlardan beri çeşitli hastalıkların tedavisinde kullanmıştır. Tamşıbulak hakkındaki ilk bilgileri Şokan Velihanov yazmıştır.</p>",
+   "facts": [
+    {
+     "label": "Yeri",
+     "value": "Kapal köyü"
+    },
+    {
+     "label": "İlçe",
+     "value": "Aksu"
+    },
+    {
+     "label": "İnceleyen",
+     "value": "Ş. Velihanov"
+    },
+    {
+     "label": "Suyu",
+     "value": "kışın donmaz"
+    }
+   ]
+  },
+  "esik": {
+   "name": "Esik Kurganları",
+   "fact": "\"Altın Adam\"ın bulunduğu yer",
+   "lead": "1969'da \"Altın Adam\"ın bulunduğu Saka krallarının mezarlığı: bağımsız Kazakistan'ın simgelerinden biri.",
+   "bodyHtml": "<p>Esik Kurganları, İli Alatau eteklerindeki Saka krallarına ait bir mezarlıktır. 1969'da buradaki kurganlardan birinde altın giysili bir savaşçının iskeleti, yani ünlü \"Altın Adam\" bulundu.</p>\n<p>Bugün \"Altın Adam\" Kazakistan'ın Bağımsızlık Anıtı'nın tepesinde duruyor; kurganların yakınında ise bir açık hava müzesi hizmet veriyor.</p>",
+   "facts": [
+    {
+     "label": "Bulunuşu",
+     "value": "1969"
+    },
+    {
+     "label": "Buluntu",
+     "value": "\"Altın Adam\""
+    },
+    {
+     "label": "Dönemi",
+     "value": "Saka"
+    },
+    {
+     "label": "Almatı'dan",
+     "value": "≈ 50 km"
+    }
+   ]
+  }
+ },
+ "heritage": {
+  "Қожа Ахмет Ясауи кесенесі": {
+   "name": "Hoca Ahmed Yesevi Türbesi",
+   "kind": "Dünya Mirası"
+  },
+  "Таңбалы тас": {
+   "name": "Tamgalı Petroglifleri",
+   "kind": "Dünya Mirası"
+  },
+  "Сарыарқа — дала мен көлдер": {
+   "name": "Sarıarka — bozkır ve göller",
+   "kind": "Doğal Miras"
+  },
+  "Айтыс": {
+   "name": "Aytış",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Күй": {
+   "name": "Küy",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Киіз үй": {
+   "name": "Boz ev",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Құсбегілік": {
+   "name": "Doğancılık",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Жылқышылардың көктемгі жоралғылары": {
+   "name": "At yetiştiricilerinin bahar ritüelleri",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Қорқыт ата мұрасы": {
+   "name": "Dede Korkut (Korkut Ata) mirası",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Наурыз": {
+   "name": "Nevruz",
+   "kind": "Somut Olmayan Kültürel Miras"
+  },
+  "Қазақша күрес": {
+   "name": "Kazak güreşi",
+   "kind": "Somut Olmayan Kültürel Miras"
+  }
+ },
+ "kaztestvariant": {
+  "1-нұсқа": {
+   "title": "Deneme 1"
+  },
+  "2-нұсқа": {
+   "title": "Deneme 2"
+  },
+  "3-нұсқа": {
+   "title": "Deneme 3"
+  }
+ }
+}

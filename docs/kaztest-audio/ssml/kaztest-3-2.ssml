@@ -1,0 +1,16 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="kk-KZ">
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Сәлеметсіз бе, Дина! Кіріңіз, отырыңыз. Мен қонақүйдің менеджері Тимурмын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сәлеметсіз бе! Танысқаныма қуаныштымын.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Сіз әкімші қызметіне өтініш беріпсіз. Өзіңіз туралы айтып беріңізші.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Мен Үрімжіде туып-өстім. Қазақстанға үш жыл бұрын көшіп келдім. Қытайда екі жыл мейрамханада әкімші болып істедім.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Қандай тілдерді білесіз?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Қазақ және қытай тілдерін жақсы білемін, орысша да сөйлей аламын. Қазір ағылшын тілі курсына барып жүрмін.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Өте жақсы. Бізге Қытайдан туристер жиі келеді, сондықтан қытай тілін білу – үлкен артықшылық.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жұмыс уақыты қандай болады?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Жұмыс таңғы сегізде басталып, кешкі бесте аяқталады. Екі сенбінің бірінде де жұмыс істейсіз.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Түсінікті. Жалақысы қанша болады?</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Алғашқы үш ай – сынақ мерзімі, бұл кезде айына үш жүз мың теңге аласыз. Кейін жалақыңыз көбейеді.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Жарайды, мен келісемін.</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-DauletNeural"><prosody rate="-8%">Онда келесі дүйсенбіден бастап жұмысқа шығыңыз. Құттықтаймын!</prosody><break time="700ms"/></voice>
+  <voice name="kk-KZ-AigulNeural"><prosody rate="-8%">Сенім артқаныңызға рақмет! Сеніміңізді ақтауға тырысамын.</prosody><break time="700ms"/></voice>
+</speak>

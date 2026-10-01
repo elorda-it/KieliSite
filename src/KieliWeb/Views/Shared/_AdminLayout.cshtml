@@ -1,0 +1,65 @@
+@{
+    string reloginReason = (ViewData["reloginReason"] ?? string.Empty) as string;
+}
+<!DOCTYPE html>
+<html lang="@(ViewData["languageIsoCode"])">
+
+<head>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" href="@Asset("/kieli/img/apple-touch-icon.png")" />
+    <title>@(SiteSetting?.Title)</title>
+    <meta name="keywords" content="@(SiteSetting?.Keywords)">
+    <meta name="description" content="@(SiteSetting?.Description)">
+    <partial name="~/Views/Shared/_Style.cshtml" />
+    @(RenderSection("Styles", required: false))
+</head>
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="@(CurrentLanguage.Equals("tote", StringComparison.OrdinalIgnoreCase) ? "rtl" : "ltr")" data-pc-theme_contrast="" data-pc-theme="@(SkinName)">
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <partial name="~/Views/Console/Partial/Sidebar.cshtml" />
+    <partial name="~/Views/Console/Partial/Header.cshtml" />
+    @(RenderBody())
+    <partial name="~/Views/Console/Partial/Footer.cshtml" />
+    <partial name="~/Views/Shared/_LanguageTemplate.cshtml" />
+    <partial name="~/Views/Shared/_Script.cshtml" />
+    <partial name="~/Views/Console/Partial/MainScripts.cshtml" />
+
+@{
+    string createOrEditScript = $"~/Views/Console/{ControllerName}/{ActionName}/CreateOrEditScripts.cshtml";
+    string listScript = $"~/Views/Console/{ControllerName}/{ActionName}/ListScripts.cshtml";
+}
+
+
+@* the shared content screens (Views/Console/Cms) bring their own scripts *@
+@switch (QarBool("cms") ? string.Empty : Query)
+{
+
+case "create":
+
+case "edit":
+                <partial name="@(createOrEditScript)" />
+break;
+
+case "list":
+                <partial name="@(listScript)" />
+break;
+
+}
+
+@if (!string.IsNullOrEmpty(reloginReason))
+{
+        <script>
+            $qar.showCustomModal("/@(CurrentLanguage)/Modal/Relogin?reloginReason=@(reloginReason)");
+        </script>
+
+}
+    @(RenderSection("Scripts", required: false))
+</body>
+
+</html>

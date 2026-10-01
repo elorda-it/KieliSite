@@ -1,0 +1,93 @@
+@{
+    Layout = null;
+}
+<div id="qar-modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">@(T("ls_Avatar"))</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <form action="/@(CurrentLanguage)/Modal/UploadAvatar" method="post" enctype="multipart/form-data" id="upload-avatar">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12">
+                    <input type="file" class="d-none" id="fileAvatar" name="fileAvatar" accept="image/*" />
+                    <button type="button" id="btnChooseFile" class="btn btn-light mb-3"
+                        for="fileAvatar">@(T("ls_Chooseaimage"))</button>
+                </div>
+            </div>
+            <div class="cropper-img-container avatar">
+                <img id="avatarPreview" class="d-none" />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@(T("ls_Close"))</button>
+            <button type="submit" class="btn btn-primary" data-loading-text="@(T("ls_Loading"))">@(T("ls_Upload"))</button>
+        </div>
+    </form>
+    <script data-modal="qar">
+        function initUploadAvatar() {
+            let btnChooseFile = document.querySelector('#btnChooseFile'),
+                fileAvatar = document.querySelector('input#fileAvatar'),
+                avatarPreview = document.querySelector('#avatarPreview'),
+                cropper = null;
+            if (btnChooseFile) {
+                btnChooseFile.addEventListener('click', function () {
+                    if (fileAvatar) {
+                        fileAvatar.click();
+                    }
+                });
+            }
+            fileAvatar.addEventListener('change', function (event) {
+                if (event.target.files && event.target.files[0]) {
+                    if (cropper !== null) {
+                        cropper.destroy();
+                        cropper = null;
+                    }
+                    const fileReader = new FileReader();
+                    fileReader.readAsDataURL(event.target.files[0]);
+                    fileReader.addEventListener("load", function (event) {
+                        avatarPreview.classList.remove('d-none');
+                        avatarPreview.setAttribute('src', this.result);
+                        if (cropper == null) {
+                            cropper = new Cropper(avatarPreview, {
+                                aspectRatio: 1,
+                                viewMode: 1,
+                                ready: function () {
+                                    croppable = true;
+                                },
+                            });
+                        }
+                    });
+                }
+            });
+
+            document.querySelector('form#upload-avatar').addEventListener("submit", async function (event) {
+                event.preventDefault();
+                const form = this,
+                    button = form.querySelector('button[type="submit"]'),
+                    data = new FormData(form),
+                    url = form.getAttribute("action"),
+                    method = form.getAttribute("method");
+                data.append('cropInfoStr', JSON.stringify(cropper.getData()));
+                $qar.setBtnStatus(button, "loading");
+                try {
+                    const res = await fetch(url, { method: method, body: data });
+                    const resData = await res.json();
+                    $qar.showMessage(resData["status"], resData["message"]);
+                    if (resData["data"]) {
+                        document.querySelectorAll('img[data-image="avatar"]').forEach(img => {
+                            img.setAttribute('src', resData["data"]);
+                        });
+                        $qar.removeCustomModal();
+                    }
+                    $qar.setBtnStatus(button, "reset");
+                } catch (err) {
+                    $qar.showMessage("error", err.message);
+                    $qar.setBtnStatus(button, "reset");
+                }
+            });
+
+        }
+        initUploadAvatar();
+    </script>
+</div>

@@ -1,0 +1,145 @@
+<section class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)">@(T("ls_Websitemanagement"))</a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">@(ViewData["title"])</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>@(ViewData["title"])</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">@(T("ls_Language"))</th>
+                                    <th scope="col">@(T("ls_Default"))</th>
+                                    <th scope="col">@(T("ls_Frontenddisplay"))</th>
+                                    <th scope="col">@(T("ls_Backenddisplay"))</th>
+                                    <th scope="col">@(T("ls_Displayorder"))</th>
+                                </tr>
+                            </thead>
+                            <tbody class="language-list">
+
+@foreach (Language item in LanguageList)
+{
+                                    <tr data-id="@(item.Id)">
+                                        <th scope="row">
+                                            @(item.FullName)
+                                        </th>
+                                        <td>
+                                            <div class="form-check abc-radio abc-radio-info">
+                                                <input class="form-check-input" type="radio" name="radioDefault"
+                                                    id="radio_@(item.Id)" value="@(item.LanguageCulture)" @((item.IsDefault == 1) ? "checked" : "")>
+                                                <label class="form-check-label" for="radio_@(item.Id)" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check abc-checkbox abc-checkbox-primary">
+                                                <input class="form-check-input" type="checkbox"
+                                                    name="checkboxFrontendDisplay" id="frontendDisplay_@(item.Id)"
+                                                    value="@(item.LanguageCulture)" @((item.FrontendDisplay == 1 || item.IsDefault == 1) ? "checked" : "") @((item.IsDefault == 1) ? "disabled" : "")>
+                                                <label class="form-check-label" for="frontendDisplay_@(item.Id)" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check abc-checkbox abc-checkbox-primary">
+                                                <input class="form-check-input" type="checkbox"
+                                                    name="checkboxBackendDisplay" id="backendDisplay_@(item.Id)"
+                                                    value="@(item.LanguageCulture)" @((item.BackendDisplay == 1 || item.IsDefault == 1) ? "checked" : "") @((item.IsDefault == 1) ? "disabled" : "")>
+                                                <label class="form-check-label" for="backendDisplay_@(item.Id)" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="sort-number">@(item.DisplayOrder)</span>
+                                        </td>
+                                    </tr>
+
+}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button type="button" class="btn btn-primary me-2 btn-save-language-form"
+                            data-loading-text="@(T("ls_Loading"))">
+                            <i class="fa-duotone fa-floppy-disk"></i> @(T("ls_Save"))
+                        </button>
+                        <button type="reset" class="btn btn-outline-secondary">
+                            <i class="fa-duotone fa-rotate-right"></i>@(T("ls_Reset"))
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/console/js/plugins/jquery.dragsort.js"></script>
+    <script>
+        $(function () {
+
+            $("tbody.language-list").dragsort({
+                dragSelector: "tr",
+                placeHolderTemplate: "<tr></tr>",
+                dragEnd: function () {
+                    $("tbody.language-list").find('tr').each(function (index, element) {
+                        $(element).find('span.sort-number').text(index + 1);
+                    });
+                }
+            });
+            $('#tbody.language-list input[type="radio"][name="radioDefault"]').on("change", function () {
+                var $tr = $(this).closest("tr"),
+                    $checkboxFrontendDisplay = $tr.find('input[type="checkbox"][name="checkboxFrontendDisplay"]'),
+                    $checkboxBackendDisplay = $tr.find('input[type="checkbox"][name="checkboxBackendDisplay"]');
+
+                $checkboxFrontendDisplay.prop("disabled", $(this).is(":checked"));
+                $checkboxBackendDisplay.prop("disabled", $(this).is(":checked"));
+                if ($(this).is(":checked")) {
+                    $checkboxFrontendDisplay.prop("checked", true);
+                    $checkboxBackendDisplay.prop("checked", true);
+                }
+            });
+            $("button.btn-save-language-form").on("click", function () {
+                var $btn = $(this),
+                    languageArr = [];
+                $('tbody.language-list tr').each(function (i, v) {
+                    languageArr.push({
+                        "id": Number($(v).attr("data-id")),
+                        "isDefault": $(v).find('input[type="radio"][name="radioDefault"]').is(":checked") ? 1 : 0,
+                        "frontendDisplay": $(v).find('input[type="checkbox"][name="checkboxFrontendDisplay"]').is(":checked") ? 1 : 0,
+                        "backendDisplay": $(v).find('input[type="checkbox"][name="checkboxBackendDisplay"]').is(":checked") ? 1 : 0,
+                        "displayOrder": (i + 1)
+                    });
+                });
+                $qar.setBtnStatus($btn[0], 'loading');
+                $.post("/@(CurrentLanguage)/@(ControllerName)/@(ActionName)", {
+                    "languageList": languageArr
+                }, function (data) {
+                    $qar.showMessage(data["status"], data["message"]);
+                    if (data["status"] === "success") {
+                        setTimeout(function () { window.location.reload(); }, 1500);
+                    }
+                    $qar.setBtnStatus($btn[0], 'reset');
+                });
+            });
+        });
+
+    </script>
+}

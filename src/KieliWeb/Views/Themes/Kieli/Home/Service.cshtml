@@ -1,0 +1,171 @@
+@model Servicepage
+@{
+    // A service detail page (admin: «Қызметтер» → «Қызмет беттері»); empty sections are left out.
+    BlockContent d = new BlockContent(ContentStore.Parse(Model.DataJson));
+    string servicesLabel = Block("site.nav").List("items").FirstOrDefault(i => i["key"] == "services")?["label"] ?? "Қызметтер";
+    IReadOnlyList<BlockContent> keyfacts = d.List("keyfacts"), benefits = d.List("benefits"), who = d.List("who"), steps = d.List("steps"), docs = d.List("docs"), faq = d.List("faq"), related = d.List("related");
+    string serviceKey = d["serviceKey"];
+}
+<main id="main">
+  <section class="page-head">
+    <div class="wrap">
+      <ol class="crumbs" aria-label="@U("common.crumbs")"><li><a href="@L("/")">@U("common.home")</a></li><li><a href="@L("/kz/services")">@servicesLabel</a></li>@if (d.Has("crumbText")) {<li><a href="@d["crumbUrl"]">@d["crumbText"]</a></li>}<li>@Model.Title</li></ol>
+      <div class="service-head">
+        <div>
+          <p class="eyebrow">@d["eyebrow"]</p>
+          <h1 class="page-title">@Model.Title</h1>
+          <p class="lead">@d["lead"]</p>
+        </div>
+        <div class="service-head__cta">
+          <button type="button" class="btn btn--primary" data-consult="@serviceKey">@d["cta"]</button>
+          <p>@d["ctaNote"]</p>
+        </div>
+      </div>
+@if (keyfacts.Count > 0)
+{
+      <div class="keyfacts">
+@foreach (BlockContent k in keyfacts)
+{
+        <div class="keyfact"><b>@k["value"]</b><span>@k["text"]</span></div>
+}
+      </div>
+}
+    </div>
+  </section>
+
+@if (benefits.Count > 0)
+{
+  <section class="section section--paper" aria-labelledby="ben-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">@d["benefitsEyebrow"]</p>
+        <h2 id="ben-title">@d["benefitsTitle"]</h2>
+        <p class="lead">@d["benefitsLead"]</p>
+      </div>
+      <div class="benefits">
+@foreach (BlockContent b in benefits)
+{
+        <div class="benefit@(b.Bool("negative") ? " benefit--no" : "")">@Icon(b.Has("icon") ? b["icon"] : b.Bool("negative") ? "i-ban" : "i-check-circle")<b>@b["title"]</b><p>@b["text"]</p></div>
+}
+      </div>
+    </div>
+  </section>
+}
+
+@if (who.Count > 0)
+{
+  <section class="section" aria-labelledby="who-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div>
+          <p class="eyebrow">@d["whoEyebrow"]</p>
+          <h2 id="who-title">@d["whoTitle"]</h2>
+        </div>
+@if (d.Has("whoAside"))
+{
+        <div class="sec-head__aside"><p>@d["whoAside"]</p></div>
+}
+      </header>
+      <div class="who">
+@foreach (BlockContent w in who)
+{
+        <div class="who__card"><span class="n">@w["label"]</span><svg aria-hidden="true" width="28" height="28" style="color:var(--kok)"><use href="#@w["icon"]"/></svg><h3>@w["title"]</h3><p>@w["text"]</p></div>
+}
+      </div>
+    </div>
+  </section>
+}
+
+@if (steps.Count > 0)
+{
+  <section class="section section--paper" aria-labelledby="steps-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div>
+          <p class="eyebrow">@d["stepsEyebrow"]</p>
+          <h2 id="steps-title">@d["stepsTitle"]</h2>
+        </div>
+@if (d.Has("stepsAside"))
+{
+        <div class="sec-head__aside"><p>@d["stepsAside"]</p></div>
+}
+      </header>
+      <ol class="route">
+@{ int n = 0; }
+@foreach (BlockContent s in steps)
+{
+        n++;
+        <li class="route__step"><span class="route__n">@n</span><h3 class="route__t">@s["title"]</h3><p class="route__d">@s["text"]</p>@if (s.Has("time")) {<span class="route__time">@s["time"]</span>}</li>
+}
+      </ol>
+@if (d.Has("disclaimer"))
+{
+      <p class="catalog__note" style="margin-block-start:36px"><svg aria-hidden="true"><use href="#i-shield"/></svg><span>@d["disclaimer"]</span></p>
+}
+    </div>
+  </section>
+}
+
+@if (docs.Count > 0)
+{
+  <section class="section section--tint" aria-labelledby="docs-title">
+    <div class="wrap checklist-wrap">
+      <div>
+        <p class="eyebrow">@d["docsEyebrow"]</p>
+        <h2 class="page-title" style="font-size:var(--fs-h2)" id="docs-title">@d["docsTitle"]</h2>
+        <p class="lead" style="margin-block:16px 28px">@d["docsLead"]</p>
+        <div class="checklist" id="checklist" data-key="@Model.Slug">
+@{ int di = 0; }
+@foreach (BlockContent doc in docs)
+{
+          di++;
+          <label for="d@(di)"><input type="checkbox" id="d@(di)"><b>@doc["title"]</b>@if (doc.Has("note")) {<small>@doc["note"]</small>}</label>
+}
+        </div>
+      </div>
+      <aside class="aside">
+        <div class="panel">
+          <h3>@d["panelTitle"]</h3>
+          <div class="progress">
+            <div class="progress__txt"><span>@U("services.docsReady")</span><b id="ck-n">0 / @docs.Count</b></div>
+            <div class="progress__bar"><i id="ck-bar"></i></div>
+            <p id="ck-msg" style="color:var(--ink-2);font-size:var(--fs-sm)">@U("services.checkNone")</p>
+          </div>
+          <button type="button" class="btn btn--primary btn--block" data-consult="@serviceKey">@d["cta"]</button>
+        </div>
+@if (d.Has("tipText"))
+{
+        <div class="callout">
+          <b>@d["tipTitle"]</b>
+          <span>@d["tipText"]</span>
+@if (d.Has("tipLinkText"))
+{
+          <a class="link-arrow" href="@d["tipLinkUrl"]">@d["tipLinkText"]</a>
+}
+        </div>
+}
+      </aside>
+    </div>
+  </section>
+}
+
+@if (faq.Count > 0)
+{
+  <partial name="~/Views/Themes/Kieli/Shared/_Faq.cshtml" model='new SectionModel(new BlockContent(new Newtonsoft.Json.Linq.JObject { ["eyebrow"] = U("services.faq"), ["title"] = d["faqTitle"], ["items"] = d.Data["faq"] }), "section", "faq-title")' />
+}
+
+@if (related.Count > 0)
+{
+  <section class="section section--tint" aria-labelledby="rel-title">
+    <div class="wrap">
+      <header class="sec-head"><div><p class="eyebrow">@d["relatedEyebrow"]</p><h2 id="rel-title">@d["relatedTitle"]</h2></div></header>
+      <div class="related">
+@foreach (BlockContent r in related)
+{
+        <a class="rel" href="@r["url"]"><span class="rel__k">@r["kicker"]</span><span class="rel__t">@r["title"]</span><p>@r["text"]</p></a>
+}
+      </div>
+    </div>
+  </section>
+}
+</main>

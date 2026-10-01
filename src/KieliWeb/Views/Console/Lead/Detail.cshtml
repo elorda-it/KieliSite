@@ -1,0 +1,96 @@
+@model Consultrequest
+@using KieliWeb.Controllers
+@{
+    List<Consultfile> files = QarList<Consultfile>("files");
+    string wa = new string((Model.Contact ?? string.Empty).Where(char.IsDigit).ToArray());
+}
+<section class="pc-container">
+    <div class="pc-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Өтінімдер</a></li>
+                            <li class="breadcrumb-item"><a href="/@(CurrentLanguage)/lead/inbox/list">Кеңес өтінімдері</a></li>
+                            <li class="breadcrumb-item" aria-current="page">@ConsultController.Number(Model.Id)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-7">
+                <div class="card kf-lead">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">@ConsultController.Number(Model.Id) · @Model.Name</h5>
+                        @Html.Raw(LeadController.StatusBadge(Model.Status))
+                    </div>
+                    <div class="card-body">
+                        <dl>
+                            <dt>Жіберілді</dt><dd>@UnixTimeHelper.UnixTimeToDateTime(Model.AddTime).ToString("dd.MM.yyyy HH:mm")</dd>
+                            <dt>Аты</dt><dd>@Model.Name</dd>
+                            <dt>Байланыс</dt><dd><b>@Model.Contact</b>@if (wa.Length >= 10) {<text> · <a href="https://wa.me/@wa" target="_blank" rel="noopener">WhatsApp</a></text>}</dd>
+                            <dt>Қай елде</dt><dd>@LeadController.Country(Model.Country)</dd>
+                            <dt>Сайт тілі</dt><dd>@SiteLanguages.Get(Model.Language).Name <small class="text-muted">— жауапты осы тілде жазған жөн</small></dd>
+                            <dt>Қызмет</dt><dd>@if (!string.IsNullOrWhiteSpace(Model.Code)) {<code class="me-1">@Model.Code</code>}@Model.ServiceTitle</dd>
+                            <dt>Қай беттен</dt><dd><code>@Model.Source</code></dd>
+                        </dl>
+                        <h6 class="mt-4">Жағдайы</h6>
+                        <div class="kf-lead__msg">@(string.IsNullOrWhiteSpace(Model.Message) ? "—" : Model.Message)</div>
+                        @if (files.Count > 0)
+                        {
+                            <h6 class="mt-4">Құжаттар (@files.Count)</h6>
+                            <div class="kf-files">
+                                @foreach (Consultfile f in files)
+                                {
+                                    string url = $"/{CurrentLanguage}/lead/inbox/file?id={f.Id}";
+                                    <a class="kf-file" href="@url" target="_blank" rel="noopener">
+                                        @if (f.ContentType.StartsWith("image/") && f.ContentType != "image/heic")
+                                        {
+                                            <img src="@url" alt="@f.FileName" loading="lazy">
+                                        }
+                                        else
+                                        {
+                                            <span class="kf-file__ic"><i class="ti ti-file-text"></i></span>
+                                        }
+                                        <span>@f.FileName</span>
+                                        <small class="text-muted">@(f.FileSize > 1048576 ? (f.FileSize / 1048576.0).ToString("0.0") + " МБ" : Math.Max(1, f.FileSize / 1024) + " КБ")</small>
+                                    </a>
+                                }
+                            </div>
+                        }
+                        <p class="text-muted small mt-4 mb-0">IP: @Model.Ip · @Model.UserAgent</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-5">
+                <form class="card qar-form" action="/@(CurrentLanguage)/Lead/Inbox" method="post">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <div class="card-header"><h5 class="mb-0">Жұмыс барысы</h5></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label" for="status">Күйі</label>
+                            <select class="form-select" id="status" name="status" data-plain>
+                                @foreach ((byte v, string label, string _) in LeadController.Statuses)
+                                {
+                                    <option value="@v" selected="@(v == Model.Status)">@label</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-0">
+                            <label class="form-label" for="staffNote">Ескертпе (тек әкімшілерге көрінеді)</label>
+                            <textarea class="form-control" id="staffNote" name="staffNote" rows="6">@Model.StaffNote</textarea>
+                        </div>
+                    </div>
+                    @if (CanEdit)
+                    {
+                        <div class="card-footer text-end">
+                            <button type="submit" class="btn btn-primary" data-loading-text="@(T("ls_Loading"))"><i class="ti ti-device-floppy me-1"></i>Сақтау</button>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

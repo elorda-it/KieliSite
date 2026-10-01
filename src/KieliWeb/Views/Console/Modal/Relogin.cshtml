@@ -1,0 +1,18 @@
+@{
+    Layout = null;
+}
+<div id="qar-modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">@(T("ls_Warning"))</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-warning" role="alert">
+            @(ViewData["reloginReason"])
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">@(T("ls_Close"))</button>
+        <a class="btn btn-warning shadow-2" href="/@(CurrentLanguage)/admin/signout">@(T("ls_Loginagain"))</a>
+    </div>
+</div>

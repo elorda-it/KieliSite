@@ -1,0 +1,93 @@
+@{
+    string skinName = (ViewData["skinName"] ?? string.Empty) as string;
+    string realName = (ViewData["realName"] ?? string.Empty) as string;
+    string avatarUrl = (ViewData["avatarUrl"] ?? string.Empty) as string;
+    string roleNames = (ViewData["roleNames"] ?? string.Empty) as string;
+    List<Navigation> navigationList = QarList<Navigation>("navigationList");
+}
+<nav class="pc-sidebar">
+  <div class="navbar-wrapper">
+    <div class="m-header p-5">
+        <a href="/kz" class="b-brand text-primary">
+
+@if (skinName.Equals("dark", StringComparison.OrdinalIgnoreCase))
+{
+                <img src="@Media(SiteSetting?.LightLogo)" class="img-fluid logo-lg" alt="@(SiteSetting?.Title)">
+
+}
+else
+{
+                <img src="@Media(SiteSetting?.DarkLogo)" class="img-fluid logo-lg" alt="@(SiteSetting?.Title)">
+
+}
+        </a>
+    </div>
+    <div class="navbar-content">
+
+      <div class="card pc-user-card">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <img src="@(avatarUrl)" data-image="avatar" alt="@(realName)" class="user-avtar wid-45 rounded-circle" />
+            </div>
+            <div class="flex-grow-1 ms-3 me-2">
+              <h6 class="mb-0">@(realName)</h6>
+              <small>@(roleNames)</small>
+            </div>
+            <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse" href="#pc_sidebar_userlink">
+              <svg class="pc-icon">
+                <use xlink:href="#custom-sort-outline"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="collapse pc-user-links" id="pc_sidebar_userlink">
+            <div class="pt-3">
+              <a href="/@(CurrentLanguage)/admin/profile">
+                <i class="ti ti-user"></i>
+                <span>@(T("ls_Myaccount"))</span>
+              </a>
+              <a href="/@(CurrentLanguage)/admin/signout">
+                <i class="ti ti-power"></i>
+                <span>@(T("ls_Signout"))</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="pc-navbar">
+
+@foreach (Navigation navigation in (from x in navigationList
+where x.ParentId == 0
+orderby x.DisplayOrder
+select x).ToList())
+{
+List<Navigation> childList = (from x in navigationList
+where x.ParentId == navigation.Id
+orderby x.DisplayOrder
+select x).ToList();
+bool isActive = childList.Exists((Navigation x) => x.NavUrl.Contains("/" + ControllerName + "/" + ActionName, StringComparison.OrdinalIgnoreCase));
+            <li class="pc-item pc-hasmenu @(isActive ? " active pc-trigger " : "")">
+              <a href="javascript:void(0)" class="pc-link">
+             <span class="pc-micon">
+               <i class="@(navigation.Icon)" ></i>
+              </span>
+            <span class="pc-mtext">@(T(navigation.NavTitle))</span>
+            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+          </a>
+         
+          <ul class="pc-submenu">
+
+@foreach (Navigation childNavigation in childList)
+{
+                 <li class="pc-item @(childNavigation.NavUrl.Contains("/" + ControllerName + "/" + ActionName, StringComparison.OrdinalIgnoreCase) ? "active" : "")"><a class="pc-link" href="/@(CurrentLanguage)@(childNavigation.NavUrl)">@(T(childNavigation.NavTitle))</a></li>
+
+}
+          </ul>
+        </li>
+
+}
+      </ul>
+    </div>
+  </div>
+</nav>

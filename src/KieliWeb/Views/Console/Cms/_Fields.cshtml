@@ -1,0 +1,180 @@
+@model FieldsModel
+@using KieliWeb.Setup.Cms
+@using Newtonsoft.Json.Linq
+@{
+    // One editor field per FieldDef. kieli-admin.js reads them back into JSON on submit
+    // (data-kf-name / data-kf-kind; list rows keep their id in data-kf-rowid, which their
+    // translations point to), so the inputs carry no name attributes of their own.
+    // Translation mode: only the translatable fields, each with its Kazakh text under it; list rows
+    // follow the Kazakh rows (they are added, moved and removed in the Kazakh form only).
+    int NextId()
+    {
+        int n = Context.Items["kf-id"] is int i ? i + 1 : 1;
+        Context.Items["kf-id"] = n;
+        return n;
+    }
+    string Str(JObject o, string name)
+    {
+        JToken t = o?[name];
+        return t == null || t.Type == JTokenType.Null ? string.Empty : t.Type == JTokenType.String ? (string)t : t.ToString();
+    }
+    string Plain(string html)
+    {
+        string text = System.Net.WebUtility.HtmlDecode(System.Text.RegularExpressions.Regex.Replace(html ?? string.Empty, "<[^>]+>", " "));
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", " ").Trim();
+        return text.Length > 260 ? text.Substring(0, 259) + "…" : text;
+    }
+    List<ContentStore.TabWithItems> tabs = null;
+    if (Model.Fields.Any(f => f.Kind == FieldKind.Service))
+    {
+        tabs = ContentStore.ServiceTabs(Cache);
+    }
+    string toolbar = "<span class=\"kf-row__tools\"><button type=\"button\" data-kf-up title=\"Жоғары\"><i class=\"ti ti-arrow-up\"></i></button><button type=\"button\" data-kf-down title=\"Төмен\"><i class=\"ti ti-arrow-down\"></i></button><button type=\"button\" data-kf-copy title=\"Көшірме\"><i class=\"ti ti-copy\"></i></button><button type=\"button\" data-kf-remove title=\"Өшіру\"><i class=\"ti ti-trash\"></i></button></span>";
+}
+@foreach (FieldDef f in Model.Fields.Where(f => !Model.Translate || f.Translatable))
+{
+    string id = "kf" + NextId();
+    string value = Str(Model.Values, f.Name);
+    string baseText = Model.Translate ? Str(Model.BaseValues, f.Name) : string.Empty;
+    <div class="kf-field kf-field--@f.Kind.ToString().ToLowerInvariant()" data-kf-name="@f.Name" data-kf-kind="@f.Kind.ToString().ToLowerInvariant()">
+    @if (f.Kind != FieldKind.Bool)
+    {
+        <label class="form-label" for="@id">@f.Label@if (f.Required && !Model.Translate) {<span class="text-danger"> *</span>}</label>
+    }
+    @switch (f.Kind)
+    {
+        case FieldKind.Textarea:
+        case FieldKind.Lines:
+            <textarea class="form-control" id="@id" data-kf-input rows="@(f.Kind == FieldKind.Lines ? 2 : Math.Clamp(Math.Max(value.Length, baseText.Length) / 90 + 2, 3, 12))">@value</textarea>
+            break;
+        case FieldKind.Html:
+            <textarea class="form-control kf-html" id="@id" data-kf-input data-kf-large="@(f.Large ? "1" : null)" rows="8">@value</textarea>
+            break;
+        case FieldKind.Number:
+            <input type="text" inputmode="decimal" class="form-control kf-narrow" id="@id" data-kf-input value="@value">
+            break;
+        case FieldKind.Date:
+            <input type="date" class="form-control kf-narrow" id="@id" data-kf-input value="@value">
+            break;
+        case FieldKind.Url:
+            <input type="text" class="form-control" id="@id" data-kf-input value="@value" placeholder="https://… немесе /kz/…" spellcheck="false">
+            break;
+        case FieldKind.Bool:
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="@id" data-kf-input checked="@(Model.Values?[f.Name]?.Type == JTokenType.Boolean && (bool)Model.Values[f.Name])">
+                <label class="form-check-label" for="@id">@f.Label</label>
+            </div>
+            break;
+        case FieldKind.Select:
+            <select class="form-select" id="@id" data-kf-input data-plain>
+                @if (!f.Required)
+                {
+                    <option value="">—</option>
+                }
+                @foreach ((string v, string label) in f.Options)
+                {
+                    <option value="@v" selected="@(v == value)">@label</option>
+                }
+                @if (value.Length > 0 && !f.Options.Any(o => o.Value == value))
+                {
+                    <option value="@value" selected>@value</option>
+                }
+            </select>
+            break;
+        case FieldKind.Service:
+            <select class="form-select" id="@id" data-kf-input data-plain>
+                <option value="">Жалпы кеңес (қызмет таңдалмайды)</option>
+                @foreach (ContentStore.TabWithItems t in tabs)
+                {
+                    <optgroup label="@t.Tab.Name">
+                        <option value="@(t.Tab.Slug):" selected="@(value == t.Tab.Slug + ":")">@t.Tab.Name — жалпы кеңес</option>
+                        @foreach (Serviceitem it in t.Items)
+                        {
+                            string key = t.Tab.Slug + ":" + it.Slug;
+                            <option value="@key" selected="@(value == key)">@it.Code · @it.Title</option>
+                        }
+                    </optgroup>
+                }
+            </select>
+            break;
+        case FieldKind.Icon:
+            <div class="kf-icon">
+                <svg class="kf-icon__preview" aria-hidden="true"><use href="#@(value)"/></svg>
+                <select class="form-select" id="@id" data-kf-input data-plain>
+                    <option value="">—</option>
+                    @foreach (string icon in BlockRegistry.Icons)
+                    {
+                        <option value="@icon" selected="@(icon == value)">@icon.Substring(2)</option>
+                    }
+                    @if (value.Length > 0 && !BlockRegistry.Icons.Contains(value))
+                    {
+                        <option value="@value" selected>@value</option>
+                    }
+                </select>
+            </div>
+            break;
+        case FieldKind.Image:
+            <div class="kf-image">
+                <img class="kf-image__preview" src="@value" alt="" hidden="@(value.Length == 0 ? "hidden" : null)">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="@id" data-kf-input value="@value" placeholder="/uploads/… немесе https://…" spellcheck="false">
+                    <label class="btn btn-outline-primary mb-0" title="Компьютерден жүктеу"><i class="ti ti-upload"></i> Жүктеу<input type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif" data-kf-upload hidden></label>
+                    <button type="button" class="btn btn-outline-secondary" data-kf-clear title="Суретті алып тастау"><i class="ti ti-x"></i></button>
+                </div>
+            </div>
+            break;
+        case FieldKind.Audio:
+            <div class="kf-image kf-audio">
+                <audio class="kf-audio__preview" src="@(value.Length > 0 ? value : null)" controls preload="none" hidden="@(value.Length == 0 ? "hidden" : null)"></audio>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="@id" data-kf-input value="@value" placeholder="/uploads/audio/… немесе https://…" spellcheck="false">
+                    <label class="btn btn-outline-primary mb-0" title="Компьютерден жүктеу"><i class="ti ti-upload"></i> Жүктеу<input type="file" accept="audio/mpeg,audio/mp4,audio/x-m4a,audio/aac,audio/ogg,audio/wav,audio/x-wav,audio/webm,.mp3,.m4a,.ogg,.oga,.wav,.webm" data-kf-upload="audio" hidden></label>
+                    <button type="button" class="btn btn-outline-secondary" data-kf-clear title="Аудионы алып тастау"><i class="ti ti-x"></i></button>
+                </div>
+            </div>
+            break;
+        case FieldKind.List:
+            JArray rows = Model.Values?[f.Name] as JArray ?? new JArray();
+            JArray baseRows = Model.BaseValues?[f.Name] as JArray ?? new JArray();
+            <div class="kf-rows">
+                @for (int ri = 0; ri < rows.Count; ri++)
+                {
+                    JObject row = rows[ri] as JObject ?? new JObject();
+                    <div class="kf-row" data-kf-rowid="@FieldValues.RowId(row)">
+                        <div class="kf-row__bar"><span class="kf-row__n"></span><span class="kf-row__sum"></span>@if (!Model.Translate) {@Html.Raw(toolbar)}</div>
+                        <div class="kf-fields"><partial name="~/Views/Console/Cms/_Fields.cshtml" model="new FieldsModel(f.Fields, row, ri < baseRows.Count ? baseRows[ri] as JObject : null, Model.Translate)" /></div>
+                    </div>
+                }
+            </div>
+            @if (Model.Translate)
+            {
+                if (rows.Count == 0)
+                {
+                    <div class="form-text">Қазақша нұсқада жол жоқ.</div>
+                }
+            }
+            else
+            {
+                <template data-kf-template>
+                    <div class="kf-row">
+                        <div class="kf-row__bar"><span class="kf-row__n"></span><span class="kf-row__sum"></span>@Html.Raw(toolbar)</div>
+                        <div class="kf-fields"><partial name="~/Views/Console/Cms/_Fields.cshtml" model="new FieldsModel(f.Fields, new JObject())" /></div>
+                    </div>
+                </template>
+                <button type="button" class="btn btn-sm btn-light-primary" data-kf-add><i class="ti ti-plus"></i> Жол қосу</button>
+            }
+            break;
+        default:
+            <input type="text" class="form-control" id="@id" data-kf-input value="@value">
+            break;
+    }
+    @if (Model.Translate && f.Kind != FieldKind.List)
+    {
+        <div class="kf-base" lang="kk"><span>Қаз:</span> @(baseText.Length == 0 ? "—" : f.Kind == FieldKind.Html || f.Kind == FieldKind.Textarea ? Plain(baseText) : baseText)</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(f.Help))
+    {
+        <div class="form-text">@f.Help</div>
+    }
+    </div>
+}

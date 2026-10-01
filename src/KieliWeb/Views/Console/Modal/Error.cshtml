@@ -1,0 +1,16 @@
+@{
+    Layout = null;
+}
+<div id="qar-modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">@(T("ls_Error"))</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+        <div class="alert alert-danger" role="alert">
+            @(ViewData["message"])
+        </div>
+    </div>
+  
+</div>

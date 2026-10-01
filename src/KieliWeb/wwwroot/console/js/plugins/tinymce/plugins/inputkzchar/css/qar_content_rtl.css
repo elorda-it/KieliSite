@@ -1,0 +1,108 @@
+@font-face {
+    font-family: KazNet;
+    src: local("KazNet"), url("../fonts/KazNet.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "UKK RKK1";
+    src: local("UKK RKK1"), url("../fonts/Ukkrkk1.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "UKK TZK1";
+    src: local("UKK TZK1"), url("../fonts/Ukktzk1.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "UKIJ Tuz Tom";
+    src: local("UKIJ Tuz Tom"), url("../fonts/UKIJTuz.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "UKIJ Chiwer Kesme";
+    src: local("UKIJ Chiwer Kesme"), url("../fonts/UKIJChiK.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "ALKATIP Tor Tom";
+    src: local("ALKATIP Tor Tom"), url("../fonts/ALKATIP_Tor_Tom.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'ALKATIP Basma Tom';
+    src: local('ALKATIP Basma Tom'), url("../fonts/ALKATIP_Basma_Tom.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "ALKATIP Jornal Tom";
+    src: local("ALKATIP Jornal Tom"), url("../fonts/ALKATIP_Jornal_Tom.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KazakhSoft Asilya";
+    src: local("KazakhSoft Asilya"), url("../fonts/KazakhSoftAsilya.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KazakhSoft Qaniq";
+    src: local("KazakhSoft Qaniq"), url("../fonts/KazakhSoftQaniq.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KazakhSoft Baspa";
+    src: local("KazakhSoft Baspa"), url("../fonts/KazakhSoftBaspa.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KazakhSoft Sulus";
+    src: local("KazakhSoft Sulus"), url("../fonts/KazakhSoftSulus.ttf") format("truetype");
+}
+
+#qarmce,
+.qarmce,
+body {
+    font-size: 15px;
+    font-family: KazNet, "UKK RKK1", "UKK TZK1", "UKIJ Tuz Tom", "UKIJ Chiwer Kesme", "ALKATIP Tor Tom", 'ALKATIP Basma Tom', "ALKATIP Jornal Tom", "KazakhSoft Asilya", "KazakhSoft Qaniq", "KazakhSoft Baspa", "KazakhSoft Sulus", Arial, sans-serif;
+    direction: rtl
+}
+
+table,
+td,
+th {
+    font-family: KazNet, "UKK RKK1", "UKK TZK1", "UKIJ Tuz Tom", "UKIJ Chiwer Kesme", "ALKATIP Tor Tom", 'ALKATIP Basma Tom', "ALKATIP Jornal Tom", "KazakhSoft Asilya", "KazakhSoft Qaniq", "KazakhSoft Baspa", "KazakhSoft Sulus", Arial, sans-serif;
+    font-size: 14px;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 5px solid #ccc;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.mce-content-body p img,
+.mce-content-body img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.mce-content-body table {
+    max-width: 100% !important;
+    border-spacing: 0;
+    border-collapse: collapse
+}
+
+.mce-content-body table>tbody>tr>td,
+.mce-content-body table>tbody>tr>th,
+.mce-content-body table>tfoot>tr>td,
+.mce-content-body table>tfoot>tr>th,
+.post-content table>thead>tr>td,
+.post-content table>thead>tr>th {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 0;
+}
+
+.mce-content-body iframe {
+    max-width: 100%;
+}
