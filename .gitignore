@@ -11,6 +11,10 @@ secrets.json
 .env
 .env.*
 initial-admin.txt
+# database dumps (accounts, personal data): only the schema file belongs in the repository
+*.sql
+!db/kieli_schema.sql
+*.sql.gz
 
 # ---- Runtime data of a running site ----
 logs/

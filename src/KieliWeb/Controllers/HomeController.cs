@@ -81,18 +81,18 @@ public class HomeController : QarBaseController
 
 	public IActionResult Kaztest() => Page("Kaztest", "kaztest", "kaztest", "kaztest", "/kz/kaztest");
 
-	/// <summary>Old kieli.kz place address (/kz/attraction/view?id=128): the place with that legacy id.</summary>
+	/// <summary>Old kieli.kz place address (/kz/attraction/view?id=128): the place with that legacy id, in the same language.</summary>
 	public IActionResult OldPlace(string query)
 	{
 		int id = GetIntQueryParam("id");
 		Place place = id > 0 ? ContentStore.Places(_memoryCache).FirstOrDefault(p => p.LegacyId == id) : null;
-		return RedirectPermanent(place == null ? "/kz/kazakhstan" : "/kz/place/" + place.Slug);
+		return RedirectPermanent(SiteLanguages.Localize(place == null ? "/kz/kazakhstan" : "/kz/place/" + place.Slug, Lang));
 	}
 
 	/// <summary>Old kieli.kz traditions: now the heritage section of the Kazakhstan page.</summary>
-	public IActionResult OldHeritage(string query) => RedirectPermanent("/kz/kazakhstan#mura");
+	public IActionResult OldHeritage(string query) => RedirectPermanent(SiteLanguages.Localize("/kz/kazakhstan", Lang) + "#mura");
 
-	public IActionResult OldAbout(string query) => RedirectPermanent("/kz/author");
+	public IActionResult OldAbout(string query) => RedirectPermanent(SiteLanguages.Localize("/kz/author", Lang));
 
 	/// <summary>An address that no page answers (the fallback route in Program.cs).</summary>
 	public IActionResult Missing() => NotFoundPage();

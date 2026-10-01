@@ -1853,7 +1853,10 @@ body.is-exam .fab { display: none; }
 .form__note[data-form-status] { color: var(--err); }
 /* article and place bodies written in the admin editor */
 .prose img { max-inline-size: 100%; block-size: auto; border-radius: 12px; }
-.prose iframe { max-inline-size: 100%; }
+.prose iframe { display: block; inline-size: 100%; max-inline-size: 100%; block-size: auto; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; }
+/* texts brought over from the old kieli.kz: pictures with credits, audio guides */
+.prose figure { margin-block: 1.4em; }
+.prose audio { display: block; inline-size: 100%; }
 .prose table { display: block; overflow-x: auto; }
 
 /* ---------- 11. Languages ------------------------------------------------ */

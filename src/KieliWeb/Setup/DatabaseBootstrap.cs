@@ -37,6 +37,7 @@ public static class DatabaseBootstrap
 		SeedServices(connection, now, seed);
 		SeedArticles(connection, now, seed);
 		SeedKazakhstan(connection, now, seed);
+		AddMissingPlaces(connection, now, seed);
 		SeedKaztest(connection, now, seed);
 		ReplaceOldKaztest(connection, now, seed);
 		AddMissingKaztestVariants(connection, now, seed);
@@ -353,6 +354,11 @@ public static class DatabaseBootstrap
 			connection.Execute("update multilanguage set columnValue = @value where id = @id", new { value = value.ToString(Formatting.None), id = tr.Id });
 			changed++;
 		}
+		// menu icons the admin's icon font does not have (the menu is kept in the navigation table)
+		foreach (JObject u in (upgrades["navigation"] as JArray ?? new JArray()).OfType<JObject>())
+		{
+			changed += connection.Execute("update navigation set icon = @to where icon = @from", new { to = (string)u["to"], from = (string)u["from"] });
+		}
 		foreach (JObject u in (upgrades["settings"] as JArray ?? new JArray()).OfType<JObject>())
 		{
 			if ((string)u["field"] == "title")
@@ -371,62 +377,92 @@ public static class DatabaseBootstrap
 	{
 		string sql = string.Join("\n", File.ReadAllLines(path).Where(l => !l.TrimStart().StartsWith("--")));
 		List<string> statements = sql.Split(";\n").Select(s => s.Trim().TrimEnd(';')).Where(s => s.Length > 0).ToList();
+		// before anything is created or changed: the database is empty, or one this program made
+		StopOnForeignTables(connection, statements);
 		foreach (string statement in statements)
 		{
 			connection.Execute(statement);
 		}
-		VerifySchema(connection, statements);
+		AddNewColumns(connection, statements);
 	}
 
-	/// <summary>
-	/// CREATE TABLE IF NOT EXISTS leaves an existing table alone. If the database already had a
-	/// table of the same name from another site, stop with a clear message instead of failing later.
-	/// </summary>
-	private static void VerifySchema(IDbConnection connection, List<string> statements)
+	/// <summary>The tables of db/kieli_schema.sql with their column names (lower case) and CREATE statement.</summary>
+	private static IEnumerable<(string Table, List<string> Columns, string Statement)> SchemaTables(List<string> statements)
 	{
-		Dictionary<string, HashSet<string>> existing = connection
-			.Query<(string Table, string Column)>("select table_name, column_name from information_schema.columns where table_schema = database()")
-			.GroupBy(x => x.Table.ToLowerInvariant())
-			.ToDictionary(g => g.Key, g => g.Select(x => x.Column.ToLowerInvariant()).ToHashSet());
-		List<string> problems = new List<string>();
 		foreach (string statement in statements)
 		{
 			System.Text.RegularExpressions.Match table = System.Text.RegularExpressions.Regex.Match(statement, @"CREATE TABLE IF NOT EXISTS `(\w+)`");
-			if (!table.Success)
+			if (table.Success)
+			{
+				yield return (table.Groups[1].Value, System.Text.RegularExpressions.Regex.Matches(statement, @"^\s+`(\w+)`", System.Text.RegularExpressions.RegexOptions.Multiline)
+					.Select(m => m.Groups[1].Value.ToLowerInvariant()).ToList(), statement);
+			}
+		}
+	}
+
+	/// <summary>The columns of every table already in the database: name, nullable, default, extra (auto_increment).</summary>
+	private static Dictionary<string, List<(string Column, string Nullable, string Default, string Extra)>> ExistingColumns(IDbConnection connection) => connection
+		.Query<(string Table, string Column, string Nullable, string Default, string Extra)>("select table_name, column_name, is_nullable, column_default, extra from information_schema.columns where table_schema = database()")
+		.GroupBy(x => x.Table.ToLowerInvariant())
+		.ToDictionary(g => g.Key, g => g.Select(x => (x.Column, x.Nullable, x.Default, x.Extra)).ToList());
+
+	/// <summary>
+	/// CREATE TABLE IF NOT EXISTS leaves an existing table alone, so a table of the same name made by another program (the old
+	/// kieli.kz site's «region» with its required «regionName») would break the first inserts. Such a table is recognised before
+	/// anything is changed — more than half of our columns are missing, or it has a required column (NOT NULL, no default) this
+	/// program does not know — and the start stops with the list; the database is left as it was.
+	/// </summary>
+	private static void StopOnForeignTables(IDbConnection connection, List<string> statements)
+	{
+		Dictionary<string, List<(string Column, string Nullable, string Default, string Extra)>> existing = ExistingColumns(connection);
+		List<string> problems = new List<string>();
+		foreach ((string table, List<string> columns, string _) in SchemaTables(statements))
+		{
+			if (!existing.TryGetValue(table.ToLowerInvariant(), out var have))
 			{
 				continue;
 			}
-			List<string> columns = System.Text.RegularExpressions.Regex.Matches(statement, @"^\s+`(\w+)`", System.Text.RegularExpressions.RegexOptions.Multiline)
-				.Select(m => m.Groups[1].Value.ToLowerInvariant()).ToList();
-			if (existing.TryGetValue(table.Groups[1].Value.ToLowerInvariant(), out HashSet<string> have))
+			HashSet<string> names = have.Select(c => c.Column.ToLowerInvariant()).ToHashSet();
+			List<string> missing = columns.Where(c => !names.Contains(c)).ToList();
+			List<string> required = have.Where(c => !columns.Contains(c.Column.ToLowerInvariant()) && c.Nullable == "NO" && c.Default == null
+				&& !(c.Extra ?? string.Empty).Contains("auto_increment", StringComparison.OrdinalIgnoreCase)).Select(c => c.Column).ToList();
+			if (missing.Count * 2 > columns.Count)
 			{
-				List<string> missing = columns.Where(c => !have.Contains(c)).ToList();
-				if (missing.Count == 0)
-				{
-					continue;
-				}
-				if (missing.Count * 2 > columns.Count)
-				{
-					// most columns missing: a table of another site, not an older version of ours
-					problems.Add(table.Groups[1].Value + " (" + string.Join(", ", missing) + ")");
-					continue;
-				}
-				// a column added in a later version: add it with its definition from the schema file
-				foreach (string column in missing)
-				{
-					System.Text.RegularExpressions.Match line = System.Text.RegularExpressions.Regex.Match(statement, @"^\s+(`" + column + @"`[^\n]*?),?\s*$",
-						System.Text.RegularExpressions.RegexOptions.Multiline | System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-					if (line.Success)
-					{
-						connection.Execute("ALTER TABLE `" + table.Groups[1].Value + "` ADD COLUMN " + line.Groups[1].Value.TrimEnd(','));
-						Log.Information("KieliSite: column {Column} added to {Table}", column, table.Groups[1].Value);
-					}
-				}
+				problems.Add(table + " (missing " + string.Join(", ", missing) + ")");
+			}
+			else if (required.Count > 0)
+			{
+				problems.Add(table + " (columns of another program: " + string.Join(", ", required) + ")");
 			}
 		}
 		if (problems.Count > 0)
 		{
-			throw new InvalidOperationException("KieliSite: the database already has tables with another structure — use an empty database. Missing columns: " + string.Join("; ", problems));
+			throw new InvalidOperationException("KieliSite: this database already has tables of another program, so nothing was changed in it. "
+				+ "Use an empty database (README «连接 kieli_db»). Tables: " + string.Join("; ", problems));
+		}
+	}
+
+	/// <summary>A column added to db/kieli_schema.sql in a later version is added to the existing table, with its definition from the file.</summary>
+	private static void AddNewColumns(IDbConnection connection, List<string> statements)
+	{
+		Dictionary<string, List<(string Column, string Nullable, string Default, string Extra)>> existing = ExistingColumns(connection);
+		foreach ((string table, List<string> columns, string statement) in SchemaTables(statements))
+		{
+			if (!existing.TryGetValue(table.ToLowerInvariant(), out var have))
+			{
+				continue;
+			}
+			HashSet<string> names = have.Select(c => c.Column.ToLowerInvariant()).ToHashSet();
+			foreach (string column in columns.Where(c => !names.Contains(c)))
+			{
+				System.Text.RegularExpressions.Match line = System.Text.RegularExpressions.Regex.Match(statement, @"^\s+(`" + column + @"`[^\n]*?),?\s*$",
+					System.Text.RegularExpressions.RegexOptions.Multiline | System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+				if (line.Success)
+				{
+					connection.Execute("ALTER TABLE `" + table + "` ADD COLUMN " + line.Groups[1].Value.TrimEnd(','));
+					Log.Information("KieliSite: column {Column} added to {Table}", column, table);
+				}
+			}
 		}
 	}
 
@@ -559,6 +595,21 @@ public static class DatabaseBootstrap
 			if (generated)
 			{
 				password = Convert.ToBase64String(RandomNumberGenerator.GetBytes(12)).Replace("+", "x").Replace("/", "y").Replace("=", string.Empty);
+				// Shown once, on the server only: sign in and change it under «Менің аккаунтым». Written before the account
+				// exists: if the site may not write there, the start stops and no account is left that nobody can open.
+				string file = Path.Combine(contentRoot, "logs", "initial-admin.txt");
+				try
+				{
+					Directory.CreateDirectory(Path.GetDirectoryName(file));
+					File.WriteAllText(file, $"KieliSite first administrator\nlogin: {email}\npassword: {password}\nChange the password after the first sign-in, then delete this file.\n");
+				}
+				catch (Exception exception) when (exception is UnauthorizedAccessException or IOException)
+				{
+					throw new InvalidOperationException("KieliSite: there is no administrator yet and Site:InitialAdmin:Password is empty, so a generated password "
+						+ "has to be written to " + file + ", but the site may not write there. Set Site:InitialAdmin:Password in the configuration, "
+						+ "or let the user that runs the site write to logs/. Nothing was created.", exception);
+				}
+				Log.Warning("KieliSite: the first administrator's generated password is in {File}", file);
 			}
 			int adminId = connection.Insert(new Admin
 			{
@@ -578,14 +629,6 @@ public static class DatabaseBootstrap
 			}).GetValueOrDefault();
 			int roleId = connection.GetList<Role>("where qStatus = 0 order by id").First().Id;
 			connection.Insert(new Adminrole { AdminId = adminId, RoleId = roleId, AddTime = now, UpdateTime = now, QStatus = 0 });
-			if (generated)
-			{
-				// Shown once, on the server only: sign in and change it under «Менің аккаунтым».
-				string file = Path.Combine(contentRoot, "logs", "initial-admin.txt");
-				Directory.CreateDirectory(Path.GetDirectoryName(file));
-				File.WriteAllText(file, $"KieliSite first administrator\nlogin: {email}\npassword: {password}\nChange the password after the first sign-in, then delete this file.\n");
-				Log.Warning("KieliSite: first administrator created, credentials written to {File}", file);
-			}
 		}
 	}
 
@@ -801,6 +844,71 @@ public static class DatabaseBootstrap
 		["eskertkish"] = "Ескерткіштер"
 	};
 
+	/// <summary>A place of db/seed/kazakhstan.json as a row; its region and category are found by map id and slug.</summary>
+	private static Place PlaceRow(JToken p, Dictionary<int, int> regionIds, Dictionary<string, int> categoryIds, int order, int now)
+	{
+		JArray facts = new JArray(((JArray)p["facts"] ?? new JArray()).Select(f => new JObject { ["label"] = f[0], ["value"] = f[1] }));
+		JArray pano = new JArray(((JArray)p["pano"] ?? new JArray()).Select(u => new JObject { ["url"] = u }));
+		return new Place
+		{
+			Slug = (string)p["slug"],
+			RegionId = regionIds.TryGetValue((int)p["regionMapId"], out int region) ? region : 0,
+			CategoryId = categoryIds.TryGetValue((string)p["category"], out int cat) ? cat : 0,
+			Name = (string)p["name"],
+			Fact = (string)p["fact"] ?? string.Empty,
+			Lead = (string)p["lead"] ?? string.Empty,
+			BodyHtml = (string)p["bodyHtml"] ?? string.Empty,
+			FactsJson = facts.ToString(Formatting.None),
+			ImageUrl = (string)p["imageUrl"] ?? string.Empty,
+			PanoJson = pano.ToString(Formatting.None),
+			Lat = (decimal?)p["lat"] ?? 0m,
+			Lon = (decimal?)p["lon"] ?? 0m,
+			LegacyId = (int?)p["legacyId"] ?? 0,
+			IsFeatured = 0,
+			DisplayOrder = order,
+			AddTime = now,
+			UpdateTime = now,
+			QStatus = 0
+		};
+	}
+
+	/// <summary>
+	/// Places added to db/seed/kazakhstan.json after a site was installed (the 170 places of the old kieli.kz, 2026-10) are added
+	/// to its database: every seed place whose old id or address is not in the table. A place deleted in the admin keeps its
+	/// row, so it is not added again. Their translations come with the draft translations (SeedTranslations, by address).
+	/// </summary>
+	private static void AddMissingPlaces(IDbConnection connection, int now, string seed)
+	{
+		JToken data = ReadSeed(seed, "kazakhstan.json")?["items"];
+		if (data == null || Empty<Place>(connection))
+		{
+			return;
+		}
+		HashSet<int> legacy = connection.Query<int>("select legacyId from place where legacyId > 0").ToHashSet();
+		HashSet<string> slugs = connection.Query<string>("select slug from place").Select(x => x.ToLowerInvariant()).ToHashSet();
+		Dictionary<int, int> regionIds = connection.Query<(int MapId, int Id)>("select mapId, id from region where qStatus = 0 order by id")
+			.GroupBy(r => r.MapId).ToDictionary(g => g.Key, g => g.First().Id);
+		Dictionary<string, int> categoryIds = connection.Query<(string Slug, int Id)>("select slug, id from placecategory where qStatus = 0 order by id")
+			.GroupBy(c => c.Slug).ToDictionary(g => g.Key, g => g.First().Id);
+		int order = connection.ExecuteScalar<int?>("select max(displayOrder) from place") ?? 0, added = 0;
+		foreach (JToken p in data["places"])
+		{
+			int legacyId = (int?)p["legacyId"] ?? 0;
+			string slug = ((string)p["slug"] ?? string.Empty).ToLowerInvariant();
+			if (slug.Length == 0 || slugs.Contains(slug) || (legacyId > 0 && legacy.Contains(legacyId)))
+			{
+				continue;
+			}
+			connection.Insert(PlaceRow(p, regionIds, categoryIds, ++order, now));
+			slugs.Add(slug);
+			added++;
+		}
+		if (added > 0)
+		{
+			Log.Information("KieliSite: {Count} places added from db/seed/kazakhstan.json", added);
+		}
+	}
+
 	private static void SeedKazakhstan(IDbConnection connection, int now, string seed)
 	{
 		JToken data = ReadSeed(seed, "kazakhstan.json")?["items"];
@@ -846,29 +954,7 @@ public static class DatabaseBootstrap
 		order = 1;
 		foreach (JToken p in data["places"])
 		{
-			JArray facts = new JArray(((JArray)p["facts"] ?? new JArray()).Select(f => new JObject { ["label"] = f[0], ["value"] = f[1] }));
-			JArray pano = new JArray(((JArray)p["pano"] ?? new JArray()).Select(u => new JObject { ["url"] = u }));
-			connection.Insert(new Place
-			{
-				Slug = (string)p["slug"],
-				RegionId = regionIds.TryGetValue((int)p["regionMapId"], out int region) ? region : 0,
-				CategoryId = categoryIds.TryGetValue((string)p["category"], out int cat) ? cat : 0,
-				Name = (string)p["name"],
-				Fact = (string)p["fact"] ?? string.Empty,
-				Lead = (string)p["lead"] ?? string.Empty,
-				BodyHtml = (string)p["bodyHtml"] ?? string.Empty,
-				FactsJson = facts.ToString(Formatting.None),
-				ImageUrl = (string)p["imageUrl"] ?? string.Empty,
-				PanoJson = pano.ToString(Formatting.None),
-				Lat = (decimal?)p["lat"] ?? 0m,
-				Lon = (decimal?)p["lon"] ?? 0m,
-				LegacyId = (int?)p["legacyId"] ?? 0,
-				IsFeatured = 0,
-				DisplayOrder = order++,
-				AddTime = now,
-				UpdateTime = now,
-				QStatus = 0
-			});
+			connection.Insert(PlaceRow(p, regionIds, categoryIds, order++, now));
 		}
 		order = 1;
 		foreach (JToken h in data["heritage"])

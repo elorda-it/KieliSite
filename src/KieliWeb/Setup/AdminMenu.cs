@@ -15,7 +15,7 @@ public static class AdminMenu
 
 	public static readonly List<Group> Groups = new List<Group>
 	{
-		new Group("Беттер мен мәтіндер", "ti ti-layout-dashboard", new[]
+		new Group("Беттер мен мәтіндер", "ti ti-file-text", new[]
 		{
 			new Item("Бет блоктары", "/content/block/list"),
 		}),
@@ -38,7 +38,7 @@ public static class AdminMenu
 			new Item("Нысан санаттары", "/atlas/category/list"),
 			new Item("Мәдени мұра", "/atlas/heritage/list"),
 		}),
-		new Group("ҚАЗТЕСТ", "ti ti-checklist", new[]
+		new Group("ҚАЗТЕСТ", "ti ti-list-check", new[]
 		{
 			new Item("Нұсқалар", "/exam/variant/list"),
 			new Item("Сұрақтар", "/exam/question/list"),

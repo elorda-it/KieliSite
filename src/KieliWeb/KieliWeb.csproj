@@ -47,7 +47,8 @@
 
   <!-- Schema and first content (db/kieli_schema.sql, db/seed/*.json), read by Setup/DatabaseBootstrap. -->
   <ItemGroup>
-    <None Include="..\..\db\**\*" LinkBase="db" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\..\db\kieli_schema.sql" Link="db\kieli_schema.sql" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\..\db\seed\**\*" LinkBase="db\seed" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

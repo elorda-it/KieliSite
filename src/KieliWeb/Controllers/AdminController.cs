@@ -27,6 +27,10 @@ public class AdminController : QarBaseController
 	{
 	}
 
+	/// <summary>/kz/admin (people type /admin): the sign-in page, which sends a signed-in administrator on to the profile.</summary>
+	[AllowAnonymous]
+	public IActionResult Index() => Redirect("/" + base.CurrentLanguage + "/admin/login");
+
 	[AllowAnonymous]
 	public IActionResult Login()
 	{

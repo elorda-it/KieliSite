@@ -1,5 +1,5 @@
 {
- "about": "Seed texts that changed after sites were installed. On start, a value that still equals «from» (nobody edited it in the admin) gets the current value of db/seed (blocks.json, i18n/*.json); settings get «to».",
+ "about": "Seed texts that changed after sites were installed. On start, a value that still equals «from» (nobody edited it in the admin) gets the current value of db/seed (blocks.json, i18n/*.json); settings get «to»; navigation: admin menu icons that still have an icon name the admin's font lacks get «to».",
  "blocks": [
   {
    "key": "site.brand",
@@ -425,6 +425,16 @@
    "field": "title",
    "from": "BASTAU LINE · Омар Бекмұрат",
    "to": "kieli.kz"
+  }
+ ],
+ "navigation": [
+  {
+   "from": "ti ti-layout-dashboard",
+   "to": "ti ti-file-text"
+  },
+  {
+   "from": "ti ti-checklist",
+   "to": "ti ti-list-check"
   }
  ]
 }

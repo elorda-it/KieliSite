@@ -25,7 +25,7 @@ the shell in the background and open the URL in the browser pane.
 ## Where things are
 
 - `Setup/DatabaseBootstrap.cs` — every start: schema (`db/kieli_schema.sql`; new columns are added to
-  existing tables), languages, admin menu (`Setup/AdminMenu.cs`), roles, first admin, content from
+  existing tables; a database holding another program's same-named tables stops the start before anything changes), languages, admin menu (`Setup/AdminMenu.cs`), roles, first admin, content from
   `db/seed/*.json`, list row ids, draft translations. Only fills what is missing.
 - `Setup/BlockRegistry*.cs` + `db/seed/blocks.json` — the 52 editable page blocks. Views read them
   with `Block("home.hero")["title"]`, `.Raw()` (html), `.Lines()`, `.List()`; see `Setup/BlockContent.cs`.
@@ -53,6 +53,10 @@ the shell in the background and open the URL in the browser pane.
 - Brand: the site name is kieli.kz (`site.brand`), the company stays «BASTAU LINE» ЖШС. Logo files are in `wwwroot/kieli/img/`
   (README «品牌与 Logo»); `BrandName()` colours the part after the last dot. `Media(url)` versions `/kieli/` files whose
   address comes from the database (static files are cached for a year).
+- Places: `db/seed/kazakhstan.json` has 188 — the prototype's 18 (rewritten by hand) and 170 converted from the old kieli.kz
+  database by `tools/kazakhstan/import_old_places.py` (capital titles recased from the text, bodies cleaned, photo credits
+  kept as captions, deleted YouTube videos left out). `AddMissingPlaces` adds seed places a database lacks (by legacyId or
+  slug; deleted rows stay deleted); old `/kz/attraction/view?id=` addresses 301 to the place in the same language.
 - ҚАЗТЕСТ: `kaztestvariant` → `kaztestquestion` (listening questions point to `kaztestaudio.audioNo`, reading questions
   to `kaztestpassage.passageNo`). The bank is BASTAU LINE's own (written 2026-10, `db/seed/kaztest.json`); never put
   National Testing Center (testcenter.kz) questions, texts or audio back — they may not be used. A variant added to the

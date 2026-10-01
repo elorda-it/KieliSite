@@ -13,7 +13,7 @@ kieli.kz 的正式网站：前台是已确认的原型（`prototype/`），后�
 ```
 KieliSite.sln
 db/kieli_schema.sql         所有表（CREATE TABLE IF NOT EXISTS，可重复执行）
-db/seed/*.json              首次启动时导入的内容（原型里的全部文字、32 项服务、10 篇文章、18 个景点、3 套 ҚАЗТЕСТ、自动新闻的来源）
+db/seed/*.json              首次启动时导入的内容（原型里的全部文字、32 项服务、10 篇文章、188 个景点、3 套 ҚАЗТЕСТ、自动新闻的来源）
 src/KieliWeb/Setup/         数据库初始化、页面区块定义、内容缓存、后台表格定义（Cms/）
 src/KieliWeb/Controllers/   Home（前台）、Consult（前台提交咨询）、Content/Catalog/Press/Atlas/Exam/Lead（后台）
 src/KieliWeb/wwwroot/kieli/img/   Logo、图标、分享图（见「品牌与 Logo」）
@@ -21,6 +21,7 @@ src/KieliWeb/wwwroot/kieli/audio/kaztest/   ҚАЗТЕСТ 听力音频（Piper 
 docs/kaztest-audio/         听力录音脚本（男女分角色，给真人重录用）和 Azure 配音用的 SSML
 tools/kaztest-audio/        重新生成听力音频的工具（Piper TTS）
 tools/blocks/generate.py    一次性工具：从原型 HTML 提取页面区块（已执行过，一般不需要再运行）
+tools/kazakhstan/import_old_places.py  一次性工具：把旧 kieli.kz 数据库里的景点转进 db/seed（已执行过，见「旧网站的景点」）
 prototype/                  已确认的静态原型（设计参照：前台的 HTML 结构和 class 与它保持一致），直接用浏览器打开即可
 ```
 
@@ -51,7 +52,7 @@ prototype/                  已确认的静态原型（设计参照：前台的 
 每一步只补缺的部分，已有的数据不会被覆盖，所以一直保持 `true` 也没问题。
 没写 `InitialAdmin.Password` 的话，会随机生成密码并写到 `logs/initial-admin.txt`（只在服务器上）——登录后请在后台右上角的「Профиль」（`/kz/admin/profile`）里改密码，然后删掉这个文件。
 
-> kieli_db 必须是空库（或者是本程序建的库）。如果里面已经有同名但结构不同的表，程序会停止并在日志里列出缺少的字段，不会乱写数据。
+> kieli_db 必须是空库（或者是本程序建的库）。如果里面有别的程序（比如旧网站）的同名表，程序会在修改任何东西之前停止，并在日志里列出这些表和原因。
 > 旧网站用的是另一个库 `kieliqazaqstan_db`，不受影响。
 
 ## 本地运行
@@ -70,7 +71,7 @@ cd src/KieliWeb && dotnet run --no-launch-profile -e ASPNETCORE_ENVIRONMENT=Deve
 
 ## 部署
 
-和 NiceGirlSite 一样：supervisor 运行 `dotnet KieliWeb.dll`，nginx 反向代理到 `127.0.0.1:51850`。
+和 NiceGirlSite 一样：supervisor 运行 `dotnet KieliWeb.dll`，nginx 反向代理到 `127.0.0.1:51850`。服务器需要 ASP.NET Core **10** 运行时（`dotnet --list-runtimes` 里要有 `Microsoft.AspNetCore.App 10.x`）；发布结果自带 Linux 版图像库（`runtimes/linux-x64/native/libSkiaSharp.so`），后台缩放上传的图片要用到它。
 
 ```bash
 dotnet publish src/KieliWeb -c Release -o out
@@ -185,6 +186,19 @@ Logo 是一座毡房（киіз үй）：金色的 шаңырақ（天窗）�
 
 **加新来源之前，请先看对方网站的使用条款**；对方不同意转载就不要加。想先审核再发布，就取消「Бірден жариялау」：新闻会以「Жасырын」（隐藏）状态加入，在「Мақалалар мен жаңалықтар」里检查后勾选「Сайтта көрсету」。自动加入的新闻在文章列表里带「Автоматты」标记。
 
+## 旧网站的景点
+
+旧 kieli.kz 的 187 个景点都已经在 `db/seed/kazakhstan.json` 里：其中 18 个是原型里重新写过的，另外 170 个是 2026-10-01 用 `tools/kazakhstan/import_old_places.py` 从旧数据库转过来的。转过来的内容包括：
+- 标题、简介、正文，以及俄、英、土、中文翻译（`db/seed/i18n/`）；
+- 坐标、109 个景点的 360° 全景、正文里的图片（保留摄影署名）、语音讲解和 26 个仍然可用的 YouTube 视频（YouTube 上已经删除的 14 个视频去掉了）。
+
+几点说明：
+- **自动添加**：网站启动时会自动补上数据库里还没有的种子景点（按旧 id 或网址名判断），所以已经运行的网站更新程序后就有了；后台删掉的景点不会再被加回来。
+- **旧网址**：`/kz/attraction/view?id=…` 会 301 跳转到对应的新景点页，并保持原来的语言。
+- **分类要人工核对**：旧网站的景点没有分类，是按标题里的词自动分的（陵墓、清真寺、教堂 → 圣地；古城、古墓 → 历史遗迹；纪念碑、广场 → 纪念碑；湖 → 自然），请在后台「Нысандар」里看一遍。
+- **一句话特点**：卡片上的「一句话特点」取自简介的第一句，也可以在后台改成更短的说明。
+- 旧网站的数据库导出文件（比如 `db/kieli_db.sql`）里有旧后台的账号，已被 `.gitignore` 排除，不要提交，也不会进发布包。
+
 ## 正式上线前必须做
 
 - [ ] **Бет блоктары → Барлық беттер → Байланыс деректері**：填真实的电话、WhatsApp、Telegram、WeChat、邮箱、БСН，上传 WeChat 二维码（现在是原型里的示例号码）
@@ -193,7 +207,7 @@ Logo 是一座毡房（киіз үй）：金色的 шаңырақ（天窗）�
 - [ ] ҚАЗТЕСТ 听力：全部音频（每套 3 段）已用 Piper TTS（AI 声音，ISSAI KazakhTTS2，CC BY 4.0）生成并接好，播放器下面有署名，不要删。条件允许的话，请真人按 `docs/kaztest-audio/README.md` 的脚本重录，在后台「ҚАЗТЕСТ → Тыңдалым жазбалары」上传替换，并把「Аудионың авторы」改成配音员。题目是 BASTAU LINE 自编的（2026-10-01），不再使用国家测试中心的材料
 - [ ] 核对文章、服务说明里的法规信息（原型内容是按 2026 年 9 月的公开信息写的）
 - [ ] 请懂俄语、中文、英语、土耳其语的人校对翻译（后台各页面的语言页签）；不准备公开的语言先在「Сайт тілдері」里隐藏
-- [ ] **旧站图片**：「Қазақстан」页和景点页的照片现在直接引用旧站的 `https://kieli.kz/uploads/thumbnail/…`。新程序部署到 kieli.kz 之前，把旧服务器网站目录里的 `wwwroot/uploads/thumbnail/` 整个复制到新站的 `wwwroot/uploads/thumbnail/`，否则换站后这些图片（包括分享预览图）会失效
+- [ ] **旧站图片**：「Қазақстан」页和景点页的照片（29 张，`_big` 和 `_middle` 两种尺寸）现在直接引用旧站的 `https://kieli.kz/uploads/thumbnail/…`。新程序部署到 kieli.kz 之前，把旧服务器网站目录里的整个 `wwwroot/uploads/` 合并复制到新站的 `wwwroot/uploads/`（不会重名：旧站是 `thumbnail/…` 和 `images/时间戳.jpg`，新站上传到 `images/年月/…`），否则换站后这些图片（包括分享预览图）会失效。旧站其余的 wwwroot（admin、themes、lib 等）是旧程序自己的文件，不需要
 - [ ] 域名切到新服务器后：在 Google Search Console、Yandex Webmaster、Bing Webmaster（需要的话再加百度资源平台）验证 kieli.kz——它们给的验证 `<meta>` 粘贴到「Сайт баптаулары → Analytics Html」；然后在这些平台提交 `https://kieli.kz/sitemap.xml`
 - [ ] 上线后看一眼「Жаңалықтар → Жаңалық көздері」：每个来源的「Соңғы тексеріс」（最近一次检查）应该是一小时以内，没有「Қате」；需要的话联系 Egemen 编辑部取得转载许可
 - [ ] 在 Google 商家资料（Google Business Profile）、2GIS、Yandex 地图登记 «BASTAU LINE»：地址、营业时间、电话和网站 kieli.kz 要和网站上一致（本地搜索和 AI 助手回答“阿斯塔纳哪里办…”时最看重这些）
@@ -213,6 +227,6 @@ Logo 是一座毡房（киіз үй）：金色的 шаңырақ（天窗）�
 
 ## 后续可以做
 
-- 把旧库 `kieliqazaqstan_db` 里的 187 个景点、照片和 360° 全景导入新的 `place` 表（现在前台只有原型里的 18 个）
+- 旧网站的 17 篇「Дәстүрлер」（传统习俗，`tradition` 表）还没有搬过来；新站的「Мәдени мұра」现在是 ЮНЕСКО 名录
 - 新咨询到达时通知到 Telegram 或邮箱
 - 管理员密码改用更强的哈希（现在沿用框架的 MD5 + 固定盐）
